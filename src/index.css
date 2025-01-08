@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Fort";
+  src: url("./utils/fonts/FortTRIAL-Medium-BF66172f46e465a.otf")
+    format("opentype");
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: "Fort";
+  src: url("./utils/fonts/FortTRIAL-Semibold-BF66172f46efb00.otf")
+    format("opentype");
+  font-weight: 600; /* Semibold */
+}
+
+@font-face {
+  font-family: "Fort";
+  src: url("./utils/fonts/FortTRIAL-Bold-BF66172f4716649.otf")
+    format("opentype");
+  font-weight: bold; /* Bold */
+}
+
+/* background: linear-gradient(to right, #DB0032 0%, #FA6602 100%); */
+
+/* background: linear-gradient(to right, #060B33 69%, #383F71 100%); */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fort", sans-serif;
+  font-weight: medium; /* Regular */
+}
+
+.bold-text {
+  font-family: "Fort", sans-serif;
+  font-weight: bold; /* Regular */
+}
+
+
+
+
+.card {
+  position: relative;
+  width: 130px;
+  height: 239px;
+  margin: 30px;
+  background: linear-gradient(to right, #db0032 0%, #fa6602 100%);
+  border-radius: 20px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 64.96px;
+  border-top-right-radius: 64.96px;
+  border-bottom-right-radius: 0px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    height: 260px;
+  }
+}
+
+.about-bg {
+  background-image: url("../src/assets/aboutbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.about-section {
+  position: relative;
+  width: 100%; /* Adjust based on your layout */
+  height: auto;
+}
+
+.about-image {
+  position: absolute;
+  top: 0; /* Adjust for desired positioning */
+  left: 0;
+  z-index: 1; /* Background layer */
+  width: 100%; /* Scale to fit */
+  opacity: 0.5; /* Optional for a faded background effect */
+}
+
+.thumb-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4; /* Middle layer */
+  width: 200px;
+  height: 188px;
+}
+
+.group-image {
+  position: absolute;
+  top: 56px;
+  left: 70px;
+  z-index: 3; /* Foreground layer */
+  width: 480px;
+  height: 460px;
+}
+
+/* Base Styles (Default for Desktop) */
+.about-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.about-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.thumb-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 200px;
+  height: 188px;
+}
+
+.group-image {
+  position: absolute;
+  top: 56px;
+  left: 70px;
+  z-index: 3;
+  width: 480px;
+  height: 460px;
+}
+
+/* Tablet View (768px and up) */
+
+@media (min-width: 820px) and (max-width: 1180px) {
+  .about-flex {
+ display: flex;
+ flex-wrap: wrap;
+  }
+  .about-section {
+    position: relative;
+    width: 100%;
+    height: 930px;
+  }
+  .thumb-image {
+    width: 240px;
+    height: 210px;
+    top: 10px;
+    left: 5px;
+  }
+
+  .group-image {
+    width: 587px;
+    height: 566px;
+  }
+}
+/* Mobile View (Below 768px) */
+@media (max-width: 768px) {
+  .about-image {
+    opacity: 0.7; /* Increase visibility on smaller screens */
+  }
+  .about-flex {
+    display: flex;
+    flex-wrap: wrap;
+     }
+  .about-section {
+    height: 700px;
+  }
+  .thumb-image {
+    width: 240px;
+    height: 210px;
+    top: 10px;
+    left: 5px;
+  }
+
+  .group-image {
+    width: 494px;
+    height: 446px;
+  }
+}
+
+/* Extra Small Mobile View (Below 480px) */
+@media (max-width: 480px) {
+  .thumb-image {
+    width: 100px;
+    height: 90px;
+    top: 5px;
+    left: 2px;
+  }
+  .about-section {
+    height: 340px;
+  }
+  .group-image {
+    width: 283px;
+    height: 298px;
+    top: 30px;
+    left: 40px;
+  }
+}
