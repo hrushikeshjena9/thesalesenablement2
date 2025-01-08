@@ -106,20 +106,20 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row sm:space-x-4 mb-3 sm:mb-0">
             <span className="flex items-center space-x-2 mb-2 sm:mb-0">
               <img src={Phone} alt="Phone" className="w-[26px] h-[26px]" />
-              <span className=" sm:inline text-lg lg:text-lg sm:text-sm">
+              <span className=" sm:inline text-lg md:text-sm sm:text-sm">
                 010 335-1182
               </span>
             </span>
             <span className="flex items-center space-x-2">
               <img src={Mail} alt="Mail" className="w-[26px] h-[26px]" />
-              <span className=" sm:inline text-lg md:text-lg sm:text-sm">
+              <span className="  sm:inline text-lg md:text-sm sm:text-sm">
                 info@theenablement.com
               </span>
             </span>
           </div>
 
           {/* Social Media Links */}
-          <div className="flex space-x-4 mb-3 sm:mb-0">
+          <div className="flex space-x-10 mb-3 sm:mb-0">
             <a href="#" aria-label="Facebook">
               <img
                 src={Facebook}
@@ -154,7 +154,7 @@ const Header = () => {
           <div className="flex justify-center sm:justify-end w-full sm:w-auto">
             <button
               type="button"
-              className="text-white h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-xs sm:text-sm px-3 py-2 md:px-6 sm:px-4 sm:py-2"
+              className="text-white h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-lg  sm:text-sm px-3 py-2 md:px-6 sm:px-4 sm:py-2"
             >
               <span>Schedule A Consultation</span>
               <img

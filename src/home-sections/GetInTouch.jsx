@@ -29,7 +29,7 @@ function GetInTouch() {
                 className="w-9 h-9 inline-block ml-2"
               />
             </h3>
-            <p className="text-[12px] text-white sm:text-[14px] md:text-[16px] leading-[32px] text-justify  mt-6">
+            <p className="text-[12px] text-white sm:text-[14px] md:text-[16px] bold-text1 leading-[32px] text-justify  mt-6">
               We help optimize sales strategies, enhance team performance, and
               create tailored solutions to unlock your sales team's potential.
             </p>
@@ -38,7 +38,7 @@ function GetInTouch() {
             </h5>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-4">
-              <div>
+              <div className="flex items-center space-x-6">
                 <input
                   type="text"
                   placeholder="Enter Name"
@@ -46,8 +46,7 @@ function GetInTouch() {
                   onChange={(e) => setName(e.target.value)}
                   className="w-full p-3 bg-white border border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-              </div>
-              <div>
+
                 <input
                   type="tel"
                   placeholder="Enter Phone Number"
@@ -56,6 +55,7 @@ function GetInTouch() {
                   className="w-full p-3 bg-white border border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
+
               <div>
                 <input
                   type="email"
@@ -74,10 +74,10 @@ function GetInTouch() {
                   rows={4}
                 />
               </div>
-              <div className="flex flex-col md:flex-row justify-between mt-6 space-y-4 md:space-y-0 md:space-x-4">
+              <div className="flex flex-col md:flex-row justify-between  space-y-4 md:space-y-0  md:space-x-4">
                 <button
                   type="submit"
-                  className="text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-2.5 flex items-center justify-center w-full md:w-auto"
+                  className="text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 flex items-center justify-center w-full md:w-auto"
                 >
                   CONNECT NOW
                   <img
@@ -88,7 +88,7 @@ function GetInTouch() {
                 </button>
                 <button
                   type="button"
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-2.5 flex items-center justify-center w-full md:w-auto"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-4 flex items-center justify-center w-full md:w-auto"
                   style={{
                     border: "2px solid transparent",
                     borderImage:

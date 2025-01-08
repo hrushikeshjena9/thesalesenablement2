@@ -173,7 +173,7 @@ function Navbar() {
       <nav className="text-white">
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold">
-            <img src={Logo} alt="Logo" className="w-[200px] h-auto" />
+            <img src={Logo} alt="Logo" className="w-[170px] h-auto" />
           </div>
 
           <button
@@ -196,13 +196,13 @@ function Navbar() {
             </svg>
           </button>
 
-          <ul className="hidden lg:flex lg:space-x-12 uppercase font-normal mt-4 lg:mt-0">
+          <ul className="hidden lg:flex lg:space-x-12 bold-text1 uppercase  mt-4 lg:mt-0">
             {links.map((link, index) => (
               <NavLink
                 key={index}
                 to={link.route}
                 className={({ isActive }) =>
-                  `relative text-lg lg:text-base ${
+                  `relative text-lg  lg:text-base ${
                     isActive
                       ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
                       : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
@@ -223,7 +223,7 @@ function Navbar() {
             </button>
             <button
               type="button"
-              className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+              className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 sm:px-10 py-3"
               style={{
                 border: "2px solid transparent",
                 borderImage:

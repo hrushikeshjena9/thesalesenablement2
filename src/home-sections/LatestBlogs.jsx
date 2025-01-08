@@ -69,15 +69,15 @@ function LatestBlogs() {
               alt={blog.title}
               className="w-full h-[233px] p-2 object-cover mb-4"
             />
-            <h3 className="text-lg sm:text-xl font-semibold mb-2 p-4 text-center">
+            <h3 className="text-lg sm:text-sm md:text-[17px] uppercase font-semibold mb-2 p-4 text-center">
               {blog.title}
             </h3>
-            <p className="text-center mb-4 text-sm sm:text-base">
+            <p className="text-left mb-4 text-sm px-6 sm:text-base">
               {blog.description}
             </p>
             <button
               type="button"
-              className="text-transparent mb-4 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-5 py-2.5 flex items-center justify-center"
+              className="text-transparent w-[86%] mb-4 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-6 py-3 flex items-center justify-center"
               style={{
                 border: "2px solid transparent",
                 borderImage:

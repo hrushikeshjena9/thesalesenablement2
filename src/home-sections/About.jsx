@@ -1,6 +1,6 @@
 import RightArrow1 from "../assets/arrow-right1.png";
 import RightArrow from "../assets/arrow-right.png";
-import OurMission from "../assets/our-mission.png";
+import OurMission from "../assets/our-mission1.png";
 import OurValues from "../assets/our-values.png";
 import OurVision from "../assets/our-vision.png";
 import AboutImg from "../assets/about.png";
@@ -18,7 +18,7 @@ function About() {
         </div>
 
         <div className="text-center md:text-left">
-          <h5 className="text-[14px] sm:text-[16px] md:text-[24px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+          <h5 className="text-[14px] sm:text-[16px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
             Who We Are
           </h5>
 
@@ -57,17 +57,28 @@ function About() {
                 text: "Guiding principles that shape everything we do.",
               },
             ].map((item, index) => (
-              <div className="flex items-center space-x-4" key={index}>
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px]"
-                />
-                <div className="flex justify-between gap-6">
-                  <h5 className="font-bold uppercase">{item.title}</h5>
-                  <p className="text-[10px] sm:text-[14px] md:text-[14px]">
-                    {item.text}
-                  </p>
+              <div
+                className="flex  space-x-4"
+                key={index}
+              >
+                <div className="w-[10%]">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[55px] md:h-[55px]"
+                  />
+                </div>
+                <div className="flex justify-between align-middle gap-6">
+                  <div className="w-[35%]">
+                    <h5 className="font-bold text-xl uppercase mt-3">
+                      {item.title}
+                    </h5>
+                  </div>
+                  <div className=" w-[90%]">
+                    <p className="text-[10px] sm:text-[14px] md:text-[18px]">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -76,7 +87,7 @@ function About() {
           <div className="flex flex-col sm:flex-row justify-between gap-6 mt-8">
             <button
               type="button"
-              className="text-white md:px-6 md:py-3 md:w-auto  uppercase flex items-center gap-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:ring-4 focus:ring-pink-200 font-bold text-sm px-5 py-2.5"
+              className="text-white text-nowrap  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto flex items-center justify-center"
             >
               Take the Sales Force Evaluation
               <img
@@ -88,7 +99,7 @@ function About() {
 
             <button
               type="button"
-              className="text-[#000] flex md:px-6 md:py-3 md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+              className="text-[#000] flex md:px-6 text-nowrap md:py-3 md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
             >
               View Upcoming Courses
               <img src={RightArrow} alt="Arrow" className="w-[24px] h-[24px]" />

@@ -33,7 +33,7 @@ function Services() {
       title: "Sales Candidate Assessments",
       image: CandidateAssessmentImg,
       description:
-        "Assess sales candidates with psychometric tests and interviews to evaluate key skills.",
+        "Assess sales candidates with psychometric tests and interviews to evaluate key skills like negotiation, resilience, and relationship-building, ensuring alignment with your strategy.",
     },
     {
       id: 4,
@@ -87,22 +87,22 @@ function Services() {
   // const handleCardClick = (id) => {
   //   setClickedCard(id === clickedCard ? null : id);
   //   setTimeout(() => {
-  //     setShowDescription(true); 
+  //     setShowDescription(true);
   //   }, 500);
   // };
 
   const handleCardClick = (id) => {
-     if (id === clickedCard) {
-       setClickedCard(null);
-       setShowDescription(false);
-     } else {
-       setClickedCard(id);
-       setShowDescription(false);
-       setTimeout(() => {
-         setShowDescription(true);
-       }, 500);
-     }
-   };
+    if (id === clickedCard) {
+      setClickedCard(null);
+      setShowDescription(false);
+    } else {
+      setClickedCard(id);
+      setShowDescription(false);
+      setTimeout(() => {
+        setShowDescription(true);
+      }, 500);
+    }
+  };
 
   return (
     <section className="py-12 container mx-auto px-4">
@@ -111,7 +111,7 @@ function Services() {
           <h5 className="text-[24px] md:text-[24px] sm:text-[28px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
             Consultation & Services
           </h5>
-          <h2 className="text-[28px] sm:text-[34px] font-bold uppercase mt-12 mb-12">
+          <h2 className="text-[16px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7">
             Explore Our Tailored Services for
             <span className="ml-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
               Sales Leaders & CEOs
@@ -119,23 +119,24 @@ function Services() {
           </h2>
           <p className="text-[12px] sm:text-[14px] md:text-[16px] leading-[32px] text-justify mb-8">
             We provide comprehensive sales enablement services designed to
-            empower your   <span className="font-bold">Sales Leaders And CEOs</span> to optimize their performance.
-            We work closely with businesses of all sizes to tailor our
-            solutions, ensuring that your team is equipped with the right tools,
-            training, and strategies to achieve exceptional results. Here's how
-            we make an impact:
+            empower your{" "}
+            <span className="font-bold">Sales Leaders And CEOs</span> to
+            optimize their performance. We work closely with businesses of all
+            sizes to tailor our solutions, ensuring that your team is equipped
+            with the right tools, training, and strategies to achieve
+            exceptional results. Here's how we make an impact:
           </p>
           <button
             type="button"
-            className="text-[#000] h-12   flex space-x-5 gap-6 uppercase items-center font-bold text-sm px-12 py-2 hover:text-[#000] border border-[#000] justify-between border-btn2"
+            className="text-[#000] h-12   flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 md:py-6 sm:16 py-4 hover:text-[#000] border border-[#000] justify-between border-btn2"
           >
             Learn More
-            <img src={RightArrow} alt="Right Arrow" className="w-5 h-5" />
+            <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
           </button>
         </div>
 
         <div className="relative flex justify-center text-white w-full">
-          <div className="relative flex justify-center items-center text-white w-full h-[500px] mb-6">
+          <div className="relative flex justify-center items-center text-white w-full  mb-6">
             <div className="w-full p-8 flex justify-center items-center">
               <div className="relative w-full sm:w-3/4 md:w-1/2">
                 {currentCards.map((card, index) => {
@@ -168,19 +169,21 @@ function Services() {
                         backgroundImage: `url(${card.image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        width: clickedCard === card.id ? "230px" : "180px",
-                        height: clickedCard === card.id ? "230px" : "180px",
+                        width: clickedCard === card.id ? "290px" : "180px",
+                        height: clickedCard === card.id ? "290px" : "180px",
                         transition: "all 0.3s ease",
                         transformOrigin: transformOrigin,
                         transform: clickedCard === card.id ? "scale(1)" : "",
                       }}
                     >
                       <div className="h-full flex flex-col justify-between bg-layer p-5 transition-all duration-300">
-                        <h3 className="text-[16px] font-bold">{card.title}</h3>
+                        <h3 className="text-[14px] uppercase font-bold">
+                          {card.title}
+                        </h3>
 
                         <div className="flex justify-start items-center">
                           {clickedCard === card.id && showDescription && (
-                            <p className="absolute text-[14px] font-normal top-20 w-3/4">
+                            <p className="absolute text-sm leading-6 md:text-[16px] bold-text1 top-16 w-[90%]">
                               {card.description}
                             </p>
                           )}
@@ -207,20 +210,23 @@ function Services() {
           </div>
 
           {/* Slider Navigation Buttons */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 md:left-[92%] flex justify-between gap-4 z-10">
-            <button
-              onClick={handlePrev}
-              className="w-[45px] h-[45px] cursor-pointer hover:scale-110 transition-transform"
-            >
-              <img src={SliderBtnLeft} alt="Slider Left" />
-            </button>
-            <button
-              onClick={handleNext}
-              className="w-[45px] h-[45px] cursor-pointer hover:scale-110 transition-transform"
-            >
-              <img src={SliderBtnRight} alt="Slider Right" />
-            </button>
-          </div>
+        </div>
+      </div>
+
+      <div className="mt-24 flex justify-end ">
+        <div className="flex  gap-4 z-10">
+          <button
+            onClick={handlePrev}
+            className="w-[45px] h-[45px] cursor-pointer hover:scale-110 transition-transform"
+          >
+            <img src={SliderBtnLeft} alt="Slider Left" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="w-[45px] h-[45px] cursor-pointer hover:scale-110 transition-transform"
+          >
+            <img src={SliderBtnRight} alt="Slider Right" />
+          </button>
         </div>
       </div>
     </section>

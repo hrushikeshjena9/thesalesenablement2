@@ -15,7 +15,7 @@ button {
   background-color: #060b33bd;
 }
 .bg-gradient-2 {
-  background: linear-gradient(to right, #db0032 0%, #fa6602 100%);
+  background: linear-gradient(to left, #db0032 0%, #fa6602 100%);
 }
 .case1 {
   background-image: url("../assets/Case1.png");
@@ -44,12 +44,7 @@ button {
   border: 2px solid #000000;
 }
 .btn-hero-slider {
-  width: 78%;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  position: absolute;
-  bottom: 14%;
+  text-align: right;
 }
 
 /* iPad Mini */

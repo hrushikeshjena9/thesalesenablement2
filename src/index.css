@@ -6,22 +6,33 @@
   font-family: "Fort";
   src: url("./utils/fonts/FortTRIAL-Medium-BF66172f46e465a.otf")
     format("opentype");
-  font-weight: medium;
+    font-weight: 400;
 }
 
-@font-face {
-  font-family: "Fort";
-  src: url("./utils/fonts/FortTRIAL-Semibold-BF66172f46efb00.otf")
-    format("opentype");
-  font-weight: 600; /* Semibold */
-}
 
 @font-face {
   font-family: "Fort";
   src: url("./utils/fonts/FortTRIAL-Bold-BF66172f4716649.otf")
     format("opentype");
-  font-weight: bold; /* Bold */
+    font-weight: bold;
 }
+
+@font-face {
+  font-family: "Fort";
+  src: url("./utils/fonts/FortTRIAL-Light-BF66172f46ee09f.otf")
+    format("opentype");
+    font-weight: 300;
+}
+
+@font-face {
+  font-family: "Fort";
+  src: url("./utils/fonts/FortTRIAL-Extralight-BF66172f470dfc2.otf")
+    format("opentype");
+    font-weight: 200;
+
+}
+
+
 
 /* background: linear-gradient(to right, #DB0032 0%, #FA6602 100%); */
 
@@ -42,7 +53,6 @@ body {
 
 body {
   font-family: "Fort", sans-serif;
-  font-weight: medium; /* Regular */
 }
 
 .bold-text {
@@ -51,7 +61,15 @@ body {
 }
 
 
+.bold-text1 {
+  font-family: "Fort", sans-serif;
+  font-weight: 300; /* Regular */
+}
+.courses{
+  margin-top: -50px !important;
+  z-index: 10;
 
+}
 
 .card {
   position: relative;
@@ -217,5 +235,13 @@ body {
     height: 298px;
     top: 30px;
     left: 40px;
+  }
+}
+
+
+
+@media (min-width: 1536px) {
+  .container {
+      max-width: 1024px !important;
   }
 }

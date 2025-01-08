@@ -104,14 +104,14 @@ function HeroSection() {
                 <h1 className="text-2xl sm:text-3xl lg:text-[36px] lg:leading-[48px]  font-bold mb-4 mt-12">
                   {slideContent[currentSlide].title}
                 </h1>
-                <p className="text-base sm:text-[16px] lg:leading-[32px] lg:text-[18px] mb-6 mx-auto lg:mx-0">
+                <p className="text-base sm:text-[16px] lg:leading-[34px] bold-text1  lg:text-[18px] mb-6 mx-auto lg:mx-0">
                   {slideContent[currentSlide].description}
                 </p>
 
                 <div className="flex flex-col  lg:flex-row justify-between lg:justify-beetween items-center lg:items-start gap-4 mb-6">
                   <button
                     type="button"
-                    className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-bold text-sm px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto flex items-center justify-center"
+                    className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[16px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto flex items-center justify-center"
                   >
                     {slideContent[currentSlide].buttonText1}
                     <img
@@ -122,7 +122,7 @@ function HeroSection() {
                   </button>
                   <button
                     type="button"
-                    className="text-white  uppercase w-full md:w-auto flex justify-around items-center space-x-2 border-btn border-white font-bold text-xs sm:text-sm px-3 py-2 md:px-6 md:py-3 sm:px-4 sm:py-2"
+                    className="text-white  uppercase w-full md:w-auto flex justify-around items-center space-x-2 border-btn border-white   md:text-[16px] sm:text-sm px-3 py-2 md:px-6 md:py-3 sm:px-4 sm:py-2"
                   >
                     {slideContent[currentSlide].buttonText2}
                     <img
@@ -140,6 +140,33 @@ function HeroSection() {
                   alt="Hero Section Illustration"
                   className="max-w-full h-auto object-contain lg:object-cover"
                 />
+              </div>
+            </div>
+
+            <div className="container mx-auto">
+              <div className="btn-hero-slider ">
+                <button
+                  onClick={goToPreviousSlide}
+                  className="focus:outline-none "
+                  aria-label="Previous Slide"
+                >
+                  <img
+                    src={SliderBtnLeft}
+                    alt="Previous Slide"
+                    className="w-12 h-12 transition-transform hover:scale-110"
+                  />
+                </button>
+                <button
+                  onClick={goToNextSlide}
+                  className="focus:outline-none ml-4"
+                  aria-label="Next Slide"
+                >
+                  <img
+                    src={SliderBtnRight}
+                    alt="Next Slide"
+                    className="w-12 h-12 transition-transform hover:scale-110"
+                  />
+                </button>
               </div>
             </div>
 
@@ -228,31 +255,6 @@ function HeroSection() {
                   />
                 </svg>
               </div>
-            </div>
-
-            <div className="btn-hero-slider md:z-10 gap-6 flex justify-center absolute bottom-0 left-1/2 transform -translate-x-1/2">
-              <button
-                onClick={goToPreviousSlide}
-                className="focus:outline-none"
-                aria-label="Previous Slide"
-              >
-                <img
-                  src={SliderBtnLeft}
-                  alt="Previous Slide"
-                  className="w-12 h-12 transition-transform hover:scale-110"
-                />
-              </button>
-              <button
-                onClick={goToNextSlide}
-                className="focus:outline-none"
-                aria-label="Next Slide"
-              >
-                <img
-                  src={SliderBtnRight}
-                  alt="Next Slide"
-                  className="w-12 h-12 transition-transform hover:scale-110"
-                />
-              </button>
             </div>
           </div>
         </div>

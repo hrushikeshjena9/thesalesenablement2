@@ -74,7 +74,7 @@ function Testimonials() {
               className="w-12 h-12 inline-block"
             />
 
-            <p className="mt-5 text-black text-sm sm:text-base">
+            <p className="mt-5 text-black text-sm md:text-xl sm:text-base">
               {testimonials[currentIndex].text}
             </p>
 
@@ -85,10 +85,10 @@ function Testimonials() {
                 className="w-24 h-24 mb-4 sm:mb-0"
               />
               <div className="sm:ml-4 text-center sm:text-left">
-                <p className="font-bold text-lg">
+                <p className="font-bold text-lg md:text-xl">
                   {testimonials[currentIndex].name}
                 </p>
-                <p className="text-black text-sm">
+                <p className="text-black text-sm mt-2 md:text-lg">
                   {testimonials[currentIndex].position}
                 </p>
               </div>
