@@ -83,7 +83,17 @@ body {
   transform: scale(1.05);
 }
 
+
+@media (max-width: 480) {
+  .btn-hero-slider{
+    text-align: center !important;
+  }
+}
+
 @media (max-width: 640) {
+  .btn-hero-slider{
+    text-align: center !important;
+  }
 }
 
 @media (min-width: 640px) and (max-width: 767px) {
@@ -146,8 +156,14 @@ body {
 }
 
 @media (min-width: 1280px) and (max-width: 1535px) {
+
+ 
 }
 @media (min-width: 1536) {
+  .card {
+    margin: 0;
+  }
+  
 }
 
 .about-bg {

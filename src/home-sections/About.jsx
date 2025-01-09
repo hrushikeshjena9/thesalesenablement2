@@ -57,25 +57,20 @@ function About() {
                 text: "Guiding principles that shape everything we do.",
               },
             ].map((item, index) => (
-              <div
-                className="flex  space-x-4"
-                key={index}
-              >
-                <div className="w-[10%]">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className=""
-                  />
+              <div className="flex items-start space-x-4" key={index}>
+                {/* Image Column */}
+                <div className="w-[10%] flex justify-center">
+                  <img src={item.img} alt={item.title} className="max-w-full" />
                 </div>
-                <div className="flex justify-between align-middle gap-6">
-                  <div className="w-[35%]">
+                {/* Text Column */}
+                <div className="flex items-start w-[90%] gap-6">
+                  <div className="w-[30%]">
                     <h5 className="font-bold lg:text-[16px] xl:text-xl uppercase sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.title}
                     </h5>
                   </div>
-                  <div className="w-[90%]">
-                    <p className="text-[10px] sm:text-[14px] md:text-[18px]">
+                  <div className="w-[70%]">
+                    <p className="text-[10px] sm:text-[14px] md:text-[18px] sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.text}
                     </p>
                   </div>
@@ -84,7 +79,7 @@ function About() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-wrap md:flex-wrap  lg:flex-wrap xl:flex-nowrap justify-between gap-6 mt-8">
+          <div className="flex flex-col sm:flex-wrap md:flex-wrap  lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-6 mt-8">
             <button
               type="button"
               className="text-white text-nowrap  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto flex items-center justify-center"
