@@ -6,33 +6,29 @@
   font-family: "Fort";
   src: url("./utils/fonts/FortTRIAL-Medium-BF66172f46e465a.otf")
     format("opentype");
-    font-weight: 400;
+  font-weight: 400;
 }
-
 
 @font-face {
   font-family: "Fort";
   src: url("./utils/fonts/FortTRIAL-Bold-BF66172f4716649.otf")
     format("opentype");
-    font-weight: bold;
+  font-weight: bold;
 }
 
 @font-face {
   font-family: "Fort";
   src: url("./utils/fonts/FortTRIAL-Light-BF66172f46ee09f.otf")
     format("opentype");
-    font-weight: 300;
+  font-weight: 300;
 }
 
 @font-face {
   font-family: "Fort";
   src: url("./utils/fonts/FortTRIAL-Extralight-BF66172f470dfc2.otf")
     format("opentype");
-    font-weight: 200;
-
+  font-weight: 200;
 }
-
-
 
 /* background: linear-gradient(to right, #DB0032 0%, #FA6602 100%); */
 
@@ -60,15 +56,13 @@ body {
   font-weight: bold; /* Regular */
 }
 
-
 .bold-text1 {
   font-family: "Fort", sans-serif;
   font-weight: 300; /* Regular */
 }
-.courses{
+.courses {
   margin-top: -50px !important;
   z-index: 10;
-
 }
 
 .card {
@@ -89,11 +83,71 @@ body {
   transform: scale(1.05);
 }
 
+@media (max-width: 640) {
+}
 
-@media (max-width: 768px) {
-  .card {
-    height: 260px;
+@media (min-width: 640px) and (max-width: 767px) {
+  .btn-hero-slider{
+    text-align: center !important;
   }
+  .service-margin {
+    margin-top: 250px;
+    margin-bottom: 150px;
+  }
+  .get-in-touch-margin {
+    margin-top: 0 !important;
+  }
+  .case-study {
+    margin-top: 0 !important;
+  }
+  .services-top-margin {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .btn-hero-slider{
+    text-align: center !important;
+  }
+  .card {
+    margin: 0;
+  }
+  .about-class {
+    margin-top: 0 !important;
+  }
+  .service-margin {
+    margin-top: 250px;
+    margin-bottom: 150px;
+  }
+  .get-in-touch-margin {
+    margin-top: 0 !important;
+  }
+  .case-study {
+    margin-top: 0 !important;
+  }
+  .services-top-margin {
+    margin-top: 0 !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .card {
+    margin: 0;
+  }
+  .card-services {
+    height: 225px !important;
+    width: 225px !important;
+  }
+  .banner {
+    margin: 0 !important;
+  }
+  .case-study {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1535px) {
+}
+@media (min-width: 1536) {
 }
 
 .about-bg {
@@ -101,7 +155,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 .about-section {
   position: relative;
@@ -174,8 +227,8 @@ body {
 
 @media (min-width: 820px) and (max-width: 1180px) {
   .about-flex {
- display: flex;
- flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
   }
   .about-section {
     position: relative;
@@ -202,7 +255,7 @@ body {
   .about-flex {
     display: flex;
     flex-wrap: wrap;
-     }
+  }
   .about-section {
     height: 700px;
   }
@@ -237,5 +290,3 @@ body {
     left: 40px;
   }
 }
-
-

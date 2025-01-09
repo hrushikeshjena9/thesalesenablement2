@@ -7,7 +7,7 @@ import Blog4 from "../assets/blog-4.png";
 
 function LatestBlogs() {
   return (
-    <section className="container mx-auto px-4 py-12">
+    <section className="container mx-auto px-4 py-12 case-study">
       <div className="text-center md:text-left mb-8">
         <h5 className="text-[24px] md:text-[24px] font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
           Latest News And Blogs
@@ -27,7 +27,7 @@ function LatestBlogs() {
             <img src={RightArrow} alt="arrow" className="w-6 h-6 ml-2" />
           </button>
         </div>
-        <p className="text-lg md:text-xl md:w-[70%] md:leading-[35px] leading-[35px] mt-4">
+        <p className="text-lg md:text-xl xl:w-[70%] md:w-full lg:w-full md:leading-[35px] leading-[35px] mt-4">
           Our blog features valuable tips, trends, and case studies to help you
           optimize your sales processes and drive success. Whether you're a
           Sales Leader, CEO, or entrepreneur, you'll find actionable advice to
@@ -35,7 +35,7 @@ function LatestBlogs() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8">
         {[
           {
             image: Blog1,

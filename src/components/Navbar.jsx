@@ -196,13 +196,13 @@ function Navbar() {
             </svg>
           </button>
 
-          <ul className="hidden lg:flex lg:space-x-12 bold-text1 uppercase  mt-4 lg:mt-0">
+          <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase  mt-4 lg:mt-0">
             {links.map((link, index) => (
               <NavLink
                 key={index}
                 to={link.route}
                 className={({ isActive }) =>
-                  `relative text-lg  lg:text-base ${
+                  `relative sm:text-xs lg:text-sm xl:text-base  ${
                     isActive
                       ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
                       : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"

@@ -111,7 +111,7 @@ function HeroSection() {
                 <div className="flex flex-col  lg:flex-row justify-between lg:justify-beetween items-center lg:items-start gap-4 mb-6">
                   <button
                     type="button"
-                    className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[16px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto flex items-center justify-center"
+                    className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[12px] xl:md:text-[16px] px-5 py-2.5 w-full md:px-2 md:py-2  lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto flex items-center justify-center"
                   >
                     {slideContent[currentSlide].buttonText1}
                     <img
@@ -122,7 +122,7 @@ function HeroSection() {
                   </button>
                   <button
                     type="button"
-                    className="text-white  uppercase w-full md:w-auto flex justify-around items-center space-x-2 border-btn border-white   md:text-[16px] sm:text-sm px-3 py-2 md:px-6 md:py-3 sm:px-4 sm:py-2"
+                    className="text-white  uppercase w-full md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
                   >
                     {slideContent[currentSlide].buttonText2}
                     <img
@@ -134,7 +134,7 @@ function HeroSection() {
                 </div>
               </div>
 
-              <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end">
+              <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end hidden lg:flex">
                 <img
                   src={heroImage}
                   alt="Hero Section Illustration"

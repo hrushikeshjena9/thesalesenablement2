@@ -13,8 +13,8 @@ function Home() {
     <>
       <div className="flex flex-col space-y-16">
         <HeroSection />
-        <OurCourses />
-        <About />
+      <OurCourses />
+          <About />
         <Services />
         <GetInTouch />
         <CaseStudies />

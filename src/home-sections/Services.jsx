@@ -105,10 +105,10 @@ function Services() {
   };
 
   return (
-    <section className="py-12 container mx-auto px-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-8">
+    <section className="py-12 services-top-margin container mx-auto px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
         <div className="w-full  text-center md:text-left">
-          <h5 className="text-[24px] md:text-[24px] sm:text-[28px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+          <h5 className="text-[24px] md:text-[24px] sm:text-[24px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
             Consultation & Services
           </h5>
           <h2 className="text-[16px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7">
@@ -128,14 +128,14 @@ function Services() {
           </p>
           <button
             type="button"
-            className="text-[#000] h-12   flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 md:py-6 sm:16 py-4 hover:text-[#000] border border-[#000] justify-between border-btn2"
+            className="text-[#000] h-12  flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 lg:px-20 sm:w-full  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
           >
             Learn More
             <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
           </button>
         </div>
 
-        <div className="relative flex justify-center text-white w-full">
+        <div className="relative flex justify-center service-margin text-white w-full">
           <div className="relative flex justify-center items-center text-white w-full  mb-6">
             <div className="w-full p-8 flex justify-center items-center">
               <div className="relative w-full sm:w-3/4 md:w-1/2">
@@ -162,8 +162,9 @@ function Services() {
                     <div
                       key={card.id}
                       onClick={() => handleCardClick(card.id)}
-                      className={`transition-all duration-500 transform ${positionClass} ${margin} ${
-                        clickedCard === card.id ? "scale-110 z-10" : ""
+                      className={`transition-all duration-500 transform  ${positionClass} ${margin} ${
+                        clickedCard === card.id ? "scale-110 z-10" : "",
+                        clickedCard === card.id ? "card-services" : ""
                       }`}
                       style={{
                         backgroundImage: `url(${card.image})`,
@@ -213,7 +214,7 @@ function Services() {
         </div>
       </div>
 
-      <div className="mt-24 flex justify-end ">
+      <div className="xl:mt-24 lg:mt-5 md:mt-[110px] sm:mt-[110px]  flex justify-end ">
         <div className="flex  gap-4 z-10">
           <button
             onClick={handlePrev}

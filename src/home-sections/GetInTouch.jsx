@@ -16,8 +16,8 @@ function GetInTouch() {
   };
 
   return (
-    <section className="banner">
-      <div className="container py-12 mx-auto px-4">
+    <section className="banner get-in-touch-margin">
+      <div className="container py-12  mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Left Section */}
           <div className="text-center md:text-left">
@@ -29,7 +29,7 @@ function GetInTouch() {
                 className="w-9 h-9 inline-block ml-2"
               />
             </h3>
-            <p className="text-[12px] text-white sm:text-[14px] md:text-[16px] bold-text1 leading-[32px] text-justify  mt-6">
+            <p className="text-[12px] text-white sm:text-[16px] md:text-[16px]  bold-text1 leading-[32px] text-justify  mt-6">
               We help optimize sales strategies, enhance team performance, and
               create tailored solutions to unlock your sales team's potential.
             </p>
@@ -107,7 +107,7 @@ function GetInTouch() {
           </div>
 
           {/* Image Section */}
-          <div className="w-full mt-8 md:mt-0 flex justify-center md:justify-end">
+          <div className="w-full mt-8 md:mt-0  ">
             <img
               src={GetInTouchImg}
               alt="Get In Touch"
