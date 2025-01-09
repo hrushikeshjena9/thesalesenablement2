@@ -46,7 +46,8 @@ function GetInTouch() {
                   onChange={(e) => setName(e.target.value)}
                   className="w-full p-3  bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   style={{
-                    borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
+                    borderImage:
+                      "linear-gradient(to right, #DB0032, #FA6602) 1",
                   }}
                 />
 
@@ -57,9 +58,10 @@ function GetInTouch() {
                   onChange={(e) => setPhone(e.target.value)}
                   className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   style={{
-                    borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
+                    borderImage:
+                      "linear-gradient(to right, #DB0032, #FA6602) 1",
                   }}
-               />
+                />
               </div>
 
               <div>
@@ -70,7 +72,8 @@ function GetInTouch() {
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   style={{
-                    borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
+                    borderImage:
+                      "linear-gradient(to right, #DB0032, #FA6602) 1",
                   }}
                 />
               </div>
@@ -82,14 +85,15 @@ function GetInTouch() {
                   className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   rows={4}
                   style={{
-                    borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
+                    borderImage:
+                      "linear-gradient(to right, #DB0032, #FA6602) 1",
                   }}
                 />
               </div>
               <div className="flex flex-col md:flex-row justify-between  space-y-4 md:space-y-0  md:space-x-4">
                 <button
                   type="submit"
-                  className="text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 flex items-center justify-center w-full md:w-auto"
+                  className="text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
                 >
                   CONNECT NOW
                   <img
@@ -100,7 +104,7 @@ function GetInTouch() {
                 </button>
                 <button
                   type="button"
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-4 flex items-center justify-center w-full md:w-auto"
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-4 md:px-3 md:py-4  lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4  flex items-center justify-center w-full md:w-auto"
                   style={{
                     border: "2px solid transparent",
                     borderImage:

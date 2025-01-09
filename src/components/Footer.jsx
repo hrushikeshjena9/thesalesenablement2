@@ -21,15 +21,15 @@ function Footer() {
           alt="Logo"
           className="w-[180px] md:w-[150px] lg:w-[200px] xl:w-[300px]  h-auto mb-4 md:mb-0"
         />
-        <div className="flex flex-col md:flex-row items-center sm:gap-6 md:gap-0 w-full md:w-auto">
+        <div className="flex flex-col md:flex-row items-center sm:gap-2 md:gap-3 lg:gap-0 xl:gap-0 2xl:gap-0  w-full md:w-auto">
           <input
             type="text"
             placeholder="Email Address"
-            className="w-full sm:w-full  border sm:px-9 md:px-12 lg:px-5 xl:px-12  text-lg md:py-4 md:w-[300px] lg:w-[430px] xl:w-[430px]  border-gray-300 px-12 py-2 mb-4 sm:mb-0 sm:mr-0 md:mr-0 lg:mr-2 xl:mr-2 2xl:mr-2"
+            className="w-full sm:w-full  border sm:px-9 md:px-10 lg:px-5 xl:px-12  text-lg md:py-3.5 lg:py-4 xl:py-4 2xl:py-4  md:w-[250px] lg:w-[430px] xl:w-[430px]  border-gray-300 px-12 py-2 mb-4 sm:mb-0 sm:mr-0 md:mr-0 lg:mr-2 xl:mr-2 2xl:mr-2"
           />
           <button
             type="button"
-            className="w-full uppercase sm:px-10 md:px-6 md:py-3 sm:w-full md:w-[240px]  lg:w-[250px] xl:w-[300px]  flex items-center border-2 border-white text-white px-4 py-2 justify-center gap-4 hover:text-white border-btn  font-medium text-sm md:text-2xl text-center  dark:hover:text-white"
+            className="w-full uppercase sm:px-10 md:px-6 md:py-3 sm:w-full md:w-[200px]  lg:w-[250px] xl:w-[300px]  flex items-center border-2 border-white text-white px-4 py-2 justify-center gap-4 hover:text-white border-btn  font-medium text-sm  md:text-lg lg:text-2xl xl:text-2xl 2xl:text-2xl text-center  dark:hover:text-white"
           >
             Subscribe
             <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
@@ -48,12 +48,12 @@ function Footer() {
                 solutions to enhance strategies, improve performance, and
                 optimize processes.
               </p>
-              <h5 className="mb-2 font-bold uppercase text-2xl md:text-lg lg:text-xl xl:text-2xl">
+              <h5 className="mb-2 font-bold uppercase text-2xl md:text-xl lg:text-xl xl:text-2xl">
                 Schedule a Consultation
               </h5>
               <button
                 type="button"
-                className="flex md:px-12 md:py-3 md:w-auto  uppercase items-center text-white font-bold text-sm md:text-lg px-5 py-2 border-2 border-white"
+                className="flex md:px-12 md:py-3 md:w-auto  uppercase items-center text-white font-bold text-sm md:text-sm lg:text-sm xl:text-xl 2xl:text-lg px-5 py-2 border-2 border-white"
               >
                 Get Started Now
                 <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />

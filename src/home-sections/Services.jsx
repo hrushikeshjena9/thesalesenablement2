@@ -184,7 +184,7 @@ function Services() {
 
                         <div className="flex justify-start items-center">
                           {clickedCard === card.id && showDescription && (
-                            <p className="absolute text-sm leading-6 md:text-[16px] bold-text1 top-16 w-[90%]">
+                            <p className="absolute text-sm leading-6 lg:leading-4 lg:text-[13px] xl:leading-6 xl:text-[16px] 2xl:leading-6 2xl:text-[16px] bold-text1 top-16 w-[90%]">
                               {card.description}
                             </p>
                           )}

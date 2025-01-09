@@ -76,10 +76,10 @@ function OurCourses() {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-wrap lg:flex-row xl:flex-row lg:m xl:mx-7  justify-between items-center gap-4">
+            <div className="flex flex-col md:flex-wrap lg:flex-wrap xl:flex-row lg:m xl:mx-7  justify-between items-center gap-4">
               <button
                 type="button"
-                className="text-white  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-auto flex items-center justify-center"
+                className="text-white  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
               >
                 Schedule a Consultation
                 <img src={RightArrow1} alt="Right Arrow" className="w-6 h-6" />
@@ -106,7 +106,7 @@ function OurCourses() {
 
               <button
                 type="button"
-                className="text-[#000] flex md:px-6 md:py-2 lg:py-2.5 xl:py-2.5 2xl:py-2.5 sm:w-[378px] md:w-[385px]  xl:w-auto lg:w-auto  uppercase gap-3 sm:justify-center md:justify-between xl:justify-between lg:justify-between justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+                className="text-[#000] flex md:px-6 md:py-2 lg:py-2.5 xl:py-2.5 2xl:py-2.5 sm:w-[378px] md:w-[385px]  xl:w-auto lg:w-w-[385px]  uppercase gap-3 sm:justify-center md:justify-center xl:justify-between lg:justify-center justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
               >
                 Discover Our Courses
                 <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
