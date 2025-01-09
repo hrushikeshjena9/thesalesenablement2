@@ -34,28 +34,28 @@ const Header = () => {
               <img
                 src={Facebook}
                 alt="Facebook"
-                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] 2xl:h-[45px] 2xl:w-[45px]  xl:w-[40px] h-[28px] sm:h-[24px]"
+                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px]  xl:w-[40px] h-[28px] sm:h-[24px]"
               />
             </a>
             <a href="#" aria-label="Instagram">
               <img
                 src={Instagram}
                 alt="Instagram"
-                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] 2xl:h-[45px] 2xl:w-[45px]  xl:w-[40px] h-[28px] sm:h-[24px]"
+                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px]   xl:w-[40px] h-[28px] sm:h-[24px]"
               />
             </a>
             <a href="#" aria-label="Twitter">
               <img
                 src={Twitter}
                 alt="Twitter"
-                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] 2xl:h-[45px] 2xl:w-[45px]  xl:w-[40px] h-[28px] sm:h-[24px]"
+                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px]    xl:w-[40px] h-[28px] sm:h-[24px]"
               />
             </a>
             <a href="#" aria-label="LinkedIn">
               <img
                 src={Linkedin}
                 alt="LinkedIn"
-                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] 2xl:h-[45px] 2xl:w-[45px]  xl:w-[40px] h-[28px] sm:h-[24px]"
+                className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px]    xl:w-[40px] h-[28px] sm:h-[24px]"
               />
             </a>
           </div>
@@ -64,7 +64,7 @@ const Header = () => {
           <div className="flex justify-center sm:justify-end w-full sm:w-auto">
             <button
               type="button"
-              className="text-white h-10  sm:h-10 md:h-12 lg:h-12 xl:h-14 2xl:h-16 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm xl:text-lg sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
+              className="text-white h-10  sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm xl:text-lg sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
             >
               <span>Schedule A Consultation</span>
               <img
