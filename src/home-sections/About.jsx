@@ -25,17 +25,26 @@ function About() {
       x: 0,
       transition: { duration: 0.8, ease: "easeOut" },
     },
+    mobile: {
+      opacity: 0.5, // Adjust opacity for mobile view
+      x: "-50%", // Adjust the slide-in position for mobile
+    },
   };
   return (
     <section className="py-12 about-class container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
         <div className="flex justify-center md:justify-start">
           <motion.div
-            className="relative"
+            className="relative overflow-hidden"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={leftVariants}
+            style={{
+              // You can adjust styles dynamically based on screen size, if needed
+              "@media (max-width: 768px)": {
+                variant: "mobile", // For mobile views
+              },}}
           >
             <img
               src={AboutImg}
@@ -47,11 +56,16 @@ function About() {
         </div>
 
         <motion.div
-          className="text-center md:text-left"
+          className="text-center md:text-left overflow-hidden"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={rightVariants}
+          style={{
+            // You can adjust styles dynamically based on screen size, if needed
+            "@media (max-width: 768px)": {
+              variant: "mobile", // For mobile views
+            },}}
         >
           <h5
             className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text"
@@ -131,7 +145,7 @@ function About() {
             <Link
               to="take-the-sales-force-evaluation"
               type="button"
-              className="text-white text-nowrap hover:scale-110 uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
+              className="text-white text-nowrap transition-transform duration-500 ease-out transform hover:scale-110 uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
                flex items-center justify-center"
             >
               Take the Sales Force Evaluation
@@ -145,7 +159,7 @@ function About() {
             <Link
               to="/view-upcoming-courses"
               type="button"
-              className="text-[#000] hover:scale-110 flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3  md:w-auto lg:w-full xl:w-auto 2xl:w-auto  uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+              className="text-[#000] transition-transform duration-500 ease-out transform hover:scale-110 flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3  md:w-auto lg:w-full xl:w-auto 2xl:w-auto  uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
             >
               View Upcoming Courses
               <img src={RightArrow} alt="Arrow" className="w-[24px] h-[24px]" />

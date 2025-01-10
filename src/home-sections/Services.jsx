@@ -166,7 +166,7 @@ function Services() {
           </p>
           <button
             type="button"
-            className="text-[#000] hover:scale-110 h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
+            className="text-[#000] transition-transform duration-500 ease-out transform hover:scale-110 h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
           >
             Learn More
             <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />

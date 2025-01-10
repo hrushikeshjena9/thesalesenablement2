@@ -96,6 +96,18 @@ function HeroSection() {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1, ease: "easeOut" },
+    },
+  };
+  useEffect(() => {
+    console.log(`Current slide: ${slideContent[currentSlide]?.title}`);
+  }, [currentSlide]);
+ 
   return (
     <>
       <section>
@@ -108,36 +120,19 @@ function HeroSection() {
             }}
           ></div> */}
 
-          {/* <AnimatePresence>
-            <motion.div
-              key={currentSlide} // Key to trigger animation when currentSlide changes
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${slides[currentSlide]})`,
-              }}
-              initial={{ opacity: 0, x: "100%" }} // Start from the right
-              animate={{ opacity: 1, x: 0 }} // Slide in to the center with full opacity
-              exit={{ opacity: 0, x: "-100%" }} // Slide out to the left
-              transition={{
-                duration: 2, // Increase the duration for a slower transition
-                ease: "easeOut", // Use 'easeOut' for a smooth, slower end to the animation
-              }}
-            />
-          </AnimatePresence> */}
-
           <AnimatePresence>
             <motion.div
-              key={currentSlide} 
+              key={currentSlide}
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage: `url(${slides[currentSlide]})`,
               }}
-              initial={{ opacity: 0 }} // Start with 0 opacity (invisible)
-              animate={{ opacity: 1 }} // Fade in to full opacity
-              exit={{ opacity: 0 }} // Fade out to 0 opacity (invisible)
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{
-                duration: 1.5, // Duration of the fade-in/out
-                ease: "easeInOut", // Smooth transition easing
+                duration: 1.5,
+                ease: "easeInOut",
               }}
             />
           </AnimatePresence>
@@ -146,25 +141,53 @@ function HeroSection() {
             <Navbar />
             <div className="text-white flex flex-col lg:flex-row items-center justify-between container mx-auto">
               <motion.div
+                key={slides[currentSlide].id}
                 className="lg:w-1/2 text-center lg:text-left h-[500px] transition-opacity duration-1000 ease-in-out  flex flex-col justify-center px-4 sm:px-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.5 }}
                 variants={leftVariants}
               >
-                <h1
-                  className="text-2xl sm:text-3xl lg:text-[36px] lg:leading-[48px]  font-bold mb-4 mt-12" 
+                <motion.h1
+                 key={slideContent[currentSlide]?.id}
+                  className="text-2xl   sm:text-3xl  lg:text-[36px] lg:leading-[48px]  font-bold mb-4 mt-12"
+            variants={textVariants}
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 100 }}
+                  transition={{ duration: 1 }}
+                  onAnimationStart={() =>
+                    console.log("Animation started for:", slideContent[currentSlide])
+                  }
+                  onAnimationComplete={() =>
+                    console.log("Animation completed for:", slideContent[currentSlide])
+                  }
                 >
                   {slideContent[currentSlide].title}
-                </h1>
-                <p className="text-base sm:text-[16px] lg:leading-[34px] bold-text1  lg:text-[18px] mb-6 mx-auto lg:mx-0">
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0 }} // Start with opacity 0 (hidden)
+                  animate={{ opacity: 1 }} // Fade in (opacity 1)
+                  exit={{ opacity: 0 }} // Fade out (opacity 0)
+                  transition={{ duration: 1 }}
+                  variants={leftVariants}
+                  onAnimationStart={() => console.log('Animation started d')}
+                  onAnimationComplete={() => console.log('Animation completed')}
+                  className="text-base sm:text-[16px] lg:leading-[34px] bold-text1  lg:text-[18px] mb-6 mx-auto lg:mx-0"
+                >
                   {slideContent[currentSlide].description}
-                </p>
+                </motion.p>
 
-                <div className="flex flex-col  lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start  mb-6">
+                <motion.div
+                  initial={{ opacity: 0 }} // Start with opacity 0 (hidden)
+                  animate={{ opacity: 1 }} // Fade in (opacity 1)
+                  exit={{ opacity: 0 }} // Fade out (opacity 0)
+                  transition={{ duration: 1 }}
+                  className="flex flex-col  lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start  mb-6"
+                >
                   <button
                     type="button"
-                    className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-110 hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2  lg:px-3 lg:py-3  xl:px-6 xl:py-3  md:w-[250px] lg:w-auto xl:w-auto flex items-center justify-center"
+                    className="text-white  transition-transform duration-500 ease-out transform  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-110 hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2  lg:px-3 lg:py-3  xl:px-6 xl:py-3  md:w-[250px] lg:w-auto xl:w-auto flex items-center justify-center"
                   >
                     {slideContent[currentSlide].buttonText1}
                     <img
@@ -175,7 +198,7 @@ function HeroSection() {
                   </button>
                   <button
                     type="button"
-                    className="text-white  uppercase w-full hover:scale-110 justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+                    className="text-white transition-transform duration-500 ease-out transform  uppercase w-full hover:scale-110 justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
                   >
                     {slideContent[currentSlide].buttonText2}
                     <img
@@ -184,15 +207,15 @@ function HeroSection() {
                       className="w-6 h-6 ml-2"
                     />
                   </button>
-                </div>
+                </motion.div>
               </motion.div>
 
               <motion.div
                 className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end hidden lg:flex"
                 ref={ref2}
-                initial={{ scale: 0, opacity: 0 }} // Start as smaller element
+                initial={{ scale: 0, opacity: 0 }}
                 animate={{
-                  scale: inView2 ? 1 : 0, // Zoom in when in view
+                  scale: inView2 ? 1 : 0,
                   opacity: inView2 ? 1 : 0,
                 }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -215,7 +238,7 @@ function HeroSection() {
                   <img
                     src={SliderBtnLeft}
                     alt="Previous Slide"
-                    className="w-12 h-12 transition-transform hover:scale-110"
+                    className="w-12 h-12 transition-transform hover:scale-110 "
                   />
                 </button>
                 <button
@@ -263,7 +286,6 @@ function HeroSection() {
                 />
               </svg>
 
-              {/* Progress Bar SVG */}
               <div
                 style={{
                   position: "absolute",

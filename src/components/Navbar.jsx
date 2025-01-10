@@ -7,7 +7,6 @@ import { FiChevronDown } from "react-icons/fi";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
-
   const links = [
     { name: "Home", route: "/" },
     { name: "About Us", route: "/about-us" },
@@ -150,6 +149,8 @@ function Navbar() {
                         )}
                       </ul>
                     )}
+
+                
                   </div>
                 ) : (
                   <NavLink
@@ -181,14 +182,14 @@ function Navbar() {
             <Link
               to="/login"
               type="button"
-              className="text-white hover:scale-110 uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+              className="text-white hover:scale-110 transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
             >
               Login
             </Link>
             <Link
               to="/sign-up"
               type="button"
-              className="text-transparent hover:scale-110 uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+              className="text-transparent hover:scale-110 transition-transform duration-500 ease-out transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
               style={{
                 border: "2px solid transparent",
                 borderImage:
@@ -236,13 +237,13 @@ function Navbar() {
               <div className="flex flex-col space-y-4 p-6 border-t">
                 <button
                   type="button"
-                  className="text-white uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+                  className="text-white transition-transform duration-500 ease-out hover:scale-110 transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                 >
                   Login
                 </button>
                 <button
                   type="button"
-                  className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+                  className="text-transparent transition-transform duration-500 ease-out hover:scale-110 transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                   style={{
                     border: "2px solid transparent",
                     borderImage:
@@ -261,3 +262,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

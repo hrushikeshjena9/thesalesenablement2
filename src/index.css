@@ -244,3 +244,17 @@ body {
 .border-btn2:hover::after {
   transform: translateX(-100%); /* Slide in from right */
 }
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-fade-in {
+  animation: fadeIn 2s ease-in-out;
+}

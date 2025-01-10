@@ -64,29 +64,3 @@ function App() {
 
 export default App;
 
-
-
-// // import React from 'react'
-// // import ScrollPopup from './components/motion'
-
-// // function App() {
-// //   return (
-// //     <div>
-// //       <ScrollPopup />
-// //     </div>
-// //   )
-// // }
-
-// // export default App
-
-// import React from 'react';
-
-// const HoverButton = () => {
-//   return (
-//     <button className="button">
-//       Hover Me
-//     </button>
-//   );
-// };
-
-// export default HoverButton;
