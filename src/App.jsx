@@ -64,3 +64,61 @@ function App() {
 
 export default App;
 
+
+// import React, { useState } from 'react';
+
+// const MegaMenu = () => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   return (
+//     <div className="relative">
+//       <nav className="flex space-x-8 p-4 bg-gray-800 text-white">
+//         <div 
+//           className="relative group"
+//           onMouseEnter={() => setIsHovered(true)}
+//           onMouseLeave={() => setIsHovered(false)}
+//         >
+//           <button className="px-4 py-2">Products</button>
+          
+//           {/* Mega Menu Dropdown */}
+//           {isHovered && (
+//             <div className="absolute left-0 mt-2 w-80 bg-white text-gray-800 shadow-xl rounded-lg p-6 space-y-4">
+//               <div className="grid grid-cols-3 gap-6">
+//                 <div>
+//                   <h3 className="font-semibold text-lg">Category 1</h3>
+//                   <ul className="space-y-2">
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 1</a></li>
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 2</a></li>
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 3</a></li>
+//                   </ul>
+//                 </div>
+//                 <div>
+//                   <h3 className="font-semibold text-lg">Category 2</h3>
+//                   <ul className="space-y-2">
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 1</a></li>
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 2</a></li>
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 3</a></li>
+//                   </ul>
+//                 </div>
+//                 <div>
+//                   <h3 className="font-semibold text-lg">Category 3</h3>
+//                   <ul className="space-y-2">
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 1</a></li>
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 2</a></li>
+//                     <li><a href="#" className="text-sm hover:text-blue-500">Link 3</a></li>
+//                   </ul>
+//                 </div>
+//               </div>
+//             </div>
+//           )}
+//         </div>
+
+//         <button className="px-4 py-2">About</button>
+//         <button className="px-4 py-2">Services</button>
+//         <button className="px-4 py-2">Contact</button>
+//       </nav>
+//     </div>
+//   );
+// };
+
+// export default MegaMenu;

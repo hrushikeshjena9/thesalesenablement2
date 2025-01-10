@@ -66,7 +66,7 @@ const Header = () => {
             <Link
             to="/schedule-a-consultation"
               type="button"
-              className="text-white h-10 transition-transform duration-500 ease-out transform hover:scale-110  sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm  sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
+              className="text-white h-10 transition-transform duration-500 ease-out transform  sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm  sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
             >
               <span>Schedule A Consultation</span>
               <img

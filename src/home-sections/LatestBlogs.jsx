@@ -52,7 +52,7 @@ function LatestBlogs() {
           <Link
             to="discover-latest-blogs"
             type="button"
-            className="text-[#000] transition-transform duration-500 ease-out transform flex hover:scale-110 md:px-6 md:py-3 w-full sm:w-auto md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+            className="text-[#000] transition-transform duration-500 ease-out transform flex  md:px-6 md:py-3 w-full sm:w-auto md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
           >
             Discover Latest Blogs
             <img src={RightArrow} alt="arrow" className="w-6 h-6 ml-2" />
@@ -122,7 +122,7 @@ function LatestBlogs() {
             <Link
               to="learn-more"
               type="button"
-              className="text-transparent transition-transform duration-500 ease-out transform hover:scale-110 w-[86%] mb-4 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-6 py-3 flex items-center justify-center"
+              className="text-transparent transition-transform duration-500 ease-out transform  w-[86%] mb-4 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-6 py-3 flex items-center justify-center"
               style={{
                 border: "2px solid transparent",
                 borderImage:

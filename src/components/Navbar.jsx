@@ -6,7 +6,8 @@ import { FiChevronDown } from "react-icons/fi";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const links = [
     { name: "Home", route: "/" },
     { name: "About Us", route: "/about-us" },
@@ -114,9 +115,14 @@ function Navbar() {
                   <div className="relative group">
                     <button
                       className="sm:text-xs lg:text-sm xl:text-base uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center"
-                      onMouseEnter={() =>
-                        toggleDropdown(link.name.toLowerCase())
-                      }
+                      onMouseEnter={() => {
+                        toggleDropdown(link.name.toLowerCase()); // Change 'products' to the appropriate dropdown name
+                        setIsHovered(true);
+                      }}
+                      onMouseLeave={() => {
+                        setIsHovered(false);
+                        setActiveDropdown(""); // Reset dropdown when leaving
+                      }}
                     >
                       {link.name}
                       <FiChevronDown
@@ -149,8 +155,6 @@ function Navbar() {
                         )}
                       </ul>
                     )}
-
-                
                   </div>
                 ) : (
                   <NavLink
@@ -182,14 +186,14 @@ function Navbar() {
             <Link
               to="/login"
               type="button"
-              className="text-white hover:scale-110 transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+              className="text-white  transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
             >
               Login
             </Link>
             <Link
               to="/sign-up"
               type="button"
-              className="text-transparent hover:scale-110 transition-transform duration-500 ease-out transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+              className="text-transparent  transition-transform duration-500 ease-out transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
               style={{
                 border: "2px solid transparent",
                 borderImage:
@@ -237,13 +241,13 @@ function Navbar() {
               <div className="flex flex-col space-y-4 p-6 border-t">
                 <button
                   type="button"
-                  className="text-white transition-transform duration-500 ease-out hover:scale-110 transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+                  className="text-white transition-transform duration-500 ease-out  transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                 >
                   Login
                 </button>
                 <button
                   type="button"
-                  className="text-transparent transition-transform duration-500 ease-out hover:scale-110 transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+                  className="text-transparent transition-transform duration-500 ease-out  transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                   style={{
                     border: "2px solid transparent",
                     borderImage:
@@ -262,4 +266,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
