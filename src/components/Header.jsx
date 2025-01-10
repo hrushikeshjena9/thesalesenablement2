@@ -6,6 +6,7 @@ import Instagram from "../assets/instagram.png";
 import Twitter from "../assets/twitter.png";
 import Linkedin from "../assets/linkedin.png";
 import RightArrow1 from "../assets/arrow-right1.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -62,7 +63,8 @@ const Header = () => {
 
           {/* Schedule Consultation Button */}
           <div className="flex justify-center sm:justify-end w-full sm:w-auto">
-            <button
+            <Link
+            to="/schedule-a-consultation"
               type="button"
               className="text-white h-10  sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm  sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
             >
@@ -72,7 +74,7 @@ const Header = () => {
                 alt="Arrow"
                 className="w-[16px] sm:w-[20px] h-[16px] sm:h-[20px]"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </header>

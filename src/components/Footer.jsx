@@ -25,7 +25,7 @@ function Footer() {
           <input
             type="text"
             placeholder="Email Address"
-            className="w-full sm:w-full  border sm:px-9 md:px-10 lg:px-5 xl:px-12  text-lg md:py-3.5 lg:py-4 xl:py-4 2xl:py-4  md:w-[250px] lg:w-[430px] xl:w-[430px]  border-gray-300 px-12 py-2 mb-4 sm:mb-0 sm:mr-0 md:mr-0 lg:mr-2 xl:mr-2 2xl:mr-2"
+            className="w-full sm:w-full  border sm:px-9 md:px-10 lg:px-5 xl:px-12  text-lg md:py-3.5 lg:py-4 xl:py-4 2xl:py-4  md:w-[250px] lg:w-[430px] xl:w-[430px]  border-gray-300 px-12 py-2 mb-4 sm:mb-0 sm:mr-0 md:mr-0 lg:mr-2 xl:mr-2 2xl:mr-2 focus:outline-none"
           />
           <button
             type="button"
@@ -40,7 +40,7 @@ function Footer() {
       {/* Middle Section */}
       <div className="banner-footer">
         <div className="container px-4 py-10 mx-auto md:block lg:flex xl:flex gap-12 justify-between">
-          <div className="w-1/3 md:w-full xs-w-full sm:w-full lg:w-1/3 xl:w-1/3">
+          <div className="w-full md:w-full xs-w-full sm:w-full lg:w-1/3 xl:w-1/3">
             <div className="">
               <p className="mb-4 bold-text1">
                 At The Enablement Company, we help your sales team achieve
@@ -48,7 +48,7 @@ function Footer() {
                 solutions to enhance strategies, improve performance, and
                 optimize processes.
               </p>
-              <h5 className="mb-2 font-bold uppercase text-2xl md:text-xl lg:text-xl xl:text-2xl">
+              <h5 className="mb-2 font-bold uppercase text-base sm:text-xl  md:text-xl lg:text-xl xl:text-2xl">
                 Schedule a Consultation
               </h5>
               <button
@@ -60,8 +60,8 @@ function Footer() {
               </button>
             </div>
           </div>
-          <div className="xs:w-full sm:w-full md:w-full lg:w-2/3 xl:w-2/3">
-            <div className="grid grid-cols-1 sm:mt-10 md:mt-10 lg:mt-0 xl:mt-0 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-5 xl:gap-12 justify-between">
+          <div className="w-full sm:w-full md:w-full lg:w-2/3 xl:w-2/3">
+            <div className="grid grid-cols-1 mt-6 sm:mt-10 md:mt-10 lg:mt-0 xl:mt-0 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-5 xl:gap-12 justify-between">
               {/* Courses Column */}
               <div>
                 <h5 className="font-bold text-lg md:text-2xl  mb-4">Courses</h5>
@@ -108,17 +108,17 @@ function Footer() {
                 </h5>
                 <img src={FooterLine} alt="Line" className="w-[110px] mb-4" />
 
-                <div className="flex flex-col  mb-2 sm:flex-row sm:gap-4 md:gap-4 md:flex-row lg:flex-col xl:flex-row">
+                <div className="flex flex-row gap-4  mb-2 sm:flex-row sm:gap-4 md:gap-4 md:flex-row lg:flex-col xl:flex-row">
                   <img src={Location} alt="location" className="w-6 h-6 mb-2" />
                   <p>28 Sturdee Road, Rosebank, Johannesburg</p>
                 </div>
 
-                <div className="flex flex-col  mb-2 sm:flex-row sm:gap-4 md:gap-4 lg:flex-col xl:flex-row">
+                <div className="flex flex-row gap-4   mb-2 sm:flex-row sm:gap-4 md:gap-4 lg:flex-col xl:flex-row">
                   <img src={Phone} alt="phone" className="w-6 h-6 mb-2" />
                   <p>010 335-1182</p>
                 </div>
 
-                <div className="flex flex-col  mb-2 sm:flex-row sm:gap-4 md:gap-4 md:flex-row lg:flex-col xl:flex-row">
+                <div className="flex flex-row gap-4  mb-2 sm:flex-row sm:gap-4 md:gap-4 md:flex-row lg:flex-col xl:flex-row">
                   <img src={Mail} alt="mail" className="w-6 h-6 mb-2" />
                   <p>info@theenablement.com</p>
                 </div>

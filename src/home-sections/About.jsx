@@ -6,23 +6,25 @@ import OurVision from "../assets/our-vision.png";
 import AboutImg from "../assets/about.png";
 import Group from "../assets/grouppeople.png";
 import Thumb from "../assets/thumbsup.png";
+import { Link } from "react-router-dom";
 
 function About() {
+
   return (
     <section className="py-12 about-class container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
         <div className="flex justify-center md:justify-start">
-          <div className="relative">
-            <img src={AboutImg} alt="About" className="w-full" />
+          <div className="relative" >
+            <img src={AboutImg} alt="About" className="w-full" data-aos="fade-right"/>
           </div>
         </div>
 
-        <div className="text-center md:text-left">
-          <h5 className="text-[14px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+        <div className="text-center md:text-left " >
+          <h5 className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text" data-aos="fade-left" data-aos-delay="200" data-aos-offset="200" >
             Who We Are
           </h5>
 
-          <h2 className="text-[16px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7">
+          <h2 className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7" data-aos="fade-left" data-aos-delay="200" data-aos-offset="200" >
             Empowering{" "}
             <span className="ml-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
               CEOs and Sales <br /> Leaders
@@ -30,7 +32,7 @@ function About() {
             to Achieve Excellence
           </h2>
 
-          <p className="text-[12px] sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px]  leading-[32px] text-justify mb-8">
+          <p className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px]  leading-[32px] text-justify mb-8" data-aos="fade-left">
             At The Enablement Company, we specialize in empowering sales teams
             to exceed their targets through tailored training, coaching, and
             enablement solutions. With a deep understanding of sales metrics,
@@ -65,12 +67,12 @@ function About() {
                 {/* Text Column */}
                 <div className="flex items-start w-[90%] gap-6">
                   <div className="w-[30%]">
-                    <h5 className="font-bold lg:text-[16px] xl:text-xl uppercase sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                    <h5 className="font-bold text-[12px] sm:text-[16px] md:text-[16px]  lg:text-[16px] xl:text-xl uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.title}
                     </h5>
                   </div>
                   <div className="w-[70%]">
-                    <p className="text-[10px] sm:text-[14px] md:text-[18px] sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                    <p className="text-[12px] sm:text-[16px] md:text-[18px] mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.text}
                     </p>
                   </div>
@@ -80,7 +82,8 @@ function About() {
           </div>
 
           <div className="flex flex-col sm:flex-wrap md:flex-wrap  lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-6 mt-8">
-            <button
+            <Link
+            to="take-the-sales-force-evaluation"
               type="button"
               className="text-white text-nowrap  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
                flex items-center justify-center"
@@ -91,15 +94,16 @@ function About() {
                 alt="Right Arrow"
                 className="w-[24px] h-[24px]"
               />
-            </button>
+            </Link>
 
-            <button
+            <Link
+            to="/view-upcoming-courses"
               type="button"
-              className="text-[#000] flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3  md:w-auto lg:w-full xl:w-auto 2xl:w-auto  uppercase gap-3 xs:justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+              className="text-[#000] flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3  md:w-auto lg:w-full xl:w-auto 2xl:w-auto  uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
             >
               View Upcoming Courses
               <img src={RightArrow} alt="Arrow" className="w-[24px] h-[24px]" />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import GetInTouchImg from "../assets/getintouch.png";
 import RightArrow from "../assets/arrow-right.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import PhoneIncome from "../assets/phone-incoming.png";
+import { Link } from "react-router-dom";
 
 function GetInTouch() {
   const [name, setName] = useState("");
@@ -29,7 +30,7 @@ function GetInTouch() {
                 className="w-9 h-9 inline-block ml-2"
               />
             </h3>
-            <p className="text-[12px] text-white sm:text-[16px] md:text-[16px]  bold-text1 leading-[32px] text-justify  mt-6">
+            <p className="text-sm text-white sm:text-[16px] md:text-[16px]  bold-text1 leading-[32px] text-justify  mt-6">
               We help optimize sales strategies, enhance team performance, and
               create tailored solutions to unlock your sales team's potential.
             </p>
@@ -38,13 +39,13 @@ function GetInTouch() {
             </h5>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-4">
-              <div className="flex items-center space-x-6">
+              <div className="flex flex-col items-center sm:flex sm:items-center space-y-4 xl:space-y-0 md:flex md:items-center sm:flex-col lg:flex-col lg:space-x-0 xl:flex-row  xl:space-x-6">
                 <input
                   type="text"
                   placeholder="Enter Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-3  bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3  bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
@@ -56,7 +57,7 @@ function GetInTouch() {
                   placeholder="Enter Phone Number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
@@ -70,7 +71,7 @@ function GetInTouch() {
                   placeholder="Enter Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
@@ -82,7 +83,7 @@ function GetInTouch() {
                   placeholder="Description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
                   rows={4}
                   style={{
                     borderImage:
@@ -91,7 +92,8 @@ function GetInTouch() {
                 />
               </div>
               <div className="flex flex-col md:flex-row justify-between  space-y-4 md:space-y-0  md:space-x-4">
-                <button
+                <Link
+                to="learn-more"
                   type="submit"
                   className="text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
                 >
@@ -101,8 +103,9 @@ function GetInTouch() {
                     alt="Right Arrow"
                     className="w-6 h-6 ml-2"
                   />
-                </button>
-                <button
+                </Link>
+                <Link
+                to="learn-more"
                   type="button"
                   className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-4 md:px-3 md:py-4  lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4  flex items-center justify-center w-full md:w-auto"
                   style={{
@@ -117,7 +120,7 @@ function GetInTouch() {
                     alt="Right Arrow"
                     className="w-6 h-6 ml-2"
                   />
-                </button>
+                </Link>
               </div>
             </form>
           </div>

@@ -6,17 +6,17 @@ function CaseStudies() {
     <section className=" case-study py-12 container mx-auto px-4">
       <div className=" text-center md:text-left mb-auto">
         <div className="w-full mb-8">
-          <h5 className="text-[14px] sm:text-[24px] md:text-[24px]  font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+          <h5 className="text-[16px] sm:text-[24px] md:text-[24px]  font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
             Our Case Studies
           </h5>
 
-          <h2 className="text-[28px] md:text-[36px] sm:text-[28px] font-bold  mt-7 mb-7 w-full  lg:w-full xl:w-[700px]">
+          <h2 className="text-[18px] md:text-[36px] sm:text-[28px] font-bold  mt-2 mb-2 sm:mt-4 sm:mb-4 md:mt-7 md:mb-7 lg:mt-7 lg:mb-7 xl:mt-7 xl:mb-7 2xl:mt-7 2xl:mb-7    w-full  lg:w-full xl:w-[700px]">
             Driving Success with Proven <br />
             <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
               Strategies
             </span>
           </h2>
-          <p className="text-base sm:text-lg  md:w-full lg:w-full xl:w-[70%] md:leading-[32px] leading-[24px] mt-12 px-4 md:px-0 text-justify">
+          <p className="text-sm sm:text-lg  md:w-full lg:w-full xl:w-[70%] md:leading-[32px] leading-[24px] mt-5 sm:mt-8 md:mt-12 lg:mt-12 xl:mt-12 2xl:mt-12 px-4 md:px-0 text-justify">
             We take pride in delivering measurable results for our clients. Our
             case studies highlight how our tailored solutions have helped sales
             teams achieve exceptional performance. Explore these success stories

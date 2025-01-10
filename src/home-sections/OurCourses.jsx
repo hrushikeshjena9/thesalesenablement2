@@ -7,6 +7,7 @@ import Front from "../assets/5.png";
 import Sales from "../assets/3.png";
 import Territory from "../assets/2.png";
 import Retail from "../assets/1.png";
+import { Link } from "react-router-dom";
 
 function OurCourses() {
   return (
@@ -20,8 +21,8 @@ function OurCourses() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 text-white gap-4 lg:gap-4 xl:gap-4 2xl:gap-12 md:grid-cols-3 lg:grid-cols-6 mb-6">
-              <div className="card p-2 shadow-lg">
+            <div className="grid grid-cols-2  text-white gap-4 lg:gap-4 xl:gap-4 2xl:gap-12 md:grid-cols-3 lg:grid-cols-6 mb-6">
+              <div className="card p-2  shadow-lg">
                 <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
                   <img src={Professional} />
                 </div>
@@ -77,13 +78,14 @@ function OurCourses() {
             </div>
 
             <div className="flex flex-col md:flex-wrap lg:flex-wrap xl:flex-row lg:m xl:mx-7  justify-between items-center gap-4">
-              <button
+              <Link
+              to="schedule-a-consultation"
                 type="button"
-                className="text-white  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
+                className="text-white  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
               >
                 Schedule a Consultation
-                <img src={RightArrow1} alt="Right Arrow" className="w-6 h-6" />
-              </button>
+                <img src={RightArrow1} alt="Right Arrow1" className="w-6 h-6" />
+              </Link>
 
               <div className="flex justify-between items-center border-2 border-black">
                 <img
@@ -94,23 +96,26 @@ function OurCourses() {
                 <input
                   type="text"
                   placeholder="Search Courses"
-                  className="flex-1 px-4 py-1  placeholder-gray-700 font-bold placeholder:text-sm uppercase outline-none"
+                  className="flex-1 w-full  px-6 py-0 sm:px-4 sm:py-1 md:px-4 md:py-1 lg:px-4 lg:py-1 xl:px-4 xl:py-1 2xl:px-4 2xl:py-1  font-bold placeholder:text-sm uppercase outline-none"
                 />
-                <button
+                <Link
+                to="book-now"
                   type="button"
-                  className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto flex items-center justify-center"
+                  className="text-white  w-auto  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px]  sm:text-sm md:text-[14px] px-5 py-2.5 sm:w-auto lg:w-auto xl:w-auto md:px-6 md:py-3 md:w-auto flex items-center justify-center"
                 >
                   Book Now
-                </button>
+                </Link>
               </div>
-
-              <button
+            
+              <Link
+              to="discover-our-courses"
                 type="button"
-                className="text-[#000] flex md:px-6 md:py-2 lg:py-2.5 xl:py-2.5 2xl:py-2.5 sm:w-[378px] md:w-[385px]  xl:w-auto lg:w-w-[385px]  uppercase gap-3 sm:justify-center md:justify-center xl:justify-between lg:justify-center justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+                className="text-[#000] flex md:px-6 md:py-2 lg:py-2.5 xl:py-2.5 2xl:py-2.5 sm:w-[378px] md:w-[385px] justify-center  w-full xl:w-auto lg:w-[385px]  uppercase gap-3 sm:justify-center md:justify-center xl:justify-between lg:justify-center  space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
               >
                 Discover Our Courses
                 <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
-              </button>
+              </Link>
+
             </div>
           </div>
         </section>

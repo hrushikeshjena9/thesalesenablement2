@@ -2,9 +2,10 @@
 // import { NavLink } from "react-router-dom";
 // import Logo from "../assets/logo.png";
 // import HoverLine from "../assets/hover-line.png";
-
+// import { FiChevronDown } from 'react-icons/fi';
 // function Navbar() {
 //   const [isMenuOpen, setIsMenuOpen] = useState(false);
+//   const [dropdownOpen, setDropdownOpen] = useState(null);
 
 //   const links = [
 //     { name: "Home", route: "/" },
@@ -15,14 +16,42 @@
 //     { name: "Contact Us", route: "/contact-us" },
 //   ];
 
+//   const courses = [
+//     "Professional Selling Skills",
+//     "Communication Skills for Sales Staff",
+//     "Front Line Retail Selling Skills",
+//     "Sales Management",
+//     "Sales Territory Planning & Routing",
+//     "Retail Sales Planning and Forecasting",
+//   ];
+
+//   const services = [
+//     "Sales Force Evaluation",
+//     "Recruiting Process Optimization",
+//     "Sales Candidate Assessments",
+//     "CRM Selection, Installation, and Integration",
+//     "Sales Process Optimization",
+//     "Metrics Development",
+//     "Pipeline Management",
+//     "Sales Management Development",
+//     "Trade Show Selling",
+//     "Consulting & Strategy ",
+//     "Coaching",
+//     "Sales Training & Professional Services Training",
+//   ];
+
+//   const toggleDropdown = (dropdownName) => {
+//     setDropdownOpen(dropdownOpen === dropdownName ? null : dropdownName);
+//   };
+
 //   return (
 //     <section className="container mx-auto px-4">
 //       <nav className="text-white">
+//         {/* Logo and Hamburger Menu */}
 //         <div className="flex justify-between items-center py-4">
 //           <div className="text-xl font-bold">
 //             <img src={Logo} alt="Logo" className="w-[170px] h-auto" />
 //           </div>
-
 //           <button
 //             onClick={() => setIsMenuOpen(!isMenuOpen)}
 //             className="lg:hidden text-white focus:outline-none"
@@ -43,61 +72,122 @@
 //             </svg>
 //           </button>
 
-//           {/* <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase  mt-4 lg:mt-0">
+//           {/* Desktop Menu */}
+//           {/* <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
 //             {links.map((link, index) => (
-//               <NavLink
-//                 key={index}
-//                 to={link.route}
-//                 className={({ isActive }) =>
-//                   `relative sm:text-xs lg:text-sm xl:text-base  ${
-//                     isActive
-//                       ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
-//                       : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-//                   }`
-//                 }
-//               >
-//                 {link.name}
-//               </NavLink>
+//               <li key={index} className="relative">
+//                 {["Courses", "Services"].includes(link.name) ? (
+//                   <div className="relative group">
+//                     <button
+//                       className="sm:text-xs lg:text-sm xl:text-base hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+//                       onClick={() => toggleDropdown(link.name.toLowerCase())}
+//                     >
+//                       {link.name}
+//                     </button>
+//                     {dropdownOpen === link.name.toLowerCase() && (
+//                       <ul className="absolute left-0 mt-2 bg-white text-black shadow-lg rounded w-64 z-50">
+//                         {(link.name === "Courses" ? courses : services).map(
+//                           (item, idx) => (
+//                             <li
+//                               key={idx}
+//                               className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+//                             >
+//                               {item}
+//                             </li>
+//                           )
+//                         )}
+//                       </ul>
+//                     )}
+//                   </div>
+//                 ) : (
+//                   <NavLink
+//                     to={link.route}
+//                     className={({ isActive }) =>
+//                       `relative sm:text-xs lg:text-sm xl:text-base ${
+//                         isActive
+//                           ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
+//                           : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+//                       }`
+//                     }
+//                   >
+//                     {link.name}
+//                   </NavLink>
+//                 )}
+//                 {window.location.pathname === link.route && (
+//                   <img
+//                     src={HoverLine}
+//                     alt="HoverLine"
+//                     className="absolute left-0 right-0 mx-auto -bottom-2 w-full"
+//                   />
+//                 )}
+//               </li>
 //             ))}
 //           </ul> */}
-
 //           <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
 //             {links.map((link, index) => (
-//               <NavLink
-//                 key={index}
-//                 to={link.route}
-//                 className={({ isActive }) =>
-//                   `relative sm:text-xs lg:text-sm xl:text-base ${
-//                     isActive
-//                       ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
-//                       : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-//                   }`
-//                 }
-//               >
-//                 {link.name}
-//                 {({ isActive }) =>
-//                   isActive && (
-//                     <img
-//                       src={HoverLine}
-//                       alt=""
-//                       className="absolute left-0 right-0 mx-auto -bottom-2 w-full"
-//                     />
-//                   )
-//                 }
-//               </NavLink>
+//               <li key={index} className="relative">
+//                 {["Courses", "Services"].includes(link.name) ? (
+//                   <div className="relative group">
+//                     <button
+//                       className="sm:text-xs lg:text-sm xl:text-base hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center"
+//                       // onClick={() => toggleDropdown(link.name.toLowerCase())}
+//                       onMouseEnter={() => toggleDropdown(link.name.toLowerCase())}
+//                       onMouseLeave={() => toggleDropdown(null)}
+//                     >
+//                       {link.name}
+//                       <FiChevronDown className="ml-2 transition-transform group-hover:rotate-180 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]" />
+//                     </button>
+//                     {dropdownOpen === link.name.toLowerCase() && (
+//                       <ul className="absolute left-0 mt-2 bg-white text-black shadow-lg rounded w-64 z-50">
+//                         {(link.name === "Courses" ? courses : services).map(
+//                           (item, idx) => (
+//                             <li
+//                               key={idx}
+//                               className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+//                             >
+//                               {item}
+//                             </li>
+//                           )
+//                         )}
+//                       </ul>
+//                     )}
+//                   </div>
+//                 ) : (
+//                   <NavLink
+//                     to={link.route}
+//                     className={({ isActive }) =>
+//                       `relative sm:text-xs lg:text-sm xl:text-base ${
+//                         isActive
+//                           ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
+//                           : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+//                       }`
+//                     }
+//                   >
+//                     {link.name}
+//                   </NavLink>
+//                 )}
+//                 {window.location.pathname === link.route && (
+//                   <img
+//                     src={HoverLine}
+//                     alt="HoverLine"
+//                     className="absolute left-0 right-0 mx-auto -bottom-2 w-full"
+//                   />
+//                 )}
+//               </li>
 //             ))}
 //           </ul>
 
+//           {/* Desktop Login/SignUp Buttons */}
 //           <div className="hidden lg:flex space-x-5">
 //             <button
 //               type="button"
-//               className="text-white uppercase text-[12px]  bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-bold text-sm px-10  py-3"
+//               className="text-white uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
 //             >
 //               Login
 //             </button>
 //             <button
 //               type="button"
-//               className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 sm:px-10 py-3"
+//               className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
 //               style={{
 //                 border: "2px solid transparent",
 //                 borderImage:
@@ -109,68 +199,61 @@
 //           </div>
 //         </div>
 
-//         {/* Mobile Menu */}
-//         <div
-//           className={`lg:hidden fixed inset-0 bg-transparent bg-opacity-50 z-40 ${
-//             isMenuOpen ? "block" : "hidden"
-//           }`}
-//           onClick={() => setIsMenuOpen(false)}
-//         >
-//           <div
-//             className={`absolute top-0 right-0 text-white bg-gradient-to-r from-[#060B33] to-[#383F71] w-3/4 h-full shadow-xl transform ${
-//               isMenuOpen ? "translate-x-0" : "translate-x-full"
-//             } transition-transform duration-300 ease-in-out`}
-//           >
-//             <div className="flex justify-between items-center p-6 border-b">
-//               <img src={Logo} alt="Logo" className="w-[150px]" />
-//               <button
-//                 onClick={() => setIsMenuOpen(false)}
-//                 className="text-white text-3xl"
-//               >
-//                 &times;
-//               </button>
-//             </div>
+//         {isMenuOpen && (
+//           <div className="lg:hidden fixed inset-0 bg-transparent bg-opacity-50 z-40">
+//             <div className="absolute top-0 right-0 text-white bg-gradient-to-r from-[#060B33] to-[#383F71] w-3/4 h-full shadow-xl transform translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto">
+//               <div className="flex justify-between items-center p-6 border-b">
+//                 <img src={Logo} alt="Logo" className="w-[150px]" />
+//                 <button
+//                   onClick={() => setIsMenuOpen(false)}
+//                   className="text-white text-3xl"
+//                 >
+//                   &times;
+//                 </button>
+//               </div>
 
-//             <ul className="p-6 space-y-6">
-//               {links.map((link, index) => (
-//                 <li key={index}>
-//                   <NavLink
-//                     to={link.route}
-//                     className={({ isActive }) =>
-//                       `block text-xl ${
-//                         isActive
-//                           ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
-//                           : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-//                       }`
-//                     }
-//                   >
-//                     {link.name}
-//                   </NavLink>
-//                 </li>
-//               ))}
-//             </ul>
+//               <ul className="p-6 space-y-6">
+//                 {links.map((link, index) => (
+//                   <li key={index}>
+//                     <NavLink
+//                       to={link.route}
+//                       className={({ isActive }) =>
+//                         `block text-xl ${
+//                           isActive
+//                             ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
+//                             : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+//                         }`
+//                       }
+//                     >
+//                       {link.name}
+//                     </NavLink>
+//                   </li>
+//                 ))}
+//               </ul>
 
-//             <div className="p-6 space-y-4">
-//               <button
-//                 type="button"
-//                 className="w-full text-white py-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none"
-//               >
-//                 Login
-//               </button>
-//               <button
-//                 type="button"
-//                 className="w-full text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl py-3 font-medium"
-//                 style={{
-//                   border: "2px solid transparent",
-//                   borderImage:
-//                     "linear-gradient(to right, #DB0032 0%, #FA6602 100%) 1",
-//                 }}
-//               >
-//                 Sign Up
-//               </button>
+//               {/* Buttons Section */}
+//               <div className="flex flex-col space-y-4 p-6 border-t">
+//                 <button
+//                   type="button"
+//                   className="text-white uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+//                 >
+//                   Login
+//                 </button>
+//                 <button
+//                   type="button"
+//                   className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+//                   style={{
+//                     border: "2px solid transparent",
+//                     borderImage:
+//                       "linear-gradient(to right, #DB0032 0%, #FA6602 100%) 1",
+//                   }}
+//                 >
+//                   Sign Up
+//                 </button>
+//               </div>
 //             </div>
 //           </div>
-//         </div>
+//         )}
 //       </nav>
 //     </section>
 //   );
@@ -178,15 +261,15 @@
 
 // export default Navbar;
 
-
-
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import HoverLine from "../assets/hover-line.png";
+import { FiChevronDown } from "react-icons/fi";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(null);
 
   const links = [
     { name: "Home", route: "/" },
@@ -196,6 +279,33 @@ function Navbar() {
     { name: "Blogs", route: "/blogs" },
     { name: "Contact Us", route: "/contact-us" },
   ];
+
+  const courses = [
+    { name: "Professional Selling Skills", path: "/courses/professional-selling-skills" },
+    { name: "Communication Skills for Sales Staff", path: "/courses/communication-skills-for-sales-staff" },
+    { name: "Front Line Retail Selling Skills", path: "/courses/front-line-retail-selling-skills" },
+    { name: "Sales Management", path: "/courses/sales-management" },
+    { name: "Sales Territory Planning & Routing", path: "/courses/sales-territory-planning-routing" },
+    { name: "Retail Sales Planning and Forecasting", path: "/courses/retail-sales-planning-forecasting" },
+  ];
+
+  const services = [
+    { name: "Sales Force Evaluation", path: "/services/sales-force-evaluation" },
+    { name: "Recruiting Process Optimization", path: "/services/recruiting-process-optimization" },
+    { name: "Sales Candidate Assessments", path: "/services/sales-candidate-assessments" },
+    { name: "CRM Selection, Installation, and Integration", path: "/services/crm-selection-installation-integration" },
+    { name: "Sales Process Optimization", path: "/services/sales-process-optimization" },
+    { name: "Metrics Development", path: "/services/metrics-development" },
+    { name: "Pipeline Management", path: "/services/pipeline-management" },
+    { name: "Sales Management Development", path: "/services/sales-management-development" },
+    { name: "Trade Show Selling", path: "/services/trade-show-selling" },
+    { name: "Consulting & Strategy", path: "/services/consulting-strategy" },
+    { name: "Coaching", path: "/services/coaching" },
+    { name: "Sales Training & Professional Services Training", path: "/services/sales-training-professional-services-training" },
+  ];
+  const toggleDropdown = (dropdownName) => {
+    setDropdownOpen(dropdownOpen === dropdownName ? null : dropdownName);
+  };
 
   return (
     <section className="container mx-auto px-4">
@@ -225,22 +335,66 @@ function Navbar() {
             </svg>
           </button>
 
-          {/* Desktop Menu */}
           <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
             {links.map((link, index) => (
               <li key={index} className="relative">
-                <NavLink
-                  to={link.route}
-                  className={({ isActive }) =>
-                    `relative sm:text-xs lg:text-sm xl:text-base ${
-                      isActive
-                        ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
-                        : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
+                {["Courses", "Services"].includes(link.name) ? (
+                  <div className="relative group">
+                    <button
+                      className="sm:text-xs lg:text-sm xl:text-base hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center"
+                      // onClick={() => toggleDropdown(link.name.toLowerCase())}
+                      onMouseEnter={() =>
+                        toggleDropdown(link.name.toLowerCase())
+                      }
+                      // onMouseLeave={() => toggleDropdown(null)}
+                    >
+                      {link.name}
+                      <FiChevronDown
+                        size={20}
+                        className="ml-2 transition-transform group-hover:rotate-180 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                      />
+                    </button>
+                    {dropdownOpen === link.name.toLowerCase() && (
+                      <ul className="absolute left-0 mt-2 bg-[#060B33] text-white shadow-lg  w-64 z-50">
+                        {(link.name === "Courses" ? courses : services).map(
+                          (item, idx) => (
+                            <li
+                              key={idx}
+                              className="px-4 py-2 hover:bg-white cursor-pointer"
+                            >
+                              <NavLink
+                                to={item.path}
+                                className={({ isActive }) =>
+                                  `block ${
+                                    isActive
+                                      ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                                      : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                                  }`
+                                }
+                              >
+                                {item.name}{" "}
+                                {/* This is rendering the name properly */}
+                              </NavLink>
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    )}
+                  </div>
+                ) : (
+                  <NavLink
+                    to={link.route}
+                    className={({ isActive }) =>
+                      `relative sm:text-xs lg:text-sm xl:text-base ${
+                        isActive
+                          ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
+                          : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                )}
                 {window.location.pathname === link.route && (
                   <img
                     src={HoverLine}
@@ -254,13 +408,15 @@ function Navbar() {
 
           {/* Desktop Login/SignUp Buttons */}
           <div className="hidden lg:flex space-x-5">
-            <button
+            <Link
+            to="/login"
               type="button"
               className="text-white uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
             >
               Login
-            </button>
-            <button
+            </Link>
+            <Link
+            to="/sign-up"
               type="button"
               className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
               style={{
@@ -270,19 +426,13 @@ function Navbar() {
               }}
             >
               Sign Up
-            </button>
+            </Link>
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div
-            className="lg:hidden fixed inset-0 bg-transparent bg-opacity-50 z-40"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <div
-              className="absolute top-0 right-0 text-white bg-gradient-to-r from-[#060B33] to-[#383F71] w-3/4 h-full shadow-xl transform translate-x-0 transition-transform duration-300 ease-in-out"
-            >
+          <div className="lg:hidden fixed inset-0 bg-transparent bg-opacity-50 z-40">
+            <div className="absolute top-0 right-0 text-white bg-gradient-to-r from-[#060B33] to-[#383F71] w-3/4 h-full shadow-xl transform translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto">
               <div className="flex justify-between items-center p-6 border-b">
                 <img src={Logo} alt="Logo" className="w-[150px]" />
                 <button
@@ -312,16 +462,17 @@ function Navbar() {
                 ))}
               </ul>
 
-              <div className="p-6 space-y-4">
+              {/* Buttons Section */}
+              <div className="flex flex-col space-y-4 p-6 border-t">
                 <button
                   type="button"
-                  className="w-full text-white py-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:ring-4 focus:outline-none"
+                  className="text-white uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                 >
                   Login
                 </button>
                 <button
                   type="button"
-                  className="w-full text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl py-3 font-medium"
+                  className="text-transparent uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                   style={{
                     border: "2px solid transparent",
                     borderImage:

@@ -43,6 +43,11 @@ button {
 .border-btn2 {
   border: 2px solid #000000;
 }
+.border-btn2:hover {
+  border: 2px solid transparent; /* Make the border transparent */
+  border-image: linear-gradient(to right, #DB0032 0%, #FA6602 100%) 1;
+  animation: borderRunningAnimation 2s linear infinite;
+}
 .btn-hero-slider {
   text-align: right;
 }

@@ -62,7 +62,7 @@ function Testimonials() {
 
   return (
     <section className="bg-gradient-2  py-12">
-      <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-6">
+      <h2 className="text-3xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-6">
         Testimonials
       </h2>
       <div className="flex justify-center items-center px-4 py-8">
@@ -78,7 +78,7 @@ function Testimonials() {
               {testimonials[currentIndex].text}
             </p>
 
-            <div className="flex flex-col sm:flex-row mt-8 ">
+            <div className="flex flex-col items-center sm:flex-row mt-8 ">
               <img
                 src={testimonials[currentIndex].image}
                 alt="Testimonial"

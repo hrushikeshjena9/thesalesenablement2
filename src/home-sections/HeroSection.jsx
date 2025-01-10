@@ -123,7 +123,7 @@ function HeroSection() {
                   </button>
                   <button
                     type="button"
-                    className="text-white  uppercase w-full xs:justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+                    className="text-white  uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
                   >
                     {slideContent[currentSlide].buttonText2}
                     <img
