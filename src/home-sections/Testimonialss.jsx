@@ -9,9 +9,13 @@ import Person2 from "../assets/person2.png";
 import Person3 from "../assets/person3.png";
 import Person4 from "../assets/person4.png";
 
+
 function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
+
+ 
 
   const testimonials = [
     {
@@ -73,10 +77,13 @@ function Testimonials() {
               alt="Quote Icon"
               className="w-12 h-12 inline-block"
             />
-
-            <p className="mt-5 text-black text-sm md:text-xl sm:text-base">
+            
+            <p className="mt-5 text-black text-sm md:text-xl sm:text-base"
+            >
               {testimonials[currentIndex].text}
             </p>
+
+           
 
             <div className="flex flex-col items-center sm:flex-row mt-8 ">
               <img
@@ -101,14 +108,14 @@ function Testimonials() {
         <div className="flex justify-between items-center w-full max-w-3xl">
           {/* Navigation Buttons */}
           <div className="flex justify-between items-center w-auto">
-            <button onClick={prevTestimonial}>
+            <button onClick={prevTestimonial} className="hover:scale-110">
               <img
                 src={LeftArrow}
                 alt="Previous Testimonial"
                 className="w-[30px] h-[30px]"
               />
             </button>
-            <button onClick={nextTestimonial} className="p-2">
+            <button onClick={nextTestimonial} className="p-2 hover:scale-110">
               <img
                 src={RightArrow}
                 alt="Next Testimonial"
@@ -133,7 +140,7 @@ function Testimonials() {
           </div>
 
           <div>
-            <button onClick={togglePlayPause} className="ml-4">
+            <button onClick={togglePlayPause} className="ml-4 hover:scale-110">
               <img
                 src={isPlaying ? Pause : Play}
                 alt="Play/Pause Button"

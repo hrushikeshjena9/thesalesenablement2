@@ -4,6 +4,7 @@ import RightArrow from "../assets/arrow-right.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import PhoneIncome from "../assets/phone-incoming.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function GetInTouch() {
   const [name, setName] = useState("");
@@ -14,6 +15,15 @@ function GetInTouch() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log({ name, phone, email, description });
+  };
+
+  const rightVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
   };
 
   return (
@@ -95,7 +105,7 @@ function GetInTouch() {
                 <Link
                 to="learn-more"
                   type="submit"
-                  className="text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
+                  className="text-white hover:scale-110 bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
                 >
                   CONNECT NOW
                   <img
@@ -107,7 +117,7 @@ function GetInTouch() {
                 <Link
                 to="learn-more"
                   type="button"
-                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-4 md:px-3 md:py-4  lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4  flex items-center justify-center w-full md:w-auto"
+                  className="text-transparent hover:scale-110 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-4 md:px-3 md:py-4  lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4  flex items-center justify-center w-full md:w-auto"
                   style={{
                     border: "2px solid transparent",
                     borderImage:
@@ -126,13 +136,18 @@ function GetInTouch() {
           </div>
 
           {/* Image Section */}
-          <div className="w-full mt-8 md:mt-0  ">
+          <motion.div className="w-full mt-8 md:mt-0  "
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% visible
+          variants={rightVariants}
+          >
             <img
               src={GetInTouchImg}
               alt="Get In Touch"
               className="w-full max-w-xl mx-auto"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

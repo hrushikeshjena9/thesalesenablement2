@@ -1,12 +1,41 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import RightArrow from "../assets/arrow-right.png";
 import Blog1 from "../assets/blog1.png";
 import Blog2 from "../assets/blog2.png";
 import Blog3 from "../assets/blog3.png";
 import Blog4 from "../assets/blog-4.png";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 function LatestBlogs() {
+     const [inView, setInView] = useState(false);
+      const elementRef = useRef(null);
+    
+      useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setInView(true);
+            } else {
+              setInView(false);
+            }
+          },
+          {
+            threshold: 0.5, // Trigger when 50% of the element is in the viewport
+          }
+        );
+    
+        // Ensure the element is available before observing
+        if (elementRef.current) {
+          observer.observe(elementRef.current);
+        }
+    
+        return () => {
+          if (elementRef.current) {
+            observer.disconnect();
+          }
+        };
+      }, []);
   return (
     <section className="container mx-auto px-4 py-12 case-study">
       <div className="text-center md:text-left mb-8">
@@ -21,9 +50,9 @@ function LatestBlogs() {
             </span>
           </h2>
           <Link
-          to="discover-latest-blogs"
+            to="discover-latest-blogs"
             type="button"
-            className="text-[#000] flex md:px-6 md:py-3 w-full sm:w-auto md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+            className="text-[#000] flex hover:scale-110 md:px-6 md:py-3 w-full sm:w-auto md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
           >
             Discover Latest Blogs
             <img src={RightArrow} alt="arrow" className="w-6 h-6 ml-2" />
@@ -37,7 +66,20 @@ function LatestBlogs() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8">
+      <motion.div
+          ref={elementRef} // Assign the ref to the motion div
+        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8"
+        initial={{ opacity: 0, y: 100 }} // Start from below the viewport (y: 100px)
+        animate={{
+          opacity: inView ? 1 : 0, // Fade in when in view
+          y: inView ? 0 : 100, // Move to final position (y: 0) when in view
+        }}
+        exit={{ opacity: 0, y: 100 }} // Fade out and move down when out of view
+        transition={{
+          duration: 1.5, // Transition duration
+          ease: "easeInOut", // Smooth easing
+        }}
+      >
         {[
           {
             image: Blog1,
@@ -78,10 +120,9 @@ function LatestBlogs() {
               {blog.description}
             </p>
             <Link
-
-            to="learn-more"
+              to="learn-more"
               type="button"
-              className="text-transparent w-[86%] mb-4 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-6 py-3 flex items-center justify-center"
+              className="text-transparent hover:scale-110 w-[86%] mb-4 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-6 py-3 flex items-center justify-center"
               style={{
                 border: "2px solid transparent",
                 borderImage:
@@ -97,7 +138,7 @@ function LatestBlogs() {
             </Link>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -8,25 +8,27 @@ import SalesTrainingImg from "../assets/sales-traning.png";
 import SalesPlaybookImg from "../assets/sales-playbook.png";
 import CandidateAssessmentImg from "../assets/candidate-assesment.png";
 import StartupSupportImg from "../assets/startup-support.png";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function Services() {
   const [clickedCard, setClickedCard] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [showDescription, setShowDescription] = useState(false);
+
   const cards = [
     {
       id: 1,
       title: "Sales Training",
       image: SalesTrainingImg,
-      description:
-        "Learn advanced sales techniques and methodologies tailored to your business needs.",
+      description: "Results-focused training programs.",
     },
     {
       id: 2,
-      title: "Sales Playbook Blueprint",
+      title: "Trade Show Selling",
       image: SalesPlaybookImg,
       description:
-        "Get a custom playbook to align your team and strategies effectively.",
+        "Turning event participation into measurable sales opportunities.",
     },
     {
       id: 3,
@@ -37,10 +39,9 @@ function Services() {
     },
     {
       id: 4,
-      title: "Startups Support",
+      title: "Coaching",
       image: StartupSupportImg,
-      description:
-        "Empower startups with strategic sales guidance and resources.",
+      description: "Executive and sales coaching to improve outcomes.",
     },
     {
       id: 5,
@@ -68,6 +69,34 @@ function Services() {
       title: "Consulting & Strategy",
       image: StartupSupportImg,
       description: "Offering market, account, and business strategy support.",
+    },
+    {
+      id: 9,
+      title: "Recruiting Process Optimization",
+      image: StartupSupportImg,
+      description:
+        "Streamlining recruitment to attract and retain top-tier sales talent.",
+    },
+    {
+      id: 10,
+      title: "CRM Selection, Installation, and Integration",
+      image: StartupSupportImg,
+      description:
+        "Helping businesses choose and implement the right CRM system.",
+    },
+    {
+      id: 11,
+      title: "Metrics Development",
+      image: StartupSupportImg,
+      description:
+        "Identifying KPIs and predictive indicators to drive revnue.",
+    },
+    {
+      id: 12,
+      title: "Pipeline Management",
+      image: StartupSupportImg,
+      description:
+        " Building formal, staged, and criteria-based pipeline systems",
     },
   ];
 
@@ -97,10 +126,26 @@ function Services() {
     }
   };
 
+  const [ref2, inView2] = useInView({ threshold: 0.5 });
+  const leftVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="py-12 services-top-margin container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
-        <div className="w-full  text-center md:text-left">
+        <motion.div
+          className="w-full  text-center md:text-left"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% visible
+          variants={leftVariants}
+        >
           <h5 className="text-[16px] md:text-[24px] sm:text-[24px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
             Consultation & Services
           </h5>
@@ -120,18 +165,26 @@ function Services() {
             exceptional results. Here's how we make an impact:
           </p>
           <button
-          
             type="button"
-            className="text-[#000] h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
+            className="text-[#000] hover:scale-110 h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
           >
             Learn More
             <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
           </button>
-        </div>
+        </motion.div>
 
         <div className="relative flex justify-center service-margin text-white w-full">
           <div className="relative flex  justify-center items-center text-white w-full  mb-6">
-            <div className="w-full p-8 flex justify-center items-center">
+            <motion.div
+              className="w-full p-8 flex justify-center items-center"
+              ref={ref2}
+              initial={{ scale: 0, opacity: 0 }} // Start as smaller element
+              animate={{
+                scale: inView2 ? 1 : 0, // Zoom in when in view
+                opacity: inView2 ? 1 : 0,
+              }}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
               <div className="relative hidden sm:block w-full sm:w-3/4 md:w-1/2">
                 {currentCards.map((card, index) => {
                   let positionClass = "";
@@ -235,7 +288,7 @@ function Services() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -244,13 +297,13 @@ function Services() {
         <div className="flex  gap-4 z-10">
           <button
             onClick={handlePrev}
-            className="w-[45px] h-[45px] cursor-pointer hover:scale-110 transition-transform"
+            className="w-12 h-12 cursor-pointer hover:scale-110 transition-transform"
           >
             <img src={SliderBtnLeft} alt="Slider Left" />
           </button>
           <button
             onClick={handleNext}
-            className="w-[45px] h-[45px] cursor-pointer hover:scale-110 transition-transform"
+            className="w-12 h-12 cursor-pointer hover:scale-110 transition-transform"
           >
             <img src={SliderBtnRight} alt="Slider Right" />
           </button>

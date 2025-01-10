@@ -1,7 +1,36 @@
 import React from "react";
 import CaseRightArrow from "../assets/caser-arrow-right.png";
-
+import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 function CaseStudies() {
+  const [inView, setInView] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+        } else {
+          setInView(false);
+        }
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the element is in the viewport
+      }
+    );
+
+    // Ensure the element is available before observing
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
   return (
     <section className=" case-study py-12 container mx-auto px-4">
       <div className=" text-center md:text-left mb-auto">
@@ -24,7 +53,20 @@ function CaseStudies() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 px-4 sm:px-0">
+        <motion.div
+          ref={elementRef} // Assign the ref to the motion div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 px-4 sm:px-0"
+          initial={{ opacity: 0, y: 100 }} // Start from below the viewport (y: 100px)
+          animate={{
+            opacity: inView ? 1 : 0, // Fade in when in view
+            y: inView ? 0 : 100, // Move to final position (y: 0) when in view
+          }}
+          exit={{ opacity: 0, y: 100 }} // Fade out and move down when out of view
+          transition={{
+            duration: 1.5, // Transition duration
+            ease: "easeInOut", // Smooth easing
+          }}
+        >
           <div className="group cursor-pointer case1 flex justify-center items-end w-full h-[350px]">
             <div className="bg-white w-full sm:w-[426.59px] h-[140px] p-4 transition-all transform group-hover:scale-105 group-hover:h-[220px] duration-300 ease-in-out">
               <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
@@ -115,7 +157,7 @@ function CaseStudies() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

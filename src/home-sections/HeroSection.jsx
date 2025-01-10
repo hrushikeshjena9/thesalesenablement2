@@ -8,6 +8,8 @@ import SliderBtnRight from "../assets/slider-btn-right.png";
 import Navbar from "../components/Navbar";
 import RightArrow from "../assets/arrow-right.png";
 import RightArrow1 from "../assets/arrow-right1.png";
+import { useInView } from "react-intersection-observer";
+import { motion, AnimatePresence } from "framer-motion";
 
 function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -85,23 +87,74 @@ function HeroSection() {
     };
   }, []);
 
+  const [ref2, inView2] = useInView({ threshold: 0.5 });
+  const leftVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
   return (
     <>
       <section>
-        <div className="relative">
-          <div
+        <div className="relative w-full h-full overflow-hidden">
+          {/* <div
             className="absolute  inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out opacity-80"
             style={{
               backgroundImage: `url(${slides[currentSlide]})`,
               opacity: 0.8,
             }}
-          ></div>
+          ></div> */}
+
+          {/* <AnimatePresence>
+            <motion.div
+              key={currentSlide} // Key to trigger animation when currentSlide changes
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${slides[currentSlide]})`,
+              }}
+              initial={{ opacity: 0, x: "100%" }} // Start from the right
+              animate={{ opacity: 1, x: 0 }} // Slide in to the center with full opacity
+              exit={{ opacity: 0, x: "-100%" }} // Slide out to the left
+              transition={{
+                duration: 2, // Increase the duration for a slower transition
+                ease: "easeOut", // Use 'easeOut' for a smooth, slower end to the animation
+              }}
+            />
+          </AnimatePresence> */}
+
+          <AnimatePresence>
+            <motion.div
+              key={currentSlide} 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${slides[currentSlide]})`,
+              }}
+              initial={{ opacity: 0 }} // Start with 0 opacity (invisible)
+              animate={{ opacity: 1 }} // Fade in to full opacity
+              exit={{ opacity: 0 }} // Fade out to 0 opacity (invisible)
+              transition={{
+                duration: 1.5, // Duration of the fade-in/out
+                ease: "easeInOut", // Smooth transition easing
+              }}
+            />
+          </AnimatePresence>
 
           <div className="relative bg-layer">
             <Navbar />
             <div className="text-white flex flex-col lg:flex-row items-center justify-between container mx-auto">
-              <div className="lg:w-1/2 text-center lg:text-left h-[500px] transition-opacity duration-1000 ease-in-out  flex flex-col justify-center px-4 sm:px-6">
-                <h1 className="text-2xl sm:text-3xl lg:text-[36px] lg:leading-[48px]  font-bold mb-4 mt-12">
+              <motion.div
+                className="lg:w-1/2 text-center lg:text-left h-[500px] transition-opacity duration-1000 ease-in-out  flex flex-col justify-center px-4 sm:px-6"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.5 }}
+                variants={leftVariants}
+              >
+                <h1
+                  className="text-2xl sm:text-3xl lg:text-[36px] lg:leading-[48px]  font-bold mb-4 mt-12" 
+                >
                   {slideContent[currentSlide].title}
                 </h1>
                 <p className="text-base sm:text-[16px] lg:leading-[34px] bold-text1  lg:text-[18px] mb-6 mx-auto lg:mx-0">
@@ -109,10 +162,9 @@ function HeroSection() {
                 </p>
 
                 <div className="flex flex-col  lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start  mb-6">
-
                   <button
                     type="button"
-                    className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2  lg:px-3 lg:py-3  xl:px-6 xl:py-3  md:w-[250px] lg:w-auto xl:w-auto flex items-center justify-center"
+                    className="text-white   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-110 hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2  lg:px-3 lg:py-3  xl:px-6 xl:py-3  md:w-[250px] lg:w-auto xl:w-auto flex items-center justify-center"
                   >
                     {slideContent[currentSlide].buttonText1}
                     <img
@@ -123,7 +175,7 @@ function HeroSection() {
                   </button>
                   <button
                     type="button"
-                    className="text-white  uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+                    className="text-white  uppercase w-full hover:scale-110 justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
                   >
                     {slideContent[currentSlide].buttonText2}
                     <img
@@ -133,15 +185,24 @@ function HeroSection() {
                     />
                   </button>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end hidden lg:flex">
+              <motion.div
+                className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end hidden lg:flex"
+                ref={ref2}
+                initial={{ scale: 0, opacity: 0 }} // Start as smaller element
+                animate={{
+                  scale: inView2 ? 1 : 0, // Zoom in when in view
+                  opacity: inView2 ? 1 : 0,
+                }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
                 <img
                   src={heroImage}
                   alt="Hero Section Illustration"
                   className="max-w-full h-auto object-contain lg:object-cover"
                 />
-              </div>
+              </motion.div>
             </div>
 
             <div className="container mx-auto px-4">
