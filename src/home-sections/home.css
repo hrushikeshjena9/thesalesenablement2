@@ -21,6 +21,7 @@ button {
   background-image: url("../assets/Case1.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 

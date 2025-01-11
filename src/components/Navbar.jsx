@@ -239,12 +239,14 @@ function Navbar() {
 
               {/* Buttons Section */}
               <div className="flex flex-col space-y-4 p-6 border-t">
-                <button
+                <Link
                   type="button"
-                  className="text-white transition-transform duration-500 ease-out  transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+                  className="text-white group transition-transform duration-500 ease-out  transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                 >
+                    <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white  group-hover:w-full group-hover:h-full opacity-10"></span>
+
                   Login
-                </button>
+                </Link>
                 <button
                   type="button"
                   className="text-transparent transition-transform duration-500 ease-out  transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"

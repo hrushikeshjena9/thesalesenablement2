@@ -6,6 +6,8 @@ import ScreenResolutionPopup from "./components/ScreenResolutionPopup";
 import { useState, useEffect } from "react";
 import { Bars } from "react-loader-spinner";
 import NotFound from "./components/Not-found";
+import Login from "./auth/Login";
+import SignUp from "./auth/SignUp";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -52,6 +54,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
