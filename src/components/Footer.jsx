@@ -29,7 +29,7 @@ function Footer() {
           />
           <button
             type="button"
-            className="w-full uppercase transition-transform duration-500 ease-out transform  sm:px-10 md:px-6 md:py-3 sm:w-full md:w-[200px]  lg:w-[250px] xl:w-[300px]  flex items-center border-2 border-white text-white px-4 py-2 justify-center gap-4 hover:text-white border-btn  font-medium text-sm  md:text-lg lg:text-2xl xl:text-2xl 2xl:text-2xl text-center  dark:hover:text-white"
+            className="w-full uppercase transition-transform hover:bg-gradient-to-r from-[#060B33] to-[#383F71] hover:text-white  duration-500 ease-out transform  sm:px-10 md:px-6 md:py-3 sm:w-full md:w-[200px]  lg:w-[250px] xl:w-[300px]  flex items-center border-2 border-white text-white px-4 py-2 justify-center gap-4 hover:text-white border-btn  font-medium text-sm  md:text-lg lg:text-2xl xl:text-2xl 2xl:text-2xl text-center  dark:hover:text-white"
           >
             Subscribe
             <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
@@ -74,7 +74,7 @@ function Footer() {
                   "Retail Sales Planning and Forecasting",
                   "Communication Skills for Sales Staff",
                 ].map((course, index) => (
-                  <div key={index} className="flex items-center mb-2">
+                  <div key={index} className="flex cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] items-center mb-2">
                     <img src={ArrowAdd} alt="arrow" className="w-6 h-6 mr-2" />
                     <p>{course}</p>
                   </div>
@@ -89,7 +89,7 @@ function Footer() {
                 <img src={FooterLine} alt="Line" className="w-[110px] mb-4" />
                 {["Home", "About Us", "Services", "Blogs", "Contact Us"].map(
                   (link, index) => (
-                    <div key={index} className="flex items-center mb-2">
+                    <div key={index} className="flex hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] cursor-pointer items-center mb-2">
                       <img
                         src={ArrowAdd}
                         alt="arrow"

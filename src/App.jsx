@@ -8,6 +8,10 @@ import { Bars } from "react-loader-spinner";
 import NotFound from "./components/Not-found";
 import Login from "./auth/Login";
 import SignUp from "./auth/SignUp";
+import Course from "./pages/Course";
+import Services from "./home-sections/Services";
+import Service from "./pages/Services";
+import Contact from "./pages/ContactUs";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -54,6 +58,9 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/courses" element={<Course />} />
+            <Route path="/services" element={<Service />} />
+            <Route path="/contact-us" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />

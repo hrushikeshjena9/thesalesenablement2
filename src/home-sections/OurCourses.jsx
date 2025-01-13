@@ -8,6 +8,7 @@ import Sales from "../assets/3.png";
 import Territory from "../assets/2.png";
 import Retail from "../assets/1.png";
 import { Link } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 
 function OurCourses() {
   return (
@@ -78,7 +79,7 @@ function OurCourses() {
             </div>
 
             <div className="flex flex-col md:flex-wrap lg:flex-wrap xl:flex-row lg:m xl:mx-7  justify-between items-center gap-4">
-              <Link
+              {/* <Link
                 to="schedule-a-consultation"
                 type="button"
                 className="text-white group   transition-all duration-300 ease-out  transform   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
@@ -86,8 +87,23 @@ function OurCourses() {
                 <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white  group-hover:w-full group-hover:h-full opacity-10"></span>
                 Schedule a Consultation
                 <img src={RightArrow1} alt="Right Arrow1" className="w-6 h-6" />
-              </Link>
+              </Link> */}
 
+              <button
+                type="button"
+                className="relative hover:border-2 border-black  font-medium overflow-hidden group  text-white group   transition-all duration-300 ease-out  transform   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
+              >
+                <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+                  Schedule a Consultation
+                  <img
+                    src={RightArrow1}
+                    alt="Arrow Icon"
+                    className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
+                  />
+                  <FiArrowRight className="hidden w-6 h-6 ml-2 text-[#FA6602] transition-opacity duration-300 ease-in-out group-hover:inline-block group-hover:opacity-100" />
+                </span>
+              </button>
               <div className="flex justify-between items-center border-2 border-black">
                 <img
                   src={FilterImg}
