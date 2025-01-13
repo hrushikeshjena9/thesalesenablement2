@@ -12,7 +12,7 @@ function LogIn() {
     navigate('/');
   }
   return (
-    <section className=" about-class container mx-0">
+    <section className=" about-class container mx-auto">
       <div className="max-w-screen-xl mx-0 ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 xl:grid-cols-12 2xl:grid-cols-12 3xl:grid-cols-12 gap-8 items-center">
           <div
