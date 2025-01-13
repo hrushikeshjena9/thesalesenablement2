@@ -193,12 +193,12 @@ const DesktopMenu = ({
 
               <p className="text-center text-sm text-gray-600">
                 Not Registered Yet?{" "}
-                <a
-                  href="/sign-up"
+                <NavLink
+                  to="/sign-up"
                   className="text-sm uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text"
                 >
                   Create An Account
-                </a>
+                </NavLink>
               </p>
             </div>
           </div>
