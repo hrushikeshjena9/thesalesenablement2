@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import HoverLine from "../assets/hover-line.png";
+import { FaLock, FaEnvelope, FaTimes } from "react-icons/fa";
 
 const DesktopMenu = ({
   links,
@@ -25,6 +26,27 @@ const DesktopMenu = ({
     setIsHovered(false);
   };
 
+  const [isLogInOpen, setIsLogInOpen] = useState(false);
+
+  const handleLoginClick = () => {
+    setIsLogInOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsLogInOpen(false);
+  };
+
+  useEffect(() => {
+    if (isLogInOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      // Cleanup on component unmount
+      document.body.style.overflow = "";
+    };
+  }, [isLogInOpen]);
   return (
     <>
       <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
@@ -49,10 +71,7 @@ const DesktopMenu = ({
                   <ul className="absolute left-0 mt-2 grid grid-cols-1 lg:grid-cols-3 gap-4 w-full sm:w-[400px] md:w-[500px] lg:w-[600px] bg-[#060B33] text-white shadow-lg z-50">
                     {(link.name === "Courses" ? courses : services).map(
                       (item, idx) => (
-                        <li
-                          key={idx}
-                          className="px-4 py-2  cursor-pointer"
-                        >
+                        <li key={idx} className="px-4 py-2  cursor-pointer">
                           <NavLink
                             to={item.path}
                             className={({ isActive }) =>
@@ -100,28 +119,99 @@ const DesktopMenu = ({
 
       {/* Login and Sign-Up Buttons */}
       <div className="hidden lg:flex space-x-5">
-        <NavLink
-          to="/login"
+        {/* <NavLink
+          onClick={handleLoginClick}
           className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
         >
           <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
           <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-          
-          Login
+            Login
           </span>
-        </NavLink>
+        </NavLink> */}
+        <NavLink
+  onClick={handleLoginClick}
+  className="text-white group flex justify-center items-center transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+>
+  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
+    Login
+  </span>
+</NavLink>
+
+        {isLogInOpen && (
+          <div className="fixed inset-0 flex justify-end items-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
+            <div className="bg-white p-8 rounded-md w-full md:w-96 lg:w-1/2 xl:w-1/3 2xl:w-1/4 relative">
+              <button
+                className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+                onClick={closeModal}
+              >
+                <FaTimes />
+              </button>
+              <h2 className="text-2xl uppercase md:text-xl font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+                Sign in or Create an account
+              </h2>
+
+              <form className="space-y-4 mt-4">
+                <div className="relative">
+                  <FaEnvelope className="absolute left-3 top-3 text-gray-400" />
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    className="w-full border border-gray-300 rounded pl-10 p-2.5"
+                  />
+                </div>
+                <div className="relative">
+                  <FaLock className="absolute left-3 top-3 text-gray-400" />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="w-full border border-gray-300 rounded pl-10 p-2.5"
+                  />
+                </div>
+                <div className="flex justify-between items-center">
+                  <label className="flex items-center">
+                    <input type="checkbox" className="mr-2" />
+                    Remember Me
+                  </label>
+                  <a href="#" className="text-sm text-blue-500">
+                    Forgot Password?
+                  </a>
+                </div>
+                <div className="flex justify-center items-center">
+                  <button className="text-white transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3">
+                    LOGIN
+                  </button>
+                </div>
+              </form>
+
+              <div className="text-center my-4 relative">
+                <div className="absolute w-full h-px bg-gray-300 top-1/2"></div>
+                <span className="bg-white px-4 relative z-10 text-gray-500">
+                  Or
+                </span>
+              </div>
+
+              <p className="text-center text-sm text-gray-600">
+                Not Registered Yet?{" "}
+                <a
+                  href="/sign-up"
+                  className="text-sm uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text"
+                >
+                  Create An Account
+                </a>
+              </p>
+            </div>
+          </div>
+        )}
         <NavLink
           to="/sign-up"
-          className="text-transparent   hover:text-white transition-transform duration-500 ease-out transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-white font-bold text-sm px-10 py-3"
-          style={{
-            border: "2px solid transparent",
-            borderImage:
-              "linear-gradient(to right, #DB0032 0%, #FA6602 100%) 1",
-          }}
+          type="button"
+           className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]  font-bold text-sm px-10 py-3 border-btn border-white"
+          // className="text-white h-10 transition-all text-[12px] duration-500 ease-in-out transform bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white  flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm sm:text-xs px-10 py-3"
         >
-
-          Sign Up
+          <span>Sign up</span>
         </NavLink>
+       
       </div>
     </>
   );

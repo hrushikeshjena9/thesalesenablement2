@@ -49,13 +49,13 @@ function GetInTouch() {
             </h5>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-4">
-              <div className="flex flex-col items-center sm:flex sm:items-center space-y-4 xl:space-y-0 md:flex md:items-center sm:flex-col lg:flex-col lg:space-x-0 xl:flex-row  xl:space-x-6">
+              <div className="flex flex-col items-center sm:flex sm:items-center space-y-4 xl:space-y-0 md:flex md:items-center sm:flex-col lg:flex-col lg:space-x-0 xl:flex-row xl:space-x-6">
                 <input
                   type="text"
                   placeholder="Enter Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-3  bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
@@ -67,7 +67,7 @@ function GetInTouch() {
                   placeholder="Enter Phone Number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
@@ -81,7 +81,7 @@ function GetInTouch() {
                   placeholder="Enter Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
@@ -93,7 +93,7 @@ function GetInTouch() {
                   placeholder="Description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#383F71]"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
                   rows={4}
                   style={{
                     borderImage:
@@ -101,37 +101,31 @@ function GetInTouch() {
                   }}
                 />
               </div>
-              <div className="flex flex-col md:flex-row justify-between  space-y-4 md:space-y-0  md:space-x-4">
+              <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
                 <Link
-                to="learn-more"
+                  to="learn-more"
                   type="submit"
-                  className="text-white group transition-transform duration-500 ease-out transform  bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
+                  className="text-white group transition-transform duration-500 ease-out transform bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
                 >
-          <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-          <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+                  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+                    CONNECT NOW
+                    <img
+                      src={RightArrow1}
+                      alt="Right Arrow"
+                      className="w-6 h-6 ml-2"
+                    />
+                  </span>
+                </Link>
 
-                  CONNECT NOW
+                <Link
+                  to="learn-more"
+                  type="button"
+                  className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white font-bold text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto border-btn border-white"
+                >
+                  <span>LEARN MORE</span>
                   <img
                     src={RightArrow1}
-                    alt="Right Arrow"
-                    className="w-6 h-6 ml-2"
-                  />
-    
-          </span>
-                </Link>
-                <Link
-                to="learn-more"
-                  type="button"
-                  className="text-transparent hover:text-white hover:bg-white transition-transform duration-500 ease-out transform  bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-medium text-sm px-12 py-4 md:px-3 md:py-4  lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4  flex items-center justify-center w-full md:w-auto"
-                  style={{
-                    border: "2px solid transparent",
-                    borderImage:
-                      "linear-gradient(to right, #DB0032 0%, #FA6602 100%) 1",
-                  }}
-                >
-                  LEARN MORE
-                  <img
-                    src={RightArrow}
                     alt="Right Arrow"
                     className="w-6 h-6 ml-2"
                   />
@@ -141,11 +135,12 @@ function GetInTouch() {
           </div>
 
           {/* Image Section */}
-          <motion.div className="w-full mt-8 md:mt-0  "
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% visible
-          variants={rightVariants}
+          <motion.div
+            className="w-full mt-8 md:mt-0  "
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% visible
+            variants={rightVariants}
           >
             <img
               src={GetInTouchImg}
