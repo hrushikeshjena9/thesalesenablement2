@@ -118,10 +118,11 @@ function OurCourses() {
                 <Link
                   to="book-now"
                   type="button"
-                  className="text-white group transition-transform duration-500 ease-out transform   w-auto  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px]  sm:text-sm md:text-[14px] px-5 py-2.5 sm:w-auto lg:w-auto xl:w-auto md:px-6 md:py-3 md:w-auto flex items-center justify-center"
+                  className="text-white hover:border hover:border-black  group transition-transform duration-500 ease-out transform   w-auto  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px]  sm:text-sm md:text-[14px] px-5 py-2.5 sm:w-auto lg:w-auto xl:w-auto md:px-6 md:py-3 md:w-auto flex items-center justify-center"
                 >
-                  <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white rounded-full group-hover:w-32 group-hover:h-32 opacity-10"></span>
-                  Book Now
+                  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+                  Book Now</span>
                 </Link>
               </div>
 

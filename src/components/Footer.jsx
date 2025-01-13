@@ -51,13 +51,21 @@ function Footer() {
               <h5 className="mb-2 font-bold uppercase text-base sm:text-xl  md:text-xl lg:text-xl xl:text-2xl">
                 Schedule a Consultation
               </h5>
-              <button
+              {/* <button
                 type="button"
                 className="flex md:px-12 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]  transition-transform duration-500 ease-out transform  md:py-3 md:w-auto  uppercase items-center text-white font-bold text-sm md:text-sm lg:text-sm xl:text-xl 2xl:text-lg px-5 py-2 border-2 border-white"
               >
                 Get Started Now
                 <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
-              </button>
+              </button> */}
+              <button
+  type="button"
+  className="flex md:px-12 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:from-[#FA6602] hover:to-[#DB0032] transition-all duration-500 ease-out transform md:py-3 md:w-auto uppercase items-center text-white font-bold text-sm md:text-sm lg:text-sm xl:text-xl 2xl:text-lg px-5 py-2 border-2 border-white"
+>
+  Get Started Now
+  <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
+</button>
+
             </div>
           </div>
           <div className="w-full sm:w-full md:w-full lg:w-2/3 xl:w-2/3">
