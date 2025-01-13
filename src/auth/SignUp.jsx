@@ -4,7 +4,7 @@ import LeftArrow from "../assets/testi-left-arr.png";
 import Logo from "../assets/SignupLogo.png";
 import { FaUser, FaLock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import Navbar from "../components/Navbar";
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function SignUp() {
   const navigate = useNavigate();
@@ -150,9 +150,9 @@ function SignUp() {
 
             <p className="text-center mt-4 text-sm text-gray-600">
               Already have an account?{" "}
-              <a href="/login" className="text-sm uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+              <NavLink to="/login" className="text-sm uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
                 Login
-              </a>
+              </NavLink>
             </p>
           </div>
         </div>
