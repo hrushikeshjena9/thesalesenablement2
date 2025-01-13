@@ -55,8 +55,8 @@ const DesktopMenu = ({
             {["Courses", "Services"].includes(link.name) ? (
               <div
                 className="relative group"
-                onMouseEnter={() => handleMouseEnter(link.name.toLowerCase())} // Toggle dropdown on hover
-                onMouseLeave={handleMouseLeave} // Reset dropdown when mouse leaves
+                onMouseEnter={() => handleMouseEnter(link.name.toLowerCase())} 
+                onMouseLeave={handleMouseLeave} 
               >
                 <button className="sm:text-xs lg:text-sm xl:text-base uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
                   {link.name}
