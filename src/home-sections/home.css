@@ -17,28 +17,100 @@ button {
 .bg-gradient-2 {
   background: linear-gradient(to left, #db0032 0%, #fa6602 100%);
 }
+
 .case1 {
+  position: relative;
   background-image: url("../assets/Case1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  transition: background 0.3s ease; /* Smooth transition for background */
 }
+
+.case1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
+  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+}
+
+.case1:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
+}
+
+
 
 
 .case2 {
+  position: relative;
   background-image: url("../assets/case2.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  transition: background 0.3s ease; /* Smooth transition for background */
 }
+.case2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
+  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+}
+
+.case2:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
+}
+
 .case3 {
+  position: relative;
   background-image: url("../assets/case3.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  transition: background 0.3s ease; /* Smooth transition for background */
+}
+.case3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
+  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+}
+
+.case3:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
 }
 .case4 {
+  position: relative;
   background-image: url("../assets/case4.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  transition: background 0.3s ease; /* Smooth transition for background */
+}
+.case4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
+  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+}
+
+.case4:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
 }
 .border-btn {
   border: 2px solid #ffffff;
