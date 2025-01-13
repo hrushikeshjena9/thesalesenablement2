@@ -17,11 +17,11 @@ function SignUp() {
     {/* <div className=" bg-[#060b33bd]">
       <Navbar />
       </div> */}
-    <section className=" about-class container mx-0">
+    <section className=" about-class container mx-auto">
       <div className="max-w-screen-xl mx-0 ">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 xl:grid-cols-12 2xl:grid-cols-12 3xl:grid-cols-12 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12  gap-8 items-center">
           <div
-            className="relative col-span-7 bg-cover bg-center flex flex-col justify-start items-start p-6 text-white min-h-[600px]"
+            className="relative col-span-12 md:col-span-7 lg:col-span-8  xxl:col-span-9 bg-cover bg-center flex flex-col justify-start items-start p-6 text-white min-h-[600px]"
             style={{
               backgroundImage: `url(${loginBg2})`,
             }}
@@ -49,7 +49,7 @@ function SignUp() {
             </div>
           </div>
 
-          <div className="col-span-5 bg-white p-8">
+          <div className="col-span-12 md:col-span-5 lg:col-span-4 xxl:col-span-3 bg-white p-8 bg-white p-8">
             <h2 className="text-2xl font-bold mb-2">Create Your Account</h2>
             <p className="text-gray-600 mb-6 text-sm">
               Continue your journey toward greater sales success with us.
