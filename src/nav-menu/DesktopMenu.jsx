@@ -55,23 +55,23 @@ const DesktopMenu = ({
             {["Courses", "Services"].includes(link.name) ? (
               <div
                 className="relative group"
-                onMouseEnter={() => handleMouseEnter(link.name.toLowerCase())} 
-                onMouseLeave={handleMouseLeave} 
+                onMouseEnter={() => handleMouseEnter(link.name.toLowerCase())} // Toggle dropdown on hover
+                onMouseLeave={handleMouseLeave} // Reset dropdown when mouse leaves
               >
-                <button className="sm:text-xs lg:text-sm xl:text-base uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-                  {link.name}
+                <button className="sm:text-xs lg:text-sm xl:text-base uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center space-x-2">
+                  <span>{link.name}</span>
                   <FiChevronDown
                     size={20}
-                    className="ml-2 transition-transform group-hover:rotate-180 hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                    className="transition-transform duration-200 group-hover:rotate-180 text-inherit"
                   />
                 </button>
 
                 {/* Conditional dropdown rendering */}
                 {dropdownOpen === link.name.toLowerCase() && (
-                  <ul className="absolute left-0 mt-2 grid grid-cols-1 lg:grid-cols-3 gap-4 w-full sm:w-[400px] md:w-[500px] lg:w-[600px] bg-[#060B33] text-white shadow-lg z-50">
+                  <ul className="absolute left-1/2 transform -translate-x-1/2  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-[600px] bg-white text-gray-700 rounded-lg shadow-lg z-50 p-4">
                     {(link.name === "Courses" ? courses : services).map(
                       (item, idx) => (
-                        <li key={idx} className="px-4 py-2  cursor-pointer">
+                        <li key={idx} className="px-4 py-2 cursor-pointer">
                           <NavLink
                             to={item.path}
                             className={({ isActive }) =>
@@ -129,14 +129,14 @@ const DesktopMenu = ({
           </span>
         </NavLink> */}
         <NavLink
-  onClick={handleLoginClick}
-  className="text-white group flex justify-center items-center transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
->
-  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
-    Login
-  </span>
-</NavLink>
+          onClick={handleLoginClick}
+          className="text-white group flex justify-center items-center transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+        >
+          <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+          <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
+            Login
+          </span>
+        </NavLink>
 
         {isLogInOpen && (
           <div className="fixed inset-0 flex justify-end items-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
@@ -206,12 +206,11 @@ const DesktopMenu = ({
         <NavLink
           to="/sign-up"
           type="button"
-           className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]  font-bold text-sm px-10 py-3 border-btn border-white"
+          className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]  font-bold text-sm px-10 py-3 border-btn border-white"
           // className="text-white h-10 transition-all text-[12px] duration-500 ease-in-out transform bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white  flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm sm:text-xs px-10 py-3"
         >
           <span>Sign up</span>
         </NavLink>
-       
       </div>
     </>
   );

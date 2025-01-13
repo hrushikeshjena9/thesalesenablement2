@@ -297,13 +297,13 @@ function Services() {
         <div className="flex  gap-4 z-10">
           <button
             onClick={handlePrev}
-            className="w-12 h-12 cursor-pointer  transition-transform"
+            className="w-12 h-12 cursor-pointer hover:scale-110  transition-transform"
           >
             <img src={SliderBtnLeft} alt="Slider Left" />
           </button>
           <button
             onClick={handleNext}
-            className="w-12 h-12 cursor-pointer  transition-transform"
+            className="w-12 h-12 cursor-pointer hover:scale-110   transition-transform"
           >
             <img src={SliderBtnRight} alt="Slider Right" />
           </button>

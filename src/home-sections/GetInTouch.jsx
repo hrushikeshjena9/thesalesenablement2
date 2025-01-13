@@ -55,11 +55,8 @@ function GetInTouch() {
                   placeholder="Enter Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
-                  style={{
-                    borderImage:
-                      "linear-gradient(to right, #DB0032, #FA6602) 1",
-                  }}
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
+              
                 />
 
                 <input
@@ -67,11 +64,8 @@ function GetInTouch() {
                   placeholder="Enter Phone Number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
-                  style={{
-                    borderImage:
-                      "linear-gradient(to right, #DB0032, #FA6602) 1",
-                  }}
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
+           
                 />
               </div>
 
@@ -81,11 +75,8 @@ function GetInTouch() {
                   placeholder="Enter Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
-                  style={{
-                    borderImage:
-                      "linear-gradient(to right, #DB0032, #FA6602) 1",
-                  }}
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
+              
                 />
               </div>
               <div>
@@ -93,12 +84,9 @@ function GetInTouch() {
                   placeholder="Description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#DB0032] focus:border-[#DB0032]"
+                  className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
                   rows={4}
-                  style={{
-                    borderImage:
-                      "linear-gradient(to right, #DB0032, #FA6602) 1",
-                  }}
+                
                 />
               </div>
               <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">

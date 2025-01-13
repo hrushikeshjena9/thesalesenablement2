@@ -57,7 +57,8 @@ function CaseStudies() {
           ref={elementRef} // Assign the ref to the motion div
           className="grid grid-cols-1 bg-cont sm:grid-cols-2 lg:grid-cols-2 gap-8 px-4 sm:px-0"
           initial={{ opacity: 0, y: 100 }} // Start from below the viewport (y: 100px)
-          animate={{
+          viewport={{ once: true, amount: 0.5 }}
+           animate={{
             opacity: inView ? 1 : 0, // Fade in when in view
             y: inView ? 0 : 100, // Move to final position (y: 0) when in view
           }}
