@@ -51,7 +51,7 @@ const DesktopMenu = ({
                       (item, idx) => (
                         <li
                           key={idx}
-                          className="px-4 py-2 hover:bg-white  cursor-pointer"
+                          className="px-4 py-2  cursor-pointer"
                         >
                           <NavLink
                             to={item.path}
