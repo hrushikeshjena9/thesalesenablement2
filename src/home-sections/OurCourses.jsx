@@ -91,7 +91,7 @@ function OurCourses() {
 
               <button
                 type="button"
-                className="relative hover:border-2 border-black  font-medium overflow-hidden group  text-white group   transition-all duration-300 ease-out  transform   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
+                className="relative  font-medium overflow-hidden group  text-white group   transition-all duration-300 ease-out  transform   uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3  xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
@@ -104,7 +104,7 @@ function OurCourses() {
                   {/* <FiArrowRight className="hidden w-6 h-6 ml-2 text-[#FA6602] transition-opacity duration-300 ease-in-out group-hover:inline-block group-hover:opacity-100" /> */}
                 </span>
               </button>
-              <div className="flex justify-between items-center border-2 border-black">
+              <div className="flex justify-between items-center border-2">
                 <img
                   src={FilterImg}
                   alt="Filter Icon"
@@ -118,7 +118,7 @@ function OurCourses() {
                 <Link
                   to="book-now"
                   type="button"
-                  className="text-white hover:border hover:border-black  group transition-transform duration-500 ease-out transform   w-auto  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px]  sm:text-sm md:text-[14px] px-5 py-2.5 sm:w-auto lg:w-auto xl:w-auto md:px-6 md:py-3 md:w-auto flex items-center justify-center"
+                  className="text-white group transition-transform duration-500 ease-out transform   w-auto  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px]  sm:text-sm md:text-[14px] px-5 py-2.5 sm:w-auto lg:w-auto xl:w-auto md:px-6 md:py-3 md:w-auto flex items-center justify-center"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
                   <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">

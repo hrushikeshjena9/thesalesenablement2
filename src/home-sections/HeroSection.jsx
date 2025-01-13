@@ -150,7 +150,8 @@ function HeroSection() {
                 variants={leftVariants}
               >
                 <motion.h1
-                  key={slideContent[currentSlide]?.id}
+                  // key={slideContent[currentSlide]?.id}
+                  key={`slide-${currentSlide}`}
                   className="text-2xl   sm:text-3xl  lg:text-[36px] lg:leading-[48px]  font-bold mb-4 mt-12"
                   variants={textVariants}
                   initial={{ opacity: 0, x: -100 }}
@@ -173,40 +174,27 @@ function HeroSection() {
                   {slideContent[currentSlide].title}
                 </motion.h1>
                 <motion.p
-                  initial={{ opacity: 0 }} // Start with opacity 0 (hidden)
-                  animate={{ opacity: 1 }} // Fade in (opacity 1)
-                  exit={{ opacity: 0 }} // Fade out (opacity 0)
+                  key={`description-${currentSlide}`}
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 100 }}
                   transition={{ duration: 1 }}
-                  variants={leftVariants}
-                  onAnimationStart={() => console.log("Animation started d")}
-                  onAnimationComplete={() => console.log("Animation completed")}
-                  className="text-base sm:text-[16px] lg:leading-[34px] bold-text1  lg:text-[18px] mb-6 mx-auto lg:mx-0"
+                  className="text-base sm:text-[16px] lg:leading-[34px] bold-text1 lg:text-[18px] mb-6 mx-auto lg:mx-0"
                 >
                   {slideContent[currentSlide].description}
                 </motion.p>
 
                 <motion.div
-                  initial={{ opacity: 0 }} // Start with opacity 0 (hidden)
-                  animate={{ opacity: 1 }} // Fade in (opacity 1)
-                  exit={{ opacity: 0 }} // Fade out (opacity 0)
+                  key={`buttons-${currentSlide}`}
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 100 }}
                   transition={{ duration: 1 }}
-                  className="flex flex-col  lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start  mb-6"
+                  className="flex flex-col lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start mb-6"
                 >
-                  {/* <button
-                    type="button"
-                    className="text-white  group transition-transform duration-500 ease-out transform  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602]  hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2  lg:px-3 lg:py-3  xl:px-6 xl:py-3  md:w-[250px] lg:w-auto xl:w-auto flex items-center justify-center"
-                  >
-                    <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white  group-hover:w-full group-hover:h-full opacity-10"></span>
-                    {slideContent[currentSlide].buttonText1}
-                    <img
-                      src={RightArrow1}
-                      alt="Logo"
-                      className="w-6 h-6 ml-2"
-                    />
-                  </button> */}
                   <button
                     type="button"
-                    className="relative  font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2  lg:px-3 lg:py-3  xl:px-6 xl:py-3  md:w-[250px] lg:w-auto xl:w-auto  "
+                    className="relative font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto"
                   >
                     <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
                     <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
@@ -216,12 +204,11 @@ function HeroSection() {
                         alt="Arrow Icon"
                         className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
                       />
-                      {/* <FiArrowRight className="hidden w-6 h-6 ml-2 text-[#FA6602] transition-opacity duration-300 ease-in-out group-hover:inline-block group-hover:opacity-100" /> */}
                     </span>
                   </button>
                   <button
                     type="button"
-                    className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full  justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white  md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+                    className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
                   >
                     {slideContent[currentSlide].buttonText2}
                     <img
@@ -231,7 +218,6 @@ function HeroSection() {
                     />
                   </button>
                 </motion.div>
-                
               </motion.div>
 
               <motion.div
