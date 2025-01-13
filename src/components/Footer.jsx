@@ -53,7 +53,7 @@ function Footer() {
               </h5>
               <button
                 type="button"
-                className="flex md:px-12 transition-transform duration-500 ease-out transform  md:py-3 md:w-auto  uppercase items-center text-white font-bold text-sm md:text-sm lg:text-sm xl:text-xl 2xl:text-lg px-5 py-2 border-2 border-white"
+                className="flex md:px-12 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]  transition-transform duration-500 ease-out transform  md:py-3 md:w-auto  uppercase items-center text-white font-bold text-sm md:text-sm lg:text-sm xl:text-xl 2xl:text-lg px-5 py-2 border-2 border-white"
               >
                 Get Started Now
                 <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />

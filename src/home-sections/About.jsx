@@ -8,6 +8,7 @@ import Group from "../assets/grouppeople.png";
 import Thumb from "../assets/thumbsup.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { FiArrowRight } from "react-icons/fi";
 
 function About() {
   const leftVariants = {
@@ -44,7 +45,8 @@ function About() {
               // You can adjust styles dynamically based on screen size, if needed
               "@media (max-width: 768px)": {
                 variant: "mobile", // For mobile views
-              },}}
+              },
+            }}
           >
             <img
               src={AboutImg}
@@ -65,7 +67,8 @@ function About() {
             // You can adjust styles dynamically based on screen size, if needed
             "@media (max-width: 768px)": {
               variant: "mobile", // For mobile views
-            },}}
+            },
+          }}
         >
           <h5
             className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text"
@@ -122,7 +125,11 @@ function About() {
               <div className="flex items-start space-x-4" key={index}>
                 {/* Image Column */}
                 <div className="w-[10%] flex justify-center">
-                  <img src={item.img} alt={item.title} className="max-w-full hover:scale-110" />
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="max-w-full hover:scale-110"
+                  />
                 </div>
                 {/* Text Column */}
                 <div className="flex items-start w-[90%] gap-6">
@@ -141,21 +148,23 @@ function About() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-wrap md:flex-wrap  lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-6 mt-8">
+          <div className="flex flex-col sm:flex-wrap md:flex-wrap   lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
             <Link
               to="take-the-sales-force-evaluation"
               type="button"
-              className="text-white group text-nowrap transition-transform duration-500 ease-out transform  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
+              className="text-white group text-nowrap hover:border-2 border-black  transition-transform duration-500 ease-out transform  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
                flex items-center justify-center"
             >
-                    <span class="absolute w-0 h-0 transition-all duration-300 ease-out bg-white  group-hover:w-full group-hover:h-full opacity-10"></span>
-
-              Take the Sales Force Evaluation
-              <img
-                src={RightArrow1}
-                alt="Right Arrow"
-                className="w-[24px] h-[24px]"
-              />
+              <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+              <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+                Schedule a Consultation
+                <img
+                  src={RightArrow1}
+                  alt="Arrow Icon"
+                  className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
+                />
+                {/* <FiArrowRight size={50} className="hidden  ml-2 text-[#FA6602] transition-opacity duration-300 ease-in-out group-hover:inline-block group-hover:opacity-100" /> */}
+              </span>
             </Link>
 
             <Link

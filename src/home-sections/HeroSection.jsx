@@ -216,7 +216,7 @@ function HeroSection() {
                         alt="Arrow Icon"
                         className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
                       />
-                      <FiArrowRight className="hidden w-6 h-6 ml-2 text-[#FA6602] transition-opacity duration-300 ease-in-out group-hover:inline-block group-hover:opacity-100" />
+                      {/* <FiArrowRight className="hidden w-6 h-6 ml-2 text-[#FA6602] transition-opacity duration-300 ease-in-out group-hover:inline-block group-hover:opacity-100" /> */}
                     </span>
                   </button>
                   <button

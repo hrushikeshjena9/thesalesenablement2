@@ -102,19 +102,24 @@ const DesktopMenu = ({
       <div className="hidden lg:flex space-x-5">
         <NavLink
           to="/login"
-          className="text-white transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+          className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
         >
+          <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+          <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+          
           Login
+          </span>
         </NavLink>
         <NavLink
           to="/sign-up"
-          className="text-transparent transition-transform duration-500 ease-out transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
+          className="text-transparent   hover:text-white transition-transform duration-500 ease-out transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-white font-bold text-sm px-10 py-3"
           style={{
             border: "2px solid transparent",
             borderImage:
               "linear-gradient(to right, #DB0032 0%, #FA6602 100%) 1",
           }}
         >
+
           Sign Up
         </NavLink>
       </div>
