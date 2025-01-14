@@ -1,18 +1,28 @@
-import React from "react";
-import { FaUser, FaLock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaUser, FaLock, FaEnvelope, FaPhoneAlt, FaEye, FaEyeSlash } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import { NavLink } from "react-router-dom";
-import heroImage1 from "../assets/banner2.jpg";
 
 function SignUp() {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordVisible(!confirmPasswordVisible);
+  };
+
   return (
     <>
       <section>
         <div className="relative w-full h-full overflow-hidden course-bg">
-          <div className="relative   bg-layer">
+          <div className="relative bg-layer">
             <Navbar />
 
-            <div className="text-white flex items-center justify-center container mx-auto px-4 h-[200px]">
+            <div className="text-white flex items-center justify-center container mx-auto px-4 pt-16 pb-20">
               <h1 className="text-5xl uppercase font-bold">Sign-UP</h1>
             </div>
           </div>
@@ -69,19 +79,33 @@ function SignUp() {
             <div className="relative">
               <FaLock className="absolute left-3 top-3 text-gray-400" />
               <input
-                type="password"
+                type={passwordVisible ? "text" : "password"}
                 placeholder="Password"
-                className="w-full border border-gray-300 rounded pl-10 p-2.5"
+                className="w-full border border-gray-300 rounded pl-10 pr-10 p-2.5"
               />
+              <button
+                type="button"
+                onClick={togglePasswordVisibility}
+                className="absolute right-3 top-3 text-gray-400 focus:outline-none"
+              >
+                {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
 
             <div className="relative">
               <FaLock className="absolute left-3 top-3 text-gray-400" />
               <input
-                type="password"
+                type={confirmPasswordVisible ? "text" : "password"}
                 placeholder="Confirm Password"
-                className="w-full border border-gray-300 rounded pl-10 p-2.5"
+                className="w-full border border-gray-300 rounded pl-10 pr-10 p-2.5"
               />
+              <button
+                type="button"
+                onClick={toggleConfirmPasswordVisibility}
+                className="absolute right-3 top-3 text-gray-400 focus:outline-none"
+              >
+                {confirmPasswordVisible ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
 
             <div className="flex items-center space-x-2">

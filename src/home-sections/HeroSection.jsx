@@ -181,7 +181,7 @@ function HeroSection() {
                     {slideContent[currentSlide].description}
                   </motion.p>
 
-                  <motion.div
+                  {/* <motion.div
                     key={`buttons-${currentSlide}`}
                     className="flex flex-col lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start mb-6"
                     initial={{ opacity: 0 }}
@@ -217,7 +217,51 @@ function HeroSection() {
                         className="w-6 h-6 ml-2"
                       />
                     </button>
-                  </motion.div>
+                  </motion.div> */}
+                  <motion.div
+  key={`buttons-${currentSlide}`}
+  className="flex flex-col lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start mb-6"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{
+    duration: 1.5,
+    ease: "easeInOut",
+  }}
+>
+  <button
+    type="button"
+    className="relative uppercase font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto"
+  >
+    <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+    <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+      {slideContent[currentSlide].buttonText1}
+      <img
+        src={RightArrow1} // Default arrow image
+        alt="Arrow Icon"
+        className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out group-hover:hidden" // Hide on hover
+      />
+      <img
+        src={RightArrow} // Arrow image for hover state
+        alt="Arrow Icon Hover"
+        className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out hidden group-hover:inline" // Show on hover
+      />
+    </span>
+  </button>
+
+  <button
+    type="button"
+    className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+  >
+    {slideContent[currentSlide].buttonText2}
+    <img
+      src={RightArrow}
+      alt="arrow"
+      className="w-6 h-6 ml-2"
+    />
+  </button>
+</motion.div>
+
                 </motion.div>
               </AnimatePresence>
 
