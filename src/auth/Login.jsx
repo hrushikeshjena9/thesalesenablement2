@@ -4,6 +4,7 @@ import LeftArrow from "../assets/testi-left-arr.png";
 import Logo from "../assets/SignupLogo.png";
 import { FaUser, FaLock, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
+import Navbar from "../components/Navbar";
 
 function LogIn() {
   const navigate = useNavigate();
@@ -12,6 +13,10 @@ function LogIn() {
     navigate('/');
   }
   return (
+    <>
+    <div className="banner bg-gray-900">
+    <Navbar />
+  </div>
     <section className=" about-class container mx-auto">
       <div className="max-w-screen-xl mx-0 ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12 xl:grid-cols-12 2xl:grid-cols-12 3xl:grid-cols-12 gap-8 items-center">
@@ -96,6 +101,7 @@ function LogIn() {
         </div>
       </div>
     </section>
+    </>
   );
 }
 
