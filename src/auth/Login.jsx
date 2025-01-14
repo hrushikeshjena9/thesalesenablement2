@@ -8,26 +8,15 @@ function LogIn() {
 
   return (
     <>
-       <section>
-        <div
-          className="relative w-full h-full overflow-hidden bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroImage1})`,
-            filter: "blur(0px)",
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            zIndex: -1,
-          }}
-        ></div>
-        <div className="relative bg-gradient-to-b from-black to-transparent" style={{ backgroundColor: '#060b33bd' }}>
-          <div>
+      <section>
+        <div className="relative w-full h-full overflow-hidden course-bg">
+          <div className="relative   bg-layer">
             <Navbar />
-          </div>
-          <div className="container mx-auto text-center py-20">
-            <h1 className="text-4xl text-white font-bold mb-4">LOGIN</h1>
+
+            <div className="text-white flex items-center justify-center container mx-auto px-4 h-[200px]">
+              <h1 className="text-5xl uppercase font-bold">Log-In</h1>
+            </div>
+           
           </div>
         </div>
       </section>

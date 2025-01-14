@@ -8,35 +8,23 @@ function SignUp() {
   return (
     <>
       <section>
-        <div
-          className="relative w-full h-full overflow-hidden bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroImage1})`,
-            filter: "blur(0px)",
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            zIndex: -1,
-          }}
-        ></div>
-        <div className="relative bg-gradient-to-b from-black to-transparent" style={{ backgroundColor: '#060b33bd' }}>
-          <div>
+        <div className="relative w-full h-full overflow-hidden course-bg">
+          <div className="relative   bg-layer">
             <Navbar />
-          </div>
-          <div className="container mx-auto text-center py-20">
-            <h1 className="text-4xl text-white font-bold mb-4">SIGN-UP</h1>
+
+            <div className="text-white flex items-center justify-center container mx-auto px-4 h-[200px]">
+              <h1 className="text-5xl uppercase font-bold">Sign-UP</h1>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="min-h-screen flex items-center justify-center bg-gray-100">
-        <div className="max-w-lg w-full bg-white p-8 rounded shadow-lg">
+        <div className="max-w-md w-full bg-white p-6 md:p-8 lg:p-10 rounded shadow-lg mx-4 md:mx-6 lg:mx-8">
           <h2 className="text-2xl font-bold mb-2 text-center">
             Create Your Account
           </h2>
-          <p className="text-gray-600 mb-6 text-sm text-center">
+          <p className="text-gray-600 mb-4 md:mb-6 text-sm text-center">
             Continue your journey toward greater sales success with us.
           </p>
 
@@ -107,7 +95,7 @@ function SignUp() {
             </div>
 
             <div className="flex justify-center items-center">
-              <button className="text-white transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3">
+              <button className="text-white transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-8 py-2 md:px-10 md:py-3">
                 SIGN UP
               </button>
             </div>
