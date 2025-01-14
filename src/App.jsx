@@ -9,6 +9,7 @@ import NotFound from "./components/Not-found";
 import Login from "./auth/Login";
 import SignUp from "./auth/SignUp";
 import Course from "./pages/Course";
+import About from "./pages/About";
 import Services from "./home-sections/Services";
 import Service from "./pages/Services";
 import Contact from "./pages/ContactUs";
@@ -62,6 +63,7 @@ function App() {
             <Route path="/services" element={<Service />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/about" element={<About />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
