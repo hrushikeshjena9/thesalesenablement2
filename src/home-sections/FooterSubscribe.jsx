@@ -23,6 +23,8 @@ const footersubscribe = () => {
           >
             Subscribe
             <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
+
+            
           </button>
         </div>
       </div>
