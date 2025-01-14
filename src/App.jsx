@@ -13,6 +13,7 @@ import About from "./pages/About";
 import Services from "./home-sections/Services";
 import Service from "./pages/Services";
 import Contact from "./pages/ContactUs";
+import CourseDetails from "./pages/CourseDetails";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -60,6 +61,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<Course />} />
+            <Route path="/course-details" element={<CourseDetails />} />
             <Route path="/services" element={<Service />} />
             <Route path="/contact-us" element={<Contact />} />
             <Route path="/login" element={<Login />} />
@@ -77,7 +79,6 @@ function App() {
 
 export default App;
 
-
 // import React, { useState } from 'react';
 
 // const MegaMenu = () => {
@@ -86,13 +87,13 @@ export default App;
 //   return (
 //     <div className="relative">
 //       <nav className="flex space-x-8 p-4 bg-gray-800 text-white">
-//         <div 
+//         <div
 //           className="relative group"
 //           onMouseEnter={() => setIsHovered(true)}
 //           onMouseLeave={() => setIsHovered(false)}
 //         >
 //           <button className="px-4 py-2">Products</button>
-          
+
 //           {/* Mega Menu Dropdown */}
 //           {isHovered && (
 //             <div className="absolute left-0 mt-2 w-80 bg-white text-gray-800 shadow-xl rounded-lg p-6 space-y-4">

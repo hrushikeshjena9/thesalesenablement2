@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../assets/logo.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 
-const footersubscribe = () => {
+const FooterSubscribe = () => {
   return (
     <footer className="bg-gradient-2 text-white">
       <div className="flex flex-col md:flex-row container mx-auto justify-between items-center py-6 px-4 md:px-4">
@@ -32,4 +32,4 @@ const footersubscribe = () => {
   );
 };
 
-export default footersubscribe;
+export default FooterSubscribe;
