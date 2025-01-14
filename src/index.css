@@ -262,8 +262,8 @@ body {
 }
 
 .icon-hover .icon-hover1:hover {
-  background: white; /* If you want the background to remain white */
-  color: black; /* Make the text color transparent */
+  background: white; 
+  color: black; 
  
 }
 .icon-hover:hover .icon-hover1{
