@@ -10,7 +10,7 @@ function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const links = [
     { name: "Home", route: "/" },
-    { name: "About Us", route: "/about-us" },
+    { name: "About Us", route: "/about" },
     { name: "Services", route: "/services" },
     { name: "Courses", route: "/courses" },
     { name: "Blogs", route: "/blogs" },
