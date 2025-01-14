@@ -90,21 +90,29 @@ function GetInTouch() {
                 />
               </div>
               <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
-                <Link
-                  to="learn-more"
-                  type="submit"
-                  className="text-white group transition-transform duration-500 ease-out transform bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
-                >
-                  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-                    CONNECT NOW
-                    <img
-                      src={RightArrow1}
-                      alt="Right Arrow"
-                      className="w-6 h-6 ml-2"
-                    />
-                  </span>
-                </Link>
+              <Link
+  to="learn-more"
+  type="submit"
+  className="relative text-white group transition-transform duration-500 ease-out transform bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
+>
+  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+    CONNECT NOW
+    <span className="relative w-6 h-6 ml-2 flex items-center justify-center">
+      <img
+        src={RightArrow1} // Default arrow image
+        alt="Right Arrow"
+        className="absolute w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-0" // Hide on hover
+      />
+      <img
+        src={RightArrow} // Arrow image for hover state
+        alt="Right Arrow Hover"
+        className="absolute w-full h-full transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100" // Show on hover
+      />
+    </span>
+  </span>
+</Link>
+
 
                 <Link
                   to="learn-more"
