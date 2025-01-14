@@ -43,12 +43,56 @@ const DesktopMenu = ({
       document.body.style.overflow = "";
     }
     return () => {
-      // Cleanup on component unmount
       document.body.style.overflow = "";
     };
   }, [isLogInOpen]);
   return (
     <>
+      {/* <ul className="grid grid-cols-1 sm:grid-cols-2 text-black lg:grid-cols-3 gap-4">
+  {services.map((service, idx) => (
+    <li key={idx} className="flex items-center space-x-3 p-4 bg-white shadow-md rounded-lg hover:bg-gray-50 cursor-pointer">
+
+      <span className="text-xl text-blue-500">{service.icon}</span>
+
+ 
+      <NavLink
+        to={service.path}
+        className={({ isActive }) =>
+          `block text-sm font-medium ${
+            isActive
+              ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+              : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+          }`
+        }
+      >
+        {service.name}
+      </NavLink>
+    </li>
+  ))}
+</ul>
+
+<ul className="grid grid-cols-1 sm:grid-cols-2 text-black lg:grid-cols-3 gap-4">
+  {courses.map((course, idx) => (
+    <li key={idx} className="flex items-center space-x-3 p-4 bg-white shadow-md rounded-lg hover:bg-gray-50 cursor-pointer">
+
+      <span className="text-xl text-green-500">{course.icon}</span>
+
+
+      <NavLink
+        to={course.path}
+        className={({ isActive }) =>
+          `block text-sm font-medium ${
+            isActive
+              ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+              : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+          }`
+        }
+      >
+        {course.name}
+      </NavLink>
+    </li>
+  ))}
+</ul> */}
       <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
         {links.map((link, index) => (
           <li key={index} className="relative">
@@ -66,19 +110,79 @@ const DesktopMenu = ({
                   />
                 </button>
 
-                {/* Conditional dropdown rendering */}
+                {/* Dropdown */}
                 {dropdownOpen === link.name.toLowerCase() && (
-                  <ul className="absolute left-1/2 transform -translate-x-1/2  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-[600px] bg-white text-gray-700 rounded-lg shadow-lg z-50 p-4">
-                    {(link.name === "Courses" ? courses : services).map(
+                  // <ul className="absolute left-1/2 transform -translate-x-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-[1000px] bg-white text-gray-700 rounded-lg shadow-lg z-50 p-4">
+
+                  //   {(link.name === "Courses" ? courses : services).map(
+                  //     (item, idx) => (
+                  //       <li
+                  //         key={idx}
+                  //         className="flex items-center space-x-3 p-4 bg-white shadow-md text-sm rounded-lg hover:bg-gray-50 cursor-pointer"
+                  //       >
+                  //         <span className="text-xl text-[#060B33]  font=bold transition duration-200 ease-in-out  hover:bg-clip-text hover:text-[#DB0032]">
+                  //           {item.icon}
+                  //         </span>
+
+                  //         <NavLink
+                  //           to={item.path}
+                  //           className={({ isActive }) =>
+                  //             `block ${
+                  //               isActive
+                  //                 ? "text-transparent bg-clip-text bg-gradient-to-r   from-[#DB0032] to-[#FA6602]"
+                  //                 : "hover:text-transparent transition duration-200 ease-in-out hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                  //             }`
+                  //           }
+                  //         >
+                  //           {item.name}
+                  //         </NavLink>
+                  //       </li>
+                  //     )
+                  //   )}
+                  // </ul>
+                  <ul className="absolute left-1/2 transform -translate-x-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-[750px] xl:w-[1000px] bg-white text-gray-700 rounded-lg shadow-lg z-50 p-4">
+                    {/* {(link.name === "Courses" ? courses : services).map(
                       (item, idx) => (
-                        <li key={idx} className="px-4 py-2 cursor-pointer">
+                        <li
+                          key={idx}
+                          className="flex items-center space-x-3 p-4 group bg-white shadow-md hover:text-white text-sm rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-[#DB0032] hover:to-[#FA6602]"
+                        >
+                          <span className="text-xl hover:text-[#060B33] font-bold transition duration-200 ease-in-out hover:bg-gray-200 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-full p-3 text-white">
+                            {item.icon}
+                          </span>
+
                           <NavLink
                             to={item.path}
                             className={({ isActive }) =>
-                              `block ${
+                              `block font-bold ${
                                 isActive
                                   ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-                                  : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                                  : ""
+                              }`
+                            }
+                          >
+                            {item.name}
+                          </NavLink>
+                        </li>
+                      )
+                    )} */}
+                    {(link.name === "Courses" ? courses : services).map(
+                      (item, idx) => (
+                        <li
+                          key={idx}
+                          className="flex icon-hover items-center space-x-3 p-4 group bg-white hover:text-white shadow-md text-sm rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-[#DB0032] hover:to-[#FA6602]"
+                        >
+                          <span className="text-xl icon-hover1 text-white font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-full p-3 ">
+                            {item.icon}
+                          </span>
+
+                          <NavLink
+                            to={item.path}
+                            className={({ isActive }) =>
+                              `block font-bold ${
+                                isActive
+                                  ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                                  : ""
                               }`
                             }
                           >
@@ -87,6 +191,7 @@ const DesktopMenu = ({
                         </li>
                       )
                     )}
+
                   </ul>
                 )}
               </div>
@@ -105,7 +210,7 @@ const DesktopMenu = ({
               </NavLink>
             )}
 
-            {/* Display hover line when the link is active */}
+            {/* Hover line */}
             {window.location.pathname === link.route && (
               <img
                 src={HoverLine}
@@ -117,17 +222,7 @@ const DesktopMenu = ({
         ))}
       </ul>
 
-      {/* Login and Sign-Up Buttons */}
       <div className="hidden lg:flex space-x-5">
-        {/* <NavLink
-          onClick={handleLoginClick}
-          className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
-        >
-          <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-          <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-            Login
-          </span>
-        </NavLink> */}
         <NavLink
           onClick={handleLoginClick}
           className="text-white group flex justify-center items-center transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"

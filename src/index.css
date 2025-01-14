@@ -260,3 +260,9 @@ body {
 .text-fade-in {
   animation: fadeIn 2s ease-in-out;
 }
+
+.icon-hover .icon-hover1:hover {
+  background: white; /* If you want the background to remain white */
+  color: black; /* Make the text color transparent */
+ 
+}
