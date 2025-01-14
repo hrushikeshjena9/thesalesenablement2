@@ -191,7 +191,6 @@ const DesktopMenu = ({
                         </li>
                       )
                     )}
-
                   </ul>
                 )}
               </div>
@@ -301,8 +300,7 @@ const DesktopMenu = ({
         <NavLink
           to="/sign-up"
           type="button"
-          className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]  font-bold text-sm px-10 py-3 border-btn border-white"
-          // className="text-white h-10 transition-all text-[12px] duration-500 ease-in-out transform bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white  flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm sm:text-xs px-10 py-3"
+          className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold text-sm px-10 py-3 border-btn border-white hover:border-[#ed3b15]"
         >
           <span>Sign up</span>
         </NavLink>

@@ -141,84 +141,85 @@ function HeroSection() {
           <div className="relative bg-layer">
             <Navbar />
             <div className="text-white flex flex-col lg:flex-row items-center justify-between container mx-auto">
-              <motion.div
-                key={slides[currentSlide].id}
-                className="lg:w-1/2 text-center lg:text-left h-[500px] transition-opacity duration-1000 ease-in-out  flex flex-col justify-center px-4 sm:px-6"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.5 }}
-                variants={leftVariants}
-              >
-                <motion.h1
-                  // key={slideContent[currentSlide]?.id}
-                  key={`slide-${currentSlide}`}
-                  className="text-2xl   sm:text-3xl  lg:text-[36px] lg:leading-[48px]  font-bold mb-4 mt-12"
-                  variants={textVariants}
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 100 }}
-                  transition={{ duration: 1 }}
-                  onAnimationStart={() =>
-                    console.log(
-                      "Animation started for:",
-                      slideContent[currentSlide]
-                    )
-                  }
-                  onAnimationComplete={() =>
-                    console.log(
-                      "Animation completed for:",
-                      slideContent[currentSlide]
-                    )
-                  }
-                >
-                  {slideContent[currentSlide].title}
-                </motion.h1>
-                <motion.p
-                  key={`description-${currentSlide}`}
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 100 }}
-                  transition={{ duration: 1 }}
-                  className="text-base sm:text-[16px] lg:leading-[34px] bold-text1 lg:text-[18px] mb-6 mx-auto lg:mx-0"
-                >
-                  {slideContent[currentSlide].description}
-                </motion.p>
-
+              <AnimatePresence>
                 <motion.div
-                  key={`buttons-${currentSlide}`}
-                  initial={{ opacity: 0, x: -100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 100 }}
-                  transition={{ duration: 1 }}
-                  className="flex flex-col lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start mb-6"
+                  key={slides[currentSlide].id}
+                  className="lg:w-1/2 text-center lg:text-left h-[500px] flex flex-col justify-center px-4 sm:px-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{
+                    duration: 1.5,
+                    ease: "easeInOut",
+                  }}
                 >
-                  <button
-                    type="button"
-                    className="relative uppercase font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto"
+                  <motion.h1
+                    key={`slide-${currentSlide}`}
+                    className="text-2xl sm:text-3xl lg:text-[36px] lg:leading-[48px] font-bold mb-4 mt-12"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 1.5,
+                      ease: "easeInOut",
+                    }}
                   >
-                    <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                    <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-                      {slideContent[currentSlide].buttonText1}
+                    {slideContent[currentSlide].title}
+                  </motion.h1>
+
+                  <motion.p
+                    key={`description-${currentSlide}`}
+                    className="text-base sm:text-[16px] lg:leading-[34px] bold-text1 lg:text-[18px] mb-6 mx-auto lg:mx-0"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 1.5,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {slideContent[currentSlide].description}
+                  </motion.p>
+
+                  <motion.div
+                    key={`buttons-${currentSlide}`}
+                    className="flex flex-col lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start mb-6"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      duration: 1.5,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <button
+                      type="button"
+                      className="relative uppercase font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto"
+                    >
+                      <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                      <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+                        {slideContent[currentSlide].buttonText1}
+                        <img
+                          src={RightArrow1}
+                          alt="Arrow Icon"
+                          className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
+                        />
+                      </span>
+                    </button>
+                    <button
+                      type="button"
+                      className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+                    >
+                      {slideContent[currentSlide].buttonText2}
                       <img
-                        src={RightArrow1}
-                        alt="Arrow Icon"
-                        className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
+                        src={RightArrow}
+                        alt="arrow"
+                        className="w-6 h-6 ml-2"
                       />
-                    </span>
-                  </button>
-                  <button
-                    type="button"
-                    className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
-                  >
-                    {slideContent[currentSlide].buttonText2}
-                    <img
-                      src={RightArrow}
-                      alt="arrow"
-                      className="w-6 h-6 ml-2"
-                    />
-                  </button>
+                    </button>
+                  </motion.div>
                 </motion.div>
-              </motion.div>
+              </AnimatePresence>
 
               <motion.div
                 className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center lg:justify-end hidden lg:flex"
