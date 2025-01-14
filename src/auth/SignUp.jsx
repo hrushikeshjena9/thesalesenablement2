@@ -14,9 +14,9 @@ function SignUp() {
   }
   return (
     <>
-    {/* <div className=" bg-[#060b33bd]">
+    <div className="banner bg-gray-900">
       <Navbar />
-      </div> */}
+      </div>
     <section className=" about-class container mx-auto">
       <div className="max-w-screen-xl mx-0 ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-12  gap-8 items-center">
