@@ -5,18 +5,18 @@ import heroImage from "../assets/Logo-banner.png"; // Import the image
 
 const CourseItem = ({ course }) => {
   const [isHovered, setIsHovered] = useState(false);
+  console.log(course.id);  // Ensure this outputs the expected course ID
 
+console.log(course)
   return (
     <div
       className="border-2 flex flex-col items-center justify-between shadow-lg  bg-gray-100 overflow-hidden relative"
       style={{
-
         borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-
       <div
         className={`w-full h-[233px] bg-gradient-to-r from-[#DB0032] to-[#FA6602]  transition-all duration-300 ${
           isHovered ? "bg-[#060B33]" : "" // Change to new color on hover
@@ -25,7 +25,6 @@ const CourseItem = ({ course }) => {
           backgroundImage: `url(${isHovered ? heroImage : course.image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          
         }}
       />
 
@@ -80,13 +79,13 @@ const CourseItem = ({ course }) => {
 
             <div className="flex justify-between">
               <Link
-                to="course-details"
+                to={`/course-details/${course.id}`}
                 className="text-center w-1/2 text-white bg-[#060B33] hover:bg-[#1f2763] font-semibold py-2 mr-2"
               >
                 View Details
               </Link>
               <Link
-                to="book-now"
+                to={`/book-now/${course.id}`}
                 className="text-center w-1/2 text-white bg-[#060B33] hover:bg-[#1f2763] font-semibold py-2"
               >
                 Book Now
@@ -124,7 +123,9 @@ const CourseItem = ({ course }) => {
                 className="w-10 h-10 rounded-full mr-3"
               />
               <div>
-                <p className="text-sm font-medium uppercase">{course.instructor}</p>
+                <p className="text-sm font-medium uppercase">
+                  {course.instructor}
+                </p>
                 <p className="text-xs text-gray-500 uppercase">Instructor</p>
               </div>
             </div>

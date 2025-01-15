@@ -17,14 +17,7 @@ function Navbar() {
     { name: "Contact Us", route: "/contact-us" },
   ];
 
-  // const courses = [
-  //   { name: "Professional Selling Skills", path: "/courses/professional-selling-skills" },
-  //   { name: "Communication Skills for Sales Staff", path: "/courses/communication-skills-for-sales-staff" },
-  //   { name: "Front Line Retail Selling Skills", path: "/courses/front-line-retail-selling-skills" },
-  //   { name: "Sales Management", path: "/courses/sales-management" },
-  //   { name: "Sales Territory Planning & Routing", path: "/courses/sales-territory-planning-routing" },
-  //   { name: "Retail Sales Planning and Forecasting", path: "/courses/retail-sales-planning-forecasting" },
-  // ];
+
 
 
 const courses = [
@@ -52,20 +45,7 @@ const services = [
   { name: "Sales Training & Professional Services Training", path: "/services/sales-training-professional-services-training", icon: <FaGraduationCap /> },
 ];
 
-  // const services = [
-  //   { name: "Sales Force Evaluation", path: "/services/sales-force-evaluation" },
-  //   { name: "Recruiting Process Optimization", path: "/services/recruiting-process-optimization" },
-  //   { name: "Sales Candidate Assessments", path: "/services/sales-candidate-assessments" },
-  //   { name: "CRM Selection, Installation, and Integration", path: "/services/crm-selection-installation-integration" },
-  //   { name: "Sales Process Optimization", path: "/services/sales-process-optimization" },
-  //   { name: "Metrics Development", path: "/services/metrics-development" },
-  //   { name: "Pipeline Management", path: "/services/pipeline-management" },
-  //   { name: "Sales Management Development", path: "/services/sales-management-development" },
-  //   { name: "Trade Show Selling", path: "/services/trade-show-selling" },
-  //   { name: "Consulting & Strategy", path: "/services/consulting-strategy" },
-  //   { name: "Coaching", path: "/services/coaching" },
-  //   { name: "Sales Training & Professional Services Training", path: "/services/sales-training-professional-services-training" },
-  // ];
+
 
   const toggleDropdown = (dropdownName) => {
     setDropdownOpen(dropdownOpen === dropdownName ? null : dropdownName);
