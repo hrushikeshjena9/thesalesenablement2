@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ModuleContent from '../course-details-sections/ModuleContent';
 import CourseObjectives from '../course-details-sections/CourseObjectives';
-import MoreInfoContent from '../course-details-sections/MoreInfoContent.JSX';
+import MoreInfoContent from '../course-details-sections/MoreInfoContent';
 import ContactDetails from '../course-details-sections/ContactDetails';
 
 const TabNavigation = () => {
