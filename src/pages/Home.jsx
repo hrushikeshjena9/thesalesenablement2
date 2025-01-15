@@ -8,7 +8,7 @@ import CaseStudies from "../home-sections/CaseStudies";
 import Testimonials from "../home-sections/Testimonialss";
 import OurCourses from "../home-sections/OurCourses";
 import LatestBlogs from "../home-sections/LatestBlogs";
-// import FooterSubscribe from "../home-sections/FooterSubscribe";
+import FooterSubscribe from "../home-sections/FooterSubscribe";
 function Home() {
   return (
     <>
@@ -21,7 +21,7 @@ function Home() {
         <CaseStudies />
         <Testimonials />
         <LatestBlogs />
-        {/* <FooterSubscribe/> */}
+        <FooterSubscribe/>
       </div>
     </>
   );
