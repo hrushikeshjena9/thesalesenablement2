@@ -5,6 +5,7 @@ import RightArrow1 from "../assets/arrow-right1.png";
 import PhoneIncome from "../assets/phone-incoming.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function GetInTouch() {
   const [name, setName] = useState("");
@@ -14,7 +15,11 @@ function GetInTouch() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({ name, phone, email, description });
+    if (!recaptchaToken) {
+      alert("Please complete the reCAPTCHA.");
+      return;
+    }
+    console.log({ name, phone, email, description, recaptchaToken });
   };
 
   const rightVariants = {
@@ -26,11 +31,16 @@ function GetInTouch() {
     },
   };
 
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+
+  const handleRecaptchaChange = (token) => {
+    setRecaptchaToken(token);
+  };
+
   return (
     <section className="banner get-in-touch-margin">
       <div className="container py-12  mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Left Section */}
           <div className="text-center md:text-left">
             <h3 className="text-3xl md:text-4xl font-bold text-white">
               GET IN TOUCH!{" "}
@@ -56,7 +66,6 @@ function GetInTouch() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
-              
                 />
 
                 <input
@@ -65,7 +74,6 @@ function GetInTouch() {
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
-           
                 />
               </div>
 
@@ -76,7 +84,6 @@ function GetInTouch() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
-              
                 />
               </div>
               <div>
@@ -86,62 +93,51 @@ function GetInTouch() {
                   onChange={(e) => setDescription(e.target.value)}
                   className="w-full p-3 bg-white border-2 border-gray-600 text-gray-800 focus:outline-none focus:ring-1 focus:ring-[#DB0032] focus:border-[#DB0032]"
                   rows={4}
-                
                 />
               </div>
+              
+
               <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
-              <Link
-  to="learn-more"
-  type="submit"
-  className="relative text-white group transition-transform duration-500 ease-out transform bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
->
-  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-    CONNECT NOW
-    <span className="relative w-6 h-6 ml-2 flex items-center justify-center">
-      <img
-        src={RightArrow1} // Default arrow image
-        alt="Right Arrow"
-        className="absolute w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-0" // Hide on hover
-      />
-      <img
-        src={RightArrow} // Arrow image for hover state
-        alt="Right Arrow Hover"
-        className="absolute w-full h-full transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100" // Show on hover
-      />
-    </span>
-  </span>
-</Link>
-
-
                 <Link
                   to="learn-more"
-                  type="button"
-                  className="text-white group transition-transform duration-500 ease-out transform uppercase text-[12px] bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white font-bold text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto border-btn border-white"
+                  type="submit"
+                  className="relative text-white group transition-transform duration-500 ease-out transform bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
                 >
-                  <span>LEARN MORE</span>
-                  <img
-                    src={RightArrow1}
-                    alt="Right Arrow"
-                    className="w-6 h-6 ml-2"
-                  />
+                  <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
+                    CONNECT NOW
+                    <span className="relative w-6 h-6 ml-2 flex items-center justify-center">
+                      <img
+                        src={RightArrow1}
+                        alt="Right Arrow"
+                        className="absolute w-full h-full transition-opacity duration-300 ease-in-out group-hover:opacity-0" // Hide on hover
+                      />
+                      <img
+                        src={RightArrow}
+                        alt="Right Arrow Hover"
+                        className="absolute w-full h-full transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100" // Show on hover
+                      />
+                    </span>
+                  </span>
                 </Link>
+                <ReCAPTCHA
+                  sitekey="your-site-key"
+                  onChange={handleRecaptchaChange}
+                />
               </div>
             </form>
           </div>
-
-          {/* Image Section */}
           <motion.div
             className="w-full mt-8 md:mt-0  "
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% visible
+            viewport={{ once: true, amount: 0.5 }} 
             variants={rightVariants}
           >
             <img
               src={GetInTouchImg}
               alt="Get In Touch"
-              className="w-full max-w-xl mx-auto"
+              className="w-full max-w-xl mx-auto h-full object-cover"
             />
           </motion.div>
         </div>
