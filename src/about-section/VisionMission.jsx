@@ -30,7 +30,7 @@ const VisionMission = () => {
   };
   return (
     <>
-      <section className=" py-6 about-class container mx-auto px-4">
+      <section className=" py-6 overflow-hidden about-class container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start">
           <motion.div
             className="text-center md:text-left overflow-hidden flex flex-col justify-start"
@@ -100,7 +100,7 @@ const VisionMission = () => {
         </div>
       </section>
 
-      <section className="py-6 about-class container mx-auto px-4">
+      <section className="py-6 overflow-hidden about-class container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start">
           <div className="flex justify-center md:justify-center">
             <motion.div
@@ -168,7 +168,7 @@ const VisionMission = () => {
         </div>
       </section>
 
-      <section className=" py-6 about-class container mx-auto px-4">
+      <section className=" py-6 overflow-hidden about-class container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start">
           <motion.div
             className="text-center md:text-left overflow-hidden flex flex-col justify-start"

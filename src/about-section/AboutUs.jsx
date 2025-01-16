@@ -27,7 +27,7 @@ const AboutUs = () => {
         },
       };
   return (
-    <section className="py-12 about-class container mx-auto px-4">
+    <section className="py-12 about-class overflow-hidden container mx-auto px-4">
     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
       <div className="flex justify-center md:justify-start">
         <motion.div

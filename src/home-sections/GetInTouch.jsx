@@ -38,7 +38,7 @@ function GetInTouch() {
   };
 
   return (
-    <section className="banner get-in-touch-margin">
+    <section className="banner overflow-hidden get-in-touch-margin">
       <div className="container py-12  mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="text-center md:text-left">

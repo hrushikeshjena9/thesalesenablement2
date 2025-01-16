@@ -25,7 +25,7 @@ const Achievement = () => {
   };
 
   return (
-    <section className="relative py-12 container mx-auto px-4">
+    <section className="relative py-12 overflow-hidden container mx-auto px-4">
       {/* Background Image */}
       <div className="absolute inset-0 flex justify-center items-center z-0">
         <motion.img
