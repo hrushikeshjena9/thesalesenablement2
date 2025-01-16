@@ -25,18 +25,21 @@ function LatestBlogs() {
 
   const blogs = [
     {
+      id : 1,
       image: Blog1,
       title: "5 Key Habits of Highly Effective Sales Leaders",
       description:
         "Discover the habits that separate top sales leaders from the rest and learn how to cultivate them in your own leadership style.",
     },
     {
+      id : 2,
       image: Blog2,
       title: "Top Sales Strategies for Startups",
       description:
         "Uncover the best practices for small businesses and startups to accelerate growth and secure customers in a competitive market.",
     },
     {
+      id : 3,
       image: Blog3,
       title:
         "The Power of Sales Training: Why Continuous Learning is Essential",
@@ -44,36 +47,42 @@ function LatestBlogs() {
         "Learn how investing in ongoing training can boost your team's effectiveness and lead to long-term success.",
     },
     {
+      id:4,
       image: Blog4,
       title: "Mastering Sales Conversations: How to Close More Deals",
       description:
         "Learn techniques to improve your sales conversations and close more deals, from the first interaction to sealing the deal.",
     },
     {
+      id:5,
       image: Blog3,
       title: "Effective CRM Strategies for Sales Growth",
       description:
         "Explore how leveraging customer relationship management tools can streamline your sales process and boost productivity.",
     },
     {
+      id:6,
       image: Blog2,
       title: "How to Build a Winning Sales Team",
       description:
         "Understand the essential traits to look for when building a successful sales team and how to nurture top performers.",
     },
     {
+      id : 7,
       image: Blog1,
       title: "Sales Forecasting: Tips for Accurate Projections",
       description:
         "Learn strategies for accurate sales forecasting and how it can help you make data-driven decisions to grow your business.",
     },
     {
+      id : 8,
       image: Blog4,
       title: "The Role of Emotional Intelligence in Sales",
       description:
         "Discover the importance of emotional intelligence in sales and how it can help you build better relationships with clients.",
     },
     {
+      id : 9,
       image: Blog3,
       title: "Using Data to Improve Your Sales Performance",
       description:
@@ -198,9 +207,9 @@ function LatestBlogs() {
         //   ease: "easeInOut",
         // }}
       >
-        {currentBlogs.map((blog, index) => (
+        {currentBlogs.map((blog) => (
           <div
-            key={index}
+            key={blog.id}
             className="border-2 flex flex-col"
             style={{
               borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
@@ -256,7 +265,7 @@ function LatestBlogs() {
             </p>
             <div className="flex justify-center">
               <Link
-                to="learn-more"
+                to={`/blog-details/${blog.id}`}
                 className="relative w-[86%] icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium text-sm text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
                 style={{
                   borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
