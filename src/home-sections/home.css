@@ -22,96 +22,155 @@ button {
   position: relative;
   background-image: url("../assets/Case1.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
-  transition: background 0.3s ease; /* Smooth transition for background */
+  transition: background-size 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
+.case1 {
+  position: relative;
+  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+}
 .case1::before {
-  content: "";
+  content: ""; /* Required for pseudo-elements */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
-  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+  background-image: url("../assets/Case1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth zoom effect */
+  z-index: -1; /* Ensure it stays behind any content inside the element */
 }
 
 .case1:hover::before {
-  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
+  transform: scale(1.1); /* Zoom effect on the image */
 }
 
-
+.case1:hover {
+  background-size: 110%; /* Zoom the background image */
+}
 
 
 .case2 {
   position: relative;
   background-image: url("../assets/case2.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
-  transition: background 0.3s ease; /* Smooth transition for background */
+  transition: background-size 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.case2 {
+  position: relative;
+  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
 }
 .case2::before {
-  content: "";
+  content: ""; /* Required for pseudo-elements */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
-  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+  background-image: url("../assets/case2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth zoom effect */
+  z-index: -1; /* Ensure it stays behind any content inside the element */
 }
 
 .case2:hover::before {
-  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
+  transform: scale(1.1); /* Zoom effect on the image */
 }
+
+.case2:hover {
+  background-size: 110%; /* Zoom the background image */
+}
+
 
 .case3 {
   position: relative;
   background-image: url("../assets/case3.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
-  transition: background 0.3s ease; /* Smooth transition for background */
+  transition: background-size 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+
+.case3 {
+  position: relative;
+  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
 }
 .case3::before {
-  content: "";
+  content: ""; /* Required for pseudo-elements */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
-  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+  background-image: url("../assets/case2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth zoom effect */
+  z-index: -1; /* Ensure it stays behind any content inside the element */
 }
 
 .case3:hover::before {
-  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
+  transform: scale(1.1); /* Zoom effect on the image */
 }
+
+.case3:hover {
+  background-size: 110%; /* Zoom the background image */
+}
+
 .case4 {
   position: relative;
   background-image: url("../assets/case4.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
-  transition: background 0.3s ease; /* Smooth transition for background */
+  transition: background-size 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+
+.case4 {
+  position: relative;
+  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
 }
 .case4::before {
-  content: "";
+  content: ""; /* Required for pseudo-elements */
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0); /* No initial overlay */
-  transition: background-color 0.3s ease; /* Smooth transition for overlay */
+  background-image: url("../assets/case4.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth zoom effect */
+  z-index: -1; /* Ensure it stays behind any content inside the element */
 }
 
 .case4:hover::before {
-  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay on hover */
+  transform: scale(1.1); /* Zoom effect on the image */
 }
+
+.case4:hover {
+  background-size: 110%; /* Zoom the background image */
+}
+
 .border-btn {
   border: 2px solid #ffffff;
 }
@@ -120,11 +179,9 @@ button {
 }
 .border-btn2:hover {
   border: 2px solid transparent; /* Make the border transparent */
-  border-image: linear-gradient(to right, #DB0032 0%, #FA6602 100%) 1;
+  border-image: linear-gradient(to right, #db0032 0%, #fa6602 100%) 1;
   animation: borderRunningAnimation 2s linear infinite;
-} 
+}
 .btn-hero-slider {
   text-align: right;
 }
-
-

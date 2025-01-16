@@ -288,3 +288,17 @@ body {
 .slick-list {
   overflow-x: hidden; 
 }
+.consultation-bg{
+  background-image: url("./assets/consultation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center
+}
+/* Add this to your CSS file */
+.hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+}
+
+/* .container{
+  overflow: hidden;
+} */
