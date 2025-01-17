@@ -59,7 +59,7 @@ const Achievement = () => {
             </span>
           </h2>
 
-          <p className="uppercase text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mb-8">
+          <p className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mb-8">
             At The Sales Enablement Company, we take immense pride in the
             milestones we've achieved through our unwavering commitment to
             empowering businesses and sales professionals. Our journey has been
@@ -67,17 +67,18 @@ const Achievement = () => {
             transformed sales teams worldwide.
           </p>
           <div className="flex justify-start">
-  <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center">
-    <div className="flex items-baseline justify-center space-x-2">
-      <span className="text-2xl font-bold">2.4K+</span>
-      <span className="text-sm font-medium self-start">Successful <br/> Students</span>
-    </div>
-  </div>
-</div>
-
+            <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center">
+              <div className="flex items-baseline justify-center space-x-2">
+                <span className="text-2xl font-bold">2.4K+</span>
+                <span className="text-sm font-medium self-start">
+                  Successful <br /> Students
+                </span>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
-        <div className="flex justify-end md:justify-end">
+        <div className="flex justify-center md:justify-center sm:justify-center">
           <div className="flex flex-col justify-start space-y-4">
             <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">

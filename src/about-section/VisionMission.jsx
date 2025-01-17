@@ -49,7 +49,7 @@ const VisionMission = () => {
             </h5>
 
             <p
-              className="uppercase text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
+              className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
             >
               At The Sales Enablement Company, our mission is clear: to empower
@@ -140,7 +140,7 @@ const VisionMission = () => {
             </h5>
 
             <p
-              className="uppercase text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
+              className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
             >
               We aspire to create a world where every sales team is equipped
@@ -187,7 +187,7 @@ const VisionMission = () => {
             </h5>
 
             <p
-              className="uppercase text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
+              className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
             >
               At The Sales Enablement Company, we are guided by a set of core
