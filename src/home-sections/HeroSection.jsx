@@ -113,14 +113,6 @@ function HeroSection() {
     <>
       <section>
         <div className="relative w-full h-full overflow-hidden">
-          {/* <div
-            className="absolute  inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out opacity-80"
-            style={{
-              backgroundImage: `url(${slides[currentSlide]})`,
-              opacity: 0.8,
-            }}
-          ></div> */}
-
           <AnimatePresence>
             <motion.div
               key={currentSlide}
@@ -181,43 +173,6 @@ function HeroSection() {
                     {slideContent[currentSlide].description}
                   </motion.p>
 
-                  {/* <motion.div
-                    key={`buttons-${currentSlide}`}
-                    className="flex flex-col lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start mb-6"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                      duration: 1.5,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    <button
-                      type="button"
-                      className="relative uppercase font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto"
-                    >
-                      <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                      <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-                        {slideContent[currentSlide].buttonText1}
-                        <img
-                          src={RightArrow1}
-                          alt="Arrow Icon"
-                          className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
-                        />
-                      </span>
-                    </button>
-                    <button
-                      type="button"
-                      className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-btn border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2 2xl:py-2.5 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
-                    >
-                      {slideContent[currentSlide].buttonText2}
-                      <img
-                        src={RightArrow}
-                        alt="arrow"
-                        className="w-6 h-6 ml-2"
-                      />
-                    </button>
-                  </motion.div> */}
                   <motion.div
                     key={`buttons-${currentSlide}`}
                     className="flex flex-col lg:flex-row justify-between lg:justify-between items-center gap-4 lg:items-start mb-6"
@@ -260,6 +215,34 @@ function HeroSection() {
                         className="w-6 h-6 ml-2"
                       />
                     </button>
+                    {/* <button
+                      type="button"
+                      className="text-white relative transition-transform duration-500 ease-in-out transform overflow-hidden group hover:border-[#ed3b15] hover:bg-none hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-2 border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2.5 2xl:py-3 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+                    >
+                      <span className="absolute inset-0 w-0 h-full bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                      <span className="relative group-hover:text-white flex items-center">
+                        {slideContent[currentSlide].buttonText2}
+                        <img
+                          src={RightArrow}
+                          alt="arrow"
+                          className="w-6 h-6 ml-2 group-hover:filter group-hover:brightness-0 group-hover:invert"
+                        />
+                      </span>
+                    </button> */}
+                    {/* <button
+                      type="button"
+                      className="text-white relative transition-transform duration-500 ease-in-out transform overflow-hidden group hover:border-[#DB0032] hover:bg-none hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-2 border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2.5 2xl:py-3 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
+                    >
+                      <span className="absolute inset-0 w-0 h-full bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                      <span className="relative group-hover:text-white flex items-center space-x-2">
+                        {slideContent[currentSlide].buttonText2}
+                        <img
+                          src={RightArrow}
+                          alt="arrow"
+                          className="w-6 h-6 ml-2 relative transition-all duration-500 ease-in-out group-hover:brightness-0 group-hover:invert group-hover:scale-110"
+                        />
+                      </span>
+                    </button> */}
                   </motion.div>
                 </motion.div>
               </AnimatePresence>
@@ -402,4 +385,3 @@ function HeroSection() {
 }
 
 export default HeroSection;
-

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaPlus, FaTwitter } from "react-icons/fa";
 import expert1 from "../assets/expert1.png";
 import expert2 from "../assets/expert2.png";
 import expert3 from "../assets/expert3.png";
@@ -57,28 +57,19 @@ const Expertise = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToShow: 4, // Show three items at a time
+    slidesToScroll: 1, // Scroll one item at a time
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // Adjust for medium-sized screens
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToShow: 2, // Show 2 items for smaller screens
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 768, // Adjust for mobile screens
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 1, // Show 1 item for very small screens
         },
       },
     ],
@@ -102,12 +93,11 @@ const Expertise = () => {
         a unique set of skills to help your sales team succeed.
       </p>
 
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         {experts.map((expert, index) => (
           <motion.div
             key={index}
             className="bg-white shadow-lg rounded-lg overflow-hidden relative group flex flex-col h-[550px] mx-4 border-2 border-orange-500"
-
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
@@ -134,9 +124,6 @@ const Expertise = () => {
 
             <div className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10">
               <div className="relative group/social">
-                {/* <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-2 rounded-full cursor-pointer">
-                  <span className="text-white text-lg">+</span>
-                </div> */}
                 <div
                   className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-2 rounded-full cursor-pointer flex items-center justify-center"
                   style={{ width: "40px", height: "40px" }}
@@ -148,6 +135,63 @@ const Expertise = () => {
                   <FaFacebookF className="text-[#0077B5] cursor-pointer" />
                   <FaLinkedinIn className="text-[#0077B5] cursor-pointer" />
                   <FaTwitter className="text-[#1DA1F2] cursor-pointer" />
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </Slider> */}
+      <Slider {...settings}>
+        {experts.map((expert, index) => (
+          <motion.div
+            key={index}
+            className="bg-white shadow-lg rounded-lg overflow-hidden relative group flex flex-col h-[550px] mx-6 border-2 border-orange-500 hover:shadow-xl transition-shadow duration-300"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 }}
+          >
+            <div className="h-1/2 border-b-2 border-orange-500">
+              <img
+                src={expert.image}
+                alt={expert.name}
+                className="w-full h-full "
+              />
+            </div>
+
+            <div className="h-1/2 flex flex-col justify-center p-6 text-center transition-colors duration-300 group-hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
+              <h3 className="text-lg uppercase font-semibold text-gray-800 group-hover:text-white">
+                {expert.name}
+              </h3>
+              <p className="text-sm uppercase text-gray-500 group-hover:text-gray-200 mt-2">
+                {expert.title}
+              </p>
+              <p className="text-gray-600 text-sm mt-3 group-hover:text-gray-100">
+                <span className="font bold group-hover:text-gray-200  text-black">Expertise:  </span>  {expert.expertise}
+              </p>
+            </div>
+
+            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
+              <div className="relative group">
+                <div
+                  className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-3 rounded-full cursor-pointer flex items-center justify-center shadow-md hover:shadow-lg transition-shadow duration-300"
+                  style={{ width: "50px", height: "50px" }}
+                >
+                  <FaPlus className="text-white text-xl font-bold" />
+                </div>
+
+                <div className="absolute bottom-full right-0 mb-2 hidden group-hover:flex flex-col space-y-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full ">
+                  <FaFacebookF
+                    className="text-white cursor-pointer hover:text-gray-600 text-xl transition-colors duration-300"
+                    title="Facebook"
+                  />
+                  <FaLinkedinIn
+                    className="text-white cursor-pointer hover:text-gray-600 text-xl transition-colors duration-300"
+                    title="LinkedIn"
+                  />
+                  <FaTwitter
+                    className="text-white cursor-pointer hover:text-gray-600 text-xl transition-colors duration-300"
+                    title="Twitter"
+                  />
                 </div>
               </div>
             </div>

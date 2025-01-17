@@ -83,7 +83,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
-          </Routes>
+          </Routes> 
           <Footer />
           {isPopupOpen && <ScreenResolutionPopup />}
         </div>

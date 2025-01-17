@@ -25,7 +25,7 @@ function ContactUsPage() {
                 is just a call, email, or live chat away.
               </span>
             </h1>
-          </div>
+          </div> 
           <div>
             <Link
             to="https://calendly.com/theenablement/30min?back=1"
