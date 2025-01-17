@@ -13,7 +13,7 @@ import SignUp from "./auth/SignUp";
 import Course from "./pages/Course";
 import About from "./pages/About";
 import ServicePage from "./pages/ServicesPage";
-import Contact from "./pages/ContactUs";
+// import Contact from "./pages/ContactUs";
 import CourseDetails from "./pages/CourseDetails";
 import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
@@ -74,7 +74,7 @@ function App() {
             <Route path="/blog-details/:blogId" element={<CourseDetails />} />
        
 
-            <Route path="/contact-us" element={<Contact />} />
+            {/* <Route path="/contact-us" element={<Contact />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />

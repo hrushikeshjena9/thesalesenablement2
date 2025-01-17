@@ -97,16 +97,15 @@ const DesktopMenu = ({
                     )}
                     <div className="flex justify-start mt-4">
                       {link.name === "Courses" ? (
-                     <Link
-                     to="/courses"  // Adjust this to your actual URL for courses
-                     className="text-white group flex justify-center items-center transition-all duration-300 ease-out transform uppercase text-[14px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl rounded-lg shadow-lg font-bold text-sm px-8 py-3 cursor-pointer "
-                   >
-                     <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                     <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
-                       All Courses
-                     </span>
-                   </Link>
-                   
+                        <Link
+                          to="/courses" // Adjust this to your actual URL for courses
+                          className="text-white group flex justify-center items-center transition-all duration-300 ease-out transform uppercase text-[14px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl rounded-lg shadow-lg font-bold text-sm px-8 py-3 cursor-pointer "
+                        >
+                          <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                          <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
+                            All Courses
+                          </span>
+                        </Link>
                       ) : (
                         <Link
                           to="/services" // Adjust this to your actual URL for services
