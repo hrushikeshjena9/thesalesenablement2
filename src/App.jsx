@@ -17,7 +17,7 @@ import ServicePage from "./pages/ServicesPage";
 import CourseDetails from "./pages/CourseDetails";
 import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
-import ServiceDetails from "./service-section/ServiceDetails";
+import ServiceDetails from "./pages/ServiceDetails";
 import SalesForceEvaluation from "./service-section/SalesForceEvolution";
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<ServicePage />} />
-            {/* <Route path="/service/:id" element={<ServiceDetails />} /> */}
+            <Route path="/service/:id" element={<ServiceDetails />} />
             <Route path="/courses" element={<Course />} />
             <Route path="/course-details/:courseId" element={<CourseDetails />} />
             <Route path="/blogs" element={<BlogPage />} />

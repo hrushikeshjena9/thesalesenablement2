@@ -45,7 +45,7 @@ const AwardSection = () => {
           </h5>
 
           <p
-            className="uppercase text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
+            className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
             data-aos="fade-left"
           >
             At The Sales Enablement Company, we take pride in the accolades
