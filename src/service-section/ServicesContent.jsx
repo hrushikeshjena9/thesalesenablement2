@@ -20,84 +20,73 @@ const services = [
     title: "Recruiting Process Optimization",
     description:
       "Streamlining recruitment to attract and retain top-tier sales talent.",
-      image: Blog2,
-      icon: SalesForceEvaluation, // Add the icon here
-  
+    image: Blog2,
+    icon: SalesForceEvaluation, // Add the icon here
   },
   {
     title: "Sales Candidate Assessments",
     description: "Leveraging advanced tools to identify high-potential hires.",
     image: Blog3,
     icon: SalesForceEvaluation, // Add the icon here
-
   },
   {
     title: "CRM Selection, Installation, and Integration",
     description:
       "Helping businesses choose and implement the right CRM system.",
-      image: Blog1,
-      icon: SalesForceEvaluation, // Add the icon here
-  
+    image: Blog1,
+    icon: SalesForceEvaluation, // Add the icon here
   },
   {
     title: "Sales Process Optimization",
     description:
       "Designing structured, customized processes for better outcomes.",
-      image: Blog4,
-      icon: SalesForceEvaluation, // Add the icon here
-  
+    image: Blog4,
+    icon: SalesForceEvaluation, // Add the icon here
   },
   {
     title: "Metrics Development",
     description: "Identifying KPIs and predictive indicators to drive revenue.",
     image: Blog3,
     icon: SalesForceEvaluation, // Add the icon here
-
   },
   {
     title: "Pipeline Management",
     description:
       "Building formal, staged, and criteria-based pipeline systems.",
-      image: Blog1,
-      icon: SalesForceEvaluation, // Add the icon here
-  
+    image: Blog1,
+    icon: SalesForceEvaluation, // Add the icon here
   },
   {
     title: "Sales Management Development",
     description:
       "Training managers in coaching, motivation, and accountability.",
-      image: Blog2,
-      icon: SalesForceEvaluation, // Add the icon here
-  
+    image: Blog2,
+    icon: SalesForceEvaluation, // Add the icon here
   },
   {
     title: "Trade Show Selling",
     description:
       "Turning event participation into measurable sales opportunities.",
-      image: Blog4,
-      icon: SalesForceEvaluation, // Add the icon here
-  
+    image: Blog4,
+    icon: SalesForceEvaluation, // Add the icon here
   },
   {
     title: "Consulting & Strategy",
     description: "Offering market, account, and business strategy support.",
     image: Blog1,
     icon: SalesForceEvaluation, // Add the icon here
-
   },
   {
     title: "Coaching",
     description: "Executive and sales coaching to improve outcomes.",
     image: Blog2,
     icon: SalesForceEvaluation, // Add the icon here
-
   },
   {
     title: "Sales Training & Professional Services Training",
     description: "Results-focused training programs.",
     image: Blog4,
     icon: SalesForceEvaluation, // Add the icon here
-
   },
 ];
 
@@ -127,11 +116,10 @@ const ServiceContent = () => {
                 className="block"
               >
                 <div
-                  className="border-2 flex flex-col"
+                  className="border-2 flex flex-col h-full" // Ensures the cards stretch equally in height
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
-                    height: "100%", // Ensure cards stretch equally in height
                   }}
                 >
                   <div className="relative flex-1">
@@ -139,8 +127,9 @@ const ServiceContent = () => {
                     <img
                       src={service.image} // Assuming each service has an image
                       alt={service.title}
-                      className="w-full h-[233px] p-2 object-cover mb-4"
+                      className="w-full h-[233px] p-2 object-cover mb-4 transition-all duration-500 ease-in-out hover:grayscale-0 hover:opacity-90"
                     />
+
                     {/* Circle Image with Icon */}
                     <div className="absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-full flex items-center justify-center shadow-md">
                       <img
@@ -149,13 +138,14 @@ const ServiceContent = () => {
                         className="w-10 h-10 object-contain transition-transform duration-300 ease-in-out transform hover:rotate-y-180"
                       />
                     </div>
-
                   </div>
 
                   <h3 className="text-lg sm:text-sm md:text-[17px] uppercase font-semibold mb-2 p-4 text-center">
                     {service.title}
                   </h3>
-                  <p className="text-left mb-4 text-sm px-6 text-center sm:text-base">
+                  <p className="text-left mb-4 text-sm px-6 text-center sm:text-base flex-1">
+                    {" "}
+                    {/* Added flex-1 to make this area stretch */}
                     {service.description}
                     <hr className="mt-4" />
                   </p>
@@ -176,7 +166,6 @@ const ServiceContent = () => {
                       </span>
                     </Link>
                   </div>
-                  {/* {blogData.link} */}
                 </div>
               </Link>
             ))}

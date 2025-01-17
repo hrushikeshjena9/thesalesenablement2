@@ -25,21 +25,21 @@ function LatestBlogs() {
 
   const blogs = [
     {
-      id : 1,
+      id: 1,
       image: Blog1,
       title: "5 Key Habits of Highly Effective Sales Leaders",
       description:
         "Discover the habits that separate top sales leaders from the rest and learn how to cultivate them in your own leadership style.",
     },
     {
-      id : 2,
+      id: 2,
       image: Blog2,
       title: "Top Sales Strategies for Startups",
       description:
         "Uncover the best practices for small businesses and startups to accelerate growth and secure customers in a competitive market.",
     },
     {
-      id : 3,
+      id: 3,
       image: Blog3,
       title:
         "The Power of Sales Training: Why Continuous Learning is Essential",
@@ -47,42 +47,42 @@ function LatestBlogs() {
         "Learn how investing in ongoing training can boost your team's effectiveness and lead to long-term success.",
     },
     {
-      id:4,
+      id: 4,
       image: Blog4,
       title: "Mastering Sales Conversations: How to Close More Deals",
       description:
         "Learn techniques to improve your sales conversations and close more deals, from the first interaction to sealing the deal.",
     },
     {
-      id:5,
+      id: 5,
       image: Blog3,
       title: "Effective CRM Strategies for Sales Growth",
       description:
         "Explore how leveraging customer relationship management tools can streamline your sales process and boost productivity.",
     },
     {
-      id:6,
+      id: 6,
       image: Blog2,
       title: "How to Build a Winning Sales Team",
       description:
         "Understand the essential traits to look for when building a successful sales team and how to nurture top performers.",
     },
     {
-      id : 7,
+      id: 7,
       image: Blog1,
       title: "Sales Forecasting: Tips for Accurate Projections",
       description:
         "Learn strategies for accurate sales forecasting and how it can help you make data-driven decisions to grow your business.",
     },
     {
-      id : 8,
+      id: 8,
       image: Blog4,
       title: "The Role of Emotional Intelligence in Sales",
       description:
         "Discover the importance of emotional intelligence in sales and how it can help you build better relationships with clients.",
     },
     {
-      id : 9,
+      id: 9,
       image: Blog3,
       title: "Using Data to Improve Your Sales Performance",
       description:
@@ -192,32 +192,17 @@ function LatestBlogs() {
 
   return (
     <section className="container mx-auto  case-study">
-
-      <motion.div
-        // ref={elementRef}
-        className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8"
-        // initial={{ opacity: 0, y: 100 }}
-        // animate={{
-        //   opacity: inView ? 1 : 0,
-        //   y: inView ? 0 : 100,
-        // }}
-        // exit={{ opacity: 0, y: 100 }}
-        // transition={{
-        //   duration: 1.5,
-        //   ease: "easeInOut",
-        // }}
-      >
+      <motion.div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8">
         {currentBlogs.map((blog) => (
           <div
             key={blog.id}
-            className="border-2 flex flex-col"
+            className="flex flex-col border-2"
             style={{
               borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
               height: "100%", // Ensure cards stretch equally in height
             }}
           >
-            <div className="relative flex-1">
-              {" "}
+            <div className="relative flex-1 flex flex-col">
               {/* Ensures image area grows to fill remaining space */}
               <div className="absolute flex gap-4 bottom-6 left-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white text-xs font-semibold py-1 px-3 rounded-tl-[8px] rounded-tr-[8px]">
                 <div className="flex items-center">
@@ -256,14 +241,16 @@ function LatestBlogs() {
                 </div>
               </div>
             </div>
-            <h3 className="text-lg sm:text-sm md:text-[17px] uppercase font-semibold mb-2 p-4 text-center">
+
+            <h3 className="text-lg sm:text-sm md:text-[17px] uppercase font-semibold mb-2 p-4 text-center flex-grow">
               {blog.title}
             </h3>
-            <p className="text-left mb-4 text-sm px-6 sm:text-base">
+            <p className="text-left mb-4 text-sm px-6 sm:text-base flex-grow">
               {blog.description}
               <hr className="mt-4" />
             </p>
-            <div className="flex justify-center">
+
+            <div className="flex justify-center flex-grow">
               <Link
                 to={`/blog-details/${blog.id}`}
                 className="relative w-[86%] icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium text-sm text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"

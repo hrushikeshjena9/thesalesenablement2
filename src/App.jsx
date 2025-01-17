@@ -19,6 +19,8 @@ import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
 import ServiceDetails from "./service-section/ServiceDetails";
 import SalesForceEvaluation from "./service-section/SalesForceEvolution";
+import ContactUsPage from "./pages/ContactUsPage";
+import Exp from "./service-section/exp";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -72,7 +74,10 @@ function App() {
             <Route path="/course-details/:courseId" element={<CourseDetails />} />
             <Route path="/blogs" element={<BlogPage />} />
             <Route path="/blog-details/:blogId" element={<CourseDetails />} />
-       
+            <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/sales-force-evoluation" element={<SalesForceEvaluation />} />
+            <Route path="/example" element={<Exp />} />
+            
 
             {/* <Route path="/contact-us" element={<Contact />} /> */}
             <Route path="/login" element={<Login />} />
