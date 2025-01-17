@@ -20,7 +20,6 @@ import BlogDetails from "./pages/BlogDetails";
 import ServiceDetails from "./pages/ServiceDetails";
 import SalesForceEvaluation from "./service-section/SalesForceEvolution";
 import ContactUsPage from "./pages/ContactUsPage";
-import Exp from "./service-section/exp";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -76,10 +75,7 @@ function App() {
             <Route path="/blog-details/:blogId" element={<CourseDetails />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/sales-force-evoluation" element={<SalesForceEvaluation />} />
-            <Route path="/example" element={<Exp />} />
-            
 
-            {/* <Route path="/contact-us" element={<Contact />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
