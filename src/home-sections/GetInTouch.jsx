@@ -95,9 +95,15 @@ function GetInTouch() {
                   rows={4}
                 />
               </div>
-              
 
               <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-4">
+                <div>
+                  <ReCAPTCHA
+                    sitekey="your-site-key"
+                    onChange={handleRecaptchaChange}
+                  />
+                </div>
+
                 <Link
                   to="learn-more"
                   type="submit"
@@ -120,10 +126,6 @@ function GetInTouch() {
                     </span>
                   </span>
                 </Link>
-                <ReCAPTCHA
-                  sitekey="your-site-key"
-                  onChange={handleRecaptchaChange}
-                />
               </div>
             </form>
           </div>
@@ -131,7 +133,7 @@ function GetInTouch() {
             className="w-full mt-8 md:mt-0  "
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }} 
+            viewport={{ once: true, amount: 0.5 }}
             variants={rightVariants}
           >
             <img

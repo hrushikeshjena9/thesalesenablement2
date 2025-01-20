@@ -1,59 +1,9 @@
-// import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
-
-// const CourseDetailSection = () => {
-//   const { courseId } = useParams(); // Extract the course ID from the URL
-//   const [course, setCourse] = useState(null);
-
-//   useEffect(() => {
-//     // Fetch course data using the courseId
-//     const fetchCourseDetails = async () => {
-//       try {
-//         // Assuming you're fetching from an API endpoint
-//         const response = await fetch(`/api/courses/${courseId}`); // Adjust the URL according to your API
-//         const courseData = await response.json();
-
-//         if (response.ok) {
-//           setCourse(courseData);
-//         } else {
-//           console.error("Failed to fetch course details");
-//         }
-//       } catch (error) {
-//         console.error("Error fetching course details:", error);
-//       }
-//     };
-
-//     fetchCourseDetails();
-//   }, [courseId]);
-
-//   if (!course) return <div>Loading...</div>; // Show loading indicator while fetching course data
-
-//   return (
-//     <section className="flex-1">
-//       <div className="course-detail-container">
-//         <h2>{course.title}</h2>
-//         <p>{course.description}</p>
-//         <p>Instructor: {course.instructor}</p>
-//         <p>Price: {course.price}</p>
-//         <p>Rating: {course.starCategory} ★</p>
-//         <div>
-//           <h3>Lessons:</h3>
-//           <p>{course.lessons} lessons</p>
-//           <h3>Students:</h3>
-//           <p>{course.students} students enrolled</p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default CourseDetailSection;
-
 import React, { useEffect, useState } from "react";
 import { FaArrowDown, FaCircle, FaUsers } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import TabNavigation from "../components/TabNavigation";
 import RelatedCourseSlider from "./RelatedCourseSlider";
+import RightArrow1 from "../assets/arrow-right1.png";
 
 const CourseDetailSection = () => {
   const { courseId } = useParams(); // Extract courseId from the URL
@@ -119,10 +69,14 @@ const CourseDetailSection = () => {
 
         <Link
           to={course.brochureLink}
-          className="absolute bottom-4 right-4 px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center space-x-2"
+          className="absolute bottom-4 right-4 px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white p-3 flex items-center space-x-2"
         >
-          <span>Download Brochure</span>
-          <FaArrowDown />
+          <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+
+          <span className="relative z-10 text-white group-hover:text-white flex gap-5 items-center">
+            Download Brochure
+            <FaArrowDown />{" "}
+          </span>
         </Link>
       </div>
 
@@ -178,10 +132,22 @@ const CourseDetailSection = () => {
             </div>
             <div className="mt-4">
               <Link
-                to={course.brochureLink}
-                className="px-6  py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3  items-center space-x-2"
+                to="take-the-sales-force-evaluation"
+                type="button"
+                className="relative px-6 w-60  py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3  items-center   group text-nowrap transition-all duration-500 ease-out transform uppercase  hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px]  flex justify-center"
               >
-                <span>Learn More</span>
+                {/* Background effect on hover */}
+                <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+
+                {/* Text and Arrow */}
+                <span className="relative z-10 text-white group-hover:text-white flex items-center">
+                  Learn More
+                  <img
+                    src={RightArrow1}
+                    alt="Arrow Icon"
+                    className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out " // Smooth arrow movement
+                  />
+                </span>
               </Link>
             </div>
           </div>

@@ -1,7 +1,10 @@
-// import { Disclosure } from '@headlessui/react';
-// import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'; // Import the down arrow and up arrow icons
+// import { Disclosure, DisclosureButton, DisclosurePanel} from "@headlessui/react";
+// import { AiOutlineDown, AiOutlineUp } from "react-icons/ai"; // Import the down arrow and up arrow icons
+// import { useState } from "react";
 
 // const ModuleContent = () => {
+//   const [openModuleIndex, setOpenModuleIndex] = useState(null); // State to track which module is open
+
 //   const modules = [
 //     {
 //       title: "Introduction to Professional Selling",
@@ -59,32 +62,44 @@
 
 //   return (
 //     <div className="space-y-4">
-
-//         <h1 className='uppercase text-3xl font-bold'>Outline of topics</h1>
+//       <h1 className="uppercase text-3xl font-bold">Outline of Topics</h1>
 //       {modules.map((module, index) => (
-//         <Disclosure key={index}>
-//           {({ open }) => (
-//             <>
-//               <Disclosure.Button className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center">
-//                 <span>{module.title}</span>
-//                 <span className="transition-transform duration-300 ease-in-out">
-//                   {open ? (
-//                     <AiOutlineUp className="w-6 h-6" />
-//                   ) : (
-//                     <AiOutlineDown className="w-6 h-6" />
-//                   )}
-//                 </span>
-//               </Disclosure.Button>
-//               <Disclosure.Panel className="p-4 bg-gray-100 rounded-md overflow-hidden transition-all duration-500 ease-in-out">
-//                 <ul className="list-disc pl-6 space-y-2">
-//                   {module.content.map((item, idx) => (
-//                     <li key={idx} className="text-gray-700">{item}</li>
-//                   ))}
-//                 </ul>
-//               </Disclosure.Panel>
-//             </>
-//           )}
-//         </Disclosure>
+//         <div key={index} className="w-full">
+//           <Disclosure as="div">
+//             {({ open }) => (
+//               <>
+//                 <DisclosureButton
+//                   onClick={() =>
+//                     setOpenModuleIndex(openModuleIndex === index ? null : index)
+//                   } // Toggle open/close for the clicked module
+//                   className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center"
+//                 >
+//                   <span>{module.title}</span>
+//                   <span className="transition-transform duration-300 ease-in-out">
+//                     {openModuleIndex === index || open ? (
+//                       <AiOutlineUp className="w-6 h-6" />
+//                     ) : (
+//                       <AiOutlineDown className="w-6 h-6" />
+//                     )}
+//                   </span>
+//                 </DisclosureButton>
+//                 <DisclosurePanel
+//                   className={`p-4 bg-gray-100 rounded-md overflow-hidden transition-all duration-500 ease-in-out ${
+//                     openModuleIndex === index ? "max-h-screen" : "max-h-0"
+//                   }`}
+//                 >
+//                   <ul className="list-disc pl-6 space-y-2">
+//                     {module.content.map((item, idx) => (
+//                       <li key={idx} className="text-gray-700">
+//                         {item}
+//                       </li>
+//                     ))}
+//                   </ul>
+//                 </DisclosurePanel>
+//               </>
+//             )}
+//           </Disclosure>
+//         </div>
 //       ))}
 //     </div>
 //   );
@@ -92,11 +107,10 @@
 
 // export default ModuleContent;
 
-
-
-import { Disclosure } from '@headlessui/react';
-import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'; // Import the down arrow and up arrow icons
-import { useState } from 'react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai"; // Import the down arrow and up arrow icons
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion"; // Import framer-motion
 
 const ModuleContent = () => {
   const [openModuleIndex, setOpenModuleIndex] = useState(null); // State to track which module is open
@@ -158,14 +172,16 @@ const ModuleContent = () => {
 
   return (
     <div className="space-y-4">
-      <h1 className='uppercase text-3xl font-bold'>Outline of Topics</h1>
+      <h1 className="uppercase text-3xl font-bold">Outline of Topics</h1>
       {modules.map((module, index) => (
         <div key={index} className="w-full">
           <Disclosure as="div">
             {({ open }) => (
               <>
-                <Disclosure.Button
-                  onClick={() => setOpenModuleIndex(openModuleIndex === index ? null : index)} // Toggle open/close for the clicked module
+                <DisclosureButton
+                  onClick={() =>
+                    setOpenModuleIndex(openModuleIndex === index ? null : index)
+                  } // Toggle open/close for the clicked module
                   className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center"
                 >
                   <span>{module.title}</span>
@@ -176,18 +192,30 @@ const ModuleContent = () => {
                       <AiOutlineDown className="w-6 h-6" />
                     )}
                   </span>
-                </Disclosure.Button>
-                <Disclosure.Panel
-                  className={`p-4 bg-gray-100 rounded-md overflow-hidden transition-all duration-500 ease-in-out ${
-                    openModuleIndex === index ? 'max-h-screen' : 'max-h-0'
-                  }`}
-                >
-                  <ul className="list-disc pl-6 space-y-2">
-                    {module.content.map((item, idx) => (
-                      <li key={idx} className="text-gray-700">{item}</li>
-                    ))}
-                  </ul>
-                </Disclosure.Panel>
+                </DisclosureButton>
+                <AnimatePresence>
+                  {openModuleIndex === index && (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: -24 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -24 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                    >
+                      <DisclosurePanel
+                        className="p-4 bg-gray-100 rounded-md overflow-hidden"
+                      >
+                        <ul className="list-disc pl-6 space-y-2">
+                          {module.content.map((item, idx) => (
+                            <li key={idx} className="text-gray-700">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </DisclosurePanel>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </>
             )}
           </Disclosure>
@@ -198,3 +226,4 @@ const ModuleContent = () => {
 };
 
 export default ModuleContent;
+

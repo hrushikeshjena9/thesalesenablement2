@@ -13,13 +13,13 @@ import SignUp from "./auth/SignUp";
 import Course from "./pages/Course";
 import About from "./pages/About";
 import ServicePage from "./pages/ServicesPage";
-// import Contact from "./pages/ContactUs";
 import CourseDetails from "./pages/CourseDetails";
 import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
 import ServiceDetails from "./pages/ServiceDetails";
 import SalesForceEvaluation from "./service-section/SalesForceEvolution";
 import ContactUsPage from "./pages/ContactUsPage";
+import ScrollToTopButton from "./components/ScroolTop";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -75,13 +75,13 @@ function App() {
             <Route path="/blog-details/:blogId" element={<CourseDetails />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/sales-force-evoluation" element={<SalesForceEvaluation />} />
-
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
           </Routes> 
+          <ScrollToTopButton/>
           <Footer />
-          {isPopupOpen && <ScreenResolutionPopup />}
+          {/* {isPopupOpen && <ScreenResolutionPopup />} */}
         </div>
       )}
     </BrowserRouter>

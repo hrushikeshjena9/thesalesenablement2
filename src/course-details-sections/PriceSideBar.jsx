@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import CourseImage from "../../src/assets/banner3.png";
 import { FaEnvelope, FaPhone, FaPhoneAlt, FaShareAlt } from "react-icons/fa";
@@ -134,20 +133,32 @@ const PriceSideBar = ({ course }) => {
 
         {/* Book Now Button */}
         <div>
-          <button className="w-full bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center">
-            <span className="mr-2">Book Now</span>
+          <button className="w-full relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center">
+          <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+           
+            <span className="mr-2 relative z-10 text-white group-hover:text-white flex items-center">Book Now</span>
           </button>
         </div>
 
         {/* Call to Action Buttons */}
         <div className="flex justify-between gap-4 mt-4">
-          <button className="w-full bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center">
-            <IoCall className="mr-2" />
-            <span>Call us to Discuss</span>
+          <button className="w-full relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center">
+            <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+
+            <span className="relative z-10 text-white group-hover:text-white flex items-center">
+              {" "}
+              <IoCall className="mr-2" />
+              Call us to Discuss
+            </span>
           </button>
-          <button className="w-full bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center">
-            <FaShareAlt className="mr-2" />
-            <span>Share This</span>
+          <button className="w-full relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center">
+            <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+
+            <span className="relative z-10 text-white group-hover:text-white flex items-center">
+              {" "}
+              <FaShareAlt className="mr-2" />
+              Share This
+            </span>
           </button>
         </div>
       </div>

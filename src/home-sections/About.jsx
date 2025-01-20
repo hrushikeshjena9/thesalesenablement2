@@ -5,7 +5,7 @@ import OurValues from "../assets/our-value.png";
 import OurVision from "../assets/our-vision.png";
 import AboutImg from "../assets/about.png";
 import Group from "../assets/grouppeople.png";
-import Thumb from "../assets/thumbsup.png";
+import Thumb from "../assets/new/thumbsup.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
@@ -164,7 +164,7 @@ function About() {
                 <img
                   src={RightArrow1}
                   alt="Arrow Icon"
-                  className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out group-hover:translate-x-2" // Smooth arrow movement
+                  className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out " // Smooth arrow movement
                 />
               </span>
             </Link>
