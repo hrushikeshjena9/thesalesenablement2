@@ -50,16 +50,6 @@ const CourseDetailSection = () => {
 
   return (
     <section className=" w-3/4 mx-auto py-6 px-4">
-      <div className="flex flex-col md:flex-row items-center mb-6">
-        <div className="w-full md:w-2/3">
-          <h2 className="text-3xl font-semibold text-gray-900 flex items-center">
-            <FaCircle className="text-[#DB0032] mr-2" />{" "}
-            {/* Dot icon with styling */}
-            {course.title}
-          </h2>
-        </div>
-      </div>
-
       <div className="md:w-1/3 md:ml-8 xl:w-full xl:ml-0 mt-6 md:mt-0 mb-6 relative">
         <img
           src={course.image}
@@ -78,6 +68,15 @@ const CourseDetailSection = () => {
             <FaArrowDown />{" "}
           </span>
         </Link>
+      </div>
+      <div className="flex flex-col md:flex-row items-center mb-6">
+        <div className="w-full md:w-2/3">
+          <h2 className="text-3xl font-semibold text-gray-900 flex items-center">
+            <FaCircle className="text-[#DB0032] mr-2" />{" "}
+            {/* Dot icon with styling */}
+            {course.title}
+          </h2>
+        </div>
       </div>
 
       <div>
@@ -149,22 +148,6 @@ const CourseDetailSection = () => {
                   />
                 </span>
               </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="course-stats  mt-20">
-          <div className="flex justify-center items-center">
-            <div className="flex items-center space-x-4">
-              <div className="h-1 w-16 bg-gradient-to-r from-[#DB0032] to-[#FA6602]"></div>
-              <h1 className="uppercase text-3xl font-bold">Related Courses</h1>
-              <div className="h-1 w-16 bg-gradient-to-r from-[#DB0032] to-[#FA6602]"></div>
-            </div>
-          </div>
-
-          <div className="mt-6">
-            <div className="grid grid-cols-1 mt md:grid-cols-1 gap-6">
-              <RelatedCourseSlider key={course.id} course={course} />
             </div>
           </div>
         </div>
