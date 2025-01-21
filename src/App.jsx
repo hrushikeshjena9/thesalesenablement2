@@ -79,7 +79,7 @@ function App() {
             <Route path="/blog-details/:blogId" element={<CourseDetails />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route
-              path="/sales-force-evaluation"
+              path="/services/sales-force-evaluation"
               element={<SalesForceEvaluation />}
             />
             <Route
