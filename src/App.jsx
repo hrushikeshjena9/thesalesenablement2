@@ -1,5 +1,3 @@
-
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
@@ -17,9 +15,12 @@ import CourseDetails from "./pages/CourseDetails";
 import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
 import ServiceDetails from "./pages/ServiceDetails";
-import SalesForceEvaluation from "./service-section/SalesForceEvolution";
+
 import ContactUsPage from "./pages/ContactUsPage";
 import ScrollToTopButton from "./components/ScroolTop";
+import SalesForceEvaluation from "./service-section/dedicated-pages/SalesForceEvolution";
+import CandidateAssessment from "./service-section/dedicated-pages/CandidateAssessment";
+
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -70,16 +71,26 @@ function App() {
             <Route path="/services" element={<ServicePage />} />
             <Route path="/service/:id" element={<ServiceDetails />} />
             <Route path="/courses" element={<Course />} />
-            <Route path="/course-details/:courseId" element={<CourseDetails />} />
+            <Route
+              path="/course-details/:courseId"
+              element={<CourseDetails />}
+            />
             <Route path="/blogs" element={<BlogPage />} />
             <Route path="/blog-details/:blogId" element={<CourseDetails />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
-            <Route path="/sales-force-evoluation" element={<SalesForceEvaluation />} />
+            <Route
+              path="/sales-force-evaluation"
+              element={<SalesForceEvaluation />}
+            />
+            <Route
+              path="/candidate-assessment"
+              element={<CandidateAssessment />}
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
-          </Routes> 
-          <ScrollToTopButton/>
+          </Routes>
+          <ScrollToTopButton />
           <Footer />
           {/* {isPopupOpen && <ScreenResolutionPopup />} */}
         </div>

@@ -3,13 +3,10 @@ import RightArrow from "../assets/arrow-right.png";
 import OurMission from "../assets/our-mission.png";
 import OurValues from "../assets/our-value.png";
 import OurVision from "../assets/our-vision.png";
-import AboutImg from "../assets/about.png";
-import Group from "../assets/grouppeople.png";
 import Thumb from "../assets/new/thumbsup.png";
+import About1 from "../assets/new/about1.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
-
 function About() {
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -27,35 +24,36 @@ function About() {
       transition: { duration: 0.8, ease: "easeOut" },
     },
     mobile: {
-      opacity: 0.5, // Adjust opacity for mobile view
-      x: "-50%", // Adjust the slide-in position for mobile
+      opacity: 0.5,
+      x: "-50%",
     },
   };
   return (
     <section className="py-12 about-class overflow-hidden container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
-        <div className="flex justify-center md:justify-start">
-          <motion.div
-            className="relative overflow-hidden"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={leftVariants}
-            style={{
-              // You can adjust styles dynamically based on screen size, if needed
-              "@media (max-width: 768px)": {
-                variant: "mobile", // For mobile views
-              },
-            }}
-          >
-            <img
-              src={AboutImg}
-              alt="About"
-              className="w-full"
-              data-aos="fade-right"
-            />
-          </motion.div>
-        </div>
+        <motion.div
+          className="relative"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={leftVariants}
+        >
+          <div className="flex justify-center align-middle">
+            <div className="about-home-bg ">
+              <img
+                src={Thumb}
+                alt=""
+                className="w-[234.3px]  h-[230.35px] relative top-[-4rem] z-20"
+              />
+
+              <img
+                src={About1}
+                alt=""
+                className="w-[444.01px] h-[402.44px] z-10 rounded-lg relative left-16 top-[-10rem]"
+              />
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           className="text-center md:text-left overflow-hidden"
@@ -63,12 +61,6 @@ function About() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
           variants={rightVariants}
-          style={{
-            // You can adjust styles dynamically based on screen size, if needed
-            "@media (max-width: 768px)": {
-              variant: "mobile", // For mobile views
-            },
-          }}
         >
           <h5
             className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text"
@@ -149,7 +141,6 @@ function About() {
           </div>
 
           <div className="flex flex-col sm:flex-wrap md:flex-wrap   lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
-
             <Link
               to="take-the-sales-force-evaluation"
               type="button"

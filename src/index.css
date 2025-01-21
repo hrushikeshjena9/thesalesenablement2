@@ -67,6 +67,36 @@ body {
   z-index: 10;
 }
 
+.mission-bg {
+  background-image: url("./assets/our-mission-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 423px;
+  height: 410px;
+}
+
+.vission-bg {
+  background-image: url("./assets/new/vissionbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 310px;
+  height: 464px;
+}
+.about-home-bg {
+  background-image: url("./assets/new/whowearebg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 566.44px;
+  height: 536.89px;
+}
+
+.value-bg {
+  width: 533px;
+  height: 456px;
+}
 .card {
   position: relative;
   width: 130px;
@@ -265,6 +295,11 @@ body {
 
 .icon-hover:hover .icon-hover2 {
   color: #fff;
+}
+
+
+.icon-hover:hover .icon-hover3 {
+  background-color: #fff;
 }
 .course-bg {
   background-image: url("./assets/bg-image.png");

@@ -162,15 +162,13 @@ function ContactUsPage() {
 
       {/* FAQ Section */}
       <div className="container mx-auto py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* FAQ Component */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-center">
           <div className="w-full">
             <Faq />
           </div>
 
-          {/* Image Section */}
+
           <div className="w-full flex justify-center relative">
-            {/* Background Element */}
             <div
               className="absolute right-10
               w-[250px] h-[200px] top-14  sm:right-24
@@ -180,7 +178,6 @@ function ContactUsPage() {
               faq-bg z-0"
             ></div>
 
-            {/* Image */}
             <img
               src={FaqImg}
               alt="FAQ Illustration"
