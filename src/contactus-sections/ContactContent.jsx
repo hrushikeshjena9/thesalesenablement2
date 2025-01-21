@@ -44,7 +44,7 @@ function ContactContent() {
             {/* Location Card */}
             <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <AiOutlineGlobal className="w-10 h-10 text-[#DB0032] mb-4" />
-              <h3 className="text-xl font-semibold text-gray-800">
+              <h3 className="text-xl text-center font-semibold text-gray-800">
                 Visit Anytime
               </h3>
               <p className="text-base text-gray-600 mt-2 text-center">
@@ -64,12 +64,21 @@ function ContactContent() {
             </div>
 
             {/* Email Card */}
-            <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
+            {/* <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <FaEnvelope className="w-10 h-10 text-[#DB0032] mb-4" />
               <h3 className="text-xl font-semibold text-gray-800">
                 Write Email
               </h3>
               <p className="text-base text-gray-600 mt-2 text-center">
+                info@theenablement.com
+              </p>
+            </div> */}
+            <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
+              <FaEnvelope className="w-10 h-10 text-[#DB0032] mb-4" />
+              <h3 className="text-xl text-center font-semibold text-gray-800">
+                Write Email
+              </h3>
+              <p className="text-base text-gray-600 mt-2 text-center break-all">
                 info@theenablement.com
               </p>
             </div>
