@@ -83,7 +83,7 @@ function App() {
               element={<SalesForceEvaluation />}
             />
             <Route
-              path="/candidate-assessment"
+              path="/services/sales-candidate-assessments"
               element={<CandidateAssessment />}
             />
             <Route path="/login" element={<Login />} />
