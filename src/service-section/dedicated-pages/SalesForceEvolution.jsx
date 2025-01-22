@@ -5,7 +5,8 @@ import RightArrow1 from "../../assets/arrow-right1.png";
 import RightArrow from "../../assets/arrow-right.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Big from "../../assets/big.png";
+import Big from "../../assets/new/salesfource.jpg";
+import VideoThumb from "../../assets/new/salesteamimage.jpg";
 import Dot from "../../assets/dotted.png";
 import Iso from "../../assets/Isolation_Mode.png";
 import Three from "../../assets/three.png";
@@ -26,7 +27,7 @@ const SalesForceEvaluation = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
-  }
+  };
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleFormSubmit = (e) => {
@@ -54,23 +55,24 @@ const SalesForceEvaluation = () => {
       x: "-50%",
     },
   };
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
   return (
     <div>
       <HeroSFE />
-      <section className="py-12 about-class container mx-auto px-4 ">
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
+
+      <section className="py-12 about-class container mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Left Section: Text Content */}
           <motion.div
-            className="text-center md:text-left overflow-hidden"
+            className="text-center lg:text-left"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={rightVariants}
-            style={{
-              "@media (max-width: 768px)": {
-                variant: "mobile",
-              },
-            }}
           >
             <h2
               className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7"
@@ -85,7 +87,7 @@ const SalesForceEvaluation = () => {
             </h2>
 
             <p
-              className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mb-8"
+              className="text-sm md:text-[16px] leading-[32px] text-justify mb-8"
               data-aos="fade-left"
             >
               Our Sales Force Evaluation process is designed to assess the
@@ -96,6 +98,7 @@ const SalesForceEvaluation = () => {
             </p>
 
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
+              {/* Take the Evaluation Button */}
               <Link
                 to="take-the-sales-force-evaluation"
                 type="button"
@@ -112,6 +115,7 @@ const SalesForceEvaluation = () => {
                 </span>
               </Link>
 
+              {/* Contact Us Button */}
               <Link
                 to="/view-upcoming-courses"
                 type="button"
@@ -127,77 +131,22 @@ const SalesForceEvaluation = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            className="relative overflow-hidden"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={leftVariants}
-            style={{
-              "@media (max-width: 768px)": {
-                variant: "mobile",
-              },
-            }}
-          >
-            <div className="px-4  sm:px-12">
-              <div className="absolute left-28  top-[-10] sm:top-0  sm:left-44 z-[-10]">
-                <img
-                  src={Iso}
-                  alt=""
-                  className="w-[200px] h-[200px] sm:w-[480px] sm:h-[480px]"
-                />
-              </div>
-
-              <div className="flex flex-row sm:flex-row gap-4 sm:gap-8">
-                <div className="flex flex-col gap-4 sm:gap-8">
-                  <div>
-                    <img
-                      src={Fir}
-                      alt=""
-                      className="w-[150px] h-[200px] sm:w-[237px] sm:h-[300px]"
-                    />
-                  </div>
-                  <div>
-                    <img
-                      src={Three}
-                      alt=""
-                      className="w-[170px] h-[175px] sm:w-[237px] sm:h-[218px]"
-                    />
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-8">
-                  <div className="rounded-lg rounded-tr-[52px] p-4 w-[100px] h-[80px] sm:w-[134px] sm:h-[105px] bg-white shadow-lg text-center">
-                    <h1 className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
-                      25 +
-                    </h1>
-                    <p className="uppercase text-xs sm:text-base font-bold">
-                      Years of
-                    </p>
-                    <p className="uppercase text-xs sm:text-base font-bold">
-                      Experience
-                    </p>
-                  </div>
-
-                  <div>
-                    <img
-                      src={Big}
-                      alt=""
-                      className="w-[180px] h-[280px] sm:w-[281px] sm:h-[415px]"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative bottom-8 sm:bottom-10 z-[-10] right-4 sm:right-8">
-                <img
-                  src={Dot}
-                  alt=""
-                  className="w-[50px] h-[60px] sm:w-[75.71px] sm:h-[85.38px]"
-                />
-              </div>
-            </div>
-          </motion.div>
+          {/* Right Section: Image */}
+          <div className="flex justify-center">
+            <motion.div
+              className="relative overflow-hidden"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              variants={leftVariants}
+            >
+              <img
+                src={Big}
+                alt="Big Image"
+                className="w-full max-w-md lg:max-w-full"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -222,11 +171,11 @@ const SalesForceEvaluation = () => {
               reach new heights.
             </p>
 
-            <div className="mt-4 flex justify-between">
+            <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
               <Link
                 to="take-the-sales-force-evaluation"
                 type="button"
-                className="text-white w-2/5 group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5   flex items-center justify-center"
+                className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
@@ -239,10 +188,9 @@ const SalesForceEvaluation = () => {
                 </span>
               </Link>
               <button
-                // to="take-the-sales-force-evaluation"
                 onClick={toggleModal}
                 type="button"
-                className="text-white w-2/5 group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5   flex items-center justify-center"
+                className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
@@ -254,21 +202,51 @@ const SalesForceEvaluation = () => {
                   />
                 </span>
               </button>
-              {isModalOpen && <SalesAssessmentModal toggleModal={toggleModal} />}
+              {isModalOpen && (
+                <SalesAssessmentModal toggleModal={toggleModal} />
+              )}
             </div>
           </div>
 
-          {/* Right Side - Video Embed Section */}
-          <div className="flex justify-end px-4 ">
-            <div className="w-full max-w-[600px] h-[400px] md:h-[600px]">
-              <iframe
-                className="w-full h-full rounded-lg shadow-xl"
-                src="https://www.youtube.com/embed/your-video-id"
-                title="Sales Force Evaluation Tool Demo"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+          <div className="flex justify-end px-4">
+            <div className="w-full max-w-[600px] h-[400px] md:h-[600px] relative">
+              {!isPlaying ? (
+                <div
+                  className="w-full h-full bg-cover bg-center rounded-lg shadow-xl cursor-pointer flex items-center justify-center relative"
+                  style={{
+                    backgroundImage: `url(${VideoThumb})`,
+                  }}
+                  onClick={handlePlay}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-lg"></div>
+
+                  <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-16 w-16 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14.752 11.168l-3.197-1.833A1 1 0 0010 10.25v3.5a1 1 0 001.555.832l3.197-1.833a1 1 0 000-1.664z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  className="w-full h-full rounded-lg shadow-xl"
+                  src="https://www.youtube.com/embed/your-video-id?autoplay=1"
+                  title="Sales Force Evaluation Tool Demo"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              )}
             </div>
           </div>
         </div>
@@ -293,11 +271,11 @@ const SalesForceEvaluation = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="text-center md:text-left gap-5 flex flex-wrap justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
               <Link
                 to="take-the-sales-force-evaluation"
                 type="button"
-                className="text-white w-2/5 group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5   flex items-center justify-center"
+                className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">

@@ -78,9 +78,10 @@ const Achievement = () => {
           </div>
         </motion.div>
 
-        <div className="flex justify-center md:justify-center sm:justify-center">
+        <div className="flex justify-center md:justify-end sm:justify-center">
           <div className="flex flex-col justify-start space-y-4">
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3">
+            {/* Global Recognition Item */}
+            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <AiOutlineGlobal className="text-white text-2xl" />
               </div>
@@ -88,13 +89,17 @@ const Achievement = () => {
                 Global Recognition
               </span>
             </div>
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3">
+
+            {/* Industry Awards Item */}
+            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FaTrophy className="text-white text-2xl" />
               </div>
               <span className="text-[#000] font-medium">Industry Awards</span>
             </div>
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3">
+
+            {/* Empowering Sales Teams Item */}
+            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FiTrendingUp className="text-white text-2xl" />
               </div>

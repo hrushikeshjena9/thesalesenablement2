@@ -84,7 +84,7 @@ const VisionMission = () => {
             </div>
           </motion.div>
 
-          <div className="flex justify-center md:justify-center">
+          <div className="flex overflow-hidden justify-center md:justify-center">
             <motion.div
               className="relative overflow-hidden flex-1 h-full"
               initial="hidden"

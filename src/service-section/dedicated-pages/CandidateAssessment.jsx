@@ -96,7 +96,7 @@ const CandidateAssessment = () => {
     <>
       <HeroCandidate />
 
-      <section className="py-12 about-class container mx-auto px-4 ">
+      <section className="py-12 about-class container mx-auto px-6 ">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
           <motion.div
             className="relative overflow-hidden"
@@ -105,7 +105,7 @@ const CandidateAssessment = () => {
             viewport={{ once: true, amount: 0.5 }}
             variants={leftVariants}
           >
-            <div className="px-4 sm:px-12">
+           
               <div className="w-full h-full flex items-center justify-center">
                 <img
                   src={Image}
@@ -113,7 +113,7 @@ const CandidateAssessment = () => {
                   className="w-full h-auto max-w-[480px] sm:max-w-full object-contain"
                 />
               </div>
-            </div>
+       
           </motion.div>
 
           <motion.div
@@ -211,71 +211,74 @@ const CandidateAssessment = () => {
           </div>
         </div>
       </section>
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center mb-12">
-        <motion.div
-          className="relative overflow-hidden"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={leftVariants}
-        >
-          <div className="px-4 sm:px-12">
-            <div className="w-full h-full flex items-center justify-center">
-              <img
-                src={Image2}
-                alt="Candidates Assessment"
-                className="w-full h-auto max-w-[480px] sm:max-w-full object-contain"
-              />
-            </div>
-          </div>
-        </motion.div>
-
-        <motion.div
-          className="text-center md:text-left overflow-hidden"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={rightVariants}
-        >
-          <h5
-            className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text"
-            data-aos="fade-left"
-            data-aos-delay="200"
-            data-aos-offset="200"
+      <section className="py-12 banner   ">
+        <div className="grid grid-cols-1 container mx-auto px-4 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center mb-12">
+          <motion.div
+            className="relative overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={leftVariants}
           >
-            Sales Candidate Assessments
-          </h5>
-
-          <h2
-            className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7"
-            data-aos="fade-left"
-            data-aos-delay="200"
-            data-aos-offset="200"
-          >
-            Download a sample of{" "}
-            <span className="ml-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
-              Sales Candidate Assessment
-            </span>
-          </h2>
-          <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
-            <Link
-              to="take-the-sales-force-evaluation"
-              type="button"
-              className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
-            >
-              <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
-              <span className="relative text-white group-hover:text-white flex items-center">
-                Sample sales Candidate Assessments
+            <div className="px-4 sm:px-12">
+              <div className="w-full h-full flex items-center justify-center">
                 <img
-                  src={RightArrow1}
-                  alt="Arrow Icon"
-                  className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
+                  src={Image2}
+                  alt="Candidates Assessment"
+                  className="w-full h-auto max-w-[480px] sm:max-w-full object-contain"
                 />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="text-center md:text-left overflow-hidden"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={rightVariants}
+          >
+            <h5
+              className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text"
+              data-aos="fade-left"
+              data-aos-delay="200"
+              data-aos-offset="200"
+            >
+              Sales Candidate Assessments
+            </h5>
+
+            <h2
+              className="text-[18px] text-white sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7"
+              data-aos="fade-left"
+              data-aos-delay="200"
+              data-aos-offset="200"
+            >
+              Download a sample of{" "}
+              <span className="ml-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+                Sales Candidate Assessment
               </span>
-            </Link>
-          </div>
-        </motion.div>
-      </div>
+            </h2>
+            <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
+              <Link
+                to="take-the-sales-force-evaluation"
+                type="button"
+                className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
+              >
+                <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out  group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-white group-hover:to-white"></span>
+                <span className="relative text-white group-hover:text-[#DB0032] flex items-center">
+                  Sample sales Candidate Assessments
+                  <img
+                    src={RightArrow1}
+                    alt="Arrow Icon"
+                    className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
+                  />
+                </span>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
@@ -355,7 +358,6 @@ const CandidateAssessment = () => {
           </div>
         </div>
       </section>
-      
     </>
   );
 };

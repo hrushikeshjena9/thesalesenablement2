@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -8,8 +8,12 @@ import expert1 from "../assets/expert1.png";
 import expert2 from "../assets/expert2.png";
 import expert3 from "../assets/expert3.png";
 import expert4 from "../assets/expert4.png";
+import SliderBtnLeft from "../assets/slider-btn-left.png";
+import SliderBtnRight from "../assets/slider-btn-right.png";
 
 const Expertise = () => {
+  const sliderRef = useRef(null);
+
   const experts = [
     {
       name: "Sarah Miller",
@@ -54,25 +58,53 @@ const Expertise = () => {
   ];
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 4, // Show three items at a time
-    slidesToScroll: 1, // Scroll one item at a time
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    autoplay: true, // Added autoplay
+    autoplaySpeed: 3000, // Added autoplay speed (3 seconds)
+    initialSlide: 0,
+    pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024, // Adjust for medium-sized screens
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 2, // Show 2 items for smaller screens
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: false,
         },
       },
       {
-        breakpoint: 768, // Adjust for mobile screens
+        breakpoint: 600,
         settings: {
-          slidesToShow: 1, // Show 1 item for very small screens
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
+  };
+
+  const goToPreviousSlide = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const goToNextSlide = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
   };
 
   return (
@@ -93,7 +125,8 @@ const Expertise = () => {
         a unique set of skills to help your sales team succeed.
       </p>
 
-      <Slider {...settings}>
+      {/* Slider */}
+      <Slider ref={sliderRef} {...settings}>
         {experts.map((expert, index) => (
           <motion.div
             key={index}
@@ -106,7 +139,7 @@ const Expertise = () => {
               <img
                 src={expert.image}
                 alt={expert.name}
-                className="w-full h-full "
+                className="w-full h-full"
               />
             </div>
 
@@ -118,7 +151,7 @@ const Expertise = () => {
                 {expert.title}
               </p>
               <p className="text-gray-600 text-sm mt-3 group-hover:text-gray-100">
-                <span className="font bold group-hover:text-gray-200  text-black">
+                <span className="font-bold group-hover:text-gray-200 text-black">
                   Expertise:{" "}
                 </span>{" "}
                 {expert.expertise}
@@ -134,7 +167,7 @@ const Expertise = () => {
                   <FaPlus className="text-white text-xl font-bold" />
                 </div>
 
-                <div className="absolute bottom-full right-0 mb-2 hidden group-hover:flex flex-col space-y-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full ">
+                <div className="absolute bottom-full right-0 mb-2 hidden group-hover:flex flex-col space-y-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full">
                   <FaFacebookF
                     className="text-white cursor-pointer hover:text-gray-600 text-xl transition-colors duration-300"
                     title="Facebook"
@@ -153,6 +186,34 @@ const Expertise = () => {
           </motion.div>
         ))}
       </Slider>
+
+      {/* Custom Navigation Buttons */}
+      <div className="container mx-auto px-4 mt-6 flex justify-end">
+        <div className="btn-hero-slider flex items-center">
+          <button
+            onClick={goToPreviousSlide}
+            className="focus:outline-none"
+            aria-label="Previous Slide"
+          >
+            <img
+              src={SliderBtnLeft}
+              alt="Previous Slide"
+              className="w-12 h-12 hover:scale-110 transition-transform"
+            />
+          </button>
+          <button
+            onClick={goToNextSlide}
+            className="focus:outline-none ml-4"
+            aria-label="Next Slide"
+          >
+            <img
+              src={SliderBtnRight}
+              alt="Next Slide"
+              className="w-12 h-12 hover:scale-110 transition-transform"
+            />
+          </button>
+        </div>
+      </div>
     </section>
   );
 };

@@ -31,7 +31,7 @@ const AboutUs = () => {
   };
   return (
     <section className="py-12 about-class container mx-auto px-4 ">
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
+      <div className="grid grid-cols-1 overflow-hidden md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
         <motion.div
           className="relative overflow-hidden"
           initial="hidden"
