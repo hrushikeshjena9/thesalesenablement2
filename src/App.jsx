@@ -21,7 +21,6 @@ import ScrollToTopButton from "./components/ScroolTop";
 import SalesForceEvaluation from "./service-section/dedicated-pages/SalesForceEvolution";
 import CandidateAssessment from "./service-section/dedicated-pages/CandidateAssessment";
 
-
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
