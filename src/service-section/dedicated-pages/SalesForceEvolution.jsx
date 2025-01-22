@@ -20,8 +20,13 @@ import {
   FaArrowRight,
   FaLongArrowAltDown,
 } from "react-icons/fa";
+import SalesAssessmentModal from "./sections/SalesAssessmentModal";
 
 const SalesForceEvaluation = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  }
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleFormSubmit = (e) => {
@@ -233,8 +238,9 @@ const SalesForceEvaluation = () => {
                   />
                 </span>
               </Link>
-              <Link
-                to="take-the-sales-force-evaluation"
+              <button
+                // to="take-the-sales-force-evaluation"
+                onClick={toggleModal}
                 type="button"
                 className="text-white w-2/5 group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5   flex items-center justify-center"
               >
@@ -247,7 +253,8 @@ const SalesForceEvaluation = () => {
                     className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
                   />
                 </span>
-              </Link>
+              </button>
+              {isModalOpen && <SalesAssessmentModal toggleModal={toggleModal} />}
             </div>
           </div>
 

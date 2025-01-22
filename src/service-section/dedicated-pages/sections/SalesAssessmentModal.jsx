@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-const SalesAssessmentModal = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const SalesAssessmentModal = ({toggleModal}) => {
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleModal = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <button
-        className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600"
-        onClick={toggleModal}
-      >
-        Let's Begin
-      </button>
+    // <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    //   <button
+    //     className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600"
+    //     onClick={toggleModal}
+    //   >
+    //     Let's Begin
+    //   </button>
 
-      {isOpen && (
+    //   {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 overflow-y-auto h-[80vh]">
             <div className="flex justify-between items-center mb-4">
@@ -124,8 +124,8 @@ const SalesAssessmentModal = () => {
             </form>
           </div>
         </div>
-      )}
-    </div>
+    //   )}
+    // </div>
   );
 };
 
