@@ -69,7 +69,7 @@ const DesktopMenu = ({
                 </button>
 
                 {dropdownOpen === link.name.toLowerCase() && (
-                  <ul className="absolute left-1/2 transform -translate-x-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-[750px] xl:w-[950px] bg-white text-gray-700 rounded-lg shadow-lg z-50 p-4">
+                  <ul className="absolute left-1/2 transform -translate-x-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-[750px] xl:w-[950px] bg-white text-gray-700 rounded-lg shadow-lg z-20 p-4">
                     {(link.name === "Courses" ? courses : services).map(
                       (item, idx) => (
                         <li

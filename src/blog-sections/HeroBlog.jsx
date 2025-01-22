@@ -6,7 +6,7 @@ function HeroBlog() {
   return (
     <>
       <section>
-        <div className="relative w-full h-full z-50 course-bg">
+        <div className="relative w-full h-full z-20 course-bg">
           <div className="relative   bg-layer">
             <Navbar />
 

@@ -56,7 +56,7 @@ const CourseSidebar = ({ setFilters }) => {
 
   return (
     <aside
-      className={`w-full md:w-1/4 bg-gray-100 p-6 shadow-lg md:block ${
+      className={`w-full md:w-1/4 h-1/2 bg-gray-100 p-6 shadow-lg md:block ${
         isOpen ? "block" : "hidden"
       } md:flex`}
     >
