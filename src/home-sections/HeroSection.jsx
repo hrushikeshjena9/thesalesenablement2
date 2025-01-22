@@ -58,7 +58,7 @@ function HeroSection() {
           return 0;
         }
       });
-    }, 50);
+    }, 48);
 
     return () => clearInterval(progressInterval);
   }, [currentSlide]);
@@ -105,9 +105,7 @@ function HeroSection() {
       transition: { duration: 1, ease: "easeOut" },
     },
   };
-  useEffect(() => {
-    console.log(`Current slide: ${slideContent[currentSlide]?.title}`);
-  }, [currentSlide]);
+ 
 
   return (
     <>
@@ -215,34 +213,6 @@ function HeroSection() {
                         className="w-6 h-6 ml-2"
                       />
                     </button>
-                    {/* <button
-                      type="button"
-                      className="text-white relative transition-transform duration-500 ease-in-out transform overflow-hidden group hover:border-[#ed3b15] hover:bg-none hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-2 border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2.5 2xl:py-3 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
-                    >
-                      <span className="absolute inset-0 w-0 h-full bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                      <span className="relative group-hover:text-white flex items-center">
-                        {slideContent[currentSlide].buttonText2}
-                        <img
-                          src={RightArrow}
-                          alt="arrow"
-                          className="w-6 h-6 ml-2 group-hover:filter group-hover:brightness-0 group-hover:invert"
-                        />
-                      </span>
-                    </button> */}
-                    {/* <button
-                      type="button"
-                      className="text-white relative transition-transform duration-500 ease-in-out transform overflow-hidden group hover:border-[#DB0032] hover:bg-none hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-2 border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2.5 2xl:py-3 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
-                    >
-                      <span className="absolute inset-0 w-0 h-full bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-                      <span className="relative group-hover:text-white flex items-center space-x-2">
-                        {slideContent[currentSlide].buttonText2}
-                        <img
-                          src={RightArrow}
-                          alt="arrow"
-                          className="w-6 h-6 ml-2 relative transition-all duration-500 ease-in-out group-hover:brightness-0 group-hover:invert group-hover:scale-110"
-                        />
-                      </span>
-                    </button> */}
                   </motion.div>
                 </motion.div>
               </AnimatePresence>

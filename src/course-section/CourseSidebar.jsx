@@ -169,19 +169,6 @@ const CourseSidebar = ({ setFilters }) => {
           </select>
         </div>
 
-        {/* Price Filter */}
-        {/* <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-600 mb-2">Price</label>
-          <select
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          >
-            <option value="all">All</option>
-            <option value="free">Free</option>
-            <option value="paid">Paid</option>
-          </select>
-        </div> */}
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-600 mb-2">
             Price

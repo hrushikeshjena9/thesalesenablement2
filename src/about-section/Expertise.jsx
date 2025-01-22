@@ -93,54 +93,6 @@ const Expertise = () => {
         a unique set of skills to help your sales team succeed.
       </p>
 
-      {/* <Slider {...settings}>
-        {experts.map((expert, index) => (
-          <motion.div
-            key={index}
-            className="bg-white shadow-lg rounded-lg overflow-hidden relative group flex flex-col h-[550px] mx-4 border-2 border-orange-500"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2 }}
-          >
-            <div className="h-1/2">
-              <img
-                src={expert.image}
-                alt={expert.name}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            <div className="h-1/2 flex flex-col justify-between p-10 transition-colors duration-300 group-hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] items-center">
-              <h3 className="text-xl font-bold transition-colors duration-300 group-hover:text-white">
-                {expert.name}
-              </h3>
-              <p className="text-sm text-gray-500 transition-colors duration-300 group-hover:text-white">
-                {expert.title}
-              </p>
-              <p className="text-gray-700 mt-2 text-center transition-colors duration-300 group-hover:text-white">
-                {expert.expertise}
-              </p>
-            </div>
-
-            <div className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10">
-              <div className="relative group/social">
-                <div
-                  className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-2 rounded-full cursor-pointer flex items-center justify-center"
-                  style={{ width: "40px", height: "40px" }}
-                >
-                  <span className="text-white text-lg">+</span>
-                </div>
-
-                <div className="absolute bottom-full right-0 mb-2 hidden group-hover/social:flex flex-col space-y-2 bg-white shadow-lg p-3 rounded-lg">
-                  <FaFacebookF className="text-[#0077B5] cursor-pointer" />
-                  <FaLinkedinIn className="text-[#0077B5] cursor-pointer" />
-                  <FaTwitter className="text-[#1DA1F2] cursor-pointer" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </Slider> */}
       <Slider {...settings}>
         {experts.map((expert, index) => (
           <motion.div
@@ -166,7 +118,10 @@ const Expertise = () => {
                 {expert.title}
               </p>
               <p className="text-gray-600 text-sm mt-3 group-hover:text-gray-100">
-                <span className="font bold group-hover:text-gray-200  text-black">Expertise:  </span>  {expert.expertise}
+                <span className="font bold group-hover:text-gray-200  text-black">
+                  Expertise:{" "}
+                </span>{" "}
+                {expert.expertise}
               </p>
             </div>
 
