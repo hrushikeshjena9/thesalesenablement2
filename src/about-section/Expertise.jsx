@@ -130,7 +130,7 @@ const Expertise = () => {
         {experts.map((expert, index) => (
           <motion.div
             key={index}
-            className="bg-white shadow-lg rounded-lg overflow-hidden relative group flex flex-col h-[550px] mx-6 border-2 border-orange-500 hover:shadow-xl transition-shadow duration-300"
+            className="bg-white shadow-lg rounded-lg overflow-hidden relative group1 flex flex-col h-[550px] mx-6 border-2 border-orange-500 hover:shadow-xl transition-shadow duration-300"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
@@ -143,7 +143,7 @@ const Expertise = () => {
               />
             </div>
 
-            <div className="h-1/2 flex flex-col justify-center p-6 text-center transition-colors duration-300 group-hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
+            <div className="h-1/2 flex flex-col justify-center p-6 text-center transition-colors duration-300 group hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
               <h3 className="text-lg uppercase font-semibold text-gray-800 group-hover:text-white">
                 {expert.name}
               </h3>
@@ -153,7 +153,7 @@ const Expertise = () => {
               <p className="text-gray-600 text-sm mt-3 group-hover:text-gray-100">
                 <span className="font-bold group-hover:text-gray-200 text-black">
                   Expertise:{" "}
-                </span>{" "}
+                </span>
                 {expert.expertise}
               </p>
             </div>
