@@ -141,6 +141,16 @@ body {
   .about-class {
     margin-top: 0 !important;
   }
+  .about-home-bg {
+    width: 21.1525rem;
+    height: 20.1181rem;
+  }
+
+  .mission-bg {
+ 
+    width: 24rem;
+    height: 23rem;
+  }
 }
 
 @media (min-width: 640px) and (max-width: 767px) {
@@ -199,6 +209,10 @@ body {
   }
   .case-study {
     margin-top: 0 !important;
+  }
+  .about-home-bg {
+    width: 437.44px;
+    height: 415.89px;
   }
 }
 
@@ -296,7 +310,6 @@ body {
 .icon-hover:hover .icon-hover2 {
   color: #fff;
 }
-
 
 .icon-hover:hover .icon-hover3 {
   background-color: #fff;
