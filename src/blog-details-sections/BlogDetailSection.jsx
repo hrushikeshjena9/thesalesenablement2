@@ -88,10 +88,7 @@ const BlogDetailSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaFacebook
-                    size={30}
-                    className="text-white hover:text-[#1877F2] text-xl"
-                  />
+                  <FaFacebook size={30} className="text-white  text-xl" />
                   <hr className="mt-4" />
                 </a>
                 <a
@@ -99,10 +96,7 @@ const BlogDetailSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaTwitter
-                    size={30}
-                    className="text-white hover:text-[#1DA1F2] text-xl"
-                  />
+                  <FaTwitter size={30} className="text-white text-xl" />
                   <hr className="mt-4" />
                 </a>
                 <a
@@ -110,10 +104,7 @@ const BlogDetailSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedin
-                    size={30}
-                    className="text-white hover:text-[#0077B5] text-xl"
-                  />
+                  <FaLinkedin size={30} className="text-white  text-xl" />
                 </a>
               </div>
             </div>
@@ -172,7 +163,7 @@ const BlogDetailSection = () => {
       </div>
 
       <CommentPost />
-      <CommentSection/>
+      <CommentSection />
     </section>
   );
 };

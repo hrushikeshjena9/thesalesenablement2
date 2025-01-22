@@ -160,15 +160,15 @@ const DesktopMenu = ({
         </NavLink>
 
         {isLogInOpen && (
-          <div className="fixed inset-0 flex justify-end items-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
-            <div className="bg-white p-8 rounded-md w-full md:w-96 lg:w-1/2 xl:w-1/3 2xl:w-1/4 relative">
+          <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50">
+            <div className="bg-white p-8 rounded-md w-full md:w-96 lg:w-1/3 xl:w-1/4 relative">
               <button
                 className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
                 onClick={closeModal}
               >
                 <FaTimes />
               </button>
-              <h2 className="text-2xl uppercase md:text-xl font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+              <h2 className="text-2xl md:text-xl font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
                 Sign in or Create an account
               </h2>
 
@@ -189,17 +189,17 @@ const DesktopMenu = ({
                     className="w-full border border-gray-300 rounded pl-10 p-2.5"
                   />
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center text-sm text-black">
                   <label className="flex items-center">
                     <input type="checkbox" className="mr-2" />
                     Remember Me
                   </label>
-                  <a href="#" className="text-sm text-blue-500">
+                  <a href="#" className="hover:text-[#DB0032]">
                     Forgot Password?
                   </a>
                 </div>
-                <div className="flex justify-center items-center">
-                  <button className="text-white transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3">
+                <div className="flex justify-center items-center mt-4">
+                  <button className="text-white uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold px-10 py-3 w-full">
                     LOGIN
                   </button>
                 </div>
@@ -224,6 +224,7 @@ const DesktopMenu = ({
             </div>
           </div>
         )}
+
         <NavLink
           to="/sign-up"
           type="button"
