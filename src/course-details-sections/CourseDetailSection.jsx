@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import TabNavigation from "../components/TabNavigation";
 import RelatedCourseSlider from "./RelatedCourseSlider";
 import RightArrow1 from "../assets/arrow-right1.png";
-
+import CourseImage from "../../src/assets/banner3.png";
 const CourseDetailSection = () => {
   const { courseId } = useParams(); // Extract courseId from the URL
   const [course, setCourse] = useState(null);
@@ -25,7 +25,7 @@ const CourseDetailSection = () => {
         starCategory: "4.8",
         lessons: 16,
         students: 350,
-        image: "/src/assets/banner3.png",
+        image: CourseImage,
         location: "online",
         topics: ["salesEnablement", "negotiation"],
         brochureLink: "/brochure.pdf",
