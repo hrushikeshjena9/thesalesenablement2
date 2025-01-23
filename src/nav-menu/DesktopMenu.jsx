@@ -85,7 +85,7 @@ const DesktopMenu = ({
                             className={({ isActive }) =>
                               `block font-bold ${
                                 isActive
-                                  ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                                  ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] icon-hover2 transition duration-200 ease-in-out"
                                   : ""
                               }`
                             }

@@ -32,7 +32,7 @@ const courses = [
 
 const services = [
   { name: "Sales Force Evaluation", path: "/services/sales-force-evaluation", icon: <FaChartLine /> },
-  { name: "Recruiting Process Optimization", path: "/services/recruiting-process-optimization", icon: <FaUserTie /> },
+  { name: "Recruiting Process Optimization", path: "/service/:id", icon: <FaUserTie /> },
   { name: "Sales Candidate Assessments", path: "/services/sales-candidate-assessments", icon: <FaClipboardList /> },
   { name: "CRM Selection, Installation, and Integration", path: "/services/crm-selection-installation-integration", icon: <FaTools /> },
   { name: "Sales Process Optimization", path: "/services/sales-process-optimization", icon: <FaClipboardCheck /> },

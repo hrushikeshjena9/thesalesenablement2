@@ -41,9 +41,9 @@ const ScheduleConsultation = () => {
           </div>
 
           <button className="px-6 py-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white text-lg font-semibold shadow-md focus:outline-none hover:from-[#FA6602] hover:to-[#DB0032] transition duration-300 flex items-center">
-  Get Started
-  <FaArrowRight className="ml-2" />
-</button>
+            Get Started
+            <FaArrowRight className="ml-2" />
+          </button>
         </div>
 
         {/* Right Section */}
