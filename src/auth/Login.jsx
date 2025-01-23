@@ -23,11 +23,11 @@ function LogIn() {
 
   return (
     <>
-      <section className="relative w-full h-full overflow-hidden course-bg">
+      <section className="relative w-full h-full  course-bg">
         <div className="relative bg-layer">
           <Navbar />
           <div className="text-white flex items-center justify-center container mx-auto px-4 py-12">
-            <h1 className="text-5xl uppercase font-bold">Log-In</h1>
+            <h1 className="text-5xl uppercase font-bold">Login</h1>
           </div>
         </div>
       </section>

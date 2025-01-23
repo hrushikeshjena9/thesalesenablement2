@@ -54,12 +54,12 @@ function SignUp() {
   return (
     <>
       <section>
-        <div className="relative w-full h-full overflow-hidden course-bg">
+        <div className="relative w-full h-full course-bg">
           <div className="relative bg-layer">
             <Navbar />
 
             <div className="text-white flex items-center justify-center container mx-auto px-4 pt-16 pb-20">
-              <h1 className="text-5xl uppercase font-bold">Sign-UP</h1>
+              <h1 className="text-5xl uppercase font-bold">Sign Up</h1>
             </div>
           </div>
         </div>

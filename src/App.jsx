@@ -87,14 +87,14 @@ function App() {
               path="/services/sales-candidate-assessments"
               element={<CandidateAssessment />}
             />
-              {/* <Route
+              <Route
               path="/privacy-policy"
               element={<PrivacyPolicy />}
-            /> */}
-               {/* <Route
+            />
+               <Route
               path="/terms-and-conditions"
               element={<TermsAndConditions />}
-            /> */}
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
