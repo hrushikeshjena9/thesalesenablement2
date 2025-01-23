@@ -21,28 +21,28 @@ function Navbar() {
 
 
 const courses = [
-  { name: "Professional Selling Skills", path: "/course-details/:courseId", icon: <FaChalkboardTeacher /> },
-  { name: "Communication Skills for Sales Staff", path: "/course-details/:courseId", icon: <FaComments /> },
-  { name: "Front Line Retail Selling Skills", path: "/course-details/:courseId", icon: <FaStore /> },
-  { name: "Sales Management", path: "/course-details/:courseId", icon: <FaChartLine /> },
-  { name: "Sales Territory Planning & Routing", path: "/course-details/:courseId", icon: <FaRoute /> },
-  { name: "Retail Sales Planning and Forecasting", path: "/course-details/:courseId", icon: <FaClipboardCheck /> },
+  { name: "Professional Selling Skills", path: "/course-details/1", icon: <FaChalkboardTeacher /> },
+  { name: "Communication Skills for Sales Staff", path: "/course-details/2", icon: <FaComments /> },
+  { name: "Front Line Retail Selling Skills", path: "/course-details/3", icon: <FaStore /> },
+  { name: "Sales Management", path: "/course-details/4", icon: <FaChartLine /> },
+  { name: "Sales Territory Planning & Routing", path: "/course-details/5", icon: <FaRoute /> },
+  { name: "Retail Sales Planning and Forecasting", path: "/course-details/6", icon: <FaClipboardCheck /> },
 ];
 
 
 const services = [
   { name: "Sales Force Evaluation", path: "/services/sales-force-evaluation", icon: <FaChartLine /> },
-  { name: "Recruiting Process Optimization", path: "/service/:id1", icon: <FaUserTie /> },
+  { name: "Recruiting Process Optimization", path: "/service/1", icon: <FaUserTie /> },
   { name: "Sales Candidate Assessments", path: "/services/sales-candidate-assessments", icon: <FaClipboardList /> },
-  { name: "CRM Selection, Installation, and Integration", path: "/service/:id2", icon: <FaTools /> },
-  { name: "Sales Process Optimization", path: "/service/:id3", icon: <FaClipboardCheck /> },
-  { name: "Metrics Development", path: "/service/:id4", icon: <FaCogs /> },
-  { name: "Pipeline Management", path: "/service/:id5", icon: <FaProjectDiagram /> },
-  { name: "Sales Management Development", path: "/service/:id6", icon: <FaUsers /> },
-  { name: "Trade Show Selling", path:"/service/:id7", icon: <FaRegHandshake /> },
-  { name: "Consulting & Strategy", path: "/service/:id8", icon: <FaLightbulb /> },
-  { name: "Coaching", path: "/service/:id9", icon: <FaChalkboardTeacher /> },
-  { name: "Sales Training & Professional Services Training", path: "/service/:id10", icon: <FaGraduationCap /> },
+  { name: "CRM Selection, Installation, and Integration", path: "/service/2", icon: <FaTools /> },
+  { name: "Sales Process Optimization", path: "/service/3", icon: <FaClipboardCheck /> },
+  { name: "Metrics Development", path: "/service/4", icon: <FaCogs /> },
+  { name: "Pipeline Management", path: "/service/5", icon: <FaProjectDiagram /> },
+  { name: "Sales Management Development", path: "/service/6", icon: <FaUsers /> },
+  { name: "Trade Show Selling", path:"/service/7", icon: <FaRegHandshake /> },
+  { name: "Consulting & Strategy", path: "/service/8", icon: <FaLightbulb /> },
+  { name: "Coaching", path: "/service/9", icon: <FaChalkboardTeacher /> },
+  { name: "Sales Training & Professional Services Training", path: "/service/10", icon: <FaGraduationCap /> },
 ];
 
 
