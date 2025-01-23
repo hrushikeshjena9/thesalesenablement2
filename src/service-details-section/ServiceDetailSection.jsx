@@ -3,6 +3,7 @@ import { FaArrowDown } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import ServicesDetails1 from "../assets/new/services-details1.jpg";
 import ServicesDetails2 from "../assets/new/metic.jpg";
+import Recruiting from "../assets/recuirting.jpg";
 
 import {
   FaChartLine,
@@ -21,16 +22,14 @@ const ServiceDetailSection = () => {
       // Simulating fetching course details based on courseId
       const courseData = {
         id: courseId,
-        title: "Retail Sales Planning and Forecasting",
+        title: "Recruiting Process Optimization",
         description:
           "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a line in section 1.10.32.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from de Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
         price: "$220",
-        instructor: "Daniel Lee",
-        instructorImage: "/src/assets/person7.png",
         starCategory: "4.8",
         lessons: 16,
         students: 350,
-        image: "/src/assets/banner3.png",
+        image: Recruiting,
         location: "online",
         topics: ["salesEnablement", "negotiation"],
         brochureLink: "/brochure.pdf",
