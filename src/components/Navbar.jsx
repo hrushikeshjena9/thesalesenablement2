@@ -32,17 +32,17 @@ const courses = [
 
 const services = [
   { name: "Sales Force Evaluation", path: "/services/sales-force-evaluation", icon: <FaChartLine /> },
-  { name: "Recruiting Process Optimization", path: "/service/:id", icon: <FaUserTie /> },
+  { name: "Recruiting Process Optimization", path: "/service/:id1", icon: <FaUserTie /> },
   { name: "Sales Candidate Assessments", path: "/services/sales-candidate-assessments", icon: <FaClipboardList /> },
-  { name: "CRM Selection, Installation, and Integration", path: "/services/crm-selection-installation-integration", icon: <FaTools /> },
-  { name: "Sales Process Optimization", path: "/services/sales-process-optimization", icon: <FaClipboardCheck /> },
-  { name: "Metrics Development", path: "/services/metrics-development", icon: <FaCogs /> },
-  { name: "Pipeline Management", path: "/services/pipeline-management", icon: <FaProjectDiagram /> },
-  { name: "Sales Management Development", path: "/services/sales-management-development", icon: <FaUsers /> },
-  { name: "Trade Show Selling", path: "/services/trade-show-selling", icon: <FaRegHandshake /> },
-  { name: "Consulting & Strategy", path: "/services/consulting-strategy", icon: <FaLightbulb /> },
-  { name: "Coaching", path: "/services/coaching", icon: <FaChalkboardTeacher /> },
-  { name: "Sales Training & Professional Services Training", path: "/services/sales-training-professional-services-training", icon: <FaGraduationCap /> },
+  { name: "CRM Selection, Installation, and Integration", path: "/service/:id2", icon: <FaTools /> },
+  { name: "Sales Process Optimization", path: "/service/:id3", icon: <FaClipboardCheck /> },
+  { name: "Metrics Development", path: "/service/:id4", icon: <FaCogs /> },
+  { name: "Pipeline Management", path: "/service/:id5", icon: <FaProjectDiagram /> },
+  { name: "Sales Management Development", path: "/service/:id6", icon: <FaUsers /> },
+  { name: "Trade Show Selling", path:"/service/:id7", icon: <FaRegHandshake /> },
+  { name: "Consulting & Strategy", path: "/service/:id8", icon: <FaLightbulb /> },
+  { name: "Coaching", path: "/service/:id9", icon: <FaChalkboardTeacher /> },
+  { name: "Sales Training & Professional Services Training", path: "/service/:id10", icon: <FaGraduationCap /> },
 ];
 
 
