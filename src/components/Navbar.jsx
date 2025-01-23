@@ -10,7 +10,7 @@ function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const links = [
     { name: "Home", route: "/" },
-    { name: "About Us", route: "/about" },
+    { name: "About Us", route: "/about-us" },
     { name: "Services", route: "/services" },
     { name: "Courses", route: "/courses" },
     { name: "Blogs", route: "/blogs" },
@@ -21,12 +21,12 @@ function Navbar() {
 
 
 const courses = [
-  { name: "Professional Selling Skills", path: "/courses/professional-selling-skills", icon: <FaChalkboardTeacher /> },
-  { name: "Communication Skills for Sales Staff", path: "/courses/communication-skills-for-sales-staff", icon: <FaComments /> },
-  { name: "Front Line Retail Selling Skills", path: "/courses/front-line-retail-selling-skills", icon: <FaStore /> },
-  { name: "Sales Management", path: "/courses/sales-management", icon: <FaChartLine /> },
-  { name: "Sales Territory Planning & Routing", path: "/courses/sales-territory-planning-routing", icon: <FaRoute /> },
-  { name: "Retail Sales Planning and Forecasting", path: "/courses/retail-sales-planning-forecasting", icon: <FaClipboardCheck /> },
+  { name: "Professional Selling Skills", path: "/course-details/:courseId", icon: <FaChalkboardTeacher /> },
+  { name: "Communication Skills for Sales Staff", path: "/course-details/:courseId", icon: <FaComments /> },
+  { name: "Front Line Retail Selling Skills", path: "/course-details/:courseId", icon: <FaStore /> },
+  { name: "Sales Management", path: "/course-details/:courseId", icon: <FaChartLine /> },
+  { name: "Sales Territory Planning & Routing", path: "/course-details/:courseId", icon: <FaRoute /> },
+  { name: "Retail Sales Planning and Forecasting", path: "/course-details/:courseId", icon: <FaClipboardCheck /> },
 ];
 
 

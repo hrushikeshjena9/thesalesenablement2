@@ -5,7 +5,8 @@ import ServicesImg from "../assets/services.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tick from "../assets/Tick.png";
-
+import Students from "../assets/new/students.png";
+import SalesLeaders from "../assets/new/sales-leaders.png";
 const WhyChooseUs = () => {
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -32,23 +33,42 @@ const WhyChooseUs = () => {
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
         <div className="flex justify-center md:justify-start">
           <motion.div
-            className="relative overflow-hidden"
+            className="relative"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={leftVariants}
-            style={{
-              "@media (max-width: 768px)": {
-                variant: "mobile",
-              },
-            }}
           >
-            <img
-              src={ServicesImg}
-              alt="About"
-              className="w-full"
-              data-aos="fade-right"
-            />
+            {/* <div className="flex justify-center align-middle">
+              <div className="about-home-bg ">
+                <img
+                  src={Thumb}
+                  alt=""
+                  className="w-[150.38px]  h-[150.38px] sm:w-[234.3px]   sm:h-[230.35px] md:w-[234.3px]  md:h-[230.35px] lg:w-[200px]  lg:h-[200px] xl:w-[234.3px]  xl:h-[230.35px] 2xl:w-[234.3px]  2xl:h-[230.35px] relative top-[-2rem] sm:top-[-4rem] z-20"
+                />
+
+                <img
+                  src={About1}
+                  alt=""
+                  className="w-[255px] h-[234px] sm:w-[444.01px] sm:h-[402.44px] md:w-[444.01px] md:h-[402.44px] lg:w-[329px] lg:h-[335px] xl:w-[444.01px] xl:h-[402.44px] 2xl:w-[444.01px] 2xl:h-[402.44px] z-10 rounded-lg relative left-[3rem] top-[-6rem] sm:left-16 sm:top-[-10rem]"
+                />
+              </div>
+            </div> */}
+
+            <div className="flex justify-center items-center">
+              <div className="services-bg relative">
+                <img
+                  src={Students}
+                  alt=""
+                  className="w-[150.38px] h-[150.38px] sm:w-[212px] sm:h-[205px] md:w-[234.3px] md:h-[240px]  lg:w-[200px] lg:h-[220px] xl:w-[270px] xl:h-[250px] 2xl:w-[290px] 2xl:h-[262px] absolute sm:top-[-5rem] top-[-2rem] right-16 md:top-[-5rem] lg:top-[-4rem] xl:top-[-6rem]  2xl:top-[-6rem] sm:right-0 md:right-0 lg:right-0 xl:right-6 2xl:right-0 z-20"
+                />
+                <img
+                  src={SalesLeaders}
+                  alt=""
+                  className="w-[290px] h-[320px] sm:w-[290px] sm:h-[294px] md:w-[360px] md:h-[420px] lg:w-[336px] lg:h-[402px] xl:w-[424px] xl:h-[480px] 2xl:w-[424px] 2xl:h-[480px] z-10 rounded-lg relative left-[6rem] top-20 sm:left-20 md:left-36 lg:left-20 xl:left-20 2xl:left-20"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
 

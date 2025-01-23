@@ -93,6 +93,15 @@ body {
   height: 536.89px;
 }
 
+.services-bg {
+  background-image: url("./assets/new/services-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 634px;
+  height: 553px;
+}
+
 .value-bg {
   width: 533px;
   height: 456px;
@@ -147,9 +156,12 @@ body {
   }
 
   .mission-bg {
- 
     width: 24rem;
     height: 23rem;
+  }
+  .services-bg {
+    width: 499px;
+    height: 412px;
   }
 }
 
@@ -169,6 +181,10 @@ body {
   }
   .services-top-margin {
     margin-top: 0 !important;
+  }
+  .services-bg {
+    width: 491px;
+    height: 412px;
   }
 }
 
@@ -213,6 +229,10 @@ body {
   .about-home-bg {
     width: 437.44px;
     height: 415.89px;
+  }
+  .services-bg {
+    width: 491px;
+    height: 412px;
   }
 }
 

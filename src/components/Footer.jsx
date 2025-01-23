@@ -80,10 +80,17 @@ function Footer() {
                   Quick Links
                 </h5>
                 <img src={FooterLine} alt="Line" className="w-[110px] mb-4" />
+
                 {["Home", "About Us", "Services", "Blogs", "Contact Us"].map(
                   (link, index) => (
                     <div
                       key={index}
+                      onClick={() =>
+                        (window.location.href =
+                          link === "Home"
+                            ? "/"
+                            : `/${link.toLowerCase().replace(/\s+/g, "-")}`)
+                      }
                       className="flex hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] cursor-pointer items-center mb-2"
                     >
                       <img
@@ -111,7 +118,6 @@ function Footer() {
                     target="_blank"
                     className="flex items-center"
                   >
-             
                     <p>28 Sturdee Road, Rosebank, Johannesburg</p>
                   </a>
                 </div>
@@ -119,7 +125,6 @@ function Footer() {
                 <div className="flex flex-row gap-4   mb-2 sm:flex-row sm:gap-4 md:gap-4 lg:flex-col xl:flex-row hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
                   <img src={Phone} alt="phone" className="w-6 h-6 mb-2" />
                   <a href="tel:+0103351182" className="flex items-center">
-             
                     <p>010 335-1182</p>
                   </a>
                 </div>
