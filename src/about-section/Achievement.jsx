@@ -67,10 +67,10 @@ const Achievement = () => {
             transformed sales teams worldwide.
           </p>
           <div className="flex justify-start">
-            <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center">
-              <div className="flex items-baseline justify-center space-x-2">
+            <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center transition-all duration-300 hover:bg-gradient-to-l hover:text-gray-200">
+              <div className="flex justify-center items-center space-x-3">
                 <span className="text-2xl font-bold">2.4K+</span>
-                <span className="text-sm font-medium self-start">
+                <span className="text-lg font-medium ">
                   Successful <br /> Students
                 </span>
               </div>
