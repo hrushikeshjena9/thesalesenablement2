@@ -35,7 +35,7 @@
 }
 
 /* background: linear-gradient(to right, #060B33 69%, #383F71 100%); */
-
+/* bg-gradient-to-r from-[#00BFFF] to-[#1E90FF] */
 *,
 *::before,
 *::after {

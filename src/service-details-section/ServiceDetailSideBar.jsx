@@ -29,16 +29,16 @@ const ServiceDetailSideBar = ({ course }) => {
     { title: "Sales Candidate Assessments", icon: <FaClipboardCheck /> },
     { title: "CRM Selection, Installation, and Integration", icon: <FaCogs /> },
     { title: "Sales Process Optimization", icon: <FaSearch /> },
-    { title: "Metrics Development", icon: <IoAnalytics /> },
-    { title: "Pipeline Management", icon: <FaClipboardList /> },
-    { title: "Sales Management Development", icon: <IoPeople /> },
-    { title: "Trade Show Selling", icon: <FaClipboardCheck /> },
-    { title: "Consulting & Strategy", icon: <IoBulb /> },
-    { title: "Coaching", icon: <FaChartLine /> },
-    {
-      title: "Sales Training & Professional Services Training",
-      icon: <FaUsers />,
-    },
+    // { title: "Metrics Development", icon: <IoAnalytics /> },
+    // { title: "Pipeline Management", icon: <FaClipboardList /> },
+    // { title: "Sales Management Development", icon: <IoPeople /> },
+    // { title: "Trade Show Selling", icon: <FaClipboardCheck /> },
+    // { title: "Consulting & Strategy", icon: <IoBulb /> },
+    // { title: "Coaching", icon: <FaChartLine /> },
+    // {
+    //   title: "Sales Training & Professional Services Training",
+    //   icon: <FaUsers />,
+    // },
   ];
 
   return (
@@ -48,7 +48,7 @@ const ServiceDetailSideBar = ({ course }) => {
       </h2>
 
       {/* Services List */}
-      <div className="space-y-4 mb-8">
+      {/* <div className="space-y-4 mb-8">
         {services.map((service, index) => (
           <div
             key={index}
@@ -60,6 +60,33 @@ const ServiceDetailSideBar = ({ course }) => {
             </div>
             <BsArrowRight className="" />
           </div>
+        ))}
+      </div> */}
+      <div className="space-y-4 mb-8">
+        {services.map((service, index) => (
+          <React.Fragment key={index}>
+            <div className="flex items-center justify-between bg-white p-4 cursor-pointer icon-hover rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300">
+              <div className="flex items-center space-x-2">
+                <div className="text-red-600 icon-hover2">{service.icon}</div>
+                <span className="font-medium">{service.title}</span>
+              </div>
+              <BsArrowRight />
+            </div>
+
+            {/* Add a custom option after the fifth item */}
+            {index === 4 && (
+              <div
+                className="flex items-center justify-between bg-white p-4 cursor-pointer icon-hover rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300"
+                onClick={() => (window.location.href = "/our-services")}
+              >
+                <div className="flex items-center space-x-2">
+                  <div className="text-blue-600 icon-hover2">🎉</div>
+                  <span className="font-medium">More Services</span>
+                </div>
+                <BsArrowRight />
+              </div>
+            )}
+          </React.Fragment>
         ))}
       </div>
 
