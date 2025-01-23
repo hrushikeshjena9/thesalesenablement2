@@ -18,16 +18,19 @@ const CourseItem = ({ course }) => {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Course Image */}
-          <div
+          {/* <div
             className={`w-full h-[233px] bg-cover bg-center transition-all duration-300 ${
               isHovered ? "bg-[#060B33]" : ""
             }`}
             style={{
               backgroundImage: `url(${isHovered ? heroImage : course.image})`,
             }}
+          /> */}
+          <div
+            className={`w-full h-[233px] bg-cover bg-center transition-all duration-300`}
+            style={{ backgroundImage: `url(${course.image})` }}
           />
 
-          {/* Course Content */}
           <div
             className={`px-6 py-4 flex flex-col justify-between transition-all duration-300 ${
               isHovered
@@ -38,16 +41,17 @@ const CourseItem = ({ course }) => {
           >
             {/* Header Section */}
             <div className="flex justify-between items-center mb-4">
-              <div className="bg-gray-200 rounded-lg px-4 py-2 uppercase">
-                <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent font-bold bg-clip-text">
-                  Sales
-                </span>
-              </div>
               <div className="flex items-center">
                 <span className="text-yellow-500 font-semibold">
                   {course.starCategory} ★
                 </span>
                 <span className="ml-2 ">Rating</span>
+              </div>
+
+              <div className="bg-gray-200 rounded-lg px-4 py-2 uppercase">
+                <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent font-bold bg-clip-text">
+                  Sales
+                </span>
               </div>
             </div>
 

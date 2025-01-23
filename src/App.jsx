@@ -20,6 +20,8 @@ import ContactUsPage from "./pages/ContactUsPage";
 import ScrollToTopButton from "./components/ScroolTop";
 import SalesForceEvaluation from "./service-section/dedicated-pages/SalesForceEvolution";
 import CandidateAssessment from "./service-section/dedicated-pages/CandidateAssessment";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -85,6 +87,14 @@ function App() {
               path="/services/sales-candidate-assessments"
               element={<CandidateAssessment />}
             />
+              {/* <Route
+              path="/privacy-policy"
+              element={<PrivacyPolicy />}
+            /> */}
+               {/* <Route
+              path="/terms-and-conditions"
+              element={<TermsAndConditions />}
+            /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />

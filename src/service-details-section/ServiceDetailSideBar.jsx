@@ -29,16 +29,6 @@ const ServiceDetailSideBar = ({ course }) => {
     { title: "Sales Candidate Assessments", icon: <FaClipboardCheck /> },
     { title: "CRM Selection, Installation, and Integration", icon: <FaCogs /> },
     { title: "Sales Process Optimization", icon: <FaSearch /> },
-    // { title: "Metrics Development", icon: <IoAnalytics /> },
-    // { title: "Pipeline Management", icon: <FaClipboardList /> },
-    // { title: "Sales Management Development", icon: <IoPeople /> },
-    // { title: "Trade Show Selling", icon: <FaClipboardCheck /> },
-    // { title: "Consulting & Strategy", icon: <IoBulb /> },
-    // { title: "Coaching", icon: <FaChartLine /> },
-    // {
-    //   title: "Sales Training & Professional Services Training",
-    //   icon: <FaUsers />,
-    // },
   ];
 
   return (
