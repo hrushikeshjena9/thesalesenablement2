@@ -60,7 +60,7 @@ function Course() {
           The Sales Sales Enablement {""}
           2025 programmes
           <a
-            href="/path-to-your-file.pdf" // Replace with the file path
+            href="/executive-education-short-courses.pdf" // Replace with the file path
             download // This enables the download functionality
             className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-lg font-bold text-transparent bg-clip-text px-2 transform transition duration-300"
           >
@@ -79,7 +79,6 @@ function Course() {
               filters.audience !== "viewAll"
                 ? `${getFilteredDetails(filters)}`
                 : ``}
-          
             </span>
           </p>
         </div>
