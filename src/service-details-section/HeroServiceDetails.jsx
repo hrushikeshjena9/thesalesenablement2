@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import Navbar from "../components/Navbar";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import Breadcrumb from "../components/Breadcrumb";
 function HeroServiceDetails() {
   return (
     <>
@@ -13,7 +14,9 @@ function HeroServiceDetails() {
             <div className="text-white flex items-center justify-center container mx-auto px-4 pt-16 pb-20">
               <h1 className="text-5xl uppercase font-bold ">Service Details</h1>
             </div>
-           
+            <div className="text-white flex items-center justify-center container mx-auto px-4 pt-10 pb-20 ">
+            <Breadcrumb breadcrumbs={[{ label: 'Home', to: '/' }, { label: 'Services', to: '/services' }, { label: 'Service-Details' }]} />
+            </div>
           </div>
         </div>
       </section>

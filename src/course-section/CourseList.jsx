@@ -193,29 +193,20 @@ const courses = [
 
 const CourseList = ({ filters }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const coursesPerPage = 10; // Number of courses per page
+  const coursesPerPage = 10;
 
-  // Filter courses based on selected filters
+  // Filter courses based on selected criteria
   const filteredCourses = courses.filter((course) => {
     const locationMatches =
       filters.location === "viewAll" || course.location === filters.location;
     const audienceMatches =
       filters.audience === "viewAll" || course.audience === filters.audience;
 
+    // Filter topics dynamically based on selected filters
     const topicsMatches =
-      (filters.topics.sellingSkills &&
-        course.topics.includes("sellingSkills")) ||
-      (filters.topics.frontlineRetail &&
-        course.topics.includes("frontlineRetail")) ||
-      (filters.topics.salesManagement &&
-        course.topics.includes("salesManagement")) ||
-      (filters.topics.territoryPlanning &&
-        course.topics.includes("territoryPlanning")) ||
-      (filters.topics.retailPlanning &&
-        course.topics.includes("retailPlanning")) ||
-      (filters.topics.communicationSkills &&
-        course.topics.includes("communicationSkills")) ||
-      Object.values(filters.topics).every((val) => !val); // If no topics are selected, show all courses
+      Object.entries(filters.topics).some(([topic, isSelected]) => {
+        return isSelected && course.topics.includes(topic);
+      }) || Object.values(filters.topics).every((val) => !val); // If no topics are selected, show all courses
 
     return locationMatches && audienceMatches && topicsMatches;
   });
@@ -232,8 +223,10 @@ const CourseList = ({ filters }) => {
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
+  // console.log("Courses:", courses);
+  // console.log("Filters:", filters);
+  // console.log("Filtered Courses:", filteredCourses);
 
-  console.log(currentCourses);
   return (
     <section className="flex-1">
       {filteredCourses.length === 0 ? (
@@ -289,7 +282,6 @@ const CourseList = ({ filters }) => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-  
           {currentCourses.map((course) => (
             <CourseItem key={course.id} course={course} />
           ))}

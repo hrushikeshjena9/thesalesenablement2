@@ -17,6 +17,20 @@ function Course() {
       communicationSkills: false,
     },
   });
+  const getFilteredDetails = (filters) => {
+    const { topics } = filters;
+    let details = [];
+
+    if (Object.values(topics).includes(true)) {
+      const activeTopics = Object.keys(topics)
+        .filter((key) => topics[key])
+        .map((key) => key.replace(/([A-Z])/g, " $1").toUpperCase()) // Convert camelCase to readable text
+        .join(" | ");
+      details.push(`${activeTopics}`);
+    }
+
+    return details.length > 0 ? details.join(" | ") : "All Courses";
+  };
 
   return (
     <div>
@@ -55,22 +69,24 @@ function Course() {
         </p>
 
         <div>
-          <p className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-lg font-bold text-transparent bg-clip-text transform transition duration-300">
-            Showing:{" "}
-            {
-        
-              filters.location !== "viewAll" ||
+          <p className=" transform transition duration-300">
+            <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-lg font-bold text-transparent bg-clip-text">
+              Showing: {""}
+            </span>
+            <span className="text-sm ml-4">
+              {filters.location !== "viewAll" ||
               Object.values(filters.topics).includes(true) ||
               filters.audience !== "viewAll"
-                ? `Filtered Options`
-                : `View All`
-            }
+                ? `${getFilteredDetails(filters)}`
+                : ``}
+          
+            </span>
           </p>
         </div>
 
         <div className="flex flex-col md:flex-row py-12 gap-10">
           <Sidebar setFilters={setFilters} filters={filters} />
-          <CourseList filters={filters} />
+          <CourseList setFilters={setFilters} filters={filters} />
         </div>
       </div>
     </div>
