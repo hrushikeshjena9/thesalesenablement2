@@ -18,15 +18,10 @@ const PriceSideBar = ({ course }) => {
             <h2 className="text-xl font-semibold text-gray-700 mb-4 uppercase">
               Sales Management
             </h2>
-            <div className="mb-4">
-              <div className=" text-sm font-medium flex justify-center text-gray-600 mb-2">
-                Mode
-              </div>
 
-              <div className="flex items-center justify-center rounded-md px-2 py-2 text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
-                <FaGlobeAmericas className="mr-2" />
-                <p>Online</p>
-              </div>
+            <div className="flex items-center justify-center rounded-md px-2 py-2 text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
+              <FaGlobeAmericas className="mr-2" />
+              <p>Online</p>
             </div>
           </div>
           <div className="flex justify-between">
