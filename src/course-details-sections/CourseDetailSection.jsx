@@ -13,9 +13,7 @@ const CourseDetailSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [relatedCourses, setRelatedCourses] = useState([]);
   useEffect(() => {
-    // Replace this with actual API or data fetching logic based on courseId
     const fetchCourseDetails = async () => {
-      // Here, we simulate a course data object based on courseId
       const courseData = {
         id: courseId,
         title: "Sales Management",
@@ -139,8 +137,9 @@ const CourseDetailSection = () => {
             <div className="mt-6 flex flex-wrap justify-between gap-6">
               {/* Download the Brochure */}
               <div className="w-full sm:w-auto">
-                <Link
-                  to={course.brochureLink}
+                <a
+                 href="/leadership-acceleration-programme-brochure-2025.pdf" 
+                 download
                   className="relative w-full uppercase  px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
@@ -148,13 +147,14 @@ const CourseDetailSection = () => {
                     Download the Brochure
                     <FaArrowDown />
                   </span>
-                </Link>
+                </a>
               </div>
 
               {/* Meet the Programme Advisor */}
               <div className="w-full sm:w-auto">
-                <Link
-                  to={course.brochureLink}
+                <a
+                 href="/meet-the-programme-advisor.pdf" 
+                 download
                   className="relative w-full uppercase px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
@@ -162,7 +162,7 @@ const CourseDetailSection = () => {
                     Meet the Programme Advisor
                     <FaArrowDown />
                   </span>
-                </Link>
+                </a>
               </div>
             </div>
           </div>
