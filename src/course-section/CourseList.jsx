@@ -301,7 +301,7 @@ const courses = [
     description:
       "Learn essential skills to close deals and build long-lasting relationships, For forward-thinking leaders who are ready to develop a more responsive and innovative culture.",
 
-    location: { text: "On Site", icon: <BsBuildings /> },
+    location: { text: "Onsite", icon: <BsBuildings /> },
     audience: "sales-teams",
     topics: ["Selling Skills"],
     courseName: { text: "Courses", icon: <FaBook /> },
@@ -323,7 +323,7 @@ const courses = [
     description:
       "Become an expert in managing sales teams and achieving sales targets, For forward-thinking leaders who are ready to develop a more responsive and innovative culture.",
 
-    location: { text: "On Site", icon: <BsBuildings /> },
+    location: { text: "Onsite", icon: <BsBuildings /> },
     audience: "sales-teams",
     topics: ["salesManagement"],
     courseName: { text: "Courses", icon: <FaBook /> },
@@ -335,7 +335,7 @@ const courses = [
     description:
       "Get the most out of your CRM system to close deals faster, For forward-thinking leaders who are ready to develop a more responsive and innovative culture.",
 
-    location: { text: "On Site", icon: <BsBuildings /> },
+    location: { text: "Onsite", icon: <BsBuildings /> },
     audience: "sales-teams",
     topics: ["crm", "salesEnablement"],
     courseName: { text: "Master Class", icon: <SiGoogleclassroom /> },
@@ -349,7 +349,7 @@ const courses = [
 
     audience: "sales-leaders",
     topics: ["salesEnablement", "processOptimization"],
-    location: { text: "On Site", icon: <BsBuildings /> },
+    location: { text: "Onsite", icon: <BsBuildings /> },
     courseName: { text: "Master Class", icon: <SiGoogleclassroom /> },
   },
   {
@@ -369,7 +369,7 @@ const courses = [
     description:
       "Elevate your leadership skills to build high-performing teams and inspire excellence.",
 
-    location: { text: "On Site", icon: <FaChalkboardTeacher /> },
+    location: { text: "Onsite", icon: <FaChalkboardTeacher /> },
     audience: "team-leaders",
     topics: ["leadership", "teamBuilding"],
     courseName: { text: "Workshops", icon: <FaUsers /> },
@@ -402,7 +402,7 @@ const courses = [
     description:
       "Streamline operations to minimize costs and maximize efficiency across the supply chain.",
 
-    location: { text: "On Site", icon: <FaChalkboardTeacher /> },
+    location: { text: "Onsite", icon: <FaChalkboardTeacher /> },
     audience: "supply-chain-managers",
     topics: ["logistics", "processImprovement"],
     courseName: { text: "Programs", icon: <FaUsers /> },
@@ -424,7 +424,7 @@ const courses = [
     description:
       "Learn essential financial management practices to drive business growth effectively.",
 
-    location: { text: "On Site", icon: <FaChalkboardTeacher /> },
+    location: { text: "Onsite", icon: <FaChalkboardTeacher /> },
     audience: "finance-managers",
     topics: ["financialPlanning", "budgetManagement"],
     courseName: { text: "Courses", icon: <FaBook /> },
@@ -446,7 +446,7 @@ const courses = [
     description:
       "Master project management techniques to deliver projects on time and within budget.",
 
-    location: { text: "On Site", icon: <FaChalkboardTeacher /> },
+    location: { text: "Onsite", icon: <FaChalkboardTeacher /> },
     audience: "project-managers",
     topics: ["agile", "teamCollaboration"],
     courseName: { text: "Programs", icon: <FaBook /> },
