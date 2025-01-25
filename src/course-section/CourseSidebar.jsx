@@ -88,13 +88,13 @@ const CourseSidebar = ({ setFilters }) => {
 
   useEffect(() => {
    
-    if (!location && !audience && !topics) {
-      handleApplyFilters(true);
-    } else {
-      handleApplyFilters(); 
-    }
+    // if (!location && !audience && !topics) {
+    //   handleApplyFilters(true);
+    // } else {
+    //   handleApplyFilters(); 
+    // }
 
-    console.log({ location, audience, topics });
+    // console.log({ location, audience, topics });
   }, [location, audience, topics]); 
   return (
     <aside
