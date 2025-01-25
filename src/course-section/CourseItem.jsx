@@ -29,6 +29,13 @@
 //               ? "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white "
 //               : ""
 //           }`}
+//           style={{
+//             minHeight: "260px", // Ensures consistent height across cards
+//             height: "auto", // Allows for flexible height based on content
+//             maxWidth: "100%", // Ensures the card is fully responsive and doesn't overflow
+//             width: "100%", // Makes sure the card stays within container bounds
+//             boxSizing: "border-box", // Ensures padding doesn't affect the total width/height
+//           }}
 //         >
 //           <div className="flex justify-between items-center mb-4">
 //             <div className="flex items-center gap-3">
@@ -69,6 +76,7 @@
 
 // export default CourseItem;
 
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 
@@ -77,8 +85,10 @@ const CourseItem = ({ course }) => {
   const navigate = useNavigate(); // Initialize the navigate function
 
   const handleCourseClick = () => {
-    // Redirect to the course details page
-    navigate(`/course-details/${course.id}`);
+    // Ensure course.id exists and is defined before navigating
+    if (course && course.id) {
+      navigate(`/course-details/${course.id}`);
+    }
   };
 
   return (
@@ -95,11 +105,7 @@ const CourseItem = ({ course }) => {
         onClick={handleCourseClick} // Add onClick handler here
       >
         <div
-          className={`px-6 py-4 flex flex-col justify-between transition-all duration-300 ${
-            isHovered
-              ? "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white "
-              : ""
-          }`}
+          className={`px-6 py-4 flex flex-col justify-between transition-all duration-300 ${isHovered ? "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white" : ""}`}
           style={{
             minHeight: "260px", // Ensures consistent height across cards
             height: "auto", // Allows for flexible height based on content
@@ -111,34 +117,28 @@ const CourseItem = ({ course }) => {
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-3">
               <span
-                className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${
-                  isHovered
-                    ? "bg-white text-[#DB0032] "
-                    : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-                }`}
+                className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${isHovered ? "bg-white text-[#DB0032]" : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"}`}
               >
-                {course.courseName.icon}
+                {/* Ensure course.courseName.icon is a valid JSX element */}
+                {course?.courseName?.icon || <span>📘</span>}
               </span>
-              <span className="font-semibold">{course.courseName.text}</span>
+              <span className="font-semibold">{course?.courseName?.text || "Course Name"}</span>
             </div>
             <div
-              className={`flex items-center justify-center gap-1 rounded-md px-2 py-2 transition-all duration-300 ${
-                isHovered
-                  ? "bg-white text-[#DB0032]" // White background, text color as #DB0032 when hovered
-                  : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]" //
-              }`}
+              className={`flex items-center justify-center gap-1 rounded-md px-2 py-2 transition-all duration-300 ${isHovered ? "bg-white text-[#DB0032]" : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"}`}
             >
-              {course.location.icon}
-              {course.location.text}
+              {/* Ensure course.location.icon and course.location.text are valid */}
+              {course?.location?.icon || <span>📍</span>}
+              {course?.location?.text || "Location"}
             </div>
           </div>
 
           <h3 className="text-sm md:text-base lg:text-lg font-semibold uppercase mb-2">
-            {course.title}
+            {course?.title || "Course Title"}
           </h3>
           <hr className="my-2" />
 
-          <p className="text-sm font-light mb-4">{course.description}</p>
+          <p className="text-sm font-light mb-4">{course?.description || "Description of the course."}</p>
         </div>
       </div>
     </div>

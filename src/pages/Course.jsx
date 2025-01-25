@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from "react";
 import CourseList from "../course-section/CourseList";
 import Sidebar from "../course-section/CourseSidebar";
@@ -17,25 +16,29 @@ function Course() {
       communicationSkills: false,
     },
   });
+
   const getFilteredDetails = (filters) => {
     const { topics } = filters;
     let details = [];
 
-    if (Object.values(topics).includes(true)) {
-      const activeTopics = Object.keys(topics)
-        .filter((key) => topics[key])
-        .map((key) => key.replace(/([A-Z])/g, " $1").toUpperCase()) // Convert camelCase to readable text
-        .join(" | ");
+    // Check active topics and format the output
+    const activeTopics = Object.keys(topics)
+      .filter((key) => topics[key]) // Filter out the selected topics
+      .map((key) => key.replace(/([A-Z])/g, " $1").toUpperCase()) // Convert camelCase to readable text
+      .join(" | ");
+
+    if (activeTopics) {
       details.push(`${activeTopics}`);
     }
 
+    // Return the list of filters applied
     return details.length > 0 ? details.join(" | ") : "All Courses";
   };
 
   return (
     <div>
       <HeroCourse />
-      <div className="container mx-auto px-4 py-12 ">
+      <div className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold uppercase leading-[48px] mb-5">
           All{" "}
           <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
@@ -43,7 +46,7 @@ function Course() {
           </span>
           <br /> Need in One Place
         </h1>
-        <hr className="py-5 " />
+        <hr className="py-5" />
         <p className="max-w-6xl">
           From foundational sales techniques to advanced AI-driven tools, our
           platform supports your professional development at every stage.
@@ -57,11 +60,11 @@ function Course() {
 
         <p className="max-w-6xl py-5">
           For a downloadable calendar of {""}
-          The Sales Sales Enablement {""}
+          The Sales Enablement {""}
           2025 programmes
           <a
             href="/executive-education-short-courses.pdf" // Replace with the file path
-            download // This enables the download functionality
+            download
             className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-lg font-bold text-transparent bg-clip-text px-2 transform transition duration-300"
           >
             click here
@@ -69,7 +72,7 @@ function Course() {
         </p>
 
         <div>
-          <p className=" transform transition duration-300">
+          <p className="transform transition duration-300">
             <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-lg font-bold text-transparent bg-clip-text">
               Showing: {""}
             </span>
@@ -78,7 +81,7 @@ function Course() {
               Object.values(filters.topics).includes(true) ||
               filters.audience !== "viewAll"
                 ? `${getFilteredDetails(filters)}`
-                : ``}
+                : "All Courses"}
             </span>
           </p>
         </div>
