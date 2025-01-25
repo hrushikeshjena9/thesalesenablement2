@@ -18,7 +18,7 @@ const courses = [
     description:
       "Learn essential skills to close deals and build long-lasting relationships, For forward-thinking leaders who are ready to develop a more responsive and innovative culture.",
 
-    location: { text: "On Site", icon: <BsBuildings /> },
+    location: { text: "Onsite", icon: <BsBuildings /> },
     audience: "sales-teams",
     topics: { sellingSkills: true },
     courseName: { text: "Courses", icon: <FaBook /> },
