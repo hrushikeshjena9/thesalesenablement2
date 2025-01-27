@@ -17,6 +17,7 @@ import {
   FaGraduationCap,
 } from "react-icons/fa";
 import { FaComments, FaStore, FaRoute } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -127,9 +128,9 @@ function Navbar() {
       <nav className="text-white">
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold">
-            <Link href="/">
+            <a href="/">
               <img src={Logo} alt="Logo" className="w-[170px] h-auto" />
-            </Link>
+            </a>
           </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
