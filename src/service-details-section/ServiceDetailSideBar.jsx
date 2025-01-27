@@ -5,9 +5,9 @@ import {
   FaClipboardCheck,
   FaCogs,
   FaSearch,
-  FaClipboardList,
+
 } from "react-icons/fa";
-import { IoAnalytics, IoBulb, IoPeople } from "react-icons/io5";
+
 import { BsArrowRight } from "react-icons/bs"; // Icon for arrow
 
 const ServiceDetailSideBar = ({ course }) => {
@@ -17,7 +17,6 @@ const ServiceDetailSideBar = ({ course }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email) {
-      // Handle email subscription logic here (e.g., call an API)
       setIsSubscribed(true);
       setEmail("");
     }
@@ -37,21 +36,6 @@ const ServiceDetailSideBar = ({ course }) => {
         Our Services
       </h2>
 
-      {/* Services List */}
-      {/* <div className="space-y-4 mb-8">
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between bg-white p-4 cursor-pointer icon-hover rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300"
-          >
-            <div className="flex items-center space-x-2">
-              <div className="text-red-600 icon-hover2">{service.icon}</div>
-              <span className=" font-medium">{service.title}</span>
-            </div>
-            <BsArrowRight className="" />
-          </div>
-        ))}
-      </div> */}
       <div className="space-y-4 mb-8">
         {services.map((service, index) => (
           <React.Fragment key={index}>
@@ -63,7 +47,6 @@ const ServiceDetailSideBar = ({ course }) => {
               <BsArrowRight />
             </div>
 
-            {/* Add a custom option after the fifth item */}
             {index === 4 && (
               <div
                 className="flex items-center justify-between bg-white p-4 cursor-pointer icon-hover rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition-all duration-300"
@@ -80,7 +63,6 @@ const ServiceDetailSideBar = ({ course }) => {
         ))}
       </div>
 
-      {/* Subscribe Form */}
       <div className="py-6 px-4 bg-gray-200 rounded-lg shadow-md">
         <h2 className="text-xl font-semibold text-gray-800 text-center">
           Get Updates

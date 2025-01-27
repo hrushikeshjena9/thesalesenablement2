@@ -26,7 +26,6 @@ const Achievement = () => {
 
   return (
     <section className="relative py-12 overflow-hidden container mx-auto px-4">
-      {/* Background Image */}
       <div className="absolute inset-0 flex justify-center items-center z-0">
         <motion.img
           src={Background}
@@ -38,9 +37,7 @@ const Achievement = () => {
         />
       </div>
 
-      {/* Content Section */}
       <div className="relative grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center z-10">
-        {/* Left Content */}
         <motion.div
           className="text-center md:text-left overflow-hidden"
           initial="hidden"
@@ -80,7 +77,6 @@ const Achievement = () => {
 
         <div className="flex justify-center md:justify-end sm:justify-center">
           <div className="flex flex-col justify-start space-y-4">
-            {/* Global Recognition Item */}
             <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <AiOutlineGlobal className="text-white text-2xl" />
@@ -90,7 +86,6 @@ const Achievement = () => {
               </span>
             </div>
 
-            {/* Industry Awards Item */}
             <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FaTrophy className="text-white text-2xl" />
@@ -98,7 +93,6 @@ const Achievement = () => {
               <span className="text-[#000] font-medium">Industry Awards</span>
             </div>
 
-            {/* Empowering Sales Teams Item */}
             <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FiTrendingUp className="text-white text-2xl" />

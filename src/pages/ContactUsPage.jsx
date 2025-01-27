@@ -10,13 +10,10 @@ import MapEmbed from "../contactus-sections/MapEmbed";
 function ContactUsPage() {
   return (
     <div>
-      {/* Hero Section */}
       <HeroContact />
 
-      {/* Consulting Support Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Section: Title */}
           <div>
             <h1 className="text-2xl sm:text-3xl font-bold uppercase leading-snug mb-5">
               Consulting support
@@ -27,7 +24,6 @@ function ContactUsPage() {
             </h1>
           </div>
 
-          {/* Right Section: Chat Button */}
           <div className="flex justify-center lg:justify-end">
             <Link
               to="https://calendly.com/theenablement/30min?back=1"
@@ -35,13 +31,11 @@ function ContactUsPage() {
                 bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg 
                 flex items-center justify-center text-sm md:text-[14px] xl:text-[16px] px-5 py-2.5"
             >
-              {/* Background Animation */}
               <span
                 className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out 
                   group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"
               ></span>
 
-              {/* Button Content */}
               <span className="relative flex items-center">
                 <FaComments className="mr-2" />
                 Let's Chat
@@ -59,12 +53,10 @@ function ContactUsPage() {
         </p>
       </div>
 
-      {/* Contact Content Section */}
       <div className="px-4 py-8">
         <ContactContent />
       </div>
 
-      {/* FAQ Section */}
       <div className="container mx-auto py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center justify-center">
           <div className="w-full">
@@ -91,7 +83,6 @@ function ContactUsPage() {
         </div>
       </div>
 
-      {/* Map Embed Section */}
       <MapEmbed />
     </div>
   );

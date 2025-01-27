@@ -4,17 +4,10 @@ import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import RightArrow from "../assets/arrow-right.png";
 import OurMission from "../assets/new/our-mission-person.png";
-import About4 from "../assets/new/aboutbg4.png";
 import VisionPng from "../assets/new/visionpng.png";
 import VisionPng2 from "../assets/new/visionpng2.png";
 import Values2 from "../assets/new/salesleader.png";
-import OurVlaues3 from "../assets/new/ourvalues-3.png";
-import OurVlaues2 from "../assets/new/ourvalues-2.png";
-import CircleIncon from "../assets/new/Isolation_Modemission.png";
-import CircleIncon2 from "../assets/new/Isolation_Modemisiion.png";
-import OurMissionPerson from "../assets/new/our-mission-person.png";
-import Thumb from "../assets/new/thumbsup.png";
-import About1 from "../assets/new/about1.png";
+
 const VisionMission = () => {
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -193,7 +186,6 @@ const VisionMission = () => {
 
       <section className="py-6 overflow-hidden container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Left Section */}
           <motion.div
             className="text-center lg:text-left flex flex-col justify-start"
             initial="hidden"
@@ -235,7 +227,6 @@ const VisionMission = () => {
             </div>
           </motion.div>
 
-          {/* Right Section */}
           <motion.div
             className="relative"
             initial="hidden"
@@ -278,66 +269,3 @@ const VisionMission = () => {
 };
 
 export default VisionMission;
-{
-  /* <motion.div
-            className="relative flex py-3 justify-end items-end"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-            variants={leftVariants}
-          >
-            <div className="value-bg">
-              <div className="flex absolute right-32 top-[-1rem]">
-                <img
-                  src={About4}
-                  alt=""
-                  className="w-[112.51px] h-[112.51px] relative"
-                />
-                <img
-                  src={OurVlaues3}
-                  alt=""
-                  className="w-[162px] h-[162px] relative z-20 right-0 rounded-full border-8 border-gray-300"
-                />
-              </div>
-
-              <div className="relative top-8">
-                <img
-                  src={OurVlaues2}
-                  alt=""
-                  className="rounded-full w-[333.51px] h-[333.51px] relative z-0  border-8 border-gray-300"
-                />
-                <div className="flex flex-col justify-center items-center text-white w-60 h-60 top-[-180px] right-32 relative z-40 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-lg">
-                  <div>
-                    <div className="flex items-center gap-5 mb-2">
-                      <span className="bg-white w-12 h-12 rounded-full flex items-center justify-center">
-                        <FaCheck className="text-green-500" />
-                      </span>
-                      <p>Integrity</p>
-                    </div>
-
-                    <div className="flex items-center gap-5 mb-2">
-                      <span className="bg-white w-12 h-12 rounded-full flex items-center justify-center">
-                        <FaCheck className="text-green-500" />
-                      </span>
-                      <p>Innovation</p>
-                    </div>
-
-                    <div className="flex items-center gap-5 mb-2">
-                      <span className="bg-white w-12 h-12 rounded-full flex items-center justify-center">
-                        <FaCheck className="text-green-500" />
-                      </span>
-                      <p>Excellence</p>
-                    </div>
-
-                    <div className="flex items-center gap-5">
-                      <span className="bg-white w-12 h-12 rounded-full flex items-center justify-center">
-                        <FaCheck className="text-green-500" />
-                      </span>
-                      <p>Collaboration</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div> */
-}

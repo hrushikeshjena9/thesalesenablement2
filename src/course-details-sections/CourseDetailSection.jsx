@@ -8,7 +8,7 @@ import CourseImage from "../../src/assets/banner3.png";
 import PersonImg from "../../src/assets/person7.png";
 import PriceSideBar from "./PriceSideBar";
 const CourseDetailSection = () => {
-  const { courseId } = useParams(); // Extract courseId from the URL
+  const { courseId } = useParams(); 
   const [course, setCourse] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [relatedCourses, setRelatedCourses] = useState([]);
@@ -67,10 +67,10 @@ const CourseDetailSection = () => {
       </div>
 
       <div className="flex flex-wrap lg:flex-nowrap justify-between items-center py-12 ">
-        {/* Main Content */}
+      
         <div className="px-6 py-16 shadow-xl w-full lg:w-4/5">
           <div className="max-w-5xl">
-            {/* Header */}
+
             <h1 className="text-2xl font-bold text-gray-800 mb-6">
               What makes this leadership programme unique?
             </h1>
@@ -82,9 +82,9 @@ const CourseDetailSection = () => {
             </p>
             <hr />
 
-            {/* Benefits and Attendance */}
+
             <div className="flex flex-wrap lg:flex-nowrap justify-between  gap-6 mt-4">
-              {/* Benefits Section */}
+   
               <div className="w-full lg:w-3/5">
                 <h2 className="text-xl font-semibold text-left text-gray-800 mb-4">
                   How will you benefit?
@@ -133,13 +133,13 @@ const CourseDetailSection = () => {
               </div>
             </div>
 
-            {/* Call to Action Links */}
+
             <div className="mt-6 flex flex-wrap justify-between gap-6">
-              {/* Download the Brochure */}
+       
               <div className="w-full sm:w-auto">
                 <a
-                 href="/leadership-acceleration-programme-brochure-2025.pdf" 
-                 download
+                  href="/leadership-acceleration-programme-brochure-2025.pdf"
+                  download
                   className="relative w-full uppercase  px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
@@ -150,11 +150,10 @@ const CourseDetailSection = () => {
                 </a>
               </div>
 
-              {/* Meet the Programme Advisor */}
               <div className="w-full sm:w-auto">
                 <a
-                 href="/meet-the-programme-advisor.pdf" 
-                 download
+                  href="/meet-the-programme-advisor.pdf"
+                  download
                   className="relative w-full uppercase px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
@@ -168,7 +167,7 @@ const CourseDetailSection = () => {
           </div>
         </div>
 
-        {/* Sidebar */}
+
         <div className="w-full lg:w-1/3">
           <PriceSideBar />
         </div>
@@ -206,8 +205,14 @@ const CourseDetailSection = () => {
       <div className="py-12">
         <TabNavigation />
       </div>
+
+      <h1 className="text-2xl font-semibold text-gray-900">Related Courses</h1>
+      <div className="py-12">
+        <RelatedCourseSlider />
+      </div>
     </section>
   );
 };
 
 export default CourseDetailSection;
+

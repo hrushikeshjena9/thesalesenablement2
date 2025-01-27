@@ -7,13 +7,13 @@ function CommentPost() {
         <h3 className="text-xl font-semibold mb-4">Post a Comment</h3>
 
         <form className="space-y-4">
-          {/* Email Notice */}
+    
           <p className="text-sm text-gray-500">
             Your email address will not be published. Required fields are marked
             *
           </p>
 
-          {/* Comment Textarea */}
+    
           <div>
             <label
               htmlFor="comment"
@@ -30,7 +30,7 @@ function CommentPost() {
             ></textarea>
           </div>
 
-          {/* Name Input */}
+
           <div>
             <label
               htmlFor="name"
@@ -47,7 +47,7 @@ function CommentPost() {
             />
           </div>
 
-          {/* Phone Number Input */}
+
           <div>
             <label
               htmlFor="phone"
@@ -63,7 +63,6 @@ function CommentPost() {
             />
           </div>
 
-          {/* Submit Button */}
           <div className="flex justify-end">
             <button
               type="submit"

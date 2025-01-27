@@ -4,7 +4,6 @@ import Blog1 from "../assets/blog1.png";
 import Blog2 from "../assets/blog2.png";
 import Blog3 from "../assets/blog3.png";
 import Blog4 from "../assets/blog-4.png";
-// import other blog images as before
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -20,7 +19,7 @@ import {
 function LatestBlogs() {
   const [inView, setInView] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 9; // Number of items to display per page
+  const itemsPerPage = 9; 
   const elementRef = useRef(null);
 
   const blogs = [
@@ -99,7 +98,7 @@ function LatestBlogs() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !inView) {
-          setInView(true); // Set to true only once when in view
+          setInView(true);
         }
       },
       {
@@ -132,11 +131,11 @@ function LatestBlogs() {
             className="flex flex-col border-2"
             style={{
               borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
-              height: "100%", // Ensure cards stretch equally in height
+              height: "100%", 
             }}
           >
             <div className="relative flex-1 flex flex-col">
-              {/* Ensures image area grows to fill remaining space */}
+         
               <div className="absolute flex gap-4 bottom-6 left-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white text-xs font-semibold py-1 px-3 rounded-tl-[8px] rounded-tr-[8px]">
                 <div className="flex items-center">
                   <FaEye className="mr-1" />
@@ -202,14 +201,14 @@ function LatestBlogs() {
         ))}
       </motion.div>
 
-      {/* Pagination */}
+
       <div className="flex justify-end mt-8">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className="px-4 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-l-md flex items-center justify-center"
         >
-          <FaArrowLeft className="w-5 h-5" /> {/* Left arrow icon */}
+          <FaArrowLeft className="w-5 h-5" /> 
         </button>
         {[...Array(totalPages)].map((_, index) => (
           <button
@@ -229,7 +228,7 @@ function LatestBlogs() {
           disabled={currentPage === totalPages}
           className="px-4 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-r-md flex items-center justify-center"
         >
-          <FaArrowRight className="w-5 h-5" /> {/* Arrow icon */}
+          <FaArrowRight className="w-5 h-5" />
         </button>
       </div>
     </section>

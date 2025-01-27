@@ -74,7 +74,7 @@ const ContactDetails = () => {
             </div>
           </div>
 
-          {/* Sales Action Buttons with Icons */}
+        
           <div className="flex space-x-4 mt-6">
             <button className="px-6 py-2 text-white bg-green-500 rounded-lg shadow-md hover:bg-green-600 focus:outline-none flex items-center space-x-2">
               <FaCalendarAlt />

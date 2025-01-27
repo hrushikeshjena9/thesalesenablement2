@@ -10,7 +10,7 @@ import Instagram from "../assets/instagram.png";
 import Twitter from "../assets/twitter.png";
 import Linkedin from "../assets/linkedin.png";
 import FooterLine from "../assets/line-footer.png";
-import { motion } from "framer-motion"; // Import motion
+import { motion } from "framer-motion"; 
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -104,7 +104,6 @@ function Footer() {
                 )}
               </div>
 
-              {/* Contact Column */}
               <div>
                 <h5 className="font-bold md:text-2xl text-lg mb-4 ">
                   Contact Us

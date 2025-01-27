@@ -21,17 +21,22 @@ function Course() {
     const { topics } = filters;
     let details = [];
 
-    // Check active topics and format the output
+
     const activeTopics = Object.keys(topics)
-      .filter((key) => topics[key]) // Filter out the selected topics
-      .map((key) => key.replace(/([A-Z])/g, " $1").toUpperCase()) // Convert camelCase to readable text
+      .filter((key) => topics[key])
+      .map(
+        (key) =>
+          key
+            .replace(/([A-Z])/g, " $1") 
+            .replace(/^./, (match) => match.toUpperCase())
+      )
       .join(" | ");
 
     if (activeTopics) {
       details.push(`${activeTopics}`);
     }
 
-    // Return the list of filters applied
+ 
     return details.length > 0 ? details.join(" | ") : "All Courses";
   };
 
@@ -63,7 +68,7 @@ function Course() {
           The Sales Enablement {""}
           2025 programmes
           <a
-            href="/executive-education-short-courses.pdf" // Replace with the file path
+            href="/executive-education-short-courses.pdf" 
             download
             className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-lg font-bold text-transparent bg-clip-text px-2 transform transition duration-300"
           >

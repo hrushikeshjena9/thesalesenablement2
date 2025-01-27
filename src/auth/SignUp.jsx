@@ -12,7 +12,6 @@ import Navbar from "../components/Navbar";
 import { Link, NavLink } from "react-router-dom";
 
 import RightArrow1 from "../assets/arrow-right1.png";
-import AuthTab from "./AuthTab";
 
 function SignUp() {
   const [passwordVisible, setPasswordVisible] = useState(false);

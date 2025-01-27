@@ -7,7 +7,6 @@ import RightArrow1 from "../assets/arrow-right1.png";
 function LogIn() {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
-  const [email, setEmail] = useState("");
   const [forgotEmail, setForgotEmail] = useState("");
 
   const togglePasswordVisibility = () => {
@@ -16,7 +15,6 @@ function LogIn() {
 
   const handleForgotPassword = (e) => {
     e.preventDefault();
-    // Handle forgot password submission here
     alert(`Password reset link sent to ${forgotEmail}`);
     setShowForgotPassword(false);
   };

@@ -1,15 +1,9 @@
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from "@headlessui/react";
-import { AiOutlineDown, AiOutlineUp } from "react-icons/ai"; // Import the down arrow and up arrow icons
+import { AiOutlineDown, AiOutlineUp } from "react-icons/ai";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion"; // Import framer-motion
+import { AnimatePresence, motion } from "framer-motion";
 
 const ModuleContent = () => {
-  const [openModuleIndex, setOpenModuleIndex] = useState(null); // State to track which module is open
-
+  const [openModuleIndex, setOpenModuleIndex] = useState(null);
   const modules = [
     {
       title: "Introduction to Professional Selling",
@@ -65,53 +59,54 @@ const ModuleContent = () => {
     },
   ];
 
+  const handleDisclosureClick = (index) => {
+    setOpenModuleIndex(openModuleIndex === index ? null : index);
+  };
+
   return (
     <div className="space-y-4">
       <h1 className="uppercase text-3xl font-bold">Outline of Topics</h1>
       {modules.map((module, index) => (
         <div key={index} className="w-full">
-          <Disclosure as="div">
-            {({ open }) => (
-              <>
-                <DisclosureButton
-                  onClick={() =>
-                    setOpenModuleIndex(openModuleIndex === index ? null : index)
-                  } // Toggle open/close for the clicked module
-                  className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center"
-                >
-                  <span>{module.title}</span>
-                  <span className="transition-transform duration-300 ease-in-out">
-                    {openModuleIndex === index || open ? (
-                      <AiOutlineUp className="w-6 h-6" />
-                    ) : (
-                      <AiOutlineDown className="w-6 h-6" />
-                    )}
-                  </span>
-                </DisclosureButton>
-                <AnimatePresence>
-                  {openModuleIndex === index && (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: -24 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -24 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                    >
-                      <DisclosurePanel className="p-4 bg-gray-100 rounded-md overflow-hidden">
-                        <ul className="list-disc pl-6 space-y-2">
-                          {module.content.map((item, idx) => (
-                            <li key={idx} className="text-gray-700">
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </DisclosurePanel>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </>
+          <button
+            onClick={() => handleDisclosureClick(index)}
+            className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center transition-all duration-300 ease-in-out"
+          >
+            <span>{module.title}</span>
+            <motion.span
+              className="transition-transform duration-300 ease-in-out"
+              animate={{ rotate: openModuleIndex === index ? "-180" : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {openModuleIndex === index ? (
+                <AiOutlineUp className="w-6 h-6" />
+              ) : (
+                <AiOutlineDown className="w-6 h-6" />
+              )}
+            </motion.span>
+          </button>
+
+          <AnimatePresence>
+            {openModuleIndex === index && (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: -24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -24 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+              >
+                <div className="p-4 bg-gray-100 rounded-md overflow-hidden">
+                  <ul className="list-disc pl-6 space-y-2">
+                    {module.content.map((item, idx) => (
+                      <li key={idx} className="text-gray-700">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
             )}
-          </Disclosure>
+          </AnimatePresence>
         </div>
       ))}
     </div>

@@ -7,18 +7,14 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Big from "../../assets/new/salesfource.jpg";
 import VideoThumb from "../../assets/new/salesteamimage.jpg";
-import Dot from "../../assets/dotted.png";
-import Iso from "../../assets/Isolation_Mode.png";
-import Three from "../../assets/three.png";
-import Fir from "../../assets/fir.png";
+
 import {
   FaUser,
   FaEnvelope,
   FaBuilding,
   FaPhoneAlt,
   FaComment,
-  FaPaperPlane,
-  FaArrowRight,
+
   FaLongArrowAltDown,
 } from "react-icons/fa";
 import SalesAssessmentModal from "./sections/SalesAssessmentModal";
@@ -66,7 +62,7 @@ const SalesForceEvaluation = () => {
 
       <section className="py-12 about-class container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          {/* Left Section: Text Content */}
+   
           <motion.div
             className="text-center lg:text-left"
             initial="hidden"
@@ -98,7 +94,7 @@ const SalesForceEvaluation = () => {
             </p>
 
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
-              {/* Take the Evaluation Button */}
+      
               <Link
                 to="take-the-sales-force-evaluation"
                 type="button"
@@ -115,7 +111,7 @@ const SalesForceEvaluation = () => {
                 </span>
               </Link>
 
-              {/* Contact Us Button */}
+
               <Link
                 to="/view-upcoming-courses"
                 type="button"
@@ -131,7 +127,7 @@ const SalesForceEvaluation = () => {
             </div>
           </motion.div>
 
-          {/* Right Section: Image */}
+
           <div className="flex justify-center">
             <motion.div
               className="relative overflow-hidden"
@@ -270,7 +266,7 @@ const SalesForceEvaluation = () => {
               streamline processes, or enhance skills, we’ve got you covered.
             </p>
 
-            {/* CTA Buttons */}
+            
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
               <Link
                 to="take-the-sales-force-evaluation"
@@ -300,7 +296,7 @@ const SalesForceEvaluation = () => {
 
           <div className="md:w-2/5 w-full ">
             <form onSubmit={handleFormSubmit} className="space-y-4">
-              {/* Full Name Input */}
+
               <div className="flex items-center space-x-3 border border-gray-300  px-4 py-2">
                 <FaUser className="text-gray-500 text-xl" />
                 <input
@@ -311,7 +307,7 @@ const SalesForceEvaluation = () => {
                 />
               </div>
 
-              {/* Email Input */}
+
               <div className="flex items-center space-x-3 border border-gray-300  px-4 py-2">
                 <FaEnvelope className="text-gray-500 text-xl" />
                 <input
@@ -322,7 +318,7 @@ const SalesForceEvaluation = () => {
                 />
               </div>
 
-              {/* Company Name Input */}
+
               <div className="flex items-center space-x-3 border border-gray-300  px-4 py-2">
                 <FaBuilding className="text-gray-500 text-xl" />
                 <input
@@ -332,7 +328,7 @@ const SalesForceEvaluation = () => {
                 />
               </div>
 
-              {/* Phone Number Input */}
+
               <div className="flex items-center space-x-3 border border-gray-300  px-4 py-2">
                 <FaPhoneAlt className="text-gray-500 text-xl" />
                 <input
@@ -343,7 +339,7 @@ const SalesForceEvaluation = () => {
                 />
               </div>
 
-              {/* Additional Comments Input */}
+
               <div className="flex items-start space-x-3 border border-gray-300  px-4 py-2">
                 <FaComment className="text-gray-500 text-xl" />
                 <textarea
@@ -352,7 +348,7 @@ const SalesForceEvaluation = () => {
                 />
               </div>
 
-              {/* Submit Button */}
+
               <button
                 to="take-the-sales-force-evaluation"
                 type="button"

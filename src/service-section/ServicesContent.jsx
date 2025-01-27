@@ -13,7 +13,7 @@ const services = [
     description:
       "Focused on analyzing salespeople, systems, and strategies to address key performance gaps.",
     image: Blog4,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation, 
   },
 
   {
@@ -21,72 +21,72 @@ const services = [
     description:
       "Streamlining recruitment to attract and retain top-tier sales talent.",
     image: Blog2,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation, 
   },
   {
     title: "Sales Candidate Assessments",
     description: "Leveraging advanced tools to identify high-potential hires.",
     image: Blog3,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation,
   },
   {
     title: "CRM Selection, Installation, and Integration",
     description:
       "Helping businesses choose and implement the right CRM system.",
     image: Blog1,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation, 
   },
   {
     title: "Sales Process Optimization",
     description:
       "Designing structured, customized processes for better outcomes.",
     image: Blog4,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation, 
   },
   {
     title: "Metrics Development",
     description: "Identifying KPIs and predictive indicators to drive revenue.",
     image: Blog3,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation, 
   },
   {
     title: "Pipeline Management",
     description:
       "Building formal, staged, and criteria-based pipeline systems.",
     image: Blog1,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation,
   },
   {
     title: "Sales Management Development",
     description:
       "Training managers in coaching, motivation, and accountability.",
     image: Blog2,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation,
   },
   {
     title: "Trade Show Selling",
     description:
       "Turning event participation into measurable sales opportunities.",
     image: Blog4,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation,
   },
   {
     title: "Consulting & Strategy",
     description: "Offering market, account, and business strategy support.",
     image: Blog1,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation, 
   },
   {
     title: "Coaching",
     description: "Executive and sales coaching to improve outcomes.",
     image: Blog2,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation,
   },
   {
     title: "Sales Training & Professional Services Training",
     description: "Results-focused training programs.",
     image: Blog4,
-    icon: SalesForceEvaluation, // Add the icon here
+    icon: SalesForceEvaluation, 
   },
 ];
 
@@ -111,29 +111,29 @@ const ServiceContent = () => {
             {services.map((service, index) => (
               <Link
                 key={index}
-                to={`/service/${index}`} // Use the index to route to the details page
-                state={service} // Pass the service data as state
+                to={`/service/${index}`}
+                state={service} 
                 className="block"
               >
                 <div
-                  className="border-2 flex flex-col h-full" // Ensures the cards stretch equally in height
+                  className="border-2 flex flex-col h-full"
                   style={{
                     borderImage:
                       "linear-gradient(to right, #DB0032, #FA6602) 1",
                   }}
                 >
                   <div className="relative flex-1">
-                    {/* Image Section */}
+      
                     <img
-                      src={service.image} // Assuming each service has an image
+                      src={service.image} 
                       alt={service.title}
                       className="w-full h-[233px] p-2 object-cover mb-4 transition-all duration-500 ease-in-out hover:grayscale-0 hover:opacity-90"
                     />
 
-                    {/* Circle Image with Icon */}
+              
                     <div className="absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-full flex items-center justify-center shadow-md">
                       <img
-                        src={service.icon} // Assuming each service has an icon URL
+                        src={service.icon} 
                         alt="Icon"
                         className="w-10 h-10 object-contain transition-transform duration-300 ease-in-out transform hover:rotate-y-180"
                       />
@@ -145,14 +145,14 @@ const ServiceContent = () => {
                   </h3>
                   <p className="text-left mb-4 text-sm px-6 text-center sm:text-base flex-1">
                     {" "}
-                    {/* Added flex-1 to make this area stretch */}
+            
                     {service.description}
                     <hr className="mt-4" />
                   </p>
                   <div className="flex justify-center">
                     <Link
                       to={`/service/${index}`}
-                      state={service} // Pass the service data as state
+                      state={service} 
                       className="relative w-[86%] icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium text-sm text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
                       style={{
                         borderImage:

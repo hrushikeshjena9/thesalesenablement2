@@ -73,22 +73,22 @@ const BlogSideBar = ({ setFilters }) => {
     {
       title: "Maximizing Sales Performance: The Ultimate Guide",
       date: "January 15, 2025",
-      image: Blog2, // Replace with your actual image URLs
+      image: Blog2, 
     },
     {
       title: "Sales Strategies for 2025",
       date: "January 10, 2025",
-      image: Blog1, // Replace with your actual image URLs
+      image: Blog1,
     },
     {
       title: "Mastering Negotiation Skills",
       date: "January 5, 2025",
-      image: Blog3, // Replace with your actual image URLs
+      image: Blog3,
     },
     {
       title: "Top Sales Tools in 2025",
       date: "December 30, 2024",
-      image: Blog4, // Replace with your actual image URLs
+      image: Blog4,
     },
   ];
 
@@ -98,7 +98,7 @@ const BlogSideBar = ({ setFilters }) => {
         isOpen ? "block" : "hidden"
       } md:flex`}
     >
-      {/* Mobile Toggle Button */}
+   
       <button
         className="md:hidden absolute top-4 left-4 bg-primary text-white p-2 rounded"
         onClick={() => setIsOpen(!isOpen)}
@@ -106,13 +106,13 @@ const BlogSideBar = ({ setFilters }) => {
         {isOpen ? "Close Filters" : "Show Filters"}
       </button>
 
-      {/* Sidebar Content */}
+
       <div className="flex flex-col w-full">
         <h2 className="text-2xl font-semibold text-gray-800 mb-6">
           Blog Filters
         </h2>
 
-        {/* Search Blogs */}
+
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Search Blogs
@@ -157,7 +157,7 @@ const BlogSideBar = ({ setFilters }) => {
           </ul>
         </div>
 
-        {/* Category Filter */}
+     
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Categories

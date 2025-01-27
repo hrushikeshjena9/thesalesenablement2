@@ -1,144 +1,94 @@
-// import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom"; // Import useNavigate hook
-
-// const CourseItem = ({ course }) => {
-//   const [isHovered, setIsHovered] = useState(false);
-//   const navigate = useNavigate(); // Initialize the navigate function
-
-//   const handleCourseClick = () => {
-//     // Redirect to the course details page
-//     navigate(`/course-details/${course.id}`);
-//   };
-
-//   return (
-//     <div className="container">
-//       <div
-//         className="border-2 flex flex-col justify-between cursor-pointer shadow-xl overflow-hidden relative transition-transform transform"
-//         style={{
-//           borderLeft: "6px solid transparent", // Adjust the width as needed
-//           borderImageSource: "linear-gradient(to bottom, #DB0032, #FA6602)", // Gradient direction for left side
-//           borderImageSlice: 1, // Required for the gradient to appear
-//         }}
-//         onMouseEnter={() => setIsHovered(true)}
-//         onMouseLeave={() => setIsHovered(false)}
-//         onClick={handleCourseClick} // Add onClick handler here
-//       >
-//         <div
-//           className={`px-6 py-4 flex flex-col justify-between transition-all duration-300 ${
-//             isHovered
-//               ? "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white "
-//               : ""
-//           }`}
-//           style={{
-//             minHeight: "260px", // Ensures consistent height across cards
-//             height: "auto", // Allows for flexible height based on content
-//             maxWidth: "100%", // Ensures the card is fully responsive and doesn't overflow
-//             width: "100%", // Makes sure the card stays within container bounds
-//             boxSizing: "border-box", // Ensures padding doesn't affect the total width/height
-//           }}
-//         >
-//           <div className="flex justify-between items-center mb-4">
-//             <div className="flex items-center gap-3">
-//               <span
-//                 className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${
-//                   isHovered
-//                     ? "bg-white text-[#DB0032] "
-//                     : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-//                 }`}
-//               >
-//                 {course.courseName.icon}
-//               </span>
-//               <span className="font-semibold">{course.courseName.text}</span>
-//             </div>
-//             <div
-//               className={`flex items-center justify-center gap-1 rounded-md px-2 py-2 transition-all duration-300 ${
-//                 isHovered
-//                   ? "bg-white text-[#DB0032]" // White background, text color as #DB0032 when hovered
-//                   : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]" //
-//               }`}
-//             >
-//               {course.location.icon}
-//               {course.location.text}
-//             </div>
-//           </div>
-
-//           <h3 className="text-sm md:text-base lg:text-lg font-semibold uppercase mb-2">
-//             {course.title}
-//           </h3>
-//           <hr className="my-2" />
-
-//           <p className="text-sm font-light mb-4">{course.description}</p>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CourseItem;
-
-
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { useNavigate } from "react-router-dom";
 
 const CourseItem = ({ course }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
 
   const handleCourseClick = () => {
-    // Ensure course.id exists and is defined before navigating
     if (course && course.id) {
       navigate(`/course-details/${course.id}`);
     }
   };
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  const description = course?.description;
+  const charLimit = 180;
+  const shortDescription = description.slice(0, charLimit);
+  const fullDescription = description;
 
   return (
     <div className="container">
       <div
         className="border-2 flex flex-col justify-between cursor-pointer shadow-xl overflow-hidden relative transition-transform transform"
         style={{
-          borderLeft: "6px solid transparent", // Adjust the width as needed
-          borderImageSource: "linear-gradient(to bottom, #DB0032, #FA6602)", // Gradient direction for left side
-          borderImageSlice: 1, // Required for the gradient to appear
+          borderLeft: "6px solid transparent",
+          borderImageSource: "linear-gradient(to bottom, #DB0032, #FA6602)",
+          borderImageSlice: 1,
         }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        onClick={handleCourseClick} // Add onClick handler here
+        onClick={handleCourseClick}
       >
         <div
-          className={`px-6 py-4 flex flex-col justify-between transition-all duration-300 ${isHovered ? "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white" : ""}`}
+          className={`px-6 py-4 flex flex-col justify-between transition-all duration-300 ${
+            isHovered
+              ? "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white"
+              : ""
+          }`}
           style={{
-            minHeight: "260px", // Ensures consistent height across cards
-            height: "auto", // Allows for flexible height based on content
-            maxWidth: "100%", // Ensures the card is fully responsive and doesn't overflow
-            width: "100%", // Makes sure the card stays within container bounds
-            boxSizing: "border-box", // Ensures padding doesn't affect the total width/height
+            minHeight: "260px",
+            height: "auto",
+            maxWidth: "100%",
+            width: "100%",
+            boxSizing: "border-box",
           }}
         >
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-3">
               <span
-                className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${isHovered ? "bg-white text-[#DB0032]" : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"}`}
+                className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${
+                  isHovered
+                    ? "bg-white text-[#DB0032]"
+                    : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                }`}
               >
-                {/* Ensure course.courseName.icon is a valid JSX element */}
-                {course?.courseName?.icon || <span>📘</span>}
+                {course?.courseName?.icon}
               </span>
-              <span className="font-semibold">{course?.courseName?.text || "Course Name"}</span>
+              <span className="font-semibold">
+                {course?.courseName?.text}
+              </span>
             </div>
             <div
-              className={`flex items-center justify-center gap-1 rounded-md px-2 py-2 transition-all duration-300 ${isHovered ? "bg-white text-[#DB0032]" : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"}`}
+              className={`flex items-center justify-center gap-1 rounded-md px-2 py-2 transition-all duration-300 ${
+                isHovered
+                  ? "bg-white text-[#DB0032]"
+                  : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+              }`}
             >
-              {/* Ensure course.location.icon and course.location.text are valid */}
-              {course?.location?.icon || <span>📍</span>}
-              {course?.location?.text || "Location"}
+              {course?.location?.icon}
+              {course?.location?.text}
             </div>
           </div>
 
           <h3 className="text-sm md:text-base lg:text-lg font-semibold uppercase mb-2">
-            {course?.title || "Course Title"}
+            {course?.title}
           </h3>
           <hr className="my-2" />
 
-          <p className="text-sm font-light mb-4">{course?.description || "Description of the course."}</p>
+          <p className="text-sm font-light mb-4">
+
+            {showFullDescription ? fullDescription : shortDescription}
+            {description.length > charLimit && (
+              <button
+                className="text-blue-500 ml-2"
+                onClick={() => setShowFullDescription(!showFullDescription)}
+              >
+                {showFullDescription ? "" : "Learn More"}
+              </button>
+            )}
+          </p>
         </div>
       </div>
     </div>

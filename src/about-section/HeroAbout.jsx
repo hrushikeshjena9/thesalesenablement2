@@ -19,14 +19,6 @@ function HeroAbout() {
             </div>
      
 
-            {/* <div className="text-white flex items-center justify-center gap-6 py-12">
-              <div className="uppercase">Home</div>
-              <span className=" bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
-                <MdOutlineKeyboardArrowRight size={30} />
-              </span>
-
-              <div className="uppercase">About</div>
-            </div> */}
           </div>
         </div>
       </section>

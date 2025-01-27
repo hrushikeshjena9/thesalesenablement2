@@ -190,12 +190,12 @@ function HeroSection() {
                       <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
                         {slideContent[currentSlide].buttonText1}
                         <img
-                          src={RightArrow1} // Default arrow image
+                          src={RightArrow1}
                           alt="Arrow Icon"
                           className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out group-hover:hidden" // Hide on hover
                         />
                         <img
-                          src={RightArrow} // Arrow image for hover state
+                          src={RightArrow} 
                           alt="Arrow Icon Hover"
                           className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out hidden group-hover:inline" // Show on hover
                         />

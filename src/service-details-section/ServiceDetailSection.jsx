@@ -13,13 +13,13 @@ import {
   FaBullhorn,
 } from "react-icons/fa";
 const ServiceDetailSection = () => {
-  const { courseId } = useParams(); // Extract courseId from the URL
+  const { courseId } = useParams(); 
   const [course, setCourse] = useState(null);
   const [relatedCourses, setRelatedCourses] = useState([]);
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
-      // Simulating fetching course details based on courseId
+  
       const courseData = {
         id: courseId,
         title: "Recruiting Process Optimization",
@@ -90,7 +90,7 @@ const ServiceDetailSection = () => {
       description: "Improve your sales processes for maximum productivity.",
       icon: <FaBullhorn />,
     },
-    // Add other features as needed
+
   ];
   return (
     <section className="w-3/4 mx-auto py-6 px-4">
@@ -166,10 +166,10 @@ const ServiceDetailSection = () => {
             />
           </div>
 
-          {/* Image 2 - Sales Strategy Implementation */}
+
           <div className="flex-1  p-4 rounded-lg ">
             <img
-              src={ServicesDetails2} // Replace with your image URL for strategy implementation
+              src={ServicesDetails2} 
               alt="Sales Strategy Implementation"
               className="w-full h-auto object-cover rounded-md"
             />

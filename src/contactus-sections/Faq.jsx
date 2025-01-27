@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineUp, AiOutlineDown } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
-import { Fragment } from "react";
+
 
 const FAQs = [
   {
@@ -33,10 +33,10 @@ const FAQs = [
 ];
 
 function Faq() {
-  const [openIndex, setOpenIndex] = useState(null); // State to track the open FAQ index
+  const [openIndex, setOpenIndex] = useState(null);
 
   const handleDisclosureClick = (index) => {
-    setOpenIndex(openIndex === index ? null : index); // Toggle FAQ open/close
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
@@ -61,13 +61,13 @@ function Faq() {
         {FAQs.map((faq, index) => (
           <div key={index}>
             <button
-              onClick={() => handleDisclosureClick(index)} // Toggle open/close when clicked
+              onClick={() => handleDisclosureClick(index)}
               className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center transition-all duration-300 ease-in-out"
             >
               <span>{faq.question}</span>
               <span
                 className={`transition-transform duration-300 ease-in-out ${
-                  openIndex === index ? "rotate-180" : ""
+                  openIndex === index ? "rotate-[-180]" : ""
                 }`}
               >
                 {openIndex === index ? (

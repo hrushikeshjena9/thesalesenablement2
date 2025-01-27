@@ -39,22 +39,6 @@ const WhyChooseUs = () => {
             viewport={{ once: true, amount: 0.5 }}
             variants={leftVariants}
           >
-            {/* <div className="flex justify-center align-middle">
-              <div className="about-home-bg ">
-                <img
-                  src={Thumb}
-                  alt=""
-                  className="w-[150.38px]  h-[150.38px] sm:w-[234.3px]   sm:h-[230.35px] md:w-[234.3px]  md:h-[230.35px] lg:w-[200px]  lg:h-[200px] xl:w-[234.3px]  xl:h-[230.35px] 2xl:w-[234.3px]  2xl:h-[230.35px] relative top-[-2rem] sm:top-[-4rem] z-20"
-                />
-
-                <img
-                  src={About1}
-                  alt=""
-                  className="w-[255px] h-[234px] sm:w-[444.01px] sm:h-[402.44px] md:w-[444.01px] md:h-[402.44px] lg:w-[329px] lg:h-[335px] xl:w-[444.01px] xl:h-[402.44px] 2xl:w-[444.01px] 2xl:h-[402.44px] z-10 rounded-lg relative left-[3rem] top-[-6rem] sm:left-16 sm:top-[-10rem]"
-                />
-              </div>
-            </div> */}
-
             <div className="flex justify-center items-center">
               <div className="services-bg relative">
                 <img
@@ -135,7 +119,6 @@ const WhyChooseUs = () => {
               },
             ].map((item, index) => (
               <div className="flex items-start space-x-4" key={index}>
-                {/* Image Column */}
                 <div className="w-[10%] flex justify-center">
                   <img
                     src={item.img}
@@ -143,7 +126,7 @@ const WhyChooseUs = () => {
                     className="w-1/2 mt-2 hover:scale-110"
                   />
                 </div>
-                {/* Text Column */}
+
                 <div className="flex items-start w-[90%] gap-6">
                   <div className="w-[30%]">
                     <h5 className="font-bold text-[12px] sm:text-[16px] md:text-[16px]  lg:text-[16px] xl:text-lg uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
@@ -179,7 +162,7 @@ const WhyChooseUs = () => {
 
             <div className="flex items-center">
               <img
-                src={Person2} // Add the correct image source path
+                src={Person2}
                 alt="Sales Trainer"
                 className="w-16 h-16 mr-4 rounded-full object-cover"
               />

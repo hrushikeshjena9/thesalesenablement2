@@ -111,7 +111,7 @@ function Testimonials() {
 
       <div className="flex justify-center items-center mt-4 px-4">
         <div className="flex justify-between items-center w-full max-w-3xl">
-          {/* Navigation Buttons */}
+
           <div className="flex justify-between items-center w-auto">
             <button onClick={prevTestimonial} className="hover:scale-110">
               <img
@@ -144,8 +144,8 @@ function Testimonials() {
                     opacity: index === currentIndex ? 1 : 0.6,
                   }}
                   transition={{
-                    duration: 0.3, // Smooth transition
-                    ease: "easeInOut", // Smooth easing
+                    duration: 0.3, 
+                    ease: "easeInOut",
                   }}
                 />
               ))}

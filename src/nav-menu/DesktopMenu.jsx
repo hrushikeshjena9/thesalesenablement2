@@ -20,22 +20,19 @@ const DesktopMenu = ({
   const [forgotEmail, setForgotEmail] = useState("");
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const handleForgotPassword = () => {
-    // Handle forgot password submission here
     alert(`Password reset link sent to ${forgotEmail}`);
-    setShowForgotPassword(false); // Hide the forgot password form after submission
+    setShowForgotPassword(false);
   };
-  // State to track hover status for dropdown menu
+
   const [isHovered, setIsHovered] = useState(false);
 
-  // Handle mouse enter to toggle dropdown visibility
   const handleMouseEnter = (menuName) => {
     toggleDropdown(menuName);
     setIsHovered(true);
   };
 
-  // Handle mouse leave to reset dropdown visibility
   const handleMouseLeave = () => {
-    toggleDropdown(""); // Reset dropdown
+    toggleDropdown("");
     setIsHovered(false);
   };
 
@@ -67,11 +64,10 @@ const DesktopMenu = ({
             {["Courses", "Services"].includes(link.name) ? (
               <div
                 className="relative group hover:font-bold"
-                onMouseEnter={() => handleMouseEnter(link.name.toLowerCase())} // Toggle dropdown on hover
-                onMouseLeave={handleMouseLeave} // Reset dropdown when mouse leaves
+                onMouseEnter={() => handleMouseEnter(link.name.toLowerCase())}
+                onMouseLeave={handleMouseLeave}
               >
                 <button
-                  // className="sm:text-xs lg:text-sm xl:text-base uppercase hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center ">
                   className="sm:text-xs lg:text-sm xl:text-base uppercase flex items-center gap-1  space-x-2
       group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] 
       transition-colors duration-300 ease-in-out
@@ -111,7 +107,7 @@ const DesktopMenu = ({
                     <div className="flex justify-start mt-4">
                       {link.name === "Courses" ? (
                         <Link
-                          to="/courses" // Adjust this to your actual URL for courses
+                          to="/courses" 
                           className="text-white group flex justify-center items-center transition-all duration-300 ease-out transform uppercase text-[14px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl rounded-lg shadow-lg font-bold text-sm px-8 py-3 cursor-pointer "
                         >
                           <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -121,7 +117,7 @@ const DesktopMenu = ({
                         </Link>
                       ) : (
                         <Link
-                          to="/services" // Adjust this to your actual URL for services
+                          to="/services" 
                           className="text-white group flex justify-center rounded-lg shadow-lg items-center transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                         >
                           <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>

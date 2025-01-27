@@ -52,7 +52,7 @@ const MoreInfoContent = () => {
     <div className="space-y-4">
       <h1 className="uppercase text-3xl font-bold text-center mb-6">More Information</h1>
       
-      {/* Table Structure */}
+ 
       <div className="overflow-x-auto bg-white p-6 rounded-lg shadow-lg">
         <table className="min-w-full table-auto">
           <thead>

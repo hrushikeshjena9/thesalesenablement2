@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  FaRegCalendarCheck,
-  FaUserAlt,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaChalkboardTeacher,
-  FaQuestionCircle,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaRegCalendarCheck } from "react-icons/fa";
 import ScheduleForm from "./ScheduleForm";
 import RightArrow1 from "../assets/arrow-right1.png";
 import RightArrow from "../assets/arrow-right.png";
@@ -15,7 +7,6 @@ const ScheduleConsultation = () => {
   return (
     <div className="container mx-auto px-4">
       <div className="py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Left Section */}
         <div className="text-center md:text-left">
           <h2 className="text-3xl font-semibold text-white">
             <FaRegCalendarCheck className="inline-block text-bg-gradient-to-r from-[#DB0032] to-[#FA6602]" />{" "}
@@ -49,12 +40,12 @@ const ScheduleConsultation = () => {
             <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
               Get Started
               <img
-                src={RightArrow1} // Default arrow image
+                src={RightArrow1} 
                 alt="Arrow Icon"
                 className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out group-hover:hidden" // Hide on hover
               />
               <img
-                src={RightArrow} // Arrow image for hover state
+                src={RightArrow} 
                 alt="Arrow Icon Hover"
                 className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out hidden group-hover:inline" // Show on hover
               />
@@ -62,7 +53,7 @@ const ScheduleConsultation = () => {
           </button>
         </div>
 
-        {/* Right Section */}
+        
         <div className="flex justify-center">
           <ScheduleForm />
         </div>

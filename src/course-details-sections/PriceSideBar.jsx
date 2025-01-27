@@ -23,7 +23,6 @@ const PriceSideBar = ({ course }) => {
           </div>
         </div>
 
-        {/* Dates */}
         <div className="mt-4">
           <label className="block text-xs sm:text-sm bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text mb-2">
             Application Open Between
@@ -33,7 +32,6 @@ const PriceSideBar = ({ course }) => {
           </div>
         </div>
 
-        {/* Course Timing */}
         <div className="mt-4 flex flex-wrap justify-between gap-4">
           <div>
             <span className="text-xs font-light">To Start by:</span>
@@ -45,7 +43,6 @@ const PriceSideBar = ({ course }) => {
           </div>
         </div>
 
-        {/* Cost and Venue */}
         <div className="mt-4 flex flex-wrap justify-between gap-4">
           <div>
             <span className="text-xs font-light">Cost</span>
@@ -59,7 +56,6 @@ const PriceSideBar = ({ course }) => {
           </div>
         </div>
 
-        {/* Enquiries Section */}
         <div className="mt-4 flex flex-wrap justify-between items-start gap-4">
           <div className="text-xs font-light text-gray-600">
             <div>For Enquiries</div>
@@ -82,7 +78,6 @@ const PriceSideBar = ({ course }) => {
         </div>
       </div>
 
-      {/* Book Now Button */}
       <div className="mt-6">
         <button className="w-full relative uppercase group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center ">
           <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
@@ -92,7 +87,6 @@ const PriceSideBar = ({ course }) => {
         </button>
       </div>
 
-      {/* Call to Action Buttons */}
       <div className="mt-4 flex flex-wrap justify-between gap-4">
         <button className="w-full md:w-auto flex-1 uppercase relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center ">
           <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>

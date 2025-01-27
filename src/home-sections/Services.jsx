@@ -143,7 +143,7 @@ function Services() {
           className="w-full  text-center md:text-left"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% visible
+          viewport={{ once: true, amount: 0.5 }}
           variants={leftVariants}
         >
           <h5 className="text-[16px] md:text-[24px] sm:text-[24px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
@@ -178,9 +178,9 @@ function Services() {
             <motion.div
               className="w-full p-8 flex justify-center items-center"
               ref={ref2}
-              initial={{ scale: 0, opacity: 0 }} // Start as smaller element
+              initial={{ scale: 0, opacity: 0 }}
               animate={{
-                scale: inView2 ? 1 : 0, // Zoom in when in view
+                scale: inView2 ? 1 : 0, 
                 opacity: inView2 ? 1 : 0,
               }}
               transition={{ duration: 1, ease: "easeOut" }}
@@ -254,9 +254,7 @@ function Services() {
                   );
                 })}
               </div>
-              {/* for mobile   */}
-
-              {/* For Mobile devices */}
+       
               <div className="sm:hidden">
                 <div className="w-full flex flex-wrap align-middle justify-center">
                   {currentCards.map((card) => (
@@ -267,8 +265,8 @@ function Services() {
                         backgroundImage: `url(${card.image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        width: "290px", // Fixed width for all cards
-                        height: "290px", // Fixed height for all cards
+                        width: "290px", 
+                        height: "290px",
                       }}
                     >
                       <div className="h-full flex flex-col justify-between bg-layer p-5">

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import RightArrow from "../assets/arrow-right.png";
 import Blog1 from "../assets/blog1.png";
@@ -12,30 +11,29 @@ function LatestBlogs() {
   const [inView, setInView] = useState(false);
   const elementRef = useRef(null);
 
-   useEffect(() => {
-     const observer = new IntersectionObserver(
-       ([entry]) => {
-         if (entry.isIntersecting && !inView) {
-           setInView(true); // Set to true only once when in view
-         }
-       },
-       {
-         threshold: 0.2, // Trigger when 50% of the element is in the viewport
-         once: true, // Ensures the animation only triggers once
-       }
-     );
- 
-     // Ensure the element is available before observing
-     if (elementRef.current) {
-       observer.observe(elementRef.current);
-     }
- 
-     return () => {
-       if (elementRef.current) {
-         observer.disconnect();
-       }
-     };
-   }, [inView]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !inView) {
+          setInView(true);
+        }
+      },
+      {
+        threshold: 0.2,
+        once: true,
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, [inView]);
   return (
     <section className="container mx-auto px-4 py-12 case-study">
       <div className="text-center md:text-left mb-8">
@@ -67,17 +65,17 @@ function LatestBlogs() {
       </div>
 
       <motion.div
-        ref={elementRef} // Assign the ref to the motion div
+        ref={elementRef}
         className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8"
-        initial={{ opacity: 0, y: 100 }} // Start from below the viewport (y: 100px)
+        initial={{ opacity: 0, y: 100 }}
         animate={{
-          opacity: inView ? 1 : 0, // Fade in when in view
-          y: inView ? 0 : 100, // Move to final position (y: 0) when in view
+          opacity: inView ? 1 : 0,
+          y: inView ? 0 : 100,
         }}
-        exit={{ opacity: 0, y: 100 }} // Fade out and move down when out of view
+        exit={{ opacity: 0, y: 100 }}
         transition={{
-          duration: 1.5, // Transition duration
-          ease: "easeInOut", // Smooth easing
+          duration: 1.5,
+          ease: "easeInOut",
         }}
       >
         {[
@@ -119,7 +117,7 @@ function LatestBlogs() {
             <p className="text-left mb-4 text-sm px-6 sm:text-base">
               {blog.description}
             </p>
-    
+
             <Link
               to="blog-details/:id"
               type="button"
@@ -142,4 +140,3 @@ function LatestBlogs() {
 }
 
 export default LatestBlogs;
-

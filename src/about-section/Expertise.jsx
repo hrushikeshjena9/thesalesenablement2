@@ -63,8 +63,8 @@ const Expertise = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    autoplay: true, // Added autoplay
-    autoplaySpeed: 3000, // Added autoplay speed (3 seconds)
+    autoplay: true,
+    autoplaySpeed: 3000, 
     initialSlide: 0,
     pauseOnHover: true,
     responsive: [
@@ -125,7 +125,7 @@ const Expertise = () => {
         a unique set of skills to help your sales team succeed.
       </p>
 
-      {/* Slider */}
+ 
       <Slider ref={sliderRef} {...settings}>
         {experts.map((expert, index) => (
           <motion.div
@@ -187,7 +187,7 @@ const Expertise = () => {
         ))}
       </Slider>
 
-      {/* Custom Navigation Buttons */}
+    
       <div className="container mx-auto px-4 mt-6 flex justify-end">
         <div className="btn-hero-slider flex items-center">
           <button

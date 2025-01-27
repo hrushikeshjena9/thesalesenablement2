@@ -105,15 +105,13 @@ const CandidateAssessment = () => {
             viewport={{ once: true, amount: 0.5 }}
             variants={leftVariants}
           >
-           
-              <div className="w-full h-full flex items-center justify-center">
-                <img
-                  src={Image}
-                  alt="Candidates Assessment"
-                  className="w-full h-auto max-w-[480px] sm:max-w-full object-contain"
-                />
-              </div>
-       
+            <div className="w-full h-full flex items-center justify-center">
+              <img
+                src={Image}
+                alt="Candidates Assessment"
+                className="w-full h-auto max-w-[480px] sm:max-w-full object-contain"
+              />
+            </div>
           </motion.div>
 
           <motion.div
@@ -290,7 +288,6 @@ const CandidateAssessment = () => {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Predictive */}
             <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] shadow-lg p-6 rounded-lg border-t-4 border-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-105 transform transition-all duration-300">
               <div className="text-4xl text-white mb-4">
                 <FaChartBar />
@@ -302,7 +299,6 @@ const CandidateAssessment = () => {
               </p>
             </div>
 
-            {/* Sales Specific */}
             <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] shadow-lg p-6 rounded-lg border-t-4 border-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-105 transform transition-all duration-300">
               <div className="text-4xl text-white mb-4">
                 <FaCheckCircle />
@@ -316,7 +312,6 @@ const CandidateAssessment = () => {
               </p>
             </div>
 
-            {/* Role-Specific */}
             <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] shadow-lg p-6 rounded-lg border-t-4 border-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-105 transform transition-all duration-300">
               <div className="text-4xl text-white mb-4">
                 <FaCog />
@@ -330,7 +325,6 @@ const CandidateAssessment = () => {
               </p>
             </div>
 
-            {/* Actionable */}
             <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] shadow-lg p-6 rounded-lg border-t-4 border-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-105 transform transition-all duration-300">
               <div className="text-4xl text-white mb-4">
                 <FaLightbulb />
@@ -342,7 +336,6 @@ const CandidateAssessment = () => {
               </p>
             </div>
 
-            {/* Customizable */}
             <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602]shadow-lg p-6 rounded-lg border-t-4 border-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-105 transform transition-all duration-300">
               <div className="text-4xl text-white mb-4">
                 <FaSlidersH />

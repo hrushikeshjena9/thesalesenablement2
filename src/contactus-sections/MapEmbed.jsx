@@ -5,7 +5,7 @@ const MapSection = () => {
   return (
     <div className="py-12 about-class container mx-auto px-4 ">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
-        {/* Left Side Content */}
+
         <div className="w-full text-center sm:text-left">
           <h2 className="text-2xl font-semibold uppercase text-gray-800 mb-4">
             Our Location
@@ -19,13 +19,13 @@ const MapSection = () => {
             <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
 
             <span className="relative text-white flex items-center">
-              <FaCommentDots className="mr-2" /> {/* Icon with margin-right */}
+              <FaCommentDots className="mr-2" /> 
               Contact Us
             </span>
           </button>
         </div>
 
-        {/* Google Map Embed */}
+   
         <div className="w-full flex justify-center">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.6420069199366!2d28.03582567616495!3d-26.14321306149427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950de5e2952bab%3A0x50020f3be991042a!2sThe%20Sales%20Enablement%20Company!5e0!3m2!1sen!2sin!4v1737106163318!5m2!1sen!2sin"

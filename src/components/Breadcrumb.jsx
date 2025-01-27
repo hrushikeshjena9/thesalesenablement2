@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Breadcrumb = ({ breadcrumbs }) => {
   return (
@@ -8,10 +8,8 @@ const Breadcrumb = ({ breadcrumbs }) => {
         {breadcrumbs.map((breadcrumb, index) => (
           <li key={index} className="breadcrumb-item">
             {breadcrumb.to ? (
-              // If 'to' property is provided, render a Link
               <Link to={breadcrumb.to}>{breadcrumb.label}</Link>
             ) : (
-     
               <span>{breadcrumb.label}</span>
             )}
           </li>

@@ -5,7 +5,6 @@ const SalesAssessmentModal = ({ toggleModal }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-75">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 overflow-y-auto h-[80vh]">
-        {/* Modal Header */}
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold text-gray-800">
             Sales Assessment
@@ -19,9 +18,7 @@ const SalesAssessmentModal = ({ toggleModal }) => {
           </button>
         </div>
 
-        {/* Form */}
         <form className="space-y-6">
-          {/* Personal Details */}
           <div className="space-y-4">
             <div>
               <label className="block text-gray-700 font-medium">Name</label>
@@ -62,7 +59,6 @@ const SalesAssessmentModal = ({ toggleModal }) => {
             </div>
           </div>
 
-          {/* Assessment Questions */}
           <div className="space-y-6">
             {[
               "Do you have a formal sales process that everyone follows?",
@@ -118,7 +114,6 @@ const SalesAssessmentModal = ({ toggleModal }) => {
             ))}
           </div>
 
-          {/* Submit Button */}
           <div className="mt-8">
             <button
               type="submit"

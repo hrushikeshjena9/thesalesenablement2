@@ -8,14 +8,7 @@ import {
   FaPaperPlane,
 } from "react-icons/fa";
 import { AiOutlineGlobal } from "react-icons/ai";
-import {
-  FaLinkedin,
-  FaTwitter,
-  FaFacebook,
-  FaInstagram,
-  FaGithub,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function ContactContent() {
   return (
@@ -26,7 +19,6 @@ function ContactContent() {
             Get In Touch With Us
           </h1>
 
-          {/* Paragraph under the Heading */}
           <p className=" text-lg text-black mb-6">
             We'd love to hear from you. Whether you're interested in our sales
             enablement solutions, want to schedule a demo, or simply have a
@@ -39,7 +31,6 @@ function ContactContent() {
             we will get back to you as soon as possible.
           </p>
 
-          {/* Contact Information */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Location Card */}
             <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
@@ -52,7 +43,6 @@ function ContactContent() {
               </p>
             </div>
 
-            {/* Phone Card */}
             <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <FaPhoneAlt className="w-10 h-10 text-[#DB0032] mb-4" />
               <h3 className="text-xl text-center font-semibold text-gray-800">
@@ -63,16 +53,6 @@ function ContactContent() {
               </p>
             </div>
 
-            {/* Email Card */}
-            {/* <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
-              <FaEnvelope className="w-10 h-10 text-[#DB0032] mb-4" />
-              <h3 className="text-xl font-semibold text-gray-800">
-                Write Email
-              </h3>
-              <p className="text-base text-gray-600 mt-2 text-center">
-                info@theenablement.com
-              </p>
-            </div> */}
             <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <FaEnvelope className="w-10 h-10 text-[#DB0032] mb-4" />
               <h3 className="text-xl text-center font-semibold text-gray-800">
@@ -84,21 +64,19 @@ function ContactContent() {
             </div>
           </div>
 
-          {/* Social Media */}
           <div className="flex justify-center mb-8 cursor-pointer space-x-6">
-            {/* LinkedIn */}
             <div className="transform hover:scale-110 transition duration-300 bg-blue-700 p-3 rounded-full text-white">
               <FaLinkedin size={24} />
             </div>
-            {/* Twitter */}
+
             <div className="transform hover:scale-110 transition duration-300 bg-blue-400 p-3 rounded-full text-white">
               <FaTwitter size={24} />
             </div>
-            {/* Facebook */}
+
             <div className="transform hover:scale-110 transition duration-300 bg-blue-600 p-3 rounded-full text-white">
               <FaFacebook size={24} />
             </div>
-            {/* Instagram */}
+
             <div className="transform hover:scale-110 transition duration-300 bg-pink-500 p-3 rounded-full text-white">
               <FaInstagram size={24} />
             </div>
@@ -192,7 +170,7 @@ function ContactContent() {
 
                 <span className="relative text-white flex items-center">
                   <FaPaperPlane className="mr-2" />{" "}
-                  {/* Icon with margin-right */}
+          
                   Send Message
                 </span>
               </button>

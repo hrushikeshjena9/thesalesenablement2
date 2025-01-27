@@ -43,7 +43,6 @@ const ScheduleForm = () => {
         </p>
 
         <div>
-          {/* Name */}
           <div className="relative mb-4">
             <FaUserAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
@@ -57,7 +56,6 @@ const ScheduleForm = () => {
             />
           </div>
 
-          {/* Email */}
           <div className="relative mb-4">
             <FaEnvelope className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
@@ -71,7 +69,6 @@ const ScheduleForm = () => {
             />
           </div>
 
-          {/* Mobile Number */}
           <div className="relative mb-4">
             <FaPhoneAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
@@ -85,7 +82,6 @@ const ScheduleForm = () => {
             />
           </div>
 
-          {/* Consultation Type */}
           <div className="relative mb-4">
             <FaChalkboardTeacher className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <select
@@ -103,7 +99,6 @@ const ScheduleForm = () => {
             </select>
           </div>
 
-          {/* Consultation Purpose */}
           <div className="relative mb-4">
             <FaQuestionCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <textarea
@@ -116,7 +111,6 @@ const ScheduleForm = () => {
             />
           </div>
 
-          {/* Preferred Time */}
           <div className="relative mb-4">
             <FaRegCalendarCheck className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
@@ -129,7 +123,6 @@ const ScheduleForm = () => {
             />
           </div>
 
-          {/* Mode of Consultation */}
           <div className="relative mb-4">
             <FaChalkboardTeacher className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <select

@@ -13,7 +13,7 @@ const TabNavigation = () => {
 
   return (
     <div className=" py-4">
-      {/* Tab buttons */}
+
       <div className="flex justify-between  mb-6">
         <button
           onClick={() => handleTabClick('modules')}
@@ -58,7 +58,7 @@ const TabNavigation = () => {
         </button>
       </div>
 
-      {/* Tab content */}
+
       <div className="p-6 border-t-2 border-[#DB0032]">
         {activeTab === 'modules' && <ModuleContent/>}
         {activeTab === 'objectives' && <CourseObjectives/>}

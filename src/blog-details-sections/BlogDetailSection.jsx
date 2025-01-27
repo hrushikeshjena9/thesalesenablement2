@@ -1,31 +1,26 @@
 import React, { useEffect, useState } from "react";
 import {
-  FaArrowDown,
   FaCalendarAlt,
-  FaCircle,
   FaComment,
   FaEye,
   FaUser,
   FaUsers,
 } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import TabNavigation from "../components/TabNavigation";
+import { useParams } from "react-router-dom";
 import { FaShareAlt, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import CommentPost from "./CommentPost";
 import CommentSection from "./CommentSection";
 import ServicesDetails1 from "../assets/new/services-details1.jpg";
-import ServicesDetails2 from "../assets/new/metic.jpg";
 import VideoThumb from "../assets/new/salesteamimage.jpg";
 
 const BlogDetailSection = () => {
-  const { courseId } = useParams(); // Extract courseId from the URL
+  const { courseId } = useParams();
   const [course, setCourse] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [relatedCourses, setRelatedCourses] = useState([]);
-  const [isPlaying, setIsPlaying] = useState(false); // Always call useState for isPlaying hook
-
+  const [isPlaying, setIsPlaying] = useState(false); 
   useEffect(() => {
-    // Replace this with actual API or data fetching logic based on courseId
+  
     const fetchCourseDetails = async () => {
       const courseData = {
         id: courseId,

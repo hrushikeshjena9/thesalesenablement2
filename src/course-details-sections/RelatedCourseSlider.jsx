@@ -1,187 +1,207 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FaBook, FaUsers } from "react-icons/fa";
-import heroImage from "../assets/Logo-banner.png"; // Import the image
-import heroImage1 from "../assets/banner2.jpg";
-import Person3 from "../assets/person3.png";
-import Blog1 from "../assets/blog1.png";
-import Blog2 from "../assets/blog2.png";
-import Blog3 from "../assets/blog3.png";
-import Blog4 from "../assets/blog-4.png";
+import React, { useState, useRef } from "react";
+import Slider from "react-slick"; 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import {
+  FaBook,
+  FaUsers,
+  FaChalkboardTeacher,
+  FaGlobeAmericas,
+} from "react-icons/fa";
+import SliderBtnLeft from "../assets/slider-btn-left.png";
+import SliderBtnRight from "../assets/slider-btn-right.png";
 
 const RelatedCourseSlider = () => {
+  const sliderRef = useRef(null);
   const [hoveredCourseId, setHoveredCourseId] = useState(null);
+  const [expandedDescription, setExpandedDescription] = useState({});
 
-  // Static course data
   const courses = [
     {
       id: 1,
-      image: heroImage1,
-      title: "Mastering Sales Techniques",
+      title: "Innovation and Creativity in Business",
       description:
-        "Learn effective strategies to boost your sales performance.",
-      price: 99.99,
-      starCategory: 4.5,
-      instructor: "Jane Doe",
-      instructorImage: Person3,
-      lessons: 15,
-      students: 120,
+        "Foster innovation and creativity to develop breakthrough business solutions.",
+      location: { text: "Hybrid", icon: <FaGlobeAmericas /> },
+      audience: "business-leaders",
+      topics: ["innovation", "creativeThinking"],
+      courseName: { text: "Workshops", icon: <FaUsers /> },
     },
     {
       id: 2,
-      image: Blog1,
-      title: "Digital Marketing Fundamentals",
+      title: "Project Management Excellence",
       description:
-        "Discover the essentials of online marketing and advertising.",
-      price: 89.99,
-      starCategory: 4.7,
-      instructor: "John Smith",
-      instructorImage: Person3,
-      lessons: 20,
-      students: 150,
+        "Master project management techniques to deliver projects on time and within budget.",
+      location: { text: "Onsite", icon: <FaChalkboardTeacher /> },
+      audience: "project-managers",
+      topics: ["agile", "teamCollaboration"],
+      courseName: { text: "Programs", icon: <FaBook /> },
     },
     {
       id: 3,
-      image: Blog2,
-      title: "Web Development Bootcamp",
-      description: "A complete guide to becoming a full-stack web developer.",
-      price: 149.99,
-      starCategory: 4.8,
-      instructor: "Emily Johnson",
-      instructorImage: Person3,
-      lessons: 30,
-      students: 200,
+      title: "Emotional Intelligence for Leaders",
+      description:
+        "Harness emotional intelligence to build stronger relationships and lead with empathy.",
+      location: { text: "Virtual", icon: <FaGlobeAmericas /> },
+      audience: "leaders",
+      topics: ["emotionalIntelligence", "leadership"],
+      courseName: { text: "Seminars", icon: <FaUsers /> },
     },
   ];
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const toggleDescription = (id) => {
+    setExpandedDescription((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
+  const goToPreviousSlide = () => {
+    if (sliderRef.current) sliderRef.current.slickPrev();
+  };
+
+  const goToNextSlide = () => {
+    if (sliderRef.current) sliderRef.current.slickNext();
+  };
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {courses.map((course) => (
-        <div
-          key={course.id}
-          className="border-2 flex flex-col items-center justify-between shadow-lg cursor-pointer bg-gray-100 overflow-hidden relative"
-          style={{
-            borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
-          }}
-          onMouseEnter={() => setHoveredCourseId(course.id)}
-          onMouseLeave={() => setHoveredCourseId(null)}
-        >
-          <div
-            className={`w-full h-[233px] transition-all duration-300 bg-cover bg-center ${
-              hoveredCourseId ? "bg-[#060B33]" : "" // Change to new color on hover
-            }`}
-            style={{
-              backgroundImage: `url(${
-                hoveredCourseId === course.id ? heroImage : course.image
-              })`,
-            }}
-          />
+    <div className="relative w-full">
+      {/* Slider */}
+      <Slider ref={sliderRef} {...settings}>
+        {courses.map((course) => {
+          const charLimit = 100;
+          const isExpanded = expandedDescription[course.id];
+          const displayedDescription = isExpanded
+            ? course.description
+            : `${course.description.slice(0, charLimit)}${
+                course.description.length > charLimit ? "..." : ""
+              }`;
 
-          <div
-            className={`px-6 py-4 flex flex-col justify-between transition-all duration-300 ${
-              hoveredCourseId === course.id
-                ? "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white"
-                : ""
-            }`}
-            style={{ minHeight: "350px" }}
+          return (
+            <div
+              key={course.id}
+              className="flex flex-col justify-between cursor-pointer shadow-xl overflow-hidden relative transition-transform transform"
+              onMouseEnter={() => setHoveredCourseId(course.id)}
+              onMouseLeave={() => setHoveredCourseId(null)}
+            >
+              <div
+                className={`border-2 px-6 py-4 flex flex-col justify-between shadow-xl overflow-hidden relative transition-all duration-300  ${
+                  hoveredCourseId === course.id
+                    ? "border-transparent bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white"
+                    : "border-gray-300 bg-white"
+                }`}
+                style={{
+                  minHeight: "260px",
+                  height: "auto",
+                  maxWidth: "100%",
+                  width: "100%",
+                  boxSizing: "border-box",
+                  borderLeft: "6px solid transparent",
+                  borderImageSource:
+                    "linear-gradient(to bottom, #DB0032, #FA6602)",
+                  borderImageSlice: 1,
+                }}
+              >
+                <div className="px-4 py-3">
+                  {/* Course Icon and Title */}
+                  <div className="flex justify-between items-center mb-6">
+                    <div className="flex items-center gap-3">
+                      <span
+                        className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${
+                          hoveredCourseId === course.id
+                            ? "bg-white text-[#DB0032]"
+                            : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                        }`}
+                      >
+                        {course?.courseName?.icon}
+                      </span>
+                      <span className="font-semibold">
+                        {course?.courseName?.text}
+                      </span>
+                    </div>
+                    <div
+                      className={`flex items-center gap-1 rounded-md px-3 py-1 transition-all duration-300 ${
+                        hoveredCourseId === course.id
+                          ? "bg-white text-red-600"
+                          : "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white"
+                      }`}
+                    >
+                      {course.location.icon}
+                      <span>{course.location.text}</span>
+                    </div>
+                  </div>
+
+                  {/* Course Title */}
+                  <h3 className="text-sm md:text-base lg:text-lg font-bold uppercase mb-4">
+                    {course.title}
+                  </h3>
+
+                  {/* Horizontal Divider */}
+                  <hr className="my-4 border-gray-300" />
+
+                  {/* Course Description */}
+                  <p className="text-sm font-light leading-relaxed">
+                    {displayedDescription}
+                    {course.description.length > charLimit && (
+                      <button
+                        className="text-blue-500 ml-2 hover:underline"
+                        onClick={() => toggleDescription(course.id)}
+                      >
+                        {isExpanded ? "Show Less" : "Learn More"}
+                      </button>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </Slider>
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-end py-3">
+        <div className="flex gap-8">
+          <button
+            onClick={goToPreviousSlide}
+            className="z-10 transform transition-all hover:scale-110 duration-75"
           >
-            {hoveredCourseId === course.id ? (
-              <>
-                <div className="flex justify-between items-center mb-4">
-                  <div className="bg-gray-200 rounded-lg uppercase flex items-center justify-center px-6 py-2">
-                    <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent font-bold bg-clip-text">
-                      Sales
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-start mb-4">
-                    <span className="text-yellow-500 font-semibold">
-                      {course.starCategory} ★
-                    </span>
-                    <span className="ml-2 ">Rating</span>
-                  </div>
-                </div>
-
-                <h3 className="text-lg font-semibold mb-2 uppercase">
-                  {course.title}
-                </h3>
-                <p className="text-sm mb-2">{course.description}</p>
-                <p className="text-lg font-semibold">${course.price}</p>
-
-                <div className="flex items-center mb-4">
-                  <img
-                    src={course.instructorImage}
-                    alt={course.instructor}
-                    className="w-10 h-10 rounded-full mr-3"
-                  />
-                  <div>
-                    <p className="text-sm font-medium uppercase">
-                      {course.instructor}
-                    </p>
-                    <p className="text-xs uppercase">Instructor</p>
-                  </div>
-                </div>
-
-                <div className="flex justify-between">
-                  <Link
-                    to={`/course-details/${course.id}`}
-                    className="text-center w-1/2 text-white bg-[#060B33] hover:bg-[#1f2763] font-semibold py-2 mr-2"
-                  >
-                    View Details
-                  </Link>
-                  <Link
-                    to={`/book-now/${course.id}`}
-                    className="text-center w-1/2 text-white bg-[#060B33] hover:bg-[#1f2763] font-semibold py-2"
-                  >
-                    Book Now
-                  </Link>
-                </div>
-              </>
-            ) : (
-              <>
-                <h3 className="text-lg font-semibold mb-1 uppercase">
-                  {course.title}
-                </h3>
-                <p className="mt-2 text-left mb-2 text-sm">
-                  {course.description}
-                </p>
-
-                <div className="flex items-center mb-4">
-                  <img
-                    src={course.instructorImage}
-                    alt={course.instructor}
-                    className="w-10 h-10 rounded-full mr-3"
-                  />
-                  <div>
-                    <p className="text-sm font-medium uppercase">
-                      {course.instructor}
-                    </p>
-                    <p className="text-xs text-gray-500 uppercase">
-                      Instructor
-                    </p>
-                  </div>
-                </div>
-
-                <hr className="my-2" />
-
-                <div className="flex justify-between text-sm">
-                  <div className="flex items-center">
-                    <FaBook className="mr-2 text-[#DB0032]" size={20} />
-                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
-                      {course.lessons} Lessons
-                    </p>
-                  </div>
-                  <div className="flex items-center">
-                    <FaUsers className="mr-2 text-[#DB0032]" size={20} />
-                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
-                      {course.students} Students
-                    </p>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
+            <img src={SliderBtnLeft} alt="Previous" className="w-14" />
+          </button>
+          <button
+            onClick={goToNextSlide}
+            className="z-10 transform transition-all hover:scale-110 duration-75"
+          >
+            <img src={SliderBtnRight} alt="Next" className="w-14" />
+          </button>
         </div>
-      ))}
+      </div>
     </div>
   );
 };

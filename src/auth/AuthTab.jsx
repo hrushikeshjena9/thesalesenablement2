@@ -38,7 +38,6 @@ const AuthTab = () => {
         </button>
       </div>
 
-      {/* Tab content */}
       <div className="p-6 border-t-2 border-[#DB0032]">
         {activeTab === "Login" && <LogIn />}
         {activeTab === "SignUp" && <SignUp />}

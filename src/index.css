@@ -36,7 +36,7 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Remove spinner in Firefox */
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -66,12 +66,12 @@ body {
 
 .bold-text {
   font-family: "Fort", sans-serif;
-  font-weight: bold; /* Regular */
+  font-weight: bold; 
 }
 
 .bold-text1 {
   font-family: "Fort", sans-serif;
-  font-weight: 300; /* Regular */
+  font-weight: 300; 
 }
 .courses {
   margin-top: -50px !important;
@@ -263,15 +263,15 @@ body {
   font-weight: bold;
   background-color: #fff;
   color: #333;
-  border: 2px solid transparent; /* Initially transparent border */
+  border: 2px solid transparent; 
   cursor: pointer;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
-/* Gradient border animation */
+
 .border-btn2:hover {
-  border: 2px solid transparent; /* Border will be transparent on hover */
+  border: 2px solid transparent;
   color: linear-gradient(to right, #db0032 0%, #A6602 100%) 1;
   border-image: linear-gradient(to right, #db0032 0%, #A6602 100%) 1;
   animation: borderRunningAnimation 2s linear infinite;
@@ -290,7 +290,7 @@ body {
   }
 }
 
-/* Hover state for sliding effect */
+
 .border-btn2::before,
 .border-btn2::after {
   content: "";

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
-const MobileMenu = ({ links, courses, services, isMenuOpen, toggleMenu, dropdownOpen, toggleDropdown }) => {
+const MobileMenu = ({ links,isMenuOpen, toggleMenu }) => {
   return (
     <div
       className={`lg:hidden fixed inset-0 bg-transparent bg-opacity-50 z-40 ${isMenuOpen ? "block" : "hidden"}`}
