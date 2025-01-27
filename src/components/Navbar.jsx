@@ -127,7 +127,9 @@ function Navbar() {
       <nav className="text-white">
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold">
-            <img src={Logo} alt="Logo" className="w-[170px] h-auto" />
+            <Link href="/">
+              <img src={Logo} alt="Logo" className="w-[170px] h-auto" />
+            </Link>
           </div>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
