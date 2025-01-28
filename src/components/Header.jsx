@@ -8,6 +8,8 @@ import Linkedin from "../assets/linkedin.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { Link } from "react-router-dom";
 import ScheduleForm from "../service-section/ScheduleForm";
+import ModalScheduleForm from "./ModalScheduleForm";
+import { FaTimes } from "react-icons/fa";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -89,7 +91,6 @@ const Header = () => {
 
           <div className="flex justify-center sm:justify-end w-full sm:w-auto">
             <button
-              // to="/schedule-a-consultation"
               type="button"
               onClick={openModal}
               className="text-white h-10 transition-all duration-500 ease-in-out transform bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
@@ -102,15 +103,28 @@ const Header = () => {
               />
             </button>
             {isModalOpen && (
-              <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 text-[#000]">
-                <div className="bg-white p-4 sm:p-4 lg:p-4 rounded-md w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] relative max-h-[80%] overflow-y-auto">
+              <div
+                className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 text-[#000]"
+                onClick={(e) => {
+                  // Close modal if clicked outside the modal content area
+                  if (e.target === e.currentTarget) {
+                    closeModal();
+                  }
+                }}
+              >
+                <div className="p-4 sm:p-4 lg:p-4 rounded-md relative ">
                   <button
                     onClick={closeModal}
-                    className="absolute top-3 right-4 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl"
+                    className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
                   >
-                    &times;
+                    <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
+                      <span className="text-white text-2xl font-semibold">
+                        <FaTimes />
+                      </span>
+                    </div>
                   </button>
-                  <ScheduleForm />
+
+                  <ModalScheduleForm />
                 </div>
               </div>
             )}
