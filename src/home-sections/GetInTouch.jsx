@@ -105,7 +105,7 @@ function GetInTouch() {
                 </div>
 
                 <Link
-                  to="learn-more"
+            
                   type="submit"
                   className="relative text-white group transition-transform duration-500 ease-out transform bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none font-medium text-sm px-12 py-4 md:px-3 md:py-4 lg:px-6 lg:py-4 xl:px-12 xl:py-4 2xl:px-12 2xl:py-4 flex items-center justify-center w-full md:w-auto"
                 >

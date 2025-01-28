@@ -151,37 +151,6 @@ const CandidateAssessment = () => {
               predictive recommendations based on sales-specific competencies
               about whether a sales candidate will succeed in a selling role.
             </p>
-
-            <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
-              <Link
-                to="take-the-sales-force-evaluation"
-                type="button"
-                className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
-              >
-                <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
-                <span className="relative text-white group-hover:text-white flex items-center">
-                  Explore Our Assessments
-                  <img
-                    src={RightArrow1}
-                    alt="Arrow Icon"
-                    className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
-                  />
-                </span>
-              </Link>
-
-              <Link
-                to="/view-upcoming-courses"
-                type="button"
-                className="text-[#000] transition-transform duration-500 ease-out transform flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000] border-[#000] border-btn2"
-              >
-                Contact Us Today
-                <img
-                  src={RightArrow}
-                  alt="Arrow"
-                  className="w-[24px] h-[24px]"
-                />
-              </Link>
-            </div>
           </motion.div>
         </div>
         <div className="py-12 px-6 mt-12">
@@ -258,7 +227,7 @@ const CandidateAssessment = () => {
             </h2>
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
               <Link
-                to="take-the-sales-force-evaluation"
+                to="sample-sales-candidate-assessments"
                 type="button"
                 className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
               >

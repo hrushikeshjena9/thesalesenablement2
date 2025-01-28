@@ -144,7 +144,7 @@ const WhyChooseUs = () => {
           </div>
           <div className="flex flex-col sm:flex-wrap md:flex-wrap   lg:flex-row xl:flex-nowrap 2xl:flex-nowrap  gap-12 mt-8">
             <Link
-              to="take-the-sales-force-evaluation"
+              to="/courses"
               type="button"
               className="text-white group text-nowrap   transition-transform duration-500 ease-out transform  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
            flex items-center justify-center"

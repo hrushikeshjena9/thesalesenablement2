@@ -22,6 +22,7 @@ import SalesForceEvaluation from "./service-section/dedicated-pages/SalesForceEv
 import CandidateAssessment from "./service-section/dedicated-pages/CandidateAssessment";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import SampleRequestPage from "./pages/SampleRequestPage.JSX";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -79,6 +80,7 @@ function App() {
             <Route path="/blogs" element={<BlogPage />} />
             <Route path="/blog-details/:blogId" element={<BlogDetails />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
+            <Route path="/services/sales-candidate-assessments/sample-sales-candidate-assessments" element={<SampleRequestPage />} />
             <Route
               path="/services/sales-force-evaluation"
               element={<SalesForceEvaluation />}
