@@ -10,6 +10,7 @@ import CandidateAssessmentImg from "../assets/candidate-assesment.png";
 import StartupSupportImg from "../assets/startup-support.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useNavigate } from "react-router-dom";
 
 function Services() {
   const [clickedCard, setClickedCard] = useState(null);
@@ -136,6 +137,11 @@ function Services() {
     },
   };
 
+  const navigate = useNavigate();
+ const handleServices = () => {
+    navigate("/services");
+  };
+
   return (
     <section className="py-12 services-top-margin container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
@@ -165,6 +171,7 @@ function Services() {
             exceptional results. Here's how we make an impact:
           </p>
           <button
+            onClick={handleServices}
             type="button"
             className="text-[#000] transition-transform duration-500 ease-out transform  h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
           >
@@ -180,7 +187,7 @@ function Services() {
               ref={ref2}
               initial={{ scale: 0, opacity: 0 }}
               animate={{
-                scale: inView2 ? 1 : 0, 
+                scale: inView2 ? 1 : 0,
                 opacity: inView2 ? 1 : 0,
               }}
               transition={{ duration: 1, ease: "easeOut" }}
@@ -254,7 +261,7 @@ function Services() {
                   );
                 })}
               </div>
-       
+
               <div className="sm:hidden">
                 <div className="w-full flex flex-wrap align-middle justify-center">
                   {currentCards.map((card) => (
@@ -265,7 +272,7 @@ function Services() {
                         backgroundImage: `url(${card.image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        width: "290px", 
+                        width: "290px",
                         height: "290px",
                       }}
                     >

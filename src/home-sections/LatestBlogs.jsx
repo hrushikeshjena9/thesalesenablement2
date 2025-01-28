@@ -48,7 +48,7 @@ function LatestBlogs() {
             </span>
           </h2>
           <Link
-            to="discover-latest-blogs"
+            to="blogs"
             type="button"
             className="text-[#000] transition-transform duration-500 ease-out transform flex  md:px-6 md:py-3 w-full sm:w-auto md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
           >

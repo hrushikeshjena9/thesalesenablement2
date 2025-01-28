@@ -5,7 +5,7 @@ import RightArrow1 from "../assets/arrow-right1.png";
 import RightArrow from "../assets/arrow-right.png";
 const ScheduleConsultation = () => {
   return (
-    <div className="container mx-auto px-4">
+    <div id="consultation" className="container mx-auto px-4 ">
       <div className="py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="text-center md:text-left">
           <h2 className="text-3xl font-semibold text-white">

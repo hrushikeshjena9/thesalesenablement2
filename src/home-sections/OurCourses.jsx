@@ -7,10 +7,15 @@ import Front from "../assets/5.png";
 import Sales from "../assets/3.png";
 import Territory from "../assets/2.png";
 import Retail from "../assets/1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function OurCourses() {
+  const navigate = useNavigate();
+const handlenavigate =()=>{
+  navigate("/services");
+}
+  
   return (
     <>
       <div className="courses">
@@ -33,7 +38,7 @@ function OurCourses() {
               </div>
 
               <div className="card pt-2 shadow-lg">
-                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto  mb-4">
+                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
                   <img src={Communication} />
                 </div>
                 <p className="text-center px-3  text-sm md:text-[12px] uppercase ">
@@ -80,7 +85,9 @@ function OurCourses() {
 
             <div className="flex flex-col md:flex-wrap lg:flex-wrap xl:flex-row lg:m xl:mx-7  justify-between items-center gap-4">
               <button
+              id="consultation"
                 type="button"
+                onClick={handlenavigate}
                 className="relative font-medium overflow-hidden group text-white transition-all duration-300 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full   bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
@@ -118,7 +125,7 @@ function OurCourses() {
               </div>
 
               <Link
-                to="discover-our-courses"
+                to="courses"
                 type="button"
                 className="text-[#000] transition-transform duration-500 ease-out transform  flex md:px-6 md:py-2 lg:py-2.5 xl:py-2.5 2xl:py-2.5 sm:w-[378px] md:w-[385px] justify-center  w-full xl:w-auto lg:w-[385px]  uppercase gap-3 sm:justify-center md:justify-center xl:justify-between lg:justify-center  space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
               >
