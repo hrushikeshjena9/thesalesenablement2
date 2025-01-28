@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/logo.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import ArrowAdd from "../assets/Advance.png";
@@ -10,10 +10,30 @@ import Instagram from "../assets/instagram.png";
 import Twitter from "../assets/twitter.png";
 import Linkedin from "../assets/linkedin.png";
 import FooterLine from "../assets/line-footer.png";
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
+import ScheduleForm from "../service-section/ScheduleForm";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isModalOpen]);
   return (
     <footer className="bg-gradient-2 text-white">
       <div className="banner-footer">
@@ -38,11 +58,25 @@ function Footer() {
 
               <button
                 type="button"
+                onClick={openModal}
                 className="flex md:px-12 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:from-[#FA6602] hover:to-[#DB0032] transition-all duration-500 ease-out transform md:py-3 md:w-auto uppercase items-center text-white font-bold text-sm md:text-sm lg:text-sm xl:text-xl 2xl:text-lg px-5 py-2  border-2 border-white"
               >
                 Get Started Now
                 <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
               </button>
+              {isModalOpen && (
+                <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 text-[#000]">
+                  <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-md w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] relative max-h-[80%] overflow-y-auto">
+                    <button
+                      onClick={closeModal}
+                      className="absolute top-3 right-4 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl"
+                    >
+                      &times;
+                    </button>
+                    <ScheduleForm />
+                  </div>
+                </div>
+              )}
             </div>
           </motion.div>
 

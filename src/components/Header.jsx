@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Phone from "../assets/Phone.png";
 import Mail from "../assets/mail.png";
 import Facebook from "../assets/facebook.png";
@@ -7,8 +7,28 @@ import Twitter from "../assets/twitter.png";
 import Linkedin from "../assets/linkedin.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { Link } from "react-router-dom";
+import ScheduleForm from "../service-section/ScheduleForm";
 
 const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isModalOpen]);
   return (
     <>
       <header className="banner text-white bg-gray-900 sticky top-0 z-50">
@@ -68,9 +88,10 @@ const Header = () => {
           </div>
 
           <div className="flex justify-center sm:justify-end w-full sm:w-auto">
-            <Link
-              to="/schedule-a-consultation"
+            <button
+              // to="/schedule-a-consultation"
               type="button"
+              onClick={openModal}
               className="text-white h-10 transition-all duration-500 ease-in-out transform bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
             >
               <span>Schedule A Consultation</span>
@@ -79,7 +100,20 @@ const Header = () => {
                 alt="Arrow"
                 className="w-[16px] sm:w-[20px] h-[16px] sm:h-[20px] transition-transform duration-500 ease-in-out hover:translate-x-1"
               />
-            </Link>
+            </button>
+            {isModalOpen && (
+              <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 text-[#000]">
+                <div className="bg-white p-4 sm:p-4 lg:p-4 rounded-md w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] relative max-h-[80%] overflow-y-auto">
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-3 right-4 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl"
+                  >
+                    &times;
+                  </button>
+                  <ScheduleForm />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </header>
