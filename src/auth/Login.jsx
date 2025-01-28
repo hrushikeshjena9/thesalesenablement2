@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { FaLock, FaEnvelope, FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
 
 function LogIn() {
@@ -109,6 +109,22 @@ function LogIn() {
                 </div>
               </form>
 
+              <div className="flex justify-center mt-4">
+                    <p className="text-sm text-gray-600 inline-block">
+                      <NavLink
+                        to="/sign-up"
+                        className={({ isActive }) =>
+                          `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
+             text-transparent bg-clip-text 
+             transition-all 
+             ${isActive ? "scale-110" : ""}`
+                        }
+                      >
+                        Create An Account
+                      </NavLink>
+                    </p>
+                  </div>
+
               <div className="text-xs text-gray-600 flex justify-center gap-1 py-6">
                 <span className="mt-1"> By continuing, you agree to the</span>
                 <Link to="/terms-and-conditions">
@@ -181,6 +197,7 @@ function LogIn() {
                   </button>
                 </div>
               </form>
+
             </>
           )}
         </div>

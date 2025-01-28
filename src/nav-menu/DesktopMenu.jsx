@@ -107,7 +107,7 @@ const DesktopMenu = ({
                     <div className="flex justify-start mt-4">
                       {link.name === "Courses" ? (
                         <Link
-                          to="/courses" 
+                          to="/courses"
                           className="text-white group flex justify-center items-center transition-all duration-300 ease-out transform uppercase text-[14px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl rounded-lg shadow-lg font-bold text-sm px-8 py-3 cursor-pointer "
                         >
                           <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -117,7 +117,7 @@ const DesktopMenu = ({
                         </Link>
                       ) : (
                         <Link
-                          to="/services" 
+                          to="/services"
                           className="text-white group flex justify-center rounded-lg shadow-lg items-center transition-transform duration-500 ease-out transform uppercase text-[12px] bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
                         >
                           <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -254,6 +254,22 @@ const DesktopMenu = ({
                       </button>
                     </div>
                   </form>
+
+                  <div className="flex justify-center mt-4">
+                    <p className="text-sm text-gray-600 inline-block">
+                      <NavLink
+                        to="/sign-up"
+                        className={({ isActive }) =>
+                          `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
+             text-transparent bg-clip-text 
+             transition-all 
+             ${isActive ? "scale-110" : ""}`
+                        }
+                      >
+                        Create An Account
+                      </NavLink>
+                    </p>
+                  </div>
 
                   <div className="text-xs text-gray-600 flex justify-center gap-1 py-6">
                     <span className="mt-1">
