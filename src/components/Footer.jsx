@@ -12,6 +12,8 @@ import Linkedin from "../assets/linkedin.png";
 import FooterLine from "../assets/line-footer.png";
 import { motion } from "framer-motion";
 import ScheduleForm from "../service-section/ScheduleForm";
+import ModalScheduleForm from "./ModalScheduleForm";
+import { FaTimes } from "react-icons/fa";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -65,15 +67,32 @@ function Footer() {
                 <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
               </button>
               {isModalOpen && (
-                <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 text-[#000]">
-                  <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-md w-[90%] sm:w-[80%] md:w-[70%] lg:w-[50%] relative max-h-[80%] overflow-y-auto">
+                <div
+                  className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 text-[#000]"
+                  onClick={(e) => {
+                    // Close modal if clicked outside the modal content area
+                    if (e.target === e.currentTarget) {
+                      closeModal();
+                    }
+                  }}
+                >
+                  <div className="p-4 sm:p-4 lg:p-4 rounded-md relative ">
                     <button
                       onClick={closeModal}
-                      className="absolute top-3 right-4 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl"
+                      className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
                     >
-                      &times;
+                      {/* <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
+                      <span className="text-white text-2xl font-semibold">
+                        <FaTimes />
+                      </span>
+                    </div> */}
+
+                      <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
+                        <FaTimes />
+                      </span>
                     </button>
-                    <ScheduleForm />
+
+                    <ModalScheduleForm />
                   </div>
                 </div>
               )}

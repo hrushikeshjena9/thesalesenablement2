@@ -122,11 +122,10 @@ const Header = () => {
                         <FaTimes />
                       </span>
                     </div> */}
-                    
-                      <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
-                        <FaTimes />
-                      </span>
-                 
+
+                    <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
+                      <FaTimes />
+                    </span>
                   </button>
 
                   <ModalScheduleForm />
