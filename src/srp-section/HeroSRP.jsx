@@ -16,7 +16,7 @@ function HeroSRP() {
             </div>
             <div className="text-white flex items-center justify-center container mx-auto px-4 pt-10 pb-20 ">
               <Breadcrumb
-                breadcrumbs={[{ label: "Home", to: "/" }, { label: "Sample-Sales-Candidate-Assessments" }]}
+                breadcrumbs={[{ label: "Home", to: "/" }, { label: "Sample Sales Candidate Assessments" }]}
               />
             </div>
           </div>
