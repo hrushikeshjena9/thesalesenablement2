@@ -22,11 +22,8 @@ function HeroSection() {
         "Our mission is to transform sales performance by equipping professionals with the skills, insights, and tools to excel. With tailored training and cutting-edge solutions, we help sales leaders and CEOs connect, close deals, and achieve exceptional results.",
       buttonText1: "Contact Us Today",
       buttonText2: "Discover Our Services",
-      path1: "/contact",  
+      path1: "/contact-us",  
       path2: "/services",
-      buttons1: [
-        { text: "Contact Us Today", path: "/contact" },
-        { text: "Discover Our Services", path: "/services" },]
     },
     {
       title: "EMPOWERING SALES LEADERS WITH THE TOOLS FOR SUCCESS AND GROWTH",
@@ -35,7 +32,7 @@ function HeroSection() {
       buttonText1: "Start Your Journey",
       buttonText2: "Contact Us More",
       path1: "/courses",  
-      path2: "/contact",
+      path2: "/contact-us",
     },
     {
       title: "OPTIMIZING SALES PROCESSES FOR MAXIMUM BETTER PERFORMANCE.",
@@ -114,7 +111,12 @@ function HeroSection() {
       transition: { duration: 1, ease: "easeOut" },
     },
   };
- 
+
+  const handleButtonClick = (path) => {
+    // Assuming you want to navigate using react-router
+    window.location.href = path;
+  };
+  
 
   return (
     <>
@@ -193,7 +195,7 @@ function HeroSection() {
                   >
                     <button
                       type="button"
-                      onClick={() => handleButtonClick(path1)}
+                      onClick={() => handleButtonClick(slideContent[currentSlide].path1)}
                       className="relative uppercase font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto"
                     >
                       <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
@@ -214,7 +216,7 @@ function HeroSection() {
 
                     <button
                       type="button"
-                      onClick={() => handleButtonClick(path1)}
+                      onClick={() => handleButtonClick(slideContent[currentSlide].path2)}
                       className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-2 border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2.5 2xl:py-3 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
                     >
                       {slideContent[currentSlide].buttonText2}
