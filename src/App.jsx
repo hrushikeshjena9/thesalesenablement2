@@ -22,7 +22,7 @@ import SalesForceEvaluation from "./service-section/dedicated-pages/SalesForceEv
 import CandidateAssessment from "./service-section/dedicated-pages/CandidateAssessment";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import SampleRequestPage from "./pages/SampleRequestPage.JSX";
+import SampleRequestPage from "./pages/SampleRequestPage";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);

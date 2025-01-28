@@ -17,34 +17,6 @@ button {
 .bg-gradient-2 {
   background: linear-gradient(to left, #db0032 0%, #fa6602 100%);
 }
-
-/* .case1 {
-  position: relative;
-  overflow: hidden;
-}
-.case1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../assets/Case1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: -1;
-}
-
-.case1:hover::before {
-  transform: scale(1.1);
-}
-
-.case1:hover {
-  background-size: 110%;
-} */
-
 .case1 {
   position: relative;
   overflow: hidden;
@@ -72,7 +44,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity for overlay darkness */
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.8s ease;
   z-index: -1;
 }
@@ -82,43 +54,12 @@ button {
 }
 
 .case1:hover::after {
-  opacity: 0.3; /* Optional: Adjust for hover effect on the overlay */
+  opacity: 0.3;
 }
 
 .case1:hover {
   background-size: 110%;
 }
-
-/* 
-.case2 {
-  position: relative;
-  overflow: hidden;
-}
-.case2::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../assets/case2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: -1;
-}
-
-.case2:hover::before {
-  transform: scale(1.1);
-}
-
-.case2:hover {
-  background-size: 110%;
-} */
-
-
-
 .case2 {
   position: relative;
   overflow: hidden;
@@ -145,7 +86,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity for overlay darkness */
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.8s ease;
   z-index: -1;
 }
@@ -154,41 +95,11 @@ button {
   transform: scale(1.1);
 }
 .case2:hover::after {
-  opacity: 0.3; /* Optional: Adjust for hover effect on the overlay */
+  opacity: 0.3;
 }
 .case2:hover {
   background-size: 110%;
 }
-
-
-
-/* .case3 {
-  position: relative;
-  overflow: hidden;
-}
-.case3::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url("../assets/case2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: -1;
-}
-
-.case3:hover::before {
-  transform: scale(1.1);
-}
-
-.case3:hover {
-  background-size: 110%;
-} */
-
 .case3 {
   position: relative;
   overflow: hidden;
@@ -214,7 +125,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity for overlay darkness */
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.8s ease;
   z-index: -1;
 }
@@ -223,7 +134,7 @@ button {
   transform: scale(1.1);
 }
 .case3:hover::after {
-  opacity: 0.3; /* Optional: Adjust for hover effect on the overlay */
+  opacity: 0.3;
 }
 .case3:hover {
   background-size: 110%;
@@ -254,7 +165,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity for overlay darkness */
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.8s ease;
   z-index: -1;
 }
@@ -262,7 +173,7 @@ button {
   transform: scale(1.1);
 }
 .case4:hover::after {
-  opacity: 0.3; /* Optional: Adjust for hover effect on the overlay */
+  opacity: 0.3;
 }
 .case4:hover {
   background-size: 110%;
