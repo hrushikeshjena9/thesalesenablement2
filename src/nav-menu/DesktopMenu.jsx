@@ -376,11 +376,14 @@ const DesktopMenu = ({
                 className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
                 onClick={closeModal}
               >
-                <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
+                {/* <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
                   <span className="text-white text-2xl font-semibold">
                     <FaTimes />
                   </span>
-                </div>
+                </div> */}
+                <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
+                  <FaTimes />
+                </span>
               </button>
               {!showForgotPassword ? (
                 <>

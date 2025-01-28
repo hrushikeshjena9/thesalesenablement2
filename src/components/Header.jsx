@@ -117,11 +117,16 @@ const Header = () => {
                     onClick={closeModal}
                     className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
                   >
-                    <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
+                    {/* <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
                       <span className="text-white text-2xl font-semibold">
                         <FaTimes />
                       </span>
-                    </div>
+                    </div> */}
+                    
+                      <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
+                        <FaTimes />
+                      </span>
+                 
                   </button>
 
                   <ModalScheduleForm />
