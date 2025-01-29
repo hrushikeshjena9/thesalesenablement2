@@ -5,7 +5,7 @@ import Logo from "../assets/logo.png";
 const MobileMenu = ({ links,isMenuOpen, toggleMenu }) => {
   return (
     <div
-      className={`lg:hidden fixed inset-0 bg-transparent bg-opacity-50 z-40 ${isMenuOpen ? "block" : "hidden"}`}
+      className={`lg:hidden fixed inset-0 bg-transparent bg-opacity-50 z-50 ${isMenuOpen ? "block" : "hidden"}`}
     >
       <div className="absolute top-0 right-0 text-white bg-gradient-to-r from-[#060B33] to-[#383F71] w-3/4 h-full shadow-xl transform translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto">
         <div className="flex justify-between items-center p-6 border-b">

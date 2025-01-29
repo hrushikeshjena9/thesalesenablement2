@@ -7,7 +7,7 @@ function HeroAbout() {
   return (
     <>
       <section>
-        <div className="relative w-full h-full course-bg z-20">
+        <div className="relative w-full h-full course-bg z-40">
           <div className="relative   bg-layer">
             <Navbar />
 

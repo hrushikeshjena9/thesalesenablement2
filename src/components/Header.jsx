@@ -33,7 +33,7 @@ const Header = () => {
   }, [isModalOpen]);
   return (
     <>
-      <header className="banner text-white bg-gray-900 sticky top-0 z-50">
+      <header className="banner text-white bg-gray-900 sticky top-0 z-40">
         <div className="flex flex-wrap sm:flex-row sm:gap-4 md:flex-row md:flex-wrap lg:flex-nowrap xl:flex-nowrap justify-between items-center container mx-auto px-4 py-3 text-sm">
           <div className="flex flex-col sm:flex-row sm:space-x-4 mb-3 sm:mb-0">
             <span className="flex items-center space-x-2 mb-2 group sm:mb-0 cursor-pointer">

@@ -5,7 +5,7 @@ function HeroContact() {
   return (
     <>
       <section>
-        <div className="relative w-full h-full z-20 course-bg">
+        <div className="relative w-full h-full z-40 course-bg">
           <div className="relative   bg-layer">
             <Navbar />
 
