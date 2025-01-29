@@ -239,9 +239,9 @@ const VisionMission = () => {
                 <img
                   src={Values2}
                   alt="Vision"
-                  className="w-[90%] md:w-[80%] z-20"
+                  className="w-[90%] md:w-[80%] z-2"
                 />
-                <div className="flex flex-col justify-center px-4 text-white w-48 h-48 sm:w-60 sm:h-60 top-[-140px] sm:top-[-180px] lg:right-12 right-0 relative z-40 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-lg">
+                <div className="flex flex-col justify-center px-4 text-white w-48 h-48 sm:w-60 sm:h-60 top-[-140px] sm:top-[-180px] lg:right-12 right-0 relative z-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-lg">
                   {[
                     "Integrity",
                     "Innovation",

@@ -30,7 +30,7 @@ const Achievement = () => {
         <motion.img
           src={Background}
           alt="Background"
-          className="w-[60%] max-w-[400px] h-auto object-contain md:w-[50%] lg:w-[40%]"
+          className="w-[60%] h-auto object-contain md:w-[50%] lg:w-[50%]"
           initial="hidden"
           animate="visible"
           variants={rightVariants}

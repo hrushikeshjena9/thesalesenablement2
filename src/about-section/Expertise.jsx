@@ -78,6 +78,14 @@ const Expertise = () => {
         },
       },
       {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
