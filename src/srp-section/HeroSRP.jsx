@@ -7,7 +7,7 @@ function HeroSRP() {
   return (
     <>
       <section>
-        <div className="relative w-full h-full z-40 course-bg">
+        <div className="relative w-full h-full  course-bg">
           <div className="relative   bg-layer">
             <Navbar />
 

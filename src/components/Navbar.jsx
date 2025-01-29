@@ -124,7 +124,7 @@ function Navbar() {
   };
 
   return (
-    <section className="container mx-auto px-4">
+    <section className="container mx-auto px-4 z-50">
       <nav className="text-white">
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold">
