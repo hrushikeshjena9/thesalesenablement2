@@ -23,6 +23,7 @@ import CandidateAssessment from "./service-section/dedicated-pages/CandidateAsse
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import SampleRequestPage from "./pages/SampleRequestPage";
+import LoginSignUp from "./auth/LoginSignUp";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
@@ -62,9 +63,8 @@ function App() {
         </div>
       ) : (
         <div
-          className={`transition-opacity duration-1000 ${
-            showContent ? "opacity-100" : "opacity-0"
-          }`}
+          className={`transition-opacity duration-1000 ${showContent ? "opacity-100" : "opacity-0"
+            }`}
         >
           <Header />
           <Routes>
@@ -89,16 +89,16 @@ function App() {
               path="/services/sales-candidate-assessments"
               element={<CandidateAssessment />}
             />
-              <Route
+            <Route
               path="/privacy-policy"
               element={<PrivacyPolicy />}
             />
-               <Route
+            <Route
               path="/terms-and-conditions"
               element={<TermsAndConditions />}
             />
-            <Route path="/login" element={<Login />} />
-            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/login-signup" element={<LoginSignUp />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
           <ScrollToTopButton />

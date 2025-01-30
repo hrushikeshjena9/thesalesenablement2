@@ -21,15 +21,7 @@ function LogIn() {
 
   return (
     <>
-      <section className="relative w-full h-full  course-bg">
-        <div className="relative bg-layer">
-          <Navbar />
-          <div className="text-white flex items-center justify-center container mx-auto px-4 py-12">
-            <h1 className="text-5xl uppercase font-bold">Login</h1>
-          </div>
-        </div>
-      </section>
-      <section className="flex items-center justify-center bg-gray-100 py-6">
+      <section className="flex items-center justify-center  py-6">
         <div className="max-w-xl w-full bg-white p-6 md:p-8 lg:p-10  shadow-xl mx-4 md:mx-6 lg:mx-8">
           {!showForgotPassword ? (
             <>
@@ -37,7 +29,7 @@ function LogIn() {
                 Welcome Back!
               </h2>
               <p className="text-gray-600 mb-4 text-sm text-center">
-                TAKE THE NEXT STEP IN YOUR SALES JOURNEY
+              Take the next step in your sales journey.
               </p>
 
               <form className="space-y-4">
@@ -110,20 +102,20 @@ function LogIn() {
               </form>
 
               <div className="flex justify-center mt-4">
-                    <p className="text-sm text-gray-600 inline-block">
-                      <NavLink
-                        to="/sign-up"
-                        className={({ isActive }) =>
-                          `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
+                <p className="text-sm text-gray-600 inline-block">
+                  <NavLink
+                    to="/sign-up"
+                    className={({ isActive }) =>
+                      `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
              text-transparent bg-clip-text 
              transition-all 
              ${isActive ? "scale-110" : ""}`
-                        }
-                      >
-                        Create An Account
-                      </NavLink>
-                    </p>
-                  </div>
+                    }
+                  >
+                    Create An Account
+                  </NavLink>
+                </p>
+              </div>
 
               <div className="text-xs text-gray-600 flex justify-center gap-1 py-6">
                 <span className="mt-1"> By continuing, you agree to the</span>

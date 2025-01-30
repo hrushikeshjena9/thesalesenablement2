@@ -52,19 +52,9 @@ function SignUp() {
 
   return (
     <>
-      <section>
-        <div className="relative w-full h-full course-bg">
-          <div className="relative bg-layer">
-            <Navbar />
 
-            <div className="text-white flex items-center justify-center container mx-auto px-4 pt-16 pb-20">
-              <h1 className="text-5xl uppercase font-bold">Sign Up</h1>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className=" py-12 flex items-center justify-center bg-gray-100">
+      <section className=" py-12 flex items-center justify-center ">
         <div className="max-w-xl w-full bg-white p-6 md:p-8 lg:p-10  shadow-xl mx-4 md:mx-6 lg:mx-8">
           <h2 className="text-3xl font-extrabold mb-4 text-center text-gray-800">
             Create Your Account
