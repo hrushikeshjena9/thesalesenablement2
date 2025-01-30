@@ -241,7 +241,7 @@ function SignUp() {
 
             <div className="flex justify-center items-center">
               <button
-                to="take-the-sales-force-evaluation"
+                to="/login-signup"
                 type="button"
                 className="text-white w-full group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5   flex items-center justify-center"
               >
@@ -262,7 +262,7 @@ function SignUp() {
             <p className="text-sm text-gray-600 inline-block">
               Already have an account?{" "}
               <NavLink
-                to="/login"
+                to="/login-signup"
                 className={({ isActive }) =>
                   `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
              text-transparent bg-clip-text 
