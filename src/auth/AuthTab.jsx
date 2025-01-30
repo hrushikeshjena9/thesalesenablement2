@@ -73,7 +73,7 @@ const AuthTab = ({ activeTab, setActiveTab }) => {
   return (
     <div className="py-12 flex flex-col items-center">
       {/* Tab Buttons */}
-      <div className={`w-full bg-white  ${isVisible ? "fixed top-20 z-50 container px-4" : "relative"}`}>
+      <div className={`w-full bg-white  ${isVisible ? "fixed top-20 z-20 container px-4" : "relative"}`}>
         <div className="flex justify-center z-10 py-3 bg- overflow-hidden  transition-all duration-500">
 
           <button
