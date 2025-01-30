@@ -41,7 +41,7 @@ const CourseSidebar = ({ setFilters }) => {
       <div className="flex flex-col w-full">
         <div className="mb-6">
           <label className="block text-lg font-semibold mb-3">
-            Training Sessions
+          Topics
           </label>
           <div className="space-y-4">
             {Object.keys(topics).map((topic) => (
