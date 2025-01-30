@@ -71,7 +71,7 @@ function LogIn({ setActiveTab }) {
                   </button>
                 </div>
                 <div className="flex justify-between items-center">
-                  <label htmlFor="remember" className="flex items-center">
+                  <label htmlFor="remember" className="flex items-center cursor-pointer">
                     <input id="remember" type="checkbox" className="mr-2" />
                     Remember Me
                   </label>
