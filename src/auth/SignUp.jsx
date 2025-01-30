@@ -8,12 +8,11 @@ import {
   FaEyeSlash,
   FaChevronDown,
 } from "react-icons/fa";
-import Navbar from "../components/Navbar";
 import { Link, NavLink } from "react-router-dom";
 
 import RightArrow1 from "../assets/arrow-right1.png";
 
-function SignUp() {
+function SignUp({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
@@ -261,16 +260,13 @@ function SignUp() {
           <div className="mt-6 justify-around flex space-x-3">
             <p className="text-sm text-gray-600 inline-block">
               Already have an account?{" "}
-              <NavLink
-             
-                className={({ isActive }) =>
-                  `font-semibold  text-sm text-[#DB0032] hover:text-[#FA6602]
-             transition-all 
-             ${isActive ? "scale-110 text-[#DB0032] hover:text-[#FA6602]" : ""}`
-                }
+              <button
+                onClick={() => setActiveTab("Login")} // Ensure this updates the state
+                className={`font-semibold text-sm text-[#DB0032] hover:text-[#FA6602] transition-all`}
               >
                 Login
-              </NavLink>
+              </button>
+
             </p>
             <div className="font-bold">|</div>
             <div className="text-sm text-gray-600">

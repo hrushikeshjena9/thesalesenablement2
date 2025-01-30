@@ -57,7 +57,7 @@ const AuthTab = ({ activeTab, setActiveTab }) => {
 
       {/* Content Section */}
       <div className="w-full mt-4 p-6 bg-white">
-        {activeTab === "Login" ? <LogIn /> : <SignUp />}
+        {activeTab === "Login" ? <LogIn setActiveTab={setActiveTab} /> : <SignUp setActiveTab={setActiveTab} />}
       </div>
     </div>
   );

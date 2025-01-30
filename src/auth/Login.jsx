@@ -4,7 +4,7 @@ import { FaLock, FaEnvelope, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
 
-function LogIn() {
+function LogIn({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [forgotEmail, setForgotEmail] = useState("");
@@ -103,16 +103,12 @@ function LogIn() {
 
               <div className="flex justify-center mt-4">
                 <p className="text-sm text-gray-600 inline-block">
-                  <NavLink
-                    to="/sign-up"
-                    className={({ isActive }) =>
-                      `font-semibold text-[#DB0032] text-sm  transition-all 
-     ${isActive ? "scale-100" : ""} 
-     hover:text-[#FA6602]`
-                    }
+                  <button
+                    onClick={() => setActiveTab("Sign Up")}
+                    className={`font-semibold text-sm text-[#DB0032] hover:text-[#FA6602] transition-all`}
                   >
                     Create An Account
-                  </NavLink>
+                  </button>
                 </p>
               </div>
 
