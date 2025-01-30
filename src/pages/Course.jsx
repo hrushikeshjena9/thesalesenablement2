@@ -44,14 +44,14 @@ function Course() {
     <div>
       <HeroCourse />
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold uppercase leading-[48px] mb-5">
+        <h1 className="text-sm leading-2 sm:text-2xl lg:text-4xl font-bold uppercase sm:leading-[48px] mb-3 lg:mb-5">
           All{" "}
           <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
             the Sales Enablement Skills You
           </span>
           <br /> Need in One Place
         </h1>
-        <hr className="py-5" />
+        <hr className="py-2 lg:py-5" />
         <p className="max-w-6xl">
           From foundational sales techniques to advanced AI-driven tools, our
           platform supports your professional development at every stage.

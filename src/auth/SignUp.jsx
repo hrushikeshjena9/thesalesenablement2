@@ -153,7 +153,7 @@ function SignUp({ setActiveTab }) {
               >
                 Password
               </label>
-              <FaLock className="absolute left-3 top-[35%] text-gray-400 pointer-events-none" />
+              <FaLock className="absolute left-3 top-9 text-gray-400 pointer-events-none" />
               <input
                 id="password"
                 type={passwordVisible ? "text" : "password"}

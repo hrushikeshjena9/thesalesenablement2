@@ -51,7 +51,7 @@ const CourseDetailSection = () => {
   return (
     <section className=" w-full mx-auto py-6 px-4">
       <div className="w-full">
-        <h2 className="text-3xl font-semibold text-gray-900 flex items-center mb-6">
+        <h2 className="text-xl lg:text-3xl font-semibold text-gray-900 flex items-center mb-6">
           <span className="font-semibold text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 mr-3  rounded-full flex justify-center items-center transition-all duration-300">
             <FaBook size={20} />
           </span>{" "}
@@ -60,7 +60,7 @@ const CourseDetailSection = () => {
       </div>
 
       <div className="max-w-6xl">
-        <h1 className="text-2xl font-semibold text-gray-900">Overview</h1>
+        <h1 className="text-base lg:text-2xl font-semibold text-gray-900">Overview</h1>
         <p className="text-gray-700 mt-2 text-justify font-light">
           {course.description}
         </p>
@@ -140,7 +140,7 @@ const CourseDetailSection = () => {
                 <a
                   href="/leadership-acceleration-programme-brochure-2025.pdf"
                   download
-                  className="relative w-full uppercase  px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
+                  className="relative text-sm sm:text-base  w-full uppercase  px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                   <span className="relative z-10 text-white group-hover:text-white flex gap-2 items-center">
@@ -154,7 +154,7 @@ const CourseDetailSection = () => {
                 <a
                   href="/meet-the-programme-advisor.pdf"
                   download
-                  className="relative w-full uppercase px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
+                  className="relative w-full text-sm sm:text-base uppercase px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                   <span className="relative z-10 text-white group-hover:text-white flex gap-2 items-center">

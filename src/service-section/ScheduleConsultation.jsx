@@ -8,18 +8,18 @@ const ScheduleConsultation = () => {
     <div id="consultation" className="container mx-auto px-4 ">
       <div className="py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="text-center md:text-left">
-          <h2 className="text-3xl font-semibold text-white">
+          <h2 className="text-xl lg:text-3xl font-semibold text-white">
             <FaRegCalendarCheck className="inline-block text-bg-gradient-to-r from-[#DB0032] to-[#FA6602]" />{" "}
             Schedule a Consultation
           </h2>
-          <p className="mt-2 text-lg text-white">
+          <p className="mt-2 text-sm lg:text-lg text-white">
             Take the first step toward making informed decisions with expert
             guidance in a personalized consultation.
           </p>
 
           {/* Description */}
-          <div className="mt-8 text-white">
-            <p className="mb-4">
+          <div className="mt-2 lg:mt-8 text-white text-sm lg:text-lg">
+            <p className="mb-4 ">
               Your business deserves the best advice, and our team is here to
               provide it. Whether you're looking for guidance on a specific
               challenge or strategic insights, our consultants are ready to

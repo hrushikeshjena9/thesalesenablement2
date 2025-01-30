@@ -126,7 +126,7 @@ const AboutUs = () => {
           </h5>
 
           <h2
-            className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7"
+            className="text-[17px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7"
             data-aos="fade-left"
             data-aos-delay="200"
             data-aos-offset="200"

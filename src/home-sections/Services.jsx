@@ -11,6 +11,7 @@ import StartupSupportImg from "../assets/startup-support.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Services() {
   const [clickedCard, setClickedCard] = useState(null);
@@ -221,7 +222,7 @@ function Services() {
                       key={card.id}
                       onClick={() => handleCardClick(card.id)}
                       className={`transition-all cursor-pointer duration-500 transform  ${positionClass} ${margin} ${(clickedCard === card.id ? "scale-110 z-10" : "",
-                          clickedCard === card.id ? "card-services" : "")
+                        clickedCard === card.id ? "card-services" : "")
                         }`}
                       style={{
                         backgroundImage: `url(${card.image})`,
@@ -305,15 +306,19 @@ function Services() {
         <div className="flex  gap-4 z-10">
           <button
             onClick={handlePrev}
-            className="w-12 h-12 cursor-pointer hover:scale-110  transition-transform"
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
+            aria-label="Previous Slide"
+            style={{ transition: "opacity 0.3s ease-in-out" }}
           >
-            <img src={SliderBtnLeft} alt="Slider Left" />
+            <FaArrowLeft className="text-xl text-[#fff] group-hover:text-[#383F71]" />
           </button>
           <button
             onClick={handleNext}
-            className="w-12 h-12 cursor-pointer hover:scale-110   transition-transform"
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
+            aria-label="Next Slide"
+            style={{ transition: "opacity 0.3s ease-in-out" }}
           >
-            <img src={SliderBtnRight} alt="Slider Right" />
+            <FaArrowRight className="text-xl text-[#fff] group-hover:text-[#383F71]" />
           </button>
         </div>
       </div>

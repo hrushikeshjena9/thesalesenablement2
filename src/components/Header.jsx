@@ -42,7 +42,7 @@ const Header = () => {
                 alt="Phone"
                 className="w-[26px] h-[26px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-500"
               />
-              <span className="xl:inline text-lg md:text-sm lg:text-sm sm:text-sm">
+              <span className="xl:inline text-sm md:text-sm lg:text-sm sm:text-xs">
                 010 335-1182
               </span>
             </span>
@@ -52,7 +52,7 @@ const Header = () => {
                 alt="Mail"
                 className="w-[26px] h-[26px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:p1 group-hover:ring-blue-500"
               />
-              <span className="sm:inline lg:text-sm md:text-sm sm:text-xs">
+              <span className="sm:inline text-sm lg:text-sm md:text-sm sm:text-xs">
                 info@theenablement.com
               </span>
             </span>

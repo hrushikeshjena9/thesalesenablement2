@@ -95,7 +95,7 @@ const VisionMission = () => {
                   <img
                     src={OurMission}
                     alt="About"
-                    className="sm:w-[345px] w-[310px] h-[315px] relative right-2 top-2  sm:h-[355px]  mx-auto"
+                    className="sm:w-[345px] w-[268px] h-[268px] relative right-2 top-2  sm:h-[355px]  mx-auto"
                     data-aos="fade-right"
                   />
                 </div>
@@ -127,7 +127,7 @@ const VisionMission = () => {
                     <img
                       src={VisionPng}
                       alt=""
-                      className="w-[292.44px] h-[328.09px]  left-20 rounded-br-[114.5px] border-4  shadow-lg z-10 relative bottom-12"
+                      className="w-[252.44px] h-[315.09px]  left-20 rounded-br-[114.5px] border-4  shadow-lg z-10 relative bottom-12"
                     />
                   </div>
                 </div>

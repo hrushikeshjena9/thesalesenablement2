@@ -56,7 +56,7 @@ function LatestBlogs() {
             <img src={RightArrow} alt="arrow" className="w-6 h-6 ml-2" />
           </Link>
         </div>
-        <p className="text-lg md:text-xl xl:w-[70%] md:w-full lg:w-full md:leading-[35px] leading-[35px] mt-4">
+        <p className="text-sm sm:text-lg md:text-xl xl:w-[70%] md:w-full lg:w-full md:leading-[35px] leading-[35px] mt-4">
           Our blog features valuable tips, trends, and case studies to help you
           optimize your sales processes and drive success. Whether you're a
           Sales Leader, CEO, or entrepreneur, you'll find actionable advice to

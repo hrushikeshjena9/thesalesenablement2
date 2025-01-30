@@ -35,7 +35,7 @@ const ScheduleForm = () => {
   return (
     <div className="max-w-lg mx-auto bg-white p-8  shadow-md border border-gray-200">
       <form onSubmit={handleSubmit} className="space-y-6">
-        <h2 className="text-2xl font-bold text-center uppercase text-gray-800">
+        <h2 className="text-lg lg:text-2xl font-bold text-center uppercase text-gray-800">
           Book Your Consultation
         </h2>
         <p className="text-center text-gray-600 text-sm">
