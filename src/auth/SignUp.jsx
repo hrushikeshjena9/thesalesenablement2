@@ -137,7 +137,7 @@ function SignUp({ setActiveTab }) {
               >
                 Email Address
               </label>
-              <FaEnvelope className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
+              <FaEnvelope className="absolute left-3 top-[2.4rem]  text-gray-400 pointer-events-none" />
               <input
                 id="emailAddress"
                 type="email"
