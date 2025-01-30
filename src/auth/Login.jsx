@@ -22,7 +22,7 @@ function LogIn() {
   return (
     <>
       <section className="flex items-center justify-center ">
-        <div className="max-w-xl w-full bg-white p-6 md:p-8 lg:p-10 max-h-[500px] overflow-y-auto py-6  shadow-xl mx-4 md:mx-6 lg:mx-8">
+        <div className="max-w-xl w-full bg-white p-6 md:p-8 lg:p-10  py-6  shadow-xl mx-4 md:mx-6 lg:mx-8">
           {!showForgotPassword ? (
             <>
               <h2 className="text-2xl font-bold mb-2 text-center">

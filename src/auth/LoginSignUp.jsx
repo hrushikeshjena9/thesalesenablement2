@@ -24,7 +24,7 @@ function LoginSignUp() {
                 </div>
             </section>
 
-            <div className='container mx-auto px-4'>
+            <div className='container mx-auto px-4 '>
 
                 <AuthTab activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
