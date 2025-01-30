@@ -69,7 +69,7 @@ const DesktopMenu = ({
               >
                 <button
                   className="sm:text-xs lg:text-sm xl:text-base uppercase flex items-center gap-1  space-x-2
-      group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] 
+      group-hover:text-transparent  group-hover:bg-clip-text group-hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] 
       transition-colors duration-300 ease-in-out
       active:text-white active:bg-gradient-to-r  active:from-[#060b33] active:to-[#383f71]"
                 >
@@ -94,7 +94,7 @@ const DesktopMenu = ({
                             className={({ isActive }) =>
                               `block font-bold ${isActive
                                 ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] icon-hover2 transition duration-200 ease-in-out"
-                                : ""
+                                : " "
                               }`
                             }
                           >
@@ -135,7 +135,7 @@ const DesktopMenu = ({
                 className={({ isActive }) =>
                   `relative sm:text-xs lg:text-sm xl:text-base ${isActive
                     ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
-                    : "hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                    : "hover:text-transparent hover:bg-clip-text hover:font-bold hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
                   }`
                 }
               >

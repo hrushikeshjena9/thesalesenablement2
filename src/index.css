@@ -394,3 +394,8 @@ body {
 .breadcrumb-item a:hover {
   text-decoration: underline;
 }
+@media (min-width: 1280px) {
+  .container {
+      max-width: 1280px !important;
+  }
+}

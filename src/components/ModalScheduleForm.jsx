@@ -34,7 +34,7 @@
 
 //   return (
 //     <div className="max-w-lg mx-auto bg-white p-8  shadow-md border border-gray-200 rounded-lg">
-      
+
 //       <form onSubmit={handleSubmit} className="space-y-6">
 //         <h2 className="text-2xl font-bold text-center uppercase text-gray-800">
 //           Book Your Consultation
@@ -174,6 +174,7 @@ import {
   FaChalkboardTeacher,
   FaQuestionCircle,
   FaRegCalendarCheck,
+  FaArrowRight,
 } from "react-icons/fa";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { Link } from "react-router-dom";
@@ -206,7 +207,7 @@ const ModalScheduleForm = () => {
         onSubmit={handleSubmit}
         className="space-y-6 max-h-[85vh] py-2 "
       >
-        <h2 className="text-2xl font-bold text-center uppercase text-gray-800">
+        <h2 className="text-2xl font-bold text-center uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
           Book Your Consultation
         </h2>
         <p className="text-center text-gray-600 text-sm">
@@ -313,17 +314,29 @@ const ModalScheduleForm = () => {
         </div>
 
         <div className="text-center mb-4">
-          <Link
+          {/* <Link
             type="submit"
             className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
           >
             <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
-            <span className="relative text-white group-hover:text-white flex items-center">
+            <span className="relative text-white group-hover:text-[#DB0032]  flex items-center">
               Schedule a Consultation
               <img
                 src={RightArrow1}
                 alt="Arrow Icon"
                 className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
+              />
+            </span>
+          </Link> */}
+          <Link
+            type="submit"
+            className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
+          >
+            <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+            <span className="relative md:text-[13px] text-white group-hover:text-[#DB0032] flex items-center">
+              Schedule a Consultation
+              <FaArrowRight
+                className="w-4 h-4 ml-2  transition-transform duration-300 ease-in-out group-hover:text-[#DB0032]"  // Change color on hover to red
               />
             </span>
           </Link>

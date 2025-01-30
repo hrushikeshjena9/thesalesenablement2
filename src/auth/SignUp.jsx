@@ -55,7 +55,7 @@ function SignUp() {
 
 
       <section className=" py-12 flex items-center justify-center ">
-        <div className="max-w-xl w-full bg-white p-6 md:p-8 lg:p-10  shadow-xl mx-4 md:mx-6 lg:mx-8">
+        <div className="max-w-xl w-full bg-white p-6 md:p-8 lg:p-10 max-h-[600px] overflow-y-auto py-6  shadow-xl mx-4 md:mx-6 lg:mx-8">
           <h2 className="text-3xl font-extrabold mb-4 text-center text-gray-800">
             Create Your Account
           </h2>
