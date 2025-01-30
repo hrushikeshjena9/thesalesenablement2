@@ -142,11 +142,11 @@ const ServiceDetailSection = () => {
             >
               <div className="flex items-center space-x-4 mb-4">
                 <div className="text-white text-3xl">{feature.icon}</div>
-                <h3 className="text-white text-xl font-bold">
+                <h3 className="text-white text-sm xl:text-sm 2xl:text-lg font-bold">
                   {feature.title}
                 </h3>
               </div>
-              <p className="text-white mt-2">{feature.description}</p>
+              <p className="text-white text-sm xl:text-sm 2xl:text:sm font-light mt-2">{feature.description}</p>
             </div>
           ))}
         </div>

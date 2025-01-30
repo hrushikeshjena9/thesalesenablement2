@@ -72,26 +72,27 @@ const ServiceDetailSideBar = ({ course }) => {
           offers.
         </p>
         <div className="mt-6 flex justify-center">
-          <form
-            onSubmit={handleSubmit}
-            className="flex max-w-md w-full bg-white p-4 rounded-lg shadow-md"
-          >
-            <input
-              type="email"
-              placeholder="Email address..."
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-red-500"
-              required
-            />
-            <button
-              type="submit"
-              className="px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-r-md hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
+  <form
+    onSubmit={handleSubmit}
+    className="flex flex-col sm:flex-row max-w-md w-full bg-white p-4 rounded-lg shadow-md"
+  >
+    <input
+      type="email"
+      placeholder="Email address..."
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      className="flex-1 px-4 py-2 border border-gray-300 rounded-t-md sm:rounded-l-md focus:outline-none focus:ring-2 focus:ring-red-500 mb-3 sm:mb-0"
+      required
+    />
+    <button
+      type="submit"
+      className="px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-t-md sm:rounded-r-md hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition"
+    >
+      Subscribe
+    </button>
+  </form>
+</div>
+
         {isSubscribed && (
           <div className="mt-4 text-center text-green-600">
             Thank you for subscribing!
