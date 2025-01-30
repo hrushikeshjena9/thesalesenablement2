@@ -93,7 +93,7 @@ const ServiceDetailSection = () => {
 
   ];
   return (
-    <section className="w-3/4 mx-auto py-6 px-4">
+    <section className="md:w-full w-full lg:w-3/4 mx-auto  px-4">
       <div className="md:w-full lg:w-full md:ml-8 xl:w-full xl:ml-0 mt-6 md:mt-0 mb-6 relative">
         <img
           src={course.image}
