@@ -34,7 +34,7 @@ const Header = () => {
   return (
     <>
       <header className="banner text-white bg-gray-900 sticky top-0 z-40">
-        <div className="flex flex-wrap sm:flex-row sm:gap-4 md:flex-row md:flex-wrap lg:flex-nowrap xl:flex-nowrap justify-between items-center container mx-auto px-4 py-3 text-sm">
+        <div className="flex flex-col  sm:flex-col sm:gap-4  md:flex-col lg:flex-row xl:flex-nowrap justify-center sm:justify-start lg:justify-between items-center container mx-auto px-4 py-3 text-sm">
           <div className="flex flex-col sm:flex-row sm:space-x-4 mb-3 sm:mb-0">
             <span className="flex items-center space-x-2 mb-2 group sm:mb-0 cursor-pointer">
               <img
@@ -93,7 +93,7 @@ const Header = () => {
             <button
               type="button"
               onClick={openModal}
-              className="text-white h-10 transition-all duration-500 ease-in-out transform bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-base lg:text-sm sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
+              className="text-white h-10 transition-all duration-500 ease-in-out transform bg-transparent hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white sm:h-10 md:h-12 lg:h-12 xl:h-14 flex items-center uppercase space-x-2 border-btn border-white font-bold text-xs lg:text-sm sm:text-xs px-3 py-2 md:px-6 sm:px-4 sm:py-2"
             >
               <span>Schedule A Consultation</span>
               <img
@@ -117,11 +117,7 @@ const Header = () => {
                     onClick={closeModal}
                     className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
                   >
-                    {/* <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
-                      <span className="text-white text-2xl font-semibold">
-                        <FaTimes />
-                      </span>
-                    </div> */}
+
 
                     <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
                       <FaTimes />

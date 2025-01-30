@@ -126,12 +126,12 @@ function About() {
                 {/* Text Column */}
                 <div className="flex items-start w-[90%] gap-6">
                   <div className="w-[30%]">
-                    <h5 className="font-bold text-[12px] sm:text-[16px] md:text-[16px]  lg:text-[16px] xl:text-xl uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                    <h5 className="font-bold text-[11px] sm:text-[16px] md:text-[16px]  lg:text-[16px] xl:text-xl uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.title}
                     </h5>
                   </div>
                   <div className="w-[70%]">
-                    <p className="text-[12px] sm:text-[16px] md:text-[18px] mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                    <p className="text-[11px] sm:text-[16px] md:text-[18px] mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.text}
                     </p>
                   </div>

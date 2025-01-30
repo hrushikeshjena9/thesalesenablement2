@@ -111,7 +111,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../assets/case2.png");
+  background-image: url("../assets/case3.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -125,7 +125,6 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-
   transition: opacity 0.8s ease;
   z-index: -1;
 }

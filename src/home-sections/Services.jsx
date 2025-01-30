@@ -127,7 +127,10 @@ function Services() {
     }
   };
 
-  const [ref2, inView2] = useInView({ threshold: 0.5 });
+  const [ref2, inView2] = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -138,7 +141,7 @@ function Services() {
   };
 
   const navigate = useNavigate();
- const handleServices = () => {
+  const handleServices = () => {
     navigate("/services");
   };
 
@@ -190,6 +193,7 @@ function Services() {
                 scale: inView2 ? 1 : 0,
                 opacity: inView2 ? 1 : 0,
               }}
+
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <div className="relative hidden sm:block w-full sm:w-3/4 md:w-1/2">
@@ -216,10 +220,9 @@ function Services() {
                     <div
                       key={card.id}
                       onClick={() => handleCardClick(card.id)}
-                      className={`transition-all cursor-pointer duration-500 transform  ${positionClass} ${margin} ${
-                        (clickedCard === card.id ? "scale-110 z-10" : "",
-                        clickedCard === card.id ? "card-services" : "")
-                      }`}
+                      className={`transition-all cursor-pointer duration-500 transform  ${positionClass} ${margin} ${(clickedCard === card.id ? "scale-110 z-10" : "",
+                          clickedCard === card.id ? "card-services" : "")
+                        }`}
                       style={{
                         backgroundImage: `url(${card.image})`,
                         backgroundSize: "cover",

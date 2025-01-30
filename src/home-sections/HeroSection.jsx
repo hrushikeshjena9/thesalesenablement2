@@ -11,6 +11,7 @@ import RightArrow1 from "../assets/arrow-right1.png";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -22,7 +23,7 @@ function HeroSection() {
         "Our mission is to transform sales performance by equipping professionals with the skills, insights, and tools to excel. With tailored training and cutting-edge solutions, we help sales leaders and CEOs connect, close deals, and achieve exceptional results.",
       buttonText1: "Contact Us Today",
       buttonText2: "Discover Our Services",
-      path1: "/contact-us",  
+      path1: "/contact-us",
       path2: "/services",
     },
     {
@@ -31,7 +32,7 @@ function HeroSection() {
         "We provide the best training, coaching, and solutions to ensure that sales leaders and teams can overcome challenges and thrive in a competitive market, we help sales leaders and CEOs connect, close deals, and achieve exceptional results.",
       buttonText1: "Start Your Journey",
       buttonText2: "Contact Us More",
-      path1: "/courses",  
+      path1: "/courses",
       path2: "/contact-us",
     },
     {
@@ -40,7 +41,7 @@ function HeroSection() {
         "Our services help streamline sales operations, boosting efficiency and enabling sales teams to close more deals with less effort. Transform your approach to sales today. we help sales leaders and CEOs connect, close deals, and achieve exceptional results.",
       buttonText1: "Get in Touch",
       buttonText2: "See How We Can Help",
-      path1: "/contact-us",  
+      path1: "/contact-us",
       path2: "/services",
     },
   ];
@@ -116,7 +117,7 @@ function HeroSection() {
     // Assuming you want to navigate using react-router
     window.location.href = path;
   };
-  
+
 
   return (
     <>
@@ -207,7 +208,7 @@ function HeroSection() {
                           className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out group-hover:hidden" // Hide on hover
                         />
                         <img
-                          src={RightArrow} 
+                          src={RightArrow}
                           alt="Arrow Icon Hover"
                           className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out hidden group-hover:inline" // Show on hover
                         />
@@ -249,29 +250,26 @@ function HeroSection() {
             </div>
 
             <div className="container mx-auto px-4">
-              <div className="btn-hero-slider ">
+              <div className="btn-hero-slider space-x-5 gap-3">
+
                 <button
                   onClick={goToPreviousSlide}
-                  className="focus:outline-none "
+                  className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
                   aria-label="Previous Slide"
+                  style={{ transition: "opacity 0.3s ease-in-out" }}
                 >
-                  <img
-                    src={SliderBtnLeft}
-                    alt="Previous Slide"
-                    className="w-12 h-12 hover:scale-110 transition-transform  "
-                  />
+                  <FaArrowLeft className="text-xl text-[#fff] group-hover:text-[#383F71]" />
                 </button>
+
                 <button
                   onClick={goToNextSlide}
-                  className="focus:outline-none ml-4"
+                  className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
                   aria-label="Next Slide"
+                  style={{ transition: "opacity 0.3s ease-in-out" }}
                 >
-                  <img
-                    src={SliderBtnRight}
-                    alt="Next Slide"
-                    className="w-12 h-12 hover:scale-110 transition-transform "
-                  />
+                  <FaArrowRight className="text-xl text-[#fff] group-hover:text-[#383F71]" />
                 </button>
+
               </div>
             </div>
 

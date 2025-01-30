@@ -32,13 +32,13 @@ const ScrollToTopButton = () => {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      } hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
+      className={`fixed bottom-8 right-8 bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300 ${isVisible ? "opacity-100" : "opacity-0"
+        } hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
       style={{ transition: "opacity 0.3s ease-in-out" }}
     >
-      <FaArrowUp className="text-2xl text-[#383f71]" />
+      <FaArrowUp className="text-xl text-[#fff] group-hover:text-[#383F71]" />
     </button>
+
   );
 };
 
