@@ -94,7 +94,7 @@ const ServiceDetailSection = () => {
   ];
   return (
     <section className="w-3/4 mx-auto py-6 px-4">
-      <div className="md:w-1/3 md:ml-8 xl:w-full xl:ml-0 mt-6 md:mt-0 mb-6 relative">
+      <div className="md:w-full lg:w-full md:ml-8 xl:w-full xl:ml-0 mt-6 md:mt-0 mb-6 relative">
         <img
           src={course.image}
           alt={course.title}
@@ -103,8 +103,8 @@ const ServiceDetailSection = () => {
       </div>
 
       <div className="flex flex-col md:flex-row items-center mb-6">
-        <div className="w-full md:w-2/3">
-          <h2 className="text-3xl font-semibold text-gray-900 flex items-center">
+        <div className="w-full xl:w-2/3">
+          <h2 className="text-lg lg:text-3xl font-semibold text-gray-900 flex items-center">
             {course.title}
           </h2>
           <svg
@@ -156,7 +156,7 @@ const ServiceDetailSection = () => {
         <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">
           Our Sales Enablement Solutions in Action
         </h2>
-        <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row gap-8 max-w-6xl mx-auto">
           {/* Image 1 - Sales Training */}
           <div className="flex-1  p-4 rounded-lg ">
             <img

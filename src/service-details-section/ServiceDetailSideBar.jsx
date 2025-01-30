@@ -31,7 +31,7 @@ const ServiceDetailSideBar = ({ course }) => {
   ];
 
   return (
-    <aside className="w-full h-full md:w-1/3 bg-gray-100 p-6 shadow-lg md:block">
+    <aside className="w-full h-full  lg:w-1/3 xl:w-2/5 2xl:w-1/3 bg-gray-100 p-6 shadow-lg md:block">
       <h2 className="text-2xl font-semibold text-gray-800 mb-6">
         Our Services
       </h2>
@@ -72,26 +72,29 @@ const ServiceDetailSideBar = ({ course }) => {
           offers.
         </p>
         <div className="mt-6 flex justify-center">
-  <form
-    onSubmit={handleSubmit}
-    className="flex flex-col sm:flex-row max-w-md w-full bg-white p-4 rounded-lg shadow-md"
-  >
-    <input
-      type="email"
-      placeholder="Email address..."
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      className="flex-1 px-4 py-2 border border-gray-300 rounded-t-md sm:rounded-l-md focus:outline-none focus:ring-2 focus:ring-red-500 mb-3 sm:mb-0"
-      required
-    />
-    <button
-      type="submit"
-      className="px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-t-md sm:rounded-r-md hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] transition"
-    >
-      Subscribe
-    </button>
-  </form>
-</div>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row md:flex-col lg:flex-col xl:flex-row gap-2 max-w-md w-full bg-white p-2 rounded-lg shadow-md"
+          >
+            <input
+              type="email"
+              placeholder="Email address..."
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-t-md sm:rounded-l-md focus:outline-none focus:ring-2 focus:ring-red-500 mb-3 sm:mb-0"
+              required
+            />
+            <button
+              type="submit"
+              className="px-6 py-2 relative  flex items-center justify-center group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-t-md sm:rounded-r-md  transition"
+            >
+              <span className="absolute inset-0 w-0 h-full   bg-[#060b33] rounded-r-md transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+              <span className="relative text-white group-hover:text-white flex items-center">
+
+                Subscribe</span>
+            </button>
+          </form>
+        </div>
 
         {isSubscribed && (
           <div className="mt-4 text-center text-green-600">
