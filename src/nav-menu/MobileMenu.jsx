@@ -42,7 +42,7 @@ const MobileMenu = ({ links,isMenuOpen, toggleMenu }) => {
             Login
           </NavLink>
           <NavLink
-            to="/sign-up"
+            to="/login-signup"
             className="text-transparent justify-center flex align-middle transition-transform duration-500 ease-out transform uppercase text-[12px] bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl font-bold text-sm px-10 py-3"
             style={{
               border: "2px solid transparent",
