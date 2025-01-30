@@ -99,7 +99,7 @@ function SignUp() {
                 placeholder="Enter your first name"
                 className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               />
-              <FaUser className="absolute left-3 top-1/2  text-gray-400 pointer-events-none" />
+              <FaUser className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
             </div>
             <div className="relative">
               <label
@@ -108,7 +108,7 @@ function SignUp() {
               >
                 Last Name
               </label>
-              <FaUser className="absolute left-3 top-1/2  text-gray-400 pointer-events-none" />
+              <FaUser className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
               <input
                 id="lastName"
                 type="text"
@@ -123,7 +123,7 @@ function SignUp() {
               >
                 Phone Number
               </label>
-              <FaPhoneAlt className="absolute left-3 top-1/2  text-gray-400 pointer-events-none" />
+              <FaPhoneAlt className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
               <input
                 id="phoneNumber"
                 type="number"
@@ -138,7 +138,7 @@ function SignUp() {
               >
                 Email Address
               </label>
-              <FaEnvelope className="absolute left-3 top-1/2  text-gray-400 pointer-events-none" />
+              <FaEnvelope className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
               <input
                 id="emailAddress"
                 type="email"
@@ -189,7 +189,7 @@ function SignUp() {
               >
                 Confirm Password
               </label>
-              <FaLock className="absolute left-3 top-1/2  text-gray-400 pointer-events-none" />
+              <FaLock className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
               <input
                 id="confirmPassword"
                 type={confirmPasswordVisible ? "text" : "password"}
@@ -232,7 +232,7 @@ function SignUp() {
                   className="text-xs cursor-pointer text-gray-600"
                 >
                   I agree to the{" "}
-                  <span className="text-sm font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text underline cursor-pointer">
+                  <span className="text-sm font-bold text-[#DB0032] hover:text-[#FA6602] cursor-pointer">
                     Terms, Conditions and Privacy policy.
                   </span>
                 </label>
@@ -262,12 +262,11 @@ function SignUp() {
             <p className="text-sm text-gray-600 inline-block">
               Already have an account?{" "}
               <NavLink
-                to="/login-signup"
+             
                 className={({ isActive }) =>
-                  `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
-             text-transparent bg-clip-text 
+                  `font-semibold  text-sm text-[#DB0032] hover:text-[#FA6602]
              transition-all 
-             ${isActive ? "scale-110" : ""}`
+             ${isActive ? "scale-110 text-[#DB0032] hover:text-[#FA6602]" : ""}`
                 }
               >
                 Login
@@ -276,7 +275,7 @@ function SignUp() {
             <div className="font-bold">|</div>
             <div className="text-sm text-gray-600">
               If you require support{" "}
-              <a href="#" className="text-blue-500 hover:underline">
+              <a href="#" className="text-[#DB0032] hover:text-[#FA6602] ">
                 Contact us
               </a>
             </div>

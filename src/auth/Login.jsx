@@ -29,7 +29,7 @@ function LogIn() {
                 Welcome Back!
               </h2>
               <p className="text-gray-600 mb-4 text-sm text-center">
-              Take the next step in your sales journey.
+                Take the next step in your sales journey.
               </p>
 
               <form className="space-y-4">
@@ -78,7 +78,7 @@ function LogIn() {
                   <button
                     type="button"
                     onClick={() => setShowForgotPassword(true)}
-                    className="text-sm bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text underline cursor-pointer"
+                    className="text-sm text-[#DB0032] hover:text-[#FA6602] cursor-pointer"
                   >
                     Forgot Password?
                   </button>
@@ -106,10 +106,9 @@ function LogIn() {
                   <NavLink
                     to="/sign-up"
                     className={({ isActive }) =>
-                      `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
-             text-transparent bg-clip-text 
-             transition-all 
-             ${isActive ? "scale-110" : ""}`
+                      `font-semibold text-[#DB0032] text-sm  transition-all 
+     ${isActive ? "scale-100" : ""} 
+     hover:text-[#FA6602]`
                     }
                   >
                     Create An Account
@@ -120,7 +119,7 @@ function LogIn() {
               <div className="text-xs text-gray-600 flex justify-center gap-1 py-6">
                 <span className="mt-1"> By continuing, you agree to the</span>
                 <Link to="/terms-and-conditions">
-                  <span className="text-sm font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text underline cursor-pointer">
+                  <span className="text-sm font-bold text-[#DB0032] hover:text-[#FA6602]  cursor-pointer">
                     Terms, Conditions and Privacy policy.
                   </span>
                 </Link>
@@ -152,7 +151,7 @@ function LogIn() {
                   >
                     Email Address
                   </label>
-                  <FaEnvelope className="absolute left-3 top-1/2  text-gray-400 pointer-events-none" />
+                  <FaEnvelope className="absolute left-3 top-9 text-gray-400 pointer-events-none" />
                   <input
                     id="forgotEmail"
                     type="email"
@@ -183,7 +182,7 @@ function LogIn() {
                   <button
                     type="button"
                     onClick={() => setShowForgotPassword(false)}
-                    className="text-sm bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text underline cursor-pointer"
+                    className="text-sm text-[#DB0032] hover:text-[#FA6602] cursor-pointer"
                   >
                     Back to Login
                   </button>
