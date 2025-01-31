@@ -177,7 +177,7 @@ function Services() {
           <button
             onClick={handleServices}
             type="button"
-            className="text-[#000] transition-transform duration-500 ease-out transform  h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
+            className="text-[#000] transition-transform duration-500 ease-out transform  h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-xs sm:text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
           >
             Learn More
             <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
@@ -306,7 +306,7 @@ function Services() {
         <div className="flex  gap-4 z-10">
           <button
             onClick={handlePrev}
-            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 hover:scale-110 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
             aria-label="Previous Slide"
             style={{ transition: "opacity 0.3s ease-in-out" }}
           >
@@ -314,7 +314,7 @@ function Services() {
           </button>
           <button
             onClick={handleNext}
-            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 hover:scale-110 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
             aria-label="Next Slide"
             style={{ transition: "opacity 0.3s ease-in-out" }}
           >

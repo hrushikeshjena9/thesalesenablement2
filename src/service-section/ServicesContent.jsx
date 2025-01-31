@@ -95,18 +95,19 @@ const ServiceContent = () => {
     <>
       <section className=" py-10">
         <div className=" container">
-          <h2 className="text-sm uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text font-bold  mb-2 lg:mb-6">
+          <h2 className="text-sm sm:text-base lg:text-lg uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text font-bold mb-2 sm:mb-4 lg:mb-6">
             Consulting & Services
           </h2>
-          <div className="">
-            {" "}
-            <h1 className="text-sm  sm:text-2xl  lg:text-3xl font-bold uppercase lg:leading-[48px] mb-5">
-              Professional Sales Enablement {""} <br />
+
+          <div>
+            <h1 className="text-sm sm:text-2xl lg:text-3xl font-bold uppercase lg:leading-[48px] mb-5">
+              Professional Sales Enablement <br />
               <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
                 Services Can Drive Success
               </span>
             </h1>
           </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <Link
@@ -130,7 +131,6 @@ const ServiceContent = () => {
                       className="w-full h-[233px] p-2 object-cover mb-4 transition-all duration-500 ease-in-out hover:grayscale-0 hover:opacity-90"
                     />
 
-
                     <div className="absolute bottom-4 right-4 w-20 h-20 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-full flex items-center justify-center shadow-md">
                       <img
                         src={service.icon}
@@ -140,20 +140,20 @@ const ServiceContent = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-lg sm:text-sm md:text-[17px] uppercase font-semibold mb-2 p-4 text-center">
+                  <h3 className="text-sm  lg:text-lg uppercase font-semibold mb-2 p-4 text-center">
                     {service.title}
                   </h3>
-                  <p className="text-left mb-4 text-sm px-6 text-center sm:text-base flex-1">
-                    {" "}
 
+                  <p className="mb-4 text-sm sm:text-sm md:text-base font-light sm:font-normal  px-6 text-center flex-1">
                     {service.description}
                     <hr className="mt-4" />
                   </p>
+
                   <div className="flex justify-center">
                     <Link
                       to={`/service/${index}`}
                       state={service}
-                      className="relative w-[86%] icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium text-sm text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                      className="relative w-[86%] icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium text-xs sm:text-sm  text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
                       style={{
                         borderImage:
                           "linear-gradient(to right, #DB0032, #FA6602) 1",

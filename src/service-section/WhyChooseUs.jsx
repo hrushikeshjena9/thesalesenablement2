@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Tick from "../assets/Tick.png";
 import Students from "../assets/new/students.png";
 import SalesLeaders from "../assets/new/sales-leaders.png";
+import { FaCheck } from "react-icons/fa";
 const WhyChooseUs = () => {
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
@@ -39,7 +40,7 @@ const WhyChooseUs = () => {
             viewport={{ once: true, amount: 0.5 }}
             variants={leftVariants}
           >
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center ">
               <div className="services-bg relative">
                 <img
                   src={Students}
@@ -90,7 +91,7 @@ const WhyChooseUs = () => {
           </h2>
 
           <p
-            className=" text-sm sm:text-[16px] md:text-[16px] lg:text-lg xl:text-xl  leading-[32px] text-justify mb-8"
+            className=" text-sm sm:text-[16px] md:text-[16px] lg:text-lg  leading-[32px] text-justify mb-8"
             data-aos="fade-left"
           >
             We pride ourselves on providing comprehensive solutions to optimize
@@ -119,22 +120,20 @@ const WhyChooseUs = () => {
               },
             ].map((item, index) => (
               <div className="flex items-start space-x-4" key={index}>
-                <div className="w-[10%] flex justify-center">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-1/2 mt-2 hover:scale-110"
-                  />
+                <div className=" flex justify-center ">
+                  <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center">
+                    <FaCheck className="text-white" />
+                  </span>
                 </div>
 
-                <div className="flex items-start w-[90%] gap-6">
-                  <div className="w-[30%]">
-                    <h5 className="font-bold text-[12px] sm:text-[16px] md:text-[16px]  lg:text-[16px] xl:text-lg uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                <div className="flex items-start w-full gap-6">
+                  <div className="w-2/5">
+                    <h5 className="font-bold text-[12px]   lg:text-[14px]  uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.title}
                     </h5>
                   </div>
-                  <div className="w-[70%]">
-                    <p className="text-[12px] sm:text-[16px] md:text-lg mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                  <div className="w-full">
+                    <p className="text-[12px] sm:text-[16px]  mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
                       {item.text}
                     </p>
                   </div>
@@ -146,7 +145,7 @@ const WhyChooseUs = () => {
             <Link
               to="/courses"
               type="button"
-              className="text-white group text-nowrap   transition-transform duration-500 ease-out transform  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none  text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
+              className="text-white group text-nowrap text-xs md:text-sm  transition-transform duration-500 ease-out transform  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none   md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto
            flex items-center justify-center"
             >
               <span className="absolute inset-0 w-0 h-full   bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>

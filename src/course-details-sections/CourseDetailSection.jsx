@@ -8,7 +8,7 @@ import CourseImage from "../../src/assets/banner3.png";
 import PersonImg from "../../src/assets/person7.png";
 import PriceSideBar from "./PriceSideBar";
 const CourseDetailSection = () => {
-  const { courseId } = useParams(); 
+  const { courseId } = useParams();
   const [course, setCourse] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [relatedCourses, setRelatedCourses] = useState([]);
@@ -49,9 +49,9 @@ const CourseDetailSection = () => {
   if (!course) return <div>Loading...</div>;
 
   return (
-    <section className=" w-full mx-auto py-6 px-4">
+    <section className=" w-full mx-auto py-6 px-3">
       <div className="w-full">
-        <h2 className="text-xl lg:text-3xl font-semibold text-gray-900 flex items-center mb-6">
+        <h2 className="text-xl lg:text-3xl font-semibold  flex items-center mb-6">
           <span className="font-semibold text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 mr-3  rounded-full flex justify-center items-center transition-all duration-300">
             <FaBook size={20} />
           </span>{" "}
@@ -60,74 +60,73 @@ const CourseDetailSection = () => {
       </div>
 
       <div className="max-w-6xl">
-        <h1 className="text-base lg:text-2xl font-semibold text-gray-900">Overview</h1>
-        <p className="text-gray-700 mt-2 text-justify font-light">
+        <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold">
+          Overview
+        </h1>
+        <p className="mt-2 text-sm sm:text-base md:text-lg text-justify font-light max-w-full sm:max-w-3xl md:max-w-5xl">
           {course.description}
         </p>
       </div>
 
       <div className="flex flex-wrap lg:flex-nowrap justify-between items-center py-12 ">
-      
+
         <div className="px-6 py-16 shadow-xl w-full lg:w-4/5">
           <div className="max-w-5xl">
 
-            <h1 className="text-2xl font-bold text-gray-800 mb-6">
+
+
+            <h1 className="text-sm sm:text-xl md:text-xl lg:text-2xl font-bold mb-6">
               What makes this leadership programme unique?
             </h1>
-            <p className="text-sm text-left font-light max-w-4xl text-gray-600 mb-8">
-              Participants utilise an Insights assessment tool for
-              self-awareness, engage in peer coaching, network with diverse
-              professionals, generate practical solutions for strategic
-              challenges, and develop a personal leadership development plan.
+            <p className="text-sm sm:text-base md:text-lg  text-justify font-light max-w-full sm:max-w-3xl md:max-w-4xl mb-8">
+              Participants utilise an Insights assessment tool for self-awareness, engage
+              in peer coaching, network with diverse professionals, generate practical
+              solutions for strategic challenges, and develop a personal leadership
+              development plan.
             </p>
+
+
             <hr />
 
 
-            <div className="flex flex-wrap lg:flex-nowrap justify-between  gap-6 mt-4">
-   
+            <div className="flex flex-col lg:flex-row justify-between gap-6 mt-4">
+              {/* How Will You Benefit Section */}
               <div className="w-full lg:w-3/5">
-                <h2 className="text-xl font-semibold text-left text-gray-800 mb-4">
+                <h2 className="text-base md:text-lg lg:text-xl font-semibold text-left mb-4">
                   How will you benefit?
                 </h2>
-                <ul className="list-disc list-inside text-left font-light text-sm">
+                <ul className="list-disc list-inside text-left font-light text-sm md:text-base space-y-2">
+                  <li>Begin a significantly enhanced journey of self-mastery.</li>
                   <li>
-                    Begin a significantly enhanced journey of self-mastery.
+                    Build social intelligence, business acumen, and an understanding of
+                    critical business levers that will transform you into a highly effective
+                    decision-maker and negotiator.
                   </li>
                   <li>
-                    Build social intelligence, business acumen, and an
-                    understanding of critical business levers that will
-                    transform you into a highly effective decision-maker and
-                    negotiator.
+                    Develop your strategic and innovative thinking skills and appreciate the
+                    dynamic ecosystems in which you work.
                   </li>
                   <li>
-                    Develop your strategic and innovative thinking skills and
-                    appreciate the dynamic ecosystems in which you work.
-                  </li>
-                  <li>
-                    Position yourself to become an influential and impactful
-                    leader with a strong personal, professional brand.
+                    Position yourself to become an influential and impactful leader with a
+                    strong personal and professional brand.
                   </li>
                 </ul>
               </div>
 
               {/* Who Should Attend Section */}
-              <div className="w-full lg:w-1/2">
-                <h2 className="text-xl font-semibold text-left text-gray-800 mb-4">
+              <div className="w-full lg:w-2/5">
+                <h2 className="text-base md:text-lg lg:text-xl font-semibold text-left mb-4">
                   Who should attend?
                 </h2>
-                <ul className="list-disc list-inside text-left font-light text-sm">
+                <ul className="list-disc list-inside text-left font-light text-sm md:text-base space-y-2">
+                  <li>High-potential specialists seeking to move into management.</li>
                   <li>
-                    High-potential specialists seeking to move into management.
+                    Emerging leaders who have the potential for increased leadership
+                    responsibilities and nominal management experience.
                   </li>
                   <li>
-                    Emerging leaders who have the potential for increased
-                    leadership responsibilities and nominal management
-                    experience.
-                  </li>
-                  <li>
-                    Middle managers seeking to acquire the skills to position
-                    themselves favorably for advancement and effect wider
-                    influence.
+                    Middle managers seeking to acquire the skills to position themselves
+                    favorably for advancement and effect wider influence.
                   </li>
                 </ul>
               </div>
@@ -135,12 +134,12 @@ const CourseDetailSection = () => {
 
 
             <div className="mt-6 flex flex-wrap justify-between gap-6">
-       
+
               <div className="w-full sm:w-auto">
                 <a
                   href="/leadership-acceleration-programme-brochure-2025.pdf"
                   download
-                  className="relative text-sm sm:text-base  w-full uppercase  px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
+                  className="relative text-xs sm:text-sm   w-full uppercase  px-6 py-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                   <span className="relative z-10 text-white group-hover:text-white flex gap-2 items-center">
@@ -154,7 +153,7 @@ const CourseDetailSection = () => {
                 <a
                   href="/meet-the-programme-advisor.pdf"
                   download
-                  className="relative w-full text-sm sm:text-base uppercase px-6 py-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
+                  className="relative w-full text-xs sm:text-sm  uppercase px-3 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] group text-white flex items-center justify-center sm:justify-start space-x-2"
                 >
                   <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                   <span className="relative z-10 text-white group-hover:text-white flex gap-2 items-center">
@@ -174,10 +173,10 @@ const CourseDetailSection = () => {
       </div>
 
       <div className="mt-4">
-        <h1 className="text-xl font-semibold text-gray-900">
-          Powerful sales questioning technique :
+        <h1 className="text-base sm:text-xl md:text-2xl font-semibold ">
+          Powerful sales questioning technique:
         </h1>
-        <p className="text-gray-700 mt-2 text-justify font-light">
+        <p className=" mt-2 text-sm sm:text-base md:text-lg text-justify font-light max-w-full sm:max-w-3xl md:max-w-7xl">
           The core of this program teaches a more effective and more
           professional sales approach that primarily depends on asking a series
           of questions in a specific order that will enable you to find out your
@@ -187,11 +186,12 @@ const CourseDetailSection = () => {
         </p>
       </div>
 
+
       <div className="mt-4">
-        <h1 className="text-xl font-semibold text-gray-900">
+        <h1 className="text-base sm:text-xl md:text-2xl font-semibold">
           Selling to different personality types :
         </h1>
-        <p className="text-gray-700 mt-2 text-justify font-light">
+        <p className="mt-2 text-sm sm:text-base md:text-lg text-justify font-light max-w-full sm:max-w-3xl md:max-w-7xl">
           Moreover, Many salespeople also have a single, preferred style of
           selling and find it difficult to sell to different types of buyers.
           They use a strategy of making friends with customers and while this
@@ -206,7 +206,7 @@ const CourseDetailSection = () => {
         <TabNavigation />
       </div>
 
-      <h1 className="text-2xl font-semibold text-gray-900">Related Courses</h1>
+      <h1 className="text-xl md:text-xl lg:text-2xl font-semibold text-gray-900">Related Courses</h1>
       <div className="py-12">
         <RelatedCourseSlider />
       </div>

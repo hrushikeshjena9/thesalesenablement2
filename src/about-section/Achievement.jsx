@@ -63,46 +63,52 @@ const Achievement = () => {
             marked by innovation, excellence, and impactful results that have
             transformed sales teams worldwide.
           </p>
+
           <div className="flex justify-start">
-            <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center transition-all duration-300 hover:bg-gradient-to-l hover:text-gray-200">
-              <div className="flex justify-center items-center space-x-3">
-                <span className="text-2xl font-bold">2.4K+</span>
-                <span className="text-lg font-medium ">
-                  Successful <br /> Students
+            <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center transition-all duration-300 hover:bg-gradient-to-l hover:text-gray-200 w-full sm:w-auto">
+              <div className="flex flex-wrap justify-center items-center space-x-3 sm:space-x-4">
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold">2.4K+</span>
+                <span className="text-sm sm:text-base md:text-lg font-medium leading-tight text-center">
+                  Successful <br className="hidden sm:block" /> Students
                 </span>
               </div>
             </div>
           </div>
+
         </motion.div>
 
+
         <div className="flex justify-center md:justify-end sm:justify-center">
-          <div className="flex flex-col justify-start space-y-4">
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
+          <div className="flex flex-col md:flex-row justify-start space-y-4 md:space-y-0 md:space-x-6">
+            <div className="flex items-center bg-white border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <AiOutlineGlobal className="text-white text-2xl" />
               </div>
-              <span className="text-[#000] font-medium">
+              <span className="text-[#000] font-medium text-sm sm:text-base md:text-lg">
                 Global Recognition
               </span>
             </div>
 
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
+            <div className="flex items-center bg-white border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FaTrophy className="text-white text-2xl" />
               </div>
-              <span className="text-[#000] font-medium">Industry Awards</span>
+              <span className="text-[#000] font-medium text-sm sm:text-base md:text-lg">
+                Industry Awards
+              </span>
             </div>
 
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
+            <div className="flex items-center bg-white border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FiTrendingUp className="text-white text-2xl" />
               </div>
-              <span className="text-[#000] font-medium">
+              <span className="text-[#000] font-medium text-sm sm:text-base md:text-lg">
                 Empowering Sales Teams
               </span>
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

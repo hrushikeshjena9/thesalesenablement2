@@ -115,7 +115,7 @@ function CaseStudies() {
             >
               <div className="bg-white w-full sm:w-[426.59px] h-[140px] p-4 transition-all transform group-hover:scale-105 group-hover:h-[220px] duration-300 ease-in-out">
                 <div className="flex justify-between gap-4">
-                  <h3 className="text-sm sm:text-2xl font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+                  <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
                     {caseStudy.title}
                   </h3>
                   <img
@@ -124,7 +124,7 @@ function CaseStudies() {
                     className="w-10 h-10"
                   />
                 </div>
-                <p className="text-gray-800 uppercase font-bold mt-2 text-sm sm:text-base">
+                <p className=" uppercase font-bold mt-2 text-sm sm:text-base">
                   {caseStudy.subtitle}
                 </p>
                 <div className="flex items-end justify-end">
@@ -134,7 +134,7 @@ function CaseStudies() {
                     className="mt-2 w-[24px] h-[24px]"
                   />
                 </div>
-                <p className="absolute opacity-0 group-hover:opacity-100 text-gray-600 mt-2 transition-opacity duration-300 ease-in-out text-sm sm:text-base bottom-[20px] left-[20px] right-[20px]">
+                <p className="absolute opacity-0 group-hover:opacity-100  mt-2 transition-opacity duration-300 ease-in-out text-sm sm:text-base bottom-[20px] left-[20px] right-[20px]">
                   {caseStudy.description}
                 </p>
               </div>

@@ -79,7 +79,7 @@ const PriceSideBar = ({ course }) => {
       </div>
 
       <div className="mt-6">
-        <button className="w-full relative uppercase group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center ">
+        <button className="w-full relative uppercase group text-xs sm:text-sm bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-2 sm:p-3 flex items-center justify-center ">
           <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
           <span className="relative z-10 text-white group-hover:text-white flex items-center">
             Book Now
@@ -88,14 +88,14 @@ const PriceSideBar = ({ course }) => {
       </div>
 
       <div className="mt-4 flex flex-wrap justify-between gap-4">
-        <button className="w-full md:w-auto flex-1 uppercase relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center ">
+        <button className="w-full md:w-auto flex-1 uppercase relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-2 sm:p-3 flex items-center justify-center ">
           <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
           <span className="relative z-10 text-white group-hover:text-white flex items-center">
             <IoCall className="mr-2" />
             <span className="text-sm">Call Us</span>
           </span>
         </button>
-        <button className="w-full md:w-auto flex-1 uppercase relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-3 flex items-center justify-center ">
+        <button className="w-full md:w-auto flex-1 uppercase relative group bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white p-2 sm:p-3 flex items-center justify-center ">
           <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
           <span className="relative z-10 text-white group-hover:text-white flex items-center">
             <FaShareAlt className="mr-2" />

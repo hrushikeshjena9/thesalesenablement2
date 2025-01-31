@@ -12,14 +12,14 @@ function About() {
     <>
       <div className="flex flex-col space-y-16">
         <HeroAbout />
-      </div>
-      <AboutUs />
-      <VisionMission />
-      <WhyChoseUs />
-      <Achievement />
+        <AboutUs />
+        <VisionMission />
+        <WhyChoseUs />
+       <Achievement />
       <Expertise />
-      <Awards />
-      <Cards />
+           <Awards />
+        <Cards />
+      </div>
     </>
   );
 }

@@ -115,7 +115,6 @@ function About() {
               },
             ].map((item, index) => (
               <div className="flex items-start space-x-4" key={index}>
-                {/* Image Column */}
                 <div className="w-[10%] flex justify-center">
                   <img
                     src={item.img}
@@ -123,7 +122,6 @@ function About() {
                     className="max-w-full hover:scale-110"
                   />
                 </div>
-                {/* Text Column */}
                 <div className="flex items-start w-[90%] gap-6">
                   <div className="w-[30%]">
                     <h5 className="font-bold text-[11px] sm:text-[16px] md:text-[16px]  lg:text-[16px] xl:text-xl uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
@@ -144,18 +142,16 @@ function About() {
             <Link
               to="/services"
               type="button"
-              className="relative text-white group text-nowrap transition-all duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
+              className="relative text-white group text-nowrap transition-all duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-xs sm:text-sm px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
             >
-              {/* Background effect on hover */}
               <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
 
-              {/* Text and Arrow */}
               <span className="relative z-10 text-white group-hover:text-white flex items-center">
                 Schedule a Consultation
                 <img
                   src={RightArrow1}
                   alt="Arrow Icon"
-                  className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out " // Smooth arrow movement
+                  className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out " 
                 />
               </span>
             </Link>
@@ -163,7 +159,7 @@ function About() {
             <Link
               to="/courses"
               type="button"
-              className="text-[#000] transition-transform duration-500 ease-out transform  flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3  md:w-auto lg:w-full xl:w-auto 2xl:w-auto  uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+              className="text-[#000] transition-transform duration-500 ease-out transform  flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3  md:w-auto lg:w-full xl:w-auto 2xl:w-auto  uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-xs sm:text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
             >
               View Upcoming Courses
               <img src={RightArrow} alt="Arrow" className="w-[24px] h-[24px]" />

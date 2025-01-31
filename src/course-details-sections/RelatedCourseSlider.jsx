@@ -1,12 +1,14 @@
 import React, { useState, useRef } from "react";
-import Slider from "react-slick"; 
-import "slick-carousel/slick/slick.css"; 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {
   FaBook,
   FaUsers,
   FaChalkboardTeacher,
   FaGlobeAmericas,
+  FaArrowLeft,
+  FaArrowRight,
 } from "react-icons/fa";
 import SliderBtnLeft from "../assets/slider-btn-left.png";
 import SliderBtnRight from "../assets/slider-btn-right.png";
@@ -100,9 +102,8 @@ const RelatedCourseSlider = () => {
           const isExpanded = expandedDescription[course.id];
           const displayedDescription = isExpanded
             ? course.description
-            : `${course.description.slice(0, charLimit)}${
-                course.description.length > charLimit ? "..." : ""
-              }`;
+            : `${course.description.slice(0, charLimit)}${course.description.length > charLimit ? "..." : ""
+            }`;
 
           return (
             <div
@@ -112,11 +113,10 @@ const RelatedCourseSlider = () => {
               onMouseLeave={() => setHoveredCourseId(null)}
             >
               <div
-                className={`border-2 px-6 py-4 flex flex-col justify-between shadow-xl overflow-hidden relative transition-all duration-300  ${
-                  hoveredCourseId === course.id
+                className={`border-2 px-6 py-4 flex flex-col justify-between shadow-xl overflow-hidden relative transition-all duration-300  ${hoveredCourseId === course.id
                     ? "border-transparent bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white"
                     : "border-gray-300 bg-white"
-                }`}
+                  }`}
                 style={{
                   minHeight: "260px",
                   height: "auto",
@@ -129,16 +129,15 @@ const RelatedCourseSlider = () => {
                   borderImageSlice: 1,
                 }}
               >
-                <div className="px-4 py-3">
+                <div className=" py-3">
                   {/* Course Icon and Title */}
                   <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center gap-3">
                       <span
-                        className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${
-                          hoveredCourseId === course.id
+                        className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${hoveredCourseId === course.id
                             ? "bg-white text-[#DB0032]"
                             : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
-                        }`}
+                          }`}
                       >
                         {course?.courseName?.icon}
                       </span>
@@ -147,11 +146,10 @@ const RelatedCourseSlider = () => {
                       </span>
                     </div>
                     <div
-                      className={`flex items-center gap-1 rounded-md px-3 py-1 transition-all duration-300 ${
-                        hoveredCourseId === course.id
+                      className={`flex items-center gap-1 rounded-md px-3 py-1 transition-all duration-300 ${hoveredCourseId === course.id
                           ? "bg-white text-red-600"
                           : "bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white"
-                      }`}
+                        }`}
                     >
                       {course.location.icon}
                       <span>{course.location.text}</span>
@@ -187,18 +185,23 @@ const RelatedCourseSlider = () => {
 
       {/* Navigation Buttons */}
       <div className="flex justify-end py-3">
-        <div className="flex gap-8">
+        <div className="flex gap-3">
           <button
             onClick={goToPreviousSlide}
-            className="z-10 transform transition-all hover:scale-110 duration-75"
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 hover:scale-105 rounded-full  text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
+            aria-label="Previous Slide"
+            style={{ transition: "opacity 0.3s ease-in-out" }}
           >
-            <img src={SliderBtnLeft} alt="Previous" className="w-14" />
+            <FaArrowLeft className="text-xl text-[#fff] group-hover:text-[#383F71]" />
           </button>
+
           <button
             onClick={goToNextSlide}
-            className="z-10 transform transition-all hover:scale-110 duration-75"
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 hover:scale-105 rounded-full  text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
+            aria-label="Next Slide"
+            style={{ transition: "opacity 0.3s ease-in-out" }}
           >
-            <img src={SliderBtnRight} alt="Next" className="w-14" />
+            <FaArrowRight className="text-xl text-[#fff] group-hover:text-[#383F71]" />
           </button>
         </div>
       </div>

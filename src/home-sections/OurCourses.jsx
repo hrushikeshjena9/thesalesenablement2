@@ -88,7 +88,7 @@ function OurCourses() {
                 id="consultation"
                 type="button"
                 onClick={handlenavigate}
-                className="relative font-medium overflow-hidden group text-white transition-all duration-300 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[16px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
+                className="relative font-medium overflow-hidden group text-white transition-all duration-300 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none sm:text-sm text-xs md:text-[14px] lg:text-[14px] xl:text-[14px] px-5 py-2.5 w-full md:py-4 sm:w-[378px] lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[380px] xl:w-auto lg:w-[380px] flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full   bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">

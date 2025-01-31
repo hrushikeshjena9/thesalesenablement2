@@ -254,7 +254,7 @@ function HeroSection() {
 
                 <button
                   onClick={goToPreviousSlide}
-                  className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
+                  className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg hover:scale-105 transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
                   aria-label="Previous Slide"
                   style={{ transition: "opacity 0.3s ease-in-out" }}
                 >
@@ -263,7 +263,7 @@ function HeroSection() {
 
                 <button
                   onClick={goToNextSlide}
-                  className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
+                  className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg hover:scale-105 transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
                   aria-label="Next Slide"
                   style={{ transition: "opacity 0.3s ease-in-out" }}
                 >

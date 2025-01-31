@@ -50,13 +50,13 @@ function LatestBlogs() {
           <Link
             to="blogs"
             type="button"
-            className="text-[#000] transition-transform duration-500 ease-out transform flex  md:px-6 md:py-3 w-full sm:w-auto md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
+            className="text-[#000] transition-transform duration-500 ease-out transform flex  md:px-6 md:py-3 w-full sm:w-auto md:w-auto  uppercase gap-3 justify-between space-x-2 items-center font-bold text-xs sm:text-sm  px-4 py-2 hover:text-[#000]  border-[#000] border-btn2"
           >
             Discover Latest Blogs
             <img src={RightArrow} alt="arrow" className="w-6 h-6 ml-2" />
           </Link>
         </div>
-        <p className="text-sm sm:text-lg md:text-xl xl:w-[70%] md:w-full lg:w-full md:leading-[35px] leading-[35px] mt-4">
+        <p className="text-sm sm:text-lg text-left md:text-xl xl:w-[70%] md:w-full lg:w-full md:leading-[35px] leading-[35px] mt-4">
           Our blog features valuable tips, trends, and case studies to help you
           optimize your sales processes and drive success. Whether you're a
           Sales Leader, CEO, or entrepreneur, you'll find actionable advice to
@@ -121,7 +121,7 @@ function LatestBlogs() {
             <Link
               to="blog-details/:id"
               type="button"
-              className="relative w-[86%] icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium text-sm text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+              className="relative w-[86%] text-xs sm:text-sm  icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium  text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
               style={{
                 borderImage: "linear-gradient(to right, #DB0032, #FA6602) 1",
               }}

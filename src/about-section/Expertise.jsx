@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FaFacebookF, FaLinkedinIn, FaPlus, FaTwitter } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaFacebookF, FaLinkedinIn, FaPlus, FaTwitter } from "react-icons/fa";
 import expert1 from "../assets/expert1.png";
 import expert2 from "../assets/expert2.png";
 import expert3 from "../assets/expert3.png";
@@ -64,10 +64,19 @@ const Expertise = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     autoplay: true,
-    autoplaySpeed: 3000, 
+    autoplaySpeed: 3000,
     initialSlide: 0,
     pauseOnHover: true,
     responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+          infinite: true,
+          dots: false,
+        },
+      },
       {
         breakpoint: 1024,
         settings: {
@@ -80,13 +89,13 @@ const Expertise = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 640,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -116,7 +125,7 @@ const Expertise = () => {
   };
 
   return (
-    <section className="py-6 container mx-auto px-4">
+    <section className="py-6 container mx-auto px-6">
       <h5 className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
         Meet our Expertise
       </h5>
@@ -133,21 +142,21 @@ const Expertise = () => {
         a unique set of skills to help your sales team succeed.
       </p>
 
- 
-      <Slider ref={sliderRef} {...settings}>
+      <Slider ref={sliderRef} {...settings} className="px-4">
         {experts.map((expert, index) => (
           <motion.div
             key={index}
-            className="bg-white shadow-lg rounded-lg overflow-hidden relative group1 flex flex-col h-[550px] mx-6 border-2 border-orange-500 hover:shadow-xl transition-shadow duration-300"
+            className="bg-white shadow-lg rounded-lg overflow-hidden relative flex flex-col border-2 border-orange-500 hover:shadow-xl transition-shadow duration-300 min-h-[550px] lg:h-[550px] md:h-[500px] sm:h-[450px] mx-auto w-full sm:w-[85%] md:w-[75%] lg:w-[65%] max-w-[400px]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
           >
+
             <div className="h-1/2 border-b-2 border-orange-500">
               <img
                 src={expert.image}
                 alt={expert.name}
-                className="w-full h-full"
+                className="w-full h-full object-cover"
               />
             </div>
 
@@ -165,7 +174,6 @@ const Expertise = () => {
                 {expert.expertise}
               </p>
             </div>
-
             <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
               <div className="relative group">
                 <div
@@ -195,30 +203,27 @@ const Expertise = () => {
         ))}
       </Slider>
 
-    
-      <div className="container mx-auto px-4 mt-6 flex justify-end">
-        <div className="btn-hero-slider flex items-center">
+
+
+      <div className="container mx-auto px-4 mt-6 flex justify-center lg:justify-end">
+        <div className="btn-hero-slider space-x-5 gap-3">
+
           <button
             onClick={goToPreviousSlide}
-            className="focus:outline-none"
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
             aria-label="Previous Slide"
+            style={{ transition: "opacity 0.3s ease-in-out" }}
           >
-            <img
-              src={SliderBtnLeft}
-              alt="Previous Slide"
-              className="w-12 h-12 hover:scale-110 transition-transform"
-            />
+            <FaArrowLeft className="text-xl text-[#fff] group-hover:text-[#383F71]" />
           </button>
+
           <button
             onClick={goToNextSlide}
-            className="focus:outline-none ml-4"
+            className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}
             aria-label="Next Slide"
+            style={{ transition: "opacity 0.3s ease-in-out" }}
           >
-            <img
-              src={SliderBtnRight}
-              alt="Next Slide"
-              className="w-12 h-12 hover:scale-110 transition-transform"
-            />
+            <FaArrowRight className="text-xl text-[#fff] group-hover:text-[#383F71]" />
           </button>
         </div>
       </div>

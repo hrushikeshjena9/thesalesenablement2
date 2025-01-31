@@ -12,53 +12,53 @@ import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function ContactContent() {
   return (
-    <div className="container mx-auto px-4  py-12">
+    <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
-          <h1 className="text-4xl font-bold uppercase  bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text  mb-6">
+          <h1 className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-4xl font-bold uppercase  bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text  mb-6">
             Get In Touch With Us
           </h1>
 
-          <p className=" text-lg text-black mb-6">
+          <p className=" sm:text-left font-light sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
             We'd love to hear from you. Whether you're interested in our sales
             enablement solutions, want to schedule a demo, or simply have a
             question, we’re here to help! Feel free to reach out to us through
             the contact form or any of the other methods below.
           </p>
 
-          <p className=" text-lg text-black mb-6">
+          <p className=" sm:text-left font-light sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
             Our team is committed to providing excellent customer support, and
             we will get back to you as soon as possible.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Location Card */}
-            <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
+            <div className="p-3 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <AiOutlineGlobal className="w-10 h-10 text-[#DB0032] mb-4" />
-              <h3 className="text-xl text-center font-semibold text-gray-800">
+              <h3 className="text-base md:text-lg text-center font-semibold text-gray-800">
                 Visit Anytime
               </h3>
-              <p className="text-base text-gray-600 mt-2 text-center">
+              <p className="text-base md:text-lg text-gray-600 mt-2 text-center">
                 28 Sturdee Road Rosebank, Johannesburg
               </p>
             </div>
 
-            <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
+            <div className="p-3 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <FaPhoneAlt className="w-10 h-10 text-[#DB0032] mb-4" />
-              <h3 className="text-xl text-center font-semibold text-gray-800">
+              <h3 className="text-base md:text-lg text-center font-semibold text-gray-800">
                 Have Any Questions?
               </h3>
-              <p className="text-base text-gray-600 mt-2 text-center">
+              <p className="text-base md:text-lg text-gray-600 mt-2 text-center">
                 010 335-1182
               </p>
             </div>
 
-            <div className="p-6 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
+            <div className="p-3 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <FaEnvelope className="w-10 h-10 text-[#DB0032] mb-4" />
-              <h3 className="text-xl text-center font-semibold text-gray-800">
+              <h3 className="text-base md:text-lg text-center font-semibold text-gray-800">
                 Write Email
               </h3>
-              <p className="text-base text-gray-600 mt-2 text-center break-all">
+              <p className="text-base md:text-lg text-gray-600 mt-2 text-center break-all">
                 info@theenablement.com
               </p>
             </div>
@@ -170,7 +170,7 @@ function ContactContent() {
 
                 <span className="relative text-white flex items-center">
                   <FaPaperPlane className="mr-2" />{" "}
-          
+
                   Send Message
                 </span>
               </button>

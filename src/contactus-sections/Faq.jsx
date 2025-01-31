@@ -41,22 +41,21 @@ function Faq() {
 
   return (
     <div className="w-full max-w-3xl bg-white p-6">
-      <h1 className="text-2xl font-bold uppercase mb-4">Our FAQs</h1>
+      <h1 className="text-sm md:text-lg lg:text-xl xl:text-2xl font-bold uppercase mb-4">Our FAQs</h1>
 
-      <div className="text-4xl mb-12">
-        <h1 className="text-3xl uppercase font-bold">
+      <div className="mb-12">
+        <h1 className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-4xl uppercase font-bold">
           Sales Enablement Solutions for
         </h1>
-        <h1 className="text-3xl uppercase font-bold mt-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
+        <h1 className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-4xl uppercase font-bold mt-2 sm:mt-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
           Business Growth
         </h1>
-        <p className="text-lg mt-4 text-gray-600">
+        <p className="sm:text-left  sm:leading-6 leading-10 sm:font-normal text-justify text-sm md:text-base lg:text-lg">
           We empower sales teams to perform at their best. We provide innovative
           tools, training, and strategies to optimize your sales process,
           improve team performance, and boost revenue generation.
         </p>
       </div>
-
       <div className="space-y-4">
         {FAQs.map((faq, index) => (
           <div key={index}>
