@@ -63,7 +63,7 @@ function Faq() {
               onClick={() => handleDisclosureClick(index)}
               className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center transition-all duration-300 ease-in-out"
             >
-              <span className="text-sm :sm:text-lg">{faq.question}</span>
+              <span className="text-xs sm:text-sm md:text-lg">{faq.question}</span>
               <span
                 className={`transition-transform duration-300 ease-in-out ${
                   openIndex === index ? "rotate-[-180]" : ""

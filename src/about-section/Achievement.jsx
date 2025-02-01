@@ -78,37 +78,33 @@ const Achievement = () => {
         </motion.div>
 
 
-        <div className="flex justify-center md:justify-end sm:justify-center">
-          <div className="flex flex-col md:flex-row justify-start space-y-4 md:space-y-0 md:space-x-6">
-            <div className="flex items-center bg-white border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
+
+        <div className="flex justify-center md:justify-end">
+          <div className="flex flex-col justify-start space-y-4">
+            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <AiOutlineGlobal className="text-white text-2xl" />
               </div>
-              <span className="text-[#000] font-medium text-sm sm:text-base md:text-lg">
+              <span className="text-[#000] font-medium">
                 Global Recognition
               </span>
             </div>
-
-            <div className="flex items-center bg-white border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
+            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FaTrophy className="text-white text-2xl" />
               </div>
-              <span className="text-[#000] font-medium text-sm sm:text-base md:text-lg">
-                Industry Awards
-              </span>
+              <span className="text-[#000] font-medium">Industry Awards</span>
             </div>
-
-            <div className="flex items-center bg-white border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
+            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
               <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                 <FiTrendingUp className="text-white text-2xl" />
               </div>
-              <span className="text-[#000] font-medium text-sm sm:text-base md:text-lg">
+              <span className="text-[#000] font-medium">
                 Empowering Sales Teams
               </span>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

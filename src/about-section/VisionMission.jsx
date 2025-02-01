@@ -105,7 +105,7 @@ const VisionMission = () => {
         </div>
       </section>
 
-      <section className="py-6 overflow-hidden about-class container mx-auto px-4">
+      <section className="overflow-hidden about-class container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start">
           <div className="flex justify-center md:justify-center">
             <motion.div
@@ -184,7 +184,7 @@ const VisionMission = () => {
         </div>
       </section>
 
-      <section className="py-6 overflow-hidden container mx-auto px-4">
+      <section className=" overflow-hidden container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <motion.div
             className="text-center lg:text-left flex flex-col justify-start"
@@ -236,11 +236,13 @@ const VisionMission = () => {
           >
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-                <img
-                  src={Values2}
-                  alt="Vision"
-                  className="w-[90%] md:w-[80%] z-2"
-                />
+             
+                  <img
+                    src={Values2}
+                    alt="Vision"
+                    className="w-[90%] md:w-[80%] z-2"
+                  />
+             
                 <div className="flex flex-col justify-center px-4 text-white w-48 h-48 sm:w-60 sm:h-60 top-[-140px] sm:top-[-180px] lg:right-12 right-0 relative z-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-lg">
                   {[
                     "Integrity",

@@ -113,7 +113,7 @@ const RelatedCourseSlider = () => {
               onMouseLeave={() => setHoveredCourseId(null)}
             >
               <div
-                className={`border-2 px-6 py-4 flex flex-col justify-between shadow-xl overflow-hidden relative transition-all duration-300  ${hoveredCourseId === course.id
+                className={`border-2 px-4 py-4 flex flex-col justify-between shadow-xl overflow-hidden relative transition-all duration-300  ${hoveredCourseId === course.id
                     ? "border-transparent bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white"
                     : "border-gray-300 bg-white"
                   }`}
