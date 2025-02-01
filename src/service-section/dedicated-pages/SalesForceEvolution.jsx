@@ -60,7 +60,7 @@ const SalesForceEvaluation = () => {
     <div>
       <HeroSFE />
 
-      <section className="py-12 about-class container mx-auto px-4">
+      <section className="py-0 xl:py-12 about-class container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
    
           <motion.div
@@ -149,8 +149,8 @@ const SalesForceEvaluation = () => {
       <div className="py-12 ">
         <BenefitsSection />
       </div>
-      <section className="py-16 container mx-auto">
-        <h2 className="text-3xl font-semibold text-center mb-8 text-gray-800">
+      <section className="container mx-auto px-4">
+        <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center mb-8 text-gray-800">
           Watch How the Sales Force Evaluation Tool Works
         </h2>
 
@@ -252,15 +252,15 @@ const SalesForceEvaluation = () => {
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Left Side Content with Additional Information and CTA Buttons */}
           <div className="md:w-1/2 mb-8 md:mb-0">
-            <h2 className="text-3xl font-bold text-center md:text-left mb-6">
+            <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-bold text-center md:text-left mb-6">
               Ready to Unlock Your Sales Team's Potential?
             </h2>
-            <p className="text-center md:text-left text-lg mb-6">
+            <p className="text-center  md:text-left text-sm md:text-base lg:text-lg mb-6">
               Transform your sales force with our comprehensive evaluation tool.
               It’s time to take your sales team to the next level and drive
               growth.
             </p>
-            <p className="text-center md:text-left text-md mb-6">
+            <p className="text-center md:text-left text-sm md:text-base lg:text-lg mb-6">
               Our tool provides in-depth insights into your team's strengths and
               areas of improvement. Whether you're looking to boost performance,
               streamline processes, or enhance skills, we’ve got you covered.

@@ -32,11 +32,11 @@ const BenefitsSection = () => {
   return (
     <section className="py-16 px-6 banner">
 
-      <h2 className="text-3xl font-bold text-center mb-10 text-white relative z-10">
+      <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-bold text-center mb-10 text-white relative z-10">
         Why Use the Sales Force Evaluation Tool?
       </h2>
 
-      <div className="px-4 container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="px-4 container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
         {benefits.map((benefit, index) => (
           <div
             key={index}
@@ -48,8 +48,8 @@ const BenefitsSection = () => {
             </div>
    
             <div className="text-center">
-              <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-              <p className="">{benefit.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">{benefit.title}</h3>
+              <p className="text-sm sm:text-lg">{benefit.description}</p>
             </div>
           </div>
         ))}

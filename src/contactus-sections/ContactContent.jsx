@@ -19,14 +19,14 @@ function ContactContent() {
             Get In Touch With Us
           </h1>
 
-          <p className=" sm:text-left font-light sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
+          <p className=" sm:text-left  sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
             We'd love to hear from you. Whether you're interested in our sales
             enablement solutions, want to schedule a demo, or simply have a
             question, we’re here to help! Feel free to reach out to us through
             the contact form or any of the other methods below.
           </p>
 
-          <p className=" sm:text-left font-light sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
+          <p className=" sm:text-left  sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
             Our team is committed to providing excellent customer support, and
             we will get back to you as soon as possible.
           </p>
@@ -84,7 +84,7 @@ function ContactContent() {
         </div>
 
         <div className="space-y-6 shadow-lg p-5">
-          <h2 className="text-3xl font-semibold  text-center uppercase text-black mb-4">
+          <h2 className="text-xl sm:text-2xl font-semibold  text-center uppercase text-black mb-4">
             Fill Out The Form
           </h2>
 

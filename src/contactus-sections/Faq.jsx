@@ -40,7 +40,7 @@ function Faq() {
   };
 
   return (
-    <div className="w-full max-w-3xl bg-white p-6">
+    <div className="w-full max-w-3xl bg-white px-4">
       <h1 className="text-sm md:text-lg lg:text-xl xl:text-2xl font-bold uppercase mb-4">Our FAQs</h1>
 
       <div className="mb-12">
@@ -50,7 +50,7 @@ function Faq() {
         <h1 className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-4xl uppercase font-bold mt-2 sm:mt-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
           Business Growth
         </h1>
-        <p className="sm:text-left  sm:leading-6 leading-10 sm:font-normal text-justify text-sm md:text-base lg:text-lg">
+        <p className="sm:text-left  sm:leading-6  sm:font-normal text-justify text-sm md:text-base lg:text-lg">
           We empower sales teams to perform at their best. We provide innovative
           tools, training, and strategies to optimize your sales process,
           improve team performance, and boost revenue generation.
@@ -63,7 +63,7 @@ function Faq() {
               onClick={() => handleDisclosureClick(index)}
               className="w-full p-4 text-left font-semibold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white rounded-md hover:bg-gradient-to-l flex justify-between items-center transition-all duration-300 ease-in-out"
             >
-              <span>{faq.question}</span>
+              <span className="text-sm :sm:text-lg">{faq.question}</span>
               <span
                 className={`transition-transform duration-300 ease-in-out ${
                   openIndex === index ? "rotate-[-180]" : ""

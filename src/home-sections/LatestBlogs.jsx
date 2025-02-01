@@ -3,7 +3,6 @@ import RightArrow from "../assets/arrow-right.png";
 import Blog1 from "../assets/blog1.png";
 import Blog2 from "../assets/blog2.png";
 import Blog3 from "../assets/blog3.png";
-import Blog4 from "../assets/blog-4.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";

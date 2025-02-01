@@ -23,7 +23,7 @@ function ServiceDetails() {
       <HeroServiceDetails />
 
       <div className="container mx-auto px-4 py-12 ">
-        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row py-12 gap-10">
+        <div className="flex flex-col sm:flex-col md:flex-col lg:flex-row gap-10">
           <ServiceDetailSection filters={filters} />
           <ServiceDetailSideBar setFilters={setFilters} filters={filters} />
         </div>

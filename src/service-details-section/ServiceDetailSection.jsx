@@ -13,13 +13,13 @@ import {
   FaBullhorn,
 } from "react-icons/fa";
 const ServiceDetailSection = () => {
-  const { courseId } = useParams(); 
+  const { courseId } = useParams();
   const [course, setCourse] = useState(null);
   const [relatedCourses, setRelatedCourses] = useState([]);
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
-  
+
       const courseData = {
         id: courseId,
         title: "Recruiting Process Optimization",
@@ -93,7 +93,7 @@ const ServiceDetailSection = () => {
 
   ];
   return (
-    <section className="md:w-full w-full lg:w-3/4 mx-auto  px-4">
+    <section className="md:w-full w-full lg:w-3/4 mx-auto">
       <div className="md:w-full lg:w-full md:ml-8 xl:w-full xl:ml-0 mt-6 md:mt-0 mb-6 relative">
         <img
           src={course.image}
@@ -126,10 +126,10 @@ const ServiceDetailSection = () => {
         </p>
       </div>
       <div className="py-12 px-6 bg-gray-100">
-        <h2 className="text-3xl font-semibold text-gray-800 text-center">
+        <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center">
           Key Features
         </h2>
-        <p className="text-center text-gray-600 mt-2">
+        <p className="text-center text-sm md:text-base lg:text-lg mt-2">
           Our team brings years of expertise in delivering cutting-edge sales
           enablement solutions designed to empower your sales teams and maximize
           revenue potential.
@@ -152,8 +152,8 @@ const ServiceDetailSection = () => {
         </div>
       </div>
 
-      <div className="py-16 px-6 bg-gray-100">
-        <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">
+      <div className="px-6 bg-gray-100">
+        <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center  mb-8">
           Our Sales Enablement Solutions in Action
         </h2>
         <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row gap-8 max-w-6xl mx-auto">
@@ -169,7 +169,7 @@ const ServiceDetailSection = () => {
 
           <div className="flex-1  p-4 rounded-lg ">
             <img
-              src={ServicesDetails2} 
+              src={ServicesDetails2}
               alt="Sales Strategy Implementation"
               className="w-full h-auto object-cover rounded-md"
             />

@@ -7,7 +7,7 @@ const MapSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
 
         <div className="w-full text-center sm:text-left">
-          <h2 className="text-2xl font-semibold uppercase text-gray-800 mb-4">
+          <h2 className="text-xl sm:text-2xl font-semibold uppercase text-gray-800 mb-4">
             Our Location
           </h2>
           <p className="text-base text-gray-600 mb-6">
