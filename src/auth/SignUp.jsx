@@ -8,13 +8,34 @@ import {
   FaEyeSlash,
   FaChevronDown,
 } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import RightArrow1 from "../assets/arrow-right1.png";
+import axios from "axios"; // Add Axios import
 
 function SignUp({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+
+
+
+  const [signUpData, setSignUpData] = useState({
+    title: "",
+    first_name: "",
+    last_name: "",
+    phone_no: "",
+    email_id: "",
+    password: "",
+    confirmPassword: ""
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSignUpData({
+      ...signUpData,
+      [name]: value,
+    })
+  }
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
@@ -23,6 +44,31 @@ function SignUp({ setActiveTab }) {
   const toggleConfirmPasswordVisibility = () => {
     setConfirmPasswordVisible(!confirmPasswordVisible);
   };
+
+  const [error, setError] = useState("")
+  const [successMsg, setSuccessMsg] = useState("")
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://192.168.1.7:8000/api/v1/register", signUpData)
+      setSuccessMsg("User Registered Successfully");
+      setSignUpData({
+        title: "",
+        first_name: "",
+        last_name: "",
+        phone_no: "",
+        email_id: "",
+        password: "",
+        confirmPassword: ""
+      })
+      console.log(response)
+    } catch (err) {
+      setError(err.message)
+    }
+  }
+
+
   const titles = [
     " AProf",
     "Adv",
@@ -62,7 +108,7 @@ function SignUp({ setActiveTab }) {
             Start your journey toward greater success with our platform.
           </p>
 
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <label
                 htmlFor="title"
@@ -72,6 +118,9 @@ function SignUp({ setActiveTab }) {
               </label>
               <select
                 id="title"
+                name="title"
+                value={signUpData.title}
+                onChange={handleChange}
                 className="w-full border border-gray-300 px-3 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               >
                 <option value="" disabled selected className="font-normal">
@@ -87,61 +136,74 @@ function SignUp({ setActiveTab }) {
             </div>
             <div className="relative">
               <label
-                htmlFor="firstName"
+                htmlFor="first_name"
                 className="block font-normal mb-1 text-sm"
               >
                 First Name
               </label>
               <input
-                id="firstName"
+                id="first_name"
                 type="text"
+                name="first_name"
+                value={signUpData.first_name}
+                onChange={handleChange}
                 placeholder="Enter your first name"
+
                 className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               />
               <FaUser className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
             </div>
             <div className="relative">
               <label
-                htmlFor="lastName"
+                htmlFor="last_name"
                 className="block font-normal mb-1 text-sm"
               >
                 Last Name
               </label>
               <FaUser className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
               <input
-                id="lastName"
+                id="last_name"
                 type="text"
+                name="last_name"
+                value={signUpData.last_name}
+                onChange={handleChange}
                 placeholder="Enter your last name"
                 className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               />
             </div>
             <div className="relative">
               <label
-                htmlFor="phoneNumber"
+                htmlFor="phone_no"
                 className="block font-normal mb-1 text-sm"
               >
                 Phone Number
               </label>
               <FaPhoneAlt className="absolute left-3 top-9  text-gray-400 pointer-events-none" />
               <input
-                id="phoneNumber"
+                id="phone_no"
                 type="number"
+                name="phone_no"
+                value={signUpData.phone_no}
+                onChange={handleChange}
                 placeholder="Enter your phone number"
                 className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               />
             </div>
             <div className="relative">
               <label
-                htmlFor="emailAddress"
+                htmlFor="email_id"
                 className="block font-normal mb-1 text-sm"
               >
                 Email Address
               </label>
               <FaEnvelope className="absolute left-3 top-[2.4rem]  text-gray-400 pointer-events-none" />
               <input
-                id="emailAddress"
+                id="email_id"
                 type="email"
                 placeholder="Enter your email"
+                name="email_id"
+                value={signUpData.email_id}
+                onChange={handleChange}
                 className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               />
             </div>
@@ -158,6 +220,9 @@ function SignUp({ setActiveTab }) {
                 id="password"
                 type={passwordVisible ? "text" : "password"}
                 placeholder="Create a password"
+                name="password"
+                value={signUpData.password}
+                onChange={handleChange}
                 className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               />
               <button
@@ -193,6 +258,9 @@ function SignUp({ setActiveTab }) {
                 id="confirmPassword"
                 type={confirmPasswordVisible ? "text" : "password"}
                 placeholder="Re-enter your password"
+                name="confirmPassword"
+                value={signUpData.confirmPassword}
+                onChange={handleChange}
                 className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
               />
               <button
@@ -240,8 +308,7 @@ function SignUp({ setActiveTab }) {
 
             <div className="flex justify-center items-center">
               <button
-                to="/login-signup"
-                type="button"
+                type="submit"
                 className="text-white w-full group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5   flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>

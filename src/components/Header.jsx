@@ -282,7 +282,7 @@ export default Header;
 // import Twitter from "../assets/twitter.png";
 // import Linkedin from "../assets/linkedin.png";
 // import RightArrow1 from "../assets/arrow-right1.png";
-// import { FaTimes } from "react-icons/fa";
+// import { FaArrowDown, FaTimes } from "react-icons/fa";
 // import ModalScheduleForm from "./ModalScheduleForm";
 
 // const Header = () => {
@@ -315,14 +315,15 @@ export default Header;
 //   return (
 //     <>
 //       <header className="banner text-white bg-gray-900 sticky top-0 z-40">
-//         <div className="flex flex-col sm:flex-row sm:gap-4 md:flex-row lg:flex-row xl:flex-nowrap justify-center sm:justify-start lg:justify-between items-center container mx-auto px-4 py-3 text-sm">
-//           {/* Toggle Button for Small Devices */}
-//           <div className="sm:hidden flex justify-between items-center w-full mb-3">
+//         <div className="flex flex-col sm:flex-col sm:gap-4 md:flex-col lg:flex-row xl:flex-nowrap justify-center sm:justify-start lg:justify-between items-center container mx-auto px-4 py-3 text-sm">
+//           <div className="sm:hidden md:hidden flex justify-between items-center w-full mb-3">
 //             <button onClick={toggleMenu} className="text-white text-xl">
 //               {isMenuOpen ? (
-//                 <FaTimes className="text-2xl" />
+//                 <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602]   w-6 h-6 rounded-full flex justify-center items-center">  <FaTimes className="text-xl" /> </span>
 //               ) : (
-//                 <img src={RightArrow1} alt="Arrow" className="w-[16px] sm:w-[20px] h-[16px] sm:h-[20px]" />
+//                 <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] absolute top-7 left-1/2  w-6 h-6 rounded-full flex justify-center items-center">
+//                   <FaArrowDown className="text-base text-white" />
+//                 </span>
 //               )}
 //             </button>
 //           </div>
@@ -357,33 +358,33 @@ export default Header;
 //               <img
 //                 src={Facebook}
 //                 alt="Facebook"
-//                 className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[24px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-500"
+//                 className="w-[28px] sm:w-[28px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[28px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-500"
 //               />
 //             </a>
 //             <a href="#" aria-label="Instagram" className="group">
 //               <img
 //                 src={Instagram}
 //                 alt="Instagram"
-//                 className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[24px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-pink-500"
+//                 className="w-[28px] sm:w-[28px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[28px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-pink-500"
 //               />
 //             </a>
 //             <a href="#" aria-label="Twitter" className="group">
 //               <img
 //                 src={Twitter}
 //                 alt="Twitter"
-//                 className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[24px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-400"
+//                 className="w-[28px] sm:w-[28px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[28px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-400"
 //               />
 //             </a>
 //             <a href="#" aria-label="LinkedIn" className="group">
 //               <img
 //                 src={Linkedin}
 //                 alt="LinkedIn"
-//                 className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[24px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-600"
+//                 className="w-[28px] sm:w-[28px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[28px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-600"
 //               />
 //             </a>
 //           </div>
 
-//           {/* Schedule Button */}
+
 //           <div className={`flex justify-center sm:justify-end w-full sm:w-auto ${isMenuOpen ? "block" : "hidden sm:flex"}`}>
 //             <button
 //               type="button"
