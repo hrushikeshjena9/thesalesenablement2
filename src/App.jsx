@@ -15,7 +15,6 @@ import CourseDetails from "./pages/CourseDetails";
 import BlogPage from "./pages/BlogPage";
 import BlogDetails from "./pages/BlogDetails";
 import ServiceDetails from "./pages/ServiceDetails";
-
 import ContactUsPage from "./pages/ContactUsPage";
 import ScrollToTopButton from "./components/ScroolTop";
 import SalesForceEvaluation from "./service-section/dedicated-pages/SalesForceEvolution";
@@ -24,7 +23,9 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import SampleRequestPage from "./pages/SampleRequestPage";
 import LoginSignUp from "./auth/LoginSignUp";
+import { ToastContainer, toast } from 'react-toastify';
 
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -103,6 +104,8 @@ function App() {
           </Routes>
           <ScrollToTopButton />
           <Footer />
+    <ToastContainer />
+
           {/* {isPopupOpen && <ScreenResolutionPopup />} */}
         </div>
       )}

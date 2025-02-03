@@ -392,3 +392,20 @@ body {
 .breadcrumb-item a:hover {
   text-decoration: underline;
 }
+
+.checkbox-custom:checked {
+  background: linear-gradient(to right, #DB0032, #FA6602);
+  border-color: #FA6602;
+}
+
+.checkbox-custom:checked::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 9px;
+  height: 16px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}

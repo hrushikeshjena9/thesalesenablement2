@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Links, NavLink } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import HoverLine from "../assets/hover-line.png";
 import { FaLock, FaEnvelope, FaTimes, FaEye, FaEyeSlash } from "react-icons/fa";
@@ -11,14 +11,14 @@ const DesktopMenu = ({
   services,
   dropdownOpen,
   toggleDropdown,
+  setActiveTab
 }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const togglePasswordVisibility = () => {
-    setPasswordVisible(!passwordVisible);
-  };
-  const [email, setEmail] = useState("");
+  const togglePasswordVisibility = () => { setPasswordVisible(!passwordVisible) };
   const [forgotEmail, setForgotEmail] = useState("");
   const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [loginData, setLoginData] = useState({ email_id: "", password: "" });
+  const [errors, setErrors] = useState({});
   const handleForgotPassword = () => {
     alert(`Password reset link sent to ${forgotEmail}`);
     setShowForgotPassword(false);
@@ -56,6 +56,74 @@ const DesktopMenu = ({
       document.body.style.overflow = "";
     };
   }, [isLogInOpen]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setLoginData({
+      ...loginData,
+      [name]: value,
+    })
+  }
+
+  const validateFields = () => {
+    let tempErrors = {};
+
+    if (!loginData.email_id) tempErrors.email_id = "Email is required.";
+    if (!loginData.password) tempErrors.password = "Password  is required.";
+
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateFields()) {
+      toast.error("Please fill all required fields", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+      return;
+    }
+
+    try {
+      const url = "http://192.168.1.7:8000/api/v1/login";
+      const { data: res } = await axios.post(url, loginData);
+      if (res.status) {
+        localStorage.setItem("token", res.data.token);
+        toast.success(res.message, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+        setTimeout(() => {
+          window.location = "/";
+        }, 3000);
+      }
+    } catch (error) {
+
+      toast.error("invalid credentials", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      })
+
+    }
+  };
+
   return (
     <>
       <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
@@ -179,7 +247,7 @@ const DesktopMenu = ({
                 className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
                 onClick={closeModal}
               >
-            
+
                 <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
                   <FaTimes />
                 </span>
@@ -193,34 +261,41 @@ const DesktopMenu = ({
                     TAKE THE NEXT STEP IN YOUR SALES JOURNEY
                   </p>
 
-                  <form className="space-y-4">
-                    <div className="relative">
+                  <form className="space-y-4" onSubmit={handleSubmit}>
+                    <div className="relative text-neutral-950">
                       <label
-                        htmlFor="email"
+                        htmlFor="email_id"
                         className="block text-black font-normal mb-1 text-sm"
                       >
                         Email Address
                       </label>
                       <FaEnvelope className="absolute left-3 top-10 text-gray-400" />
                       <input
-                        id="email"
+                        id="email_id"
                         type="email"
+                        name="email_id"
                         placeholder="Email Address"
+                        onChange={handleChange}
+                        value={loginData.email_id}
                         className="w-full border border-gray-300 pl-10 mt-1 p-2"
                       />
+                      {errors && <span className="text-red-500 text-xs mt-2">{errors.email_id}</span>}
                     </div>
-                    <div className="relative">
+                    <div className="relative text-neutral-950">
                       <label
                         htmlFor="password"
-                        className="block text-black font-normal mb-1 text-sm"
+                        className="block font-normal text-black mb-1 text-sm"
                       >
                         Password
                       </label>
                       <FaLock className="absolute left-3 top-10 text-gray-400" />
                       <input
                         id="password"
+                        name="password"
                         type={passwordVisible ? "text" : "password"}
                         placeholder="Password"
+                        onChange={handleChange}
+                        value={loginData.password}
                         className="w-full border border-gray-300 pl-10 pr-10 mt-1 p-2"
                       />
                       <button
@@ -230,23 +305,31 @@ const DesktopMenu = ({
                       >
                         {passwordVisible ? <FaEyeSlash /> : <FaEye />}
                       </button>
+                      {errors && <span className="text-red-500 text-xs mt-2">{errors.password}</span>}
+
                     </div>
                     <div className="flex justify-between text-black items-center">
-                      <label htmlFor="remember" className="flex items-center">
-                        <input id="remember" type="checkbox" className="mr-2" />
-                        Remember Me
+
+                      <label htmlFor="remember" className="flex gap-2  cursor-pointer items-center">
+                        <input
+                          id="remember"
+                          type="checkbox"
+                          className="checkbox-custom w-5 h-5 border-2 border-[#DB0032] rounded-sm hover:border-[#FA6602] appearance-none relative transition-all ease-in cursor-pointer"
+                        />
+                        <span className="text-sm">Remember Me</span>
                       </label>
+
                       <button
                         type="button"
                         onClick={() => setShowForgotPassword(true)}
-                        className="text-sm bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text underline cursor-pointer"
+                        className="text-sm text-[#DB0032] hover:text-[#FA6602] cursor-pointer"
                       >
                         Forgot Password?
                       </button>
                     </div>
                     <div className="flex justify-center items-center">
                       <button
-                        type="button"
+                        type="submit"
                         className="text-white w-full group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 flex items-center justify-center"
                       >
                         <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
@@ -264,17 +347,12 @@ const DesktopMenu = ({
 
                   <div className="flex justify-center mt-4">
                     <p className="text-sm text-gray-600 inline-block">
-                      <NavLink
-                        to="/sign-up"
-                        className={({ isActive }) =>
-                          `font-semibold bg-gradient-to-r text-sm from-[#DB0032] to-[#FA6602] 
-             text-transparent bg-clip-text 
-             transition-all 
-             ${isActive ? "scale-110" : ""}`
-                        }
+                      <Link
+                        to="/login-signup"
+                        className={`font-semibold text-sm text-[#DB0032] hover:text-[#FA6602] transition-all`}
                       >
                         Create An Account
-                      </NavLink>
+                      </Link>
                     </p>
                   </div>
 
@@ -284,7 +362,7 @@ const DesktopMenu = ({
                       By continuing, you agree to the
                     </span>
                     <Link to="/terms-and-conditions">
-                      <span className="text-sm font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text underline cursor-pointer">
+                      <span className="text-sm font-bold text-[#DB0032] hover:text-[#FA6602]  cursor-pointer">
                         Terms, Conditions and Privacy policy.
                       </span>
                     </Link>
@@ -347,7 +425,7 @@ const DesktopMenu = ({
                       <button
                         type="button"
                         onClick={() => setShowForgotPassword(false)}
-                        className="text-sm bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text underline cursor-pointer"
+                        className="text-sm text-[#DB0032] hover:text-[#FA6602] cursor-pointer"
                       >
                         Back to Login
                       </button>
