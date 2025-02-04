@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "../components/Navbar";
 import { FaLock, FaEnvelope, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
 import axios from "axios";
 import { toast, ToastContainer } from 'react-toastify'; // Ensure you've imported the toast library
-
+import { AuthContext } from "../context/AuthContext"
 function LogIn({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [forgotEmail, setForgotEmail] = useState("");
   const [loginData, setLoginData] = useState({ email_id: "", password: "" });
   const [errors, setErrors] = useState({});
-
+  const { login } = useContext(AuthContext)
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
@@ -63,6 +63,12 @@ function LogIn({ setActiveTab }) {
       const { data: res } = await axios.post(url, loginData);
       if (res.status) {
         localStorage.setItem("token", res.data.token);
+        const userData = {
+          first_name: res.data.first_name,
+        };
+        
+        login(userData); 
+   
         toast.success(res.message, {
           position: "top-right",
           autoClose: 3000,

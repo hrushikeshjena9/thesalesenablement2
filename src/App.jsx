@@ -26,6 +26,7 @@ import LoginSignUp from "./auth/LoginSignUp";
 import { ToastContainer, toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
+import { AuthProvider } from "./context/AuthContext";
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <BrowserRouter>
+
       {isLoading ? (
         <div
           style={{
@@ -67,6 +69,7 @@ function App() {
           className={`transition-opacity duration-1000 ${showContent ? "opacity-100" : "opacity-0"
             }`}
         >
+           <AuthProvider>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -105,7 +108,7 @@ function App() {
           <ScrollToTopButton />
           <Footer />
     <ToastContainer />
-
+    </AuthProvider>
           {/* {isPopupOpen && <ScreenResolutionPopup />} */}
         </div>
       )}
