@@ -51,8 +51,9 @@ const CourseSidebar = ({ setFilters }) => {
                   id={topic}
                   checked={topics[topic]}
                   onChange={handleTopicChange}
-                  className="mr-2 w-6 h-6  cursor-pointer border-2 hover:rounded-sm hover:border-[#DB0032] hover:ring-2 hover:ring-[#DB0032] focus:ring-2 focus:ring-[#DB0032] transition duration-200 ease-in-out"
+                  className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                 />
+               
                 <label
                   htmlFor={topic}
                   className="text-sm cursor-pointer md:text-[16px]"
@@ -76,7 +77,7 @@ const CourseSidebar = ({ setFilters }) => {
                   id={locationType}
                   checked={location[locationType]}
                   onChange={updateFilter(setLocation)}
-                  className="mr-2 w-6 h-6 cursor-pointer border-2 hover:rounded-sm hover:border-[#DB0032] hover:ring-2 hover:ring-[#DB0032] focus:ring-2 focus:ring-[#DB0032] transition duration-200 ease-in-out"
+                  className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                 />
                 <label
                   htmlFor={locationType}
@@ -92,7 +93,7 @@ const CourseSidebar = ({ setFilters }) => {
                 id="viewAll"
                 checked={location.viewAll}
                 onChange={updateFilter(setLocation)}
-                className="mr-2 w-6 h-6 cursor-pointer border-2 hover:rounded-sm hover:border-[#DB0032] hover:ring-2 hover:ring-[#DB0032] focus:ring-2 focus:ring-[#DB0032] transition duration-200 ease-in-out"
+                className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
               />
               <label
                 htmlFor="viewAll"
@@ -114,7 +115,7 @@ const CourseSidebar = ({ setFilters }) => {
                   id={audienceType}
                   checked={audience[audienceType]}
                   onChange={updateFilter(setAudience)}
-                  className="mr-2 w-6 h-6 cursor-pointer border-2 hover:rounded-sm hover:border-[#DB0032] hover:ring-2 hover:ring-[#DB0032] focus:ring-2 focus:ring-[#DB0032] transition duration-200 ease-in-out"
+                  className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                 />
                 <label
                   htmlFor={audienceType}
@@ -133,7 +134,7 @@ const CourseSidebar = ({ setFilters }) => {
                 id="viewAllAudience"
                 checked={audience.viewAll}
                 onChange={updateFilter(setAudience)}
-                className="mr-2 w-6 h-6 cursor-pointer border-2 hover:rounded-sm hover:border-[#DB0032] hover:ring-2 hover:ring-[#DB0032] focus:ring-2 focus:ring-[#DB0032] transition duration-200 ease-in-out"
+                className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
               />
               <label
                 htmlFor="viewAllAudience"

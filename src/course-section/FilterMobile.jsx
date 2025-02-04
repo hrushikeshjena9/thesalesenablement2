@@ -31,7 +31,7 @@ const FilterMobile = ({ setFilters }) => {
   return (
     <div>
       <button
-        className="md:hidden fixed bottom-24 right-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white px-4 py-2 rounded-lg shadow-md z-50"
+        className="md:hidden fixed bottom-24 right-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white px-4 py-2  shadow-md z-50"
         onClick={() => setIsOpen(true)}
       >
         Show Filters
@@ -48,21 +48,21 @@ const FilterMobile = ({ setFilters }) => {
         <div className="p-6 h-full flex flex-col">
 
           <button
-               className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
+            className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
             onClick={() => setIsOpen(false)}
-               >
-     
-     
-                 <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
-                   <FaTimes />
-                 </span>
-               </button>
-        
-   
+          >
+
+
+            <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
+              <FaTimes />
+            </span>
+          </button>
+
+
           <div className="flex flex-col w-full flex-1 overflow-y-auto">
             <div className="mb-6">
               <label className="block text-lg font-semibold mb-3">
-                Training Sessions
+                Topics
               </label>
               <div className="space-y-3">
                 {Object.keys(topics).map((topic) => (
@@ -72,7 +72,7 @@ const FilterMobile = ({ setFilters }) => {
                       id={topic}
                       checked={topics[topic]}
                       onChange={handleTopicChange}
-                      className="mr-2 w-5 h-5 cursor-pointer border-gray-300 rounded focus:ring-red-500"
+                      className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
                     <label htmlFor={topic} className="text-sm cursor-pointer">
                       {topic
@@ -89,14 +89,14 @@ const FilterMobile = ({ setFilters }) => {
                 {["onsite", "virtual", "view All"].map((locationType) => (
                   <div key={locationType} className="flex items-center">
                     <input
-                      type="radio"
+                      type="checkbox"
                       id={locationType}
                       name="location"
                       checked={location === locationType}
                       onChange={updateFilter(setLocation)}
-                      className="mr-2 w-5 h-5 cursor-pointer border-gray-300 rounded focus:ring-red-500"
+                      className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
-                    <label htmlFor={locationType} className="text-sm cursor-pointer">
+                    <label   id={locationType} htmlFor={locationType} className="text-sm cursor-pointer">
                       {locationType.charAt(0).toUpperCase() + locationType.slice(1)}
                     </label>
                   </div>
@@ -109,14 +109,14 @@ const FilterMobile = ({ setFilters }) => {
                 {["sales-leaders", "sales-teams", "view All"].map((audienceType) => (
                   <div key={audienceType} className="flex items-center">
                     <input
-                      type="radio"
+                      type="checkbox"
                       id={audienceType}
                       name="audience"
                       checked={audience === audienceType}
                       onChange={updateFilter(setAudience)}
-                      className="mr-2 w-5 h-5 cursor-pointer border-gray-300 rounded focus:ring-red-500"
+                      className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
-                    <label htmlFor={audienceType} className="text-sm cursor-pointer">
+                    <label  id={audienceType} htmlFor={audienceType} className="text-sm cursor-pointer">
                       {audienceType.replace("-", " ").replace(/\b\w/g, (match) => match.toUpperCase())}
                     </label>
                   </div>

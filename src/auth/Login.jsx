@@ -69,7 +69,6 @@ function LogIn({ setActiveTab }) {
         };
         
         login(userData); 
-   console.log(res)
         toast.success(res.message, {
           position: "top-right",
           autoClose: 3000,

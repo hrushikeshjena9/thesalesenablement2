@@ -114,7 +114,6 @@ function SignUp({ setActiveTab }) {
         draggable: true,
         theme: "light",
       });
-
     }
   };
 
@@ -143,7 +142,6 @@ function SignUp({ setActiveTab }) {
     "Amb",
     "Mx",
   ];
-
   return (
     <>
 
