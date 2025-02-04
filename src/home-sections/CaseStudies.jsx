@@ -1,8 +1,6 @@
-
-
 import React from "react";
 import CaseRightArrow from "../assets/caser-arrow-right.png";
-import SampleLogo from "../assets/logo.png"; // Replace with your actual logo path
+import SampleLogo from "../assets/logo.png";
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
@@ -14,7 +12,7 @@ const caseStudiesData = [
     description:
       "This case study highlights how we helped Innovate Company achieve remarkable growth in a competitive market.",
     className: "case1",
-    logo: SampleLogo, // Add the logo path here
+    logo: SampleLogo, 
   },
   {
     id: 2,

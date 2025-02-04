@@ -13,7 +13,6 @@ const FilterMobile = ({ setFilters }) => {
     communicationSkills: false,
   });
   const [isOpen, setIsOpen] = useState(false);
-
   const updateFilter = (setter) => (e) => {
     setter(e.target.id);
   };
@@ -27,7 +26,6 @@ const FilterMobile = ({ setFilters }) => {
     setFilters({ location, audience, topics });
     setIsOpen(false);
   };
-
   return (
     <div>
       <button
@@ -51,8 +49,6 @@ const FilterMobile = ({ setFilters }) => {
             className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
             onClick={() => setIsOpen(false)}
           >
-
-
             <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
               <FaTimes />
             </span>
@@ -96,7 +92,7 @@ const FilterMobile = ({ setFilters }) => {
                       onChange={updateFilter(setLocation)}
                       className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
-                    <label   id={locationType} htmlFor={locationType} className="text-sm cursor-pointer">
+                    <label id={locationType} htmlFor={locationType} className="text-sm cursor-pointer">
                       {locationType.charAt(0).toUpperCase() + locationType.slice(1)}
                     </label>
                   </div>
@@ -116,7 +112,7 @@ const FilterMobile = ({ setFilters }) => {
                       onChange={updateFilter(setAudience)}
                       className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
-                    <label  id={audienceType} htmlFor={audienceType} className="text-sm cursor-pointer">
+                    <label id={audienceType} htmlFor={audienceType} className="text-sm cursor-pointer">
                       {audienceType.replace("-", " ").replace(/\b\w/g, (match) => match.toUpperCase())}
                     </label>
                   </div>

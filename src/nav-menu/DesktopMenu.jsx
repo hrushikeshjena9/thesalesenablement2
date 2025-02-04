@@ -762,7 +762,7 @@ const DesktopMenu = ({
         ))}
       </ul>
 
-      <div className="bg-transparent">
+      <div className="bg-transparent hidden lg:block">
         <div className="text-lg">
           {user ? (
             <>
@@ -772,53 +772,6 @@ const DesktopMenu = ({
                   className="group cursor-pointer border-2 border-[#db2100] flex justify-center items-center h-10 w-10 text-center rounded-full"
                 >
                   <FaUser className="w-5 h-5" />
-
-                  {/* <div
-                    id="dropdownContainer"
-                    className="absolute top-full right-0 bg-white text-black px-6 py-8 border-2 rounded-md shadow-lg w-64 hidden group-hover:block sm:w-56 md:w-64 lg:w-64 xl:w-72"
-
-                  >
-                    <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#060B33] to-[#383F71] text-base sm:text-lg md:text-2xl">
-                      My Profile
-                    </h2>
-                    <hr className="my-4 border-[#060B33]" />
-
-                    <div className="space-y-4">
-                      <div className="flex items-center cursor-pointer space-x-2">
-                        <FaBook className="text-[#DB0032]  text-xl transition-colors duration-300" />
-                        <p className="text-lg font-medium text-[#DB0032]  transition-colors duration-300">
-                          My learning journey
-                        </p>
-                      </div>
-
-
-                      <div className="flex items-center cursor-pointer  space-x-2">
-                        <FaUserAlt className="text-[#DB0032]  text-xl transition-colors duration-300" />
-                        <p className="text-lg font-medium text-[#DB0032]  transition-colors duration-300">
-                          Personal details
-                        </p>
-                      </div>
-
-                      <div className="flex items-center cursor-pointer  space-x-2">
-                        <FaKey className="text-[#DB0032]  text-xl transition-colors duration-300" />
-                        <p className="text-lg font-medium text-[#DB0032]  transition-colors duration-300">
-                          Change password
-                        </p>
-                      </div>
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={logout}
-                      className="mt-6 text-white w-full group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px] sm:text-sm md:text-[14px] px-5 py-2.5 md:px-6 md:py-3 flex items-center justify-center"
-                    >
-                      <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
-                      <span className="relative text-white group-hover:text-white flex items-center">
-                        <FaSignOutAlt className="mr-2 text-lg" />
-                        Sign Out
-                      </span>
-                    </button>
-                  </div> */}
                   <div
                     id="dropdownContainer"
                     className="absolute z-20 top-full right-0 bg-gradient-to-r from-[#060B33] to-[#383F71] text-white px-6 py-8 border-2 border-[#383F71] rounded-md shadow-lg w-64 hidden group-hover:block sm:w-56 md:w-64 lg:w-64 xl:w-72"

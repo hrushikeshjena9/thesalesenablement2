@@ -15,16 +15,13 @@ const CourseSidebar = ({ setFilters }) => {
   const updateFilter = (setter) => (e) => {
     setter(e.target.id);
   };
-
   const handleTopicChange = (e) => {
     const { id, checked } = e.target;
     setTopics((prev) => ({ ...prev, [id]: checked }));
   };
-
   useEffect(() => {
     setFilters({ location, audience, topics });
   }, [location, audience, topics, setFilters]);
-
   return (
     <aside
       className={`w-full md:w-1/4 h-1/3 p-6 md:block ${
@@ -66,7 +63,6 @@ const CourseSidebar = ({ setFilters }) => {
             ))}
           </div>
         </div>
-
         <div className="mb-6">
           <label className="block text-lg font-semibold mb-3">Location</label>
           <div className="space-y-4">
@@ -104,7 +100,6 @@ const CourseSidebar = ({ setFilters }) => {
             </div>
           </div>
         </div>
-
         <div className="mb-6">
           <label className="block text-lg font-semibold mb-3">Audience</label>
           <div className="space-y-4">
