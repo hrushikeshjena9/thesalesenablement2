@@ -522,7 +522,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, Links, NavLink } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import HoverLine from "../assets/hover-line.png";
-import { FaLock, FaEnvelope, FaTimes, FaEye, FaEyeSlash, FaUser } from "react-icons/fa";
+import { FaLock, FaEnvelope, FaTimes, FaEye, FaEyeSlash, FaUser, FaSignOutAlt, FaBook, FaUserAlt, FaKey } from "react-icons/fa";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext";
@@ -534,7 +534,7 @@ const DesktopMenu = ({
   services,
   dropdownOpen,
   toggleDropdown,
-  setActiveTab
+
 }) => {
   const { user, logout } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -640,7 +640,9 @@ const DesktopMenu = ({
         // }, 3000);
       }
     } catch (error) {
-      toast.error("invalid credentials", {
+      console.error(error);
+      const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred";
+      toast.error(errorMessage, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -648,24 +650,18 @@ const DesktopMenu = ({
         pauseOnHover: true,
         draggable: true,
         theme: "light",
-      })
+      });
 
     }
   };
 
 
-  const [profileModalOpen, setProfileModalOpen] = useState(false)
-  const ProfileToggle = () => {
-    setProfileModalOpen((prev) => !prev)
-  }
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
 
-  const closeProfile = (e) => {
-    if (e.target.id === "modalOverlay") {
-      setProfileModalOpen(false);
-    }
+  const toggleDropdown1 = () => {
+    setDropdownVisible(!isDropdownVisible);
   };
 
-  
 
   return (
     <>
@@ -770,15 +766,107 @@ const DesktopMenu = ({
         <div className="text-lg">
           {user ? (
             <>
-              <div className="flex justify-between items-center gap-6">
-
+              <div className="flex justify-between items-center gap-6 relative flex-wrap">
                 <span>Welcome, {user.first_name}!</span>
                 <span
-                  className="hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] cursor-pointer border-2 border-[#db2100] flex justify-center items-center h-10 w-10 text-center rounded-full"
+                  className="group cursor-pointer border-2 border-[#db2100] flex justify-center items-center h-10 w-10 text-center rounded-full"
                 >
                   <FaUser className="w-5 h-5" />
+
+                  {/* <div
+                    id="dropdownContainer"
+                    className="absolute top-full right-0 bg-white text-black px-6 py-8 border-2 rounded-md shadow-lg w-64 hidden group-hover:block sm:w-56 md:w-64 lg:w-64 xl:w-72"
+
+                  >
+                    <h2 className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#060B33] to-[#383F71] text-base sm:text-lg md:text-2xl">
+                      My Profile
+                    </h2>
+                    <hr className="my-4 border-[#060B33]" />
+
+                    <div className="space-y-4">
+                      <div className="flex items-center cursor-pointer space-x-2">
+                        <FaBook className="text-[#DB0032]  text-xl transition-colors duration-300" />
+                        <p className="text-lg font-medium text-[#DB0032]  transition-colors duration-300">
+                          My learning journey
+                        </p>
+                      </div>
+
+
+                      <div className="flex items-center cursor-pointer  space-x-2">
+                        <FaUserAlt className="text-[#DB0032]  text-xl transition-colors duration-300" />
+                        <p className="text-lg font-medium text-[#DB0032]  transition-colors duration-300">
+                          Personal details
+                        </p>
+                      </div>
+
+                      <div className="flex items-center cursor-pointer  space-x-2">
+                        <FaKey className="text-[#DB0032]  text-xl transition-colors duration-300" />
+                        <p className="text-lg font-medium text-[#DB0032]  transition-colors duration-300">
+                          Change password
+                        </p>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={logout}
+                      className="mt-6 text-white w-full group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px] sm:text-sm md:text-[14px] px-5 py-2.5 md:px-6 md:py-3 flex items-center justify-center"
+                    >
+                      <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+                      <span className="relative text-white group-hover:text-white flex items-center">
+                        <FaSignOutAlt className="mr-2 text-lg" />
+                        Sign Out
+                      </span>
+                    </button>
+                  </div> */}
+                  <div
+                    id="dropdownContainer"
+                    className="absolute z-20 top-full right-0 bg-gradient-to-r from-[#060B33] to-[#383F71] text-white px-6 py-8 border-2 border-[#383F71] rounded-md shadow-lg w-64 hidden group-hover:block sm:w-56 md:w-64 lg:w-64 xl:w-72"
+                  >
+                    <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl mb-6 text-center text-white">
+                      My Profile
+                    </h2>
+                    <hr className="my-4 border-[#DB0032] border-2" />
+
+                    <div className="space-y-5">
+                      <div className="flex items-center cursor-pointer space-x-3 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white transition-all duration-300 rounded-md p-2">
+                        <FaBook className=" text-xl transition-colors duration-300" />
+                        <p className="text-lg font-medium transition-colors duration-300">
+                          My learning journey
+                        </p>
+                      </div>
+
+                      <div className="flex items-center cursor-pointer space-x-3 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white transition-all duration-300 rounded-md p-2">
+                        <FaUserAlt className=" text-xl transition-colors duration-300" />
+                        <p className="text-lg font-medium  transition-colors duration-300">
+                          Personal details
+                        </p>
+                      </div>
+
+                      <div className="flex items-center cursor-pointer space-x-3 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white transition-all duration-300 rounded-md p-2">
+                        <FaKey className=" text-xl  transition-colors duration-300" />
+                        <p className="text-lg font-medium  transition-colors duration-300">
+                          Change password
+                        </p>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={logout}
+                      className="mt-6 text-white w-full group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[14px] sm:text-sm md:text-[16px] px-5 py-3 flex items-center justify-center"
+                    >
+                      <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
+                      <span className="relative text-white group-hover:text-white flex items-center">
+                        <FaSignOutAlt className="mr-2 text-lg" />
+                        Sign Out
+                      </span>
+                    </button>
+                  </div>
+
                 </span>
               </div>
+
             </>
           ) : (
             <div className="hidden lg:flex gap-5">
@@ -803,31 +891,6 @@ const DesktopMenu = ({
         </div>
       </div>
 
-
-
-      {profileModalOpen && (
-        <div
-          id="modalOverlay"
-          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
-          onClick={closeProfile}
-        >
-          <div
-            className="bg-white text-black p-6 rounded-md shadow-lg"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2 className="text-xl font-bold"> My Profile</h2>
-            <p>My learning journey</p>
-            <p>Personal details</p>
-            <p>Change my password</p>
-            <button
-              className="mt-4 bg-red-500 text-white p-2 rounded"
-              onClick={logout}
-            >
-              SIGN OUT
-            </button>
-          </div>
-        </div>
-      )}
 
       {isLogInOpen && (
         <div

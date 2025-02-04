@@ -27,6 +27,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "./context/AuthContext";
+import ChangePassword from "./auth/ChangePwd";
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -77,6 +78,7 @@ function App() {
             <Route path="/services" element={<ServicePage />} />
             <Route path="/service/:id" element={<ServiceDetails />} />
             <Route path="/courses" element={<Course />} />
+            <Route path="/pwd" element={<ChangePassword />} />
             <Route
               path="/course-details/:courseId"
               element={<CourseDetails />}

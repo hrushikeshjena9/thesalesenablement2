@@ -63,12 +63,13 @@ function LogIn({ setActiveTab }) {
       const { data: res } = await axios.post(url, loginData);
       if (res.status) {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("user_id", res.data.user_id);
         const userData = {
           first_name: res.data.first_name,
         };
         
         login(userData); 
-   
+   console.log(res)
         toast.success(res.message, {
           position: "top-right",
           autoClose: 3000,
