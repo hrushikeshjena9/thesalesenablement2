@@ -10,14 +10,14 @@ import CandidateAssessmentImg from "../assets/candidate-assesment.png";
 import StartupSupportImg from "../assets/startup-support.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Services() {
   const [clickedCard, setClickedCard] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [showDescription, setShowDescription] = useState(false);
-
+  const [isHovered, setIsHovered] = useState(false);
   const cards = [
     {
       id: 1,
@@ -194,15 +194,13 @@ function Services() {
                 scale: inView2 ? 1 : 0,
                 opacity: inView2 ? 1 : 0,
               }}
-
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              <div className="relative hidden sm:block w-full sm:w-3/4 md:w-1/2">
+              {/* <div className="relative hidden sm:block w-full sm:w-3/4 md:w-1/2 ">
                 {currentCards.map((card, index) => {
                   let positionClass = "";
                   let transformOrigin = "";
                   let margin = "m-4";
-
                   if (index === 0) {
                     positionClass = "absolute bottom-0 right-1/2";
                     transformOrigin = "bottom right";
@@ -216,7 +214,6 @@ function Services() {
                     positionClass = "absolute bottom-0 left-1/2 ";
                     transformOrigin = "bottom center";
                   }
-
                   return (
                     <div
                       key={card.id}
@@ -232,6 +229,7 @@ function Services() {
                         height: clickedCard === card.id ? "290px" : "180px",
                         transition: "all 0.3s ease",
                         transformOrigin: transformOrigin,
+                        
                         transform: clickedCard === card.id ? "scale(1)" : "",
                       }}
                     >
@@ -264,6 +262,66 @@ function Services() {
                     </div>
                   );
                 })}
+              </div> */}
+
+              <div className="relative hidden sm:block w-full sm:w-3/4 md:w-1/2">
+                {currentCards.map((card, index) => {
+                  let positionClass = "";
+                  let transformOrigin = "";
+                  let margin = "m-4";
+
+                  if (index === 0) {
+                    positionClass = "absolute bottom-0 right-1/2";
+                    transformOrigin = "bottom right";
+                  } else if (index === 1) {
+                    positionClass = "absolute top-1/2 left-1/2";
+                    transformOrigin = "left center";
+                  } else if (index === 2) {
+                    positionClass = "absolute top-1/2 right-1/2";
+                    transformOrigin = "right center";
+                  } else if (index === 3) {
+                    positionClass = "absolute bottom-0 left-1/2";
+                    transformOrigin = "bottom center";
+                  }
+
+                  return (
+                    <div
+                      key={card.id}
+                      onClick={() => handleCardClick(card.id)}
+                      className={`transition-all cursor-pointer duration-500 transform 
+                        ${positionClass} ${margin} 
+                             ${clickedCard === card.id ? "scale-110 z-10" : ""} 
+                            hover:shadow-lg hover:opacity-90`}
+                      style={{
+                        backgroundImage: `url(${card.image})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        width: clickedCard === card.id ? "290px" : "180px",
+                        height: clickedCard === card.id ? "290px" : "180px",
+                        transition: "all 0.3s ease",
+                        transformOrigin: transformOrigin,
+                        transform: clickedCard === card.id ? "scale(1)" : "",
+                      }}
+                    >
+                      <div className="h-full flex flex-col justify-between bg-layer p-5 transition-all duration-300">
+                        <h3 className="text-[14px] uppercase font-bold">{card.title}</h3>
+
+                        <div className="flex justify-start items-center">
+                          {clickedCard === card.id && showDescription && (
+                            <p className="absolute text-sm leading-6 lg:leading-4 lg:text-[13px] xl:leading-6 xl:text-[16px] 2xl:leading-6 2xl:text-[16px] bold-text1 top-16 w-[90%]">
+                              {card.description}
+                            </p>
+                          )}
+                          {clickedCard === card.id ? (
+                            <img src={ServiceArrow} alt="Service Arrow" className="w-7 h-7" />
+                          ) : (
+                            <img src={PlusImg} alt="Plus Icon" className="w-7 h-7" />
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="sm:hidden">
@@ -287,11 +345,16 @@ function Services() {
                         <p className="absolute text-sm leading-6 lg:leading-4 lg:text-[13px] xl:leading-6 xl:text-[16px] 2xl:leading-6 2xl:text-[16px] bold-text1 top-16 w-[90%]">
                           {card.description}
                         </p>
+                      <Link to="/services">
+
                         <img
                           src={ServiceArrow}
                           alt="Service Arrow"
                           className="w-7 h-7"
                         />
+                      </Link>
+                      
+                      
                       </div>
                     </div>
                   ))}
