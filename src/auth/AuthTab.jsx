@@ -149,7 +149,7 @@ const AuthTab = ({ activeTab, setActiveTab }) => {
       </div>
 
       {/* Content Display based on activeTab */}
-      <div className="w-full mt-4 p-6 bg-white">
+      <div className="w-full mt-4 p-0 sm:p-6 bg-white">
         {activeTab === "Login" ? (
           <LogIn setActiveTab={setActiveTab} onLoginSuccess={handleLoginSuccess} />
         ) : activeTab === "Sign Up" ? (

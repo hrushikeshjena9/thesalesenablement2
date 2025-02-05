@@ -9,18 +9,13 @@ import {
   FaChevronDown,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
 import RightArrow1 from "../assets/arrow-right1.png";
 import axios from "axios"; // Add Axios import
 import { toast, ToastContainer } from "react-toastify";
-
 function SignUp({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-
-
-
-  const [signUpData, setSignUpData] = useState({
+const [signUpData, setSignUpData] = useState({
     title: "",
     first_name: "",
     last_name: "",
@@ -29,18 +24,13 @@ function SignUp({ setActiveTab }) {
     password: "",
     confirmPassword: ""
   })
-
-
-  const togglePasswordVisibility = () => {
+const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-
   const toggleConfirmPasswordVisibility = () => {
     setConfirmPasswordVisible(!confirmPasswordVisible);
   };
-
   const [errors, setErrors] = useState({});
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSignUpData({
@@ -48,15 +38,15 @@ function SignUp({ setActiveTab }) {
       [name]: value,
     })
   }
-
   const validateFields = () => {
     let tempErrors = {};
-
     if (!signUpData.title) tempErrors.title = "Title is required.";
     if (!signUpData.first_name) tempErrors.first_name = "First name is required.";
     if (!signUpData.last_name) tempErrors.last_name = "Last name is required.";
     if (!signUpData.phone_no) tempErrors.phone_no = "Phone Number is required.";
     if (!signUpData.email_id) tempErrors.email_id = "Email is required.";
+    if (!signUpData.checked) tempErrors.checked = "required.";
+
     if (!signUpData.password) {
       tempErrors.password = "Password is required.";
     }
@@ -65,11 +55,9 @@ function SignUp({ setActiveTab }) {
     } else if (signUpData.password !== signUpData.confirmPassword) {
       tempErrors.confirmPassword = "Passwords do not match.";
     }
-
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -85,8 +73,6 @@ function SignUp({ setActiveTab }) {
       });
       return;
     }
-
-
     try {
       const url = "http://192.168.1.7:8000/api/v1/register";
       const response = await axios.post(url, signUpData);
@@ -116,7 +102,6 @@ function SignUp({ setActiveTab }) {
       });
     }
   };
-
   const titles = [
     " AProf",
     "Adv",
@@ -144,10 +129,9 @@ function SignUp({ setActiveTab }) {
   ];
   return (
     <>
-
       <section className=" py-12 flex items-center justify-center ">
-        <div className="max-w-xl w-full bg-white p-6 md:p-8 lg:p-10  py-6  shadow-xl mx-4 md:mx-6 lg:mx-8">
-          <h2 className="text-3xl font-extrabold mb-4 text-center text-gray-800">
+        <div className="max-w-xl w-full bg-white p-4 md:p-8 lg:p-10  py-6  shadow-xl mx-4 md:mx-6 lg:mx-8">
+          <h2 className="sm:text-3xl text-2xl font-extrabold mb-4 text-center text-gray-800">
             Create Your Account
           </h2>
           <p className="text-gray-600 mb-6 text-sm text-center leading-relaxed">
@@ -291,6 +275,7 @@ function SignUp({ setActiveTab }) {
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
+                
                 className="absolute right-3 top-10 text-gray-400 hover:text-gray-600"
               >
                 {passwordVisible ? <FaEyeSlash /> : <FaEye />}
@@ -338,10 +323,11 @@ function SignUp({ setActiveTab }) {
 
 
             </div>
-            <div className="flex items-center space-x-2">
+            <div className="flex gap-2 items-center justify-between">
               <input
                 id="may-we-send"
                 type="checkbox"
+        
                 className="checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
               />
               <label
@@ -351,8 +337,10 @@ function SignUp({ setActiveTab }) {
                 May we send you marketing material via email and other
                 electronic channels?
               </label>
+
+              {errors.checked && <p className="text-red-500 text-xs">({errors.checked})</p>}
             </div>
-            <div className="flex items-center space-x-2 ">
+            <div className="flex gap-2 items-center ">
               <input
                 id="Terms and Conditions"
                 type="checkbox"
@@ -369,6 +357,8 @@ function SignUp({ setActiveTab }) {
                   </span>
               </Link>
                 </label>
+
+              {errors.checked && <p className="text-red-500 text-xs">({errors.checked})</p>}
             </div>
 
             <div className="flex justify-center items-center">
