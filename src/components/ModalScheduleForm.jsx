@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { Link } from "react-router-dom";
+import { MdOutlineDescription } from "react-icons/md";
 
 const ModalScheduleForm = () => {
   const [name, setName] = useState("");
@@ -76,7 +77,7 @@ const ModalScheduleForm = () => {
           <div className="relative mb-4">
             <FaPhoneAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
-              type="tel"
+              type="number"
               id="mobile"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
               value={mobile}
@@ -104,7 +105,7 @@ const ModalScheduleForm = () => {
           </div>
 
           <div className="relative mb-4">
-            <FaQuestionCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
+            <MdOutlineDescription className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <textarea
               id="consultationPurpose"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
@@ -146,20 +147,6 @@ const ModalScheduleForm = () => {
         </div>
 
         <div className="text-center mb-4">
-          {/* <Link
-            type="submit"
-            className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
-          >
-            <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
-            <span className="relative text-white group-hover:text-[#DB0032]  flex items-center">
-              Schedule a Consultation
-              <img
-                src={RightArrow1}
-                alt="Arrow Icon"
-                className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
-              />
-            </span>
-          </Link> */}
           <Link
             type="submit"
             className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"

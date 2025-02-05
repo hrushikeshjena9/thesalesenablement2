@@ -121,19 +121,19 @@ const WhyChooseUs = () => {
             ].map((item, index) => (
               <div className="flex items-start space-x-4" key={index}>
                 <div className=" flex justify-center ">
-                  <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center">
-                    <FaCheck className="text-white" />
+                  <span className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-8 h-8 sm:w-6 sm:h-6 rounded-full flex items-center justify-center">
+                    <FaCheck className="text-white w-4 h-4" />
                   </span>
                 </div>
 
                 <div className="flex items-start w-full gap-6">
                   <div className="w-2/5">
-                    <h5 className="font-bold text-[12px]   lg:text-[14px]  uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                    <h5 className="font-bold text-[12px]   lg:text-[14px]  uppercase mt-3  sm:mt-4 md:mt-5 lg:mt-1 xl:mt-1">
                       {item.title}
                     </h5>
                   </div>
                   <div className="w-full">
-                    <p className="text-[12px] sm:text-[16px]  mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
+                    <p className="text-[12px] sm:text-[16px]  mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-1">
                       {item.text}
                     </p>
                   </div>

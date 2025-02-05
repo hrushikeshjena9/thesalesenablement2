@@ -9,7 +9,8 @@ import {
 } from "react-icons/fa";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { Link } from "react-router-dom";
-
+import { Button } from "@headlessui/react";
+import { MdOutlineDescription } from "react-icons/md";
 const ScheduleForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -72,7 +73,7 @@ const ScheduleForm = () => {
           <div className="relative mb-4">
             <FaPhoneAlt className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
-              type="tel"
+              type="number"
               id="mobile"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
               value={mobile}
@@ -100,7 +101,7 @@ const ScheduleForm = () => {
           </div>
 
           <div className="relative mb-4">
-            <FaQuestionCircle className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
+            <MdOutlineDescription  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <textarea
               id="consultationPurpose"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
@@ -111,7 +112,7 @@ const ScheduleForm = () => {
             />
           </div>
 
-          <div className="relative mb-4">
+          <div className="relative mb-4 ">
             <FaRegCalendarCheck className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
               type="time"
@@ -142,9 +143,9 @@ const ScheduleForm = () => {
         </div>
 
         <div className="text-center">
-          <Link
+          <Button
             type="submit"
-            className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-xs md:text-sm px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
+            className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-xs md:text-sm px-5 py-2.5 w-full md:px-6 md:py-3 md:w-full lg:w-full xl:w-full 2xl:w-full flex items-center justify-center"
           >
             <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
             <span className="relative text-white group-hover:text-white flex items-center">
@@ -155,7 +156,7 @@ const ScheduleForm = () => {
                 className="w-6 h-6 ml-2 transition-transform duration-300 ease-in-out"
               />
             </span>
-          </Link>
+          </Button>
         </div>
       </form>
     </div>

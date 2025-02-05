@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import { MdOutlineDescription, MdOutlineSupportAgent } from "react-icons/md";
 
 function ContactContent() {
   return (
@@ -124,7 +125,7 @@ function ContactContent() {
 
             <div className="relative">
               <input
-                type="tel"
+                type="number"
                 id="phone"
                 required
                 placeholder="Phone Number*"
@@ -147,7 +148,7 @@ function ContactContent() {
                 <option value="support">Support</option>
                 <option value="general">General Inquiry</option>
               </select>
-              <FaQuestionCircle className="absolute left-3 top-3 text-gray-500" />
+              <MdOutlineSupportAgent className="absolute left-3 top-3 text-gray-500" />
             </div>
 
             <div className="relative">
@@ -158,7 +159,7 @@ function ContactContent() {
                 placeholder="Your Message*"
                 className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#060B33] transition duration-300 ease-in-out hover:border-[#060B33]"
               ></textarea>
-              <FaQuestionCircle className="absolute left-3 top-3 text-gray-500" />
+              <MdOutlineDescription className="absolute left-3 top-3 text-gray-500" />
             </div>
 
             <div className="text-center flex justify-center">
