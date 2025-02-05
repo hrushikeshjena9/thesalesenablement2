@@ -13,7 +13,22 @@ button {
 }
 .bg-layer {
   background-color: #060b33bd;
+  transition: background 0.5s ease-in-out;
 }
+
+/* Service Section  */
+.bg-layer1 {
+  background-color: #060b33bd;
+  transition: background 0.5s ease-in-out;
+}
+.bg-layer1:hover {
+  background: linear-gradient(to right, #db0032 0%, #fa6602 100%);
+}
+.bg-layer1:hover .bg-text {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
 .bg-gradient-2 {
   background: linear-gradient(to left, #db0032 0%, #fa6602 100%);
 }

@@ -11,7 +11,8 @@ import StartupSupportImg from "../assets/startup-support.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link, useNavigate } from "react-router-dom";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaPlus } from "react-icons/fa";
+import { LuPlus } from "react-icons/lu";
 
 function Services() {
   const [clickedCard, setClickedCard] = useState(null);
@@ -145,7 +146,6 @@ function Services() {
   const handleServices = () => {
     navigate("/services");
   };
-
   return (
     <section className="py-12 services-top-margin container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
@@ -233,7 +233,7 @@ function Services() {
                         transform: clickedCard === card.id ? "scale(1)" : "",
                       }}
                     >
-                      <div className="h-full flex flex-col justify-between bg-layer p-5 transition-all duration-300">
+                      <div className="h-full flex flex-col justify-between bg-layer1 p-5 transition-all duration-300">
                         <h3 className="text-[14px] uppercase font-bold">
                           {card.title}
                         </h3>
@@ -303,7 +303,7 @@ function Services() {
                         transform: clickedCard === card.id ? "scale(1)" : "",
                       }}
                     >
-                      <div className="h-full flex flex-col justify-between bg-layer p-5 transition-all duration-300">
+                      <div className="h-full flex flex-col justify-between bg-layer1 p-5 transition-all duration-300">
                         <h3 className="text-[14px] uppercase font-bold">{card.title}</h3>
 
                         <div className="flex justify-start items-center">
@@ -312,11 +312,17 @@ function Services() {
                               {card.description}
                             </p>
                           )}
-                          {clickedCard === card.id ? (
-                            <img src={ServiceArrow} alt="Service Arrow" className="w-7 h-7" />
-                          ) : (
-                            <img src={PlusImg} alt="Plus Icon" className="w-7 h-7" />
-                          )}
+                          <Link to="/services">
+                            {clickedCard === card.id ? (
+                              <span className="w-10 h-10 border-2 text-red-500 border-red-500 bg-text flex items-center justify-center">
+                                <FaArrowRight className="text-xl" />
+                              </span>
+                            ) : (
+                              <span className="w-10 h-10 text-red-500 bg-text flex items-center justify-center">
+                                <LuPlus className="text-lg w-7 h-7" />
+                              </span>
+                            )}
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -338,23 +344,23 @@ function Services() {
                         height: "290px",
                       }}
                     >
-                      <div className="h-full flex flex-col justify-between bg-layer p-5">
+                      <div className="h-full flex flex-col justify-between bg-layer1 p-5">
                         <h3 className="text-[14px] uppercase font-bold">
                           {card.title}
                         </h3>
                         <p className="absolute text-sm leading-6 lg:leading-4 lg:text-[13px] xl:leading-6 xl:text-[16px] 2xl:leading-6 2xl:text-[16px] bold-text1 top-16 w-[90%]">
                           {card.description}
                         </p>
-                      <Link to="/services">
+                        <Link to="/services">
 
-                        <img
-                          src={ServiceArrow}
-                          alt="Service Arrow"
-                          className="w-7 h-7"
-                        />
-                      </Link>
-                      
-                      
+                          <img
+                            src={ServiceArrow}
+                            alt="Service Arrow"
+                            className="w-7 h-7"
+                          />
+                        </Link>
+
+
                       </div>
                     </div>
                   ))}
