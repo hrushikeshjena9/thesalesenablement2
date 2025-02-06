@@ -534,7 +534,7 @@ const DesktopMenu = ({
   services,
   dropdownOpen,
   toggleDropdown,
-
+  setActiveTab
 }) => {
   const { user, logout } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -543,6 +543,8 @@ const DesktopMenu = ({
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [loginData, setLoginData] = useState({ email_id: "", password: "" });
   const [errors, setErrors] = useState({});
+    const [remember, setRemember] = useState(false);
+  
   const { login } = useContext(AuthContext)
   const handleForgotPassword = () => {
     alert(`Password reset link sent to ${forgotEmail}`);
@@ -588,7 +590,21 @@ const DesktopMenu = ({
       [name]: value,
     })
   }
-
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("email_id");
+    const savedPassword = localStorage.getItem("password");
+    const rememberMe = JSON.parse(localStorage.getItem("rememberMe") || "false"); // Ensure boolean value
+  
+    if (rememberMe) {
+      setLoginData({ email_id: savedEmail || "", password: savedPassword || "" });
+      setRemember(true);
+    }
+  }, []);
+  
+  const handleRememberMe = () => {
+    setRemember((prev) => !prev);
+  };
+  
   const validateFields = () => {
     let tempErrors = {};
 
@@ -616,14 +632,24 @@ const DesktopMenu = ({
     }
 
     try {
+      if (remember) {
+        localStorage.setItem("email_id", loginData.email_id);
+        localStorage.setItem("password", loginData.password);
+        localStorage.setItem("rememberMe", "true");
+      } else {
+        localStorage.removeItem("email_id");
+        localStorage.removeItem("password");
+        localStorage.removeItem("rememberMe");
+      }
+
       const url = "http://192.168.1.7:8000/api/v1/login";
       const { data: res } = await axios.post(url, loginData);
+
       if (res.status) {
         localStorage.setItem("token", res.data.token);
-        const userData = {
-          first_name: res.data.first_name,
-        };
+        localStorage.setItem("user_id", res.data.user_id);
 
+        const userData = { first_name: res.data.first_name };
         login(userData);
 
         toast.success(res.message, {
@@ -635,14 +661,13 @@ const DesktopMenu = ({
           draggable: true,
           theme: "light",
         });
-        // setTimeout(() => {
-        //   window.location = "/";
-        // }, 3000);
+
+        setTimeout(() => {
+          window.location.reload(); // Refreshes the current page
+        }, 3000);
       }
     } catch (error) {
-      console.error(error);
-      const errorMessage = error instanceof Error ? error.message : "An unexpected error occurred";
-      toast.error(errorMessage, {
+      toast.error("Invalid credentials", {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -651,17 +676,8 @@ const DesktopMenu = ({
         draggable: true,
         theme: "light",
       });
-
     }
   };
-
-
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
-
-  const toggleDropdown1 = () => {
-    setDropdownVisible(!isDropdownVisible);
-  };
-
 
   return (
     <>
@@ -784,23 +800,23 @@ const DesktopMenu = ({
                     <div className="space-y-5">
                       <div className="flex items-center cursor-pointer space-x-3 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white transition-all duration-300 rounded-md p-2">
                         <FaBook className=" text-xl transition-colors duration-300" />
-                        <p className="text-lg font-medium transition-colors duration-300">
+                        <Link to="/login-signup" className="text-lg font-medium transition-colors duration-300" onClick={() => setActiveTab("My Learning Journey")}  >
                           My learning journey
-                        </p>
+                        </Link>
                       </div>
 
                       <div className="flex items-center cursor-pointer space-x-3 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white transition-all duration-300 rounded-md p-2">
                         <FaUserAlt className=" text-xl transition-colors duration-300" />
-                        <p className="text-lg font-medium  transition-colors duration-300">
+                        <Link to="/login-signup" className="text-lg font-medium  transition-colors duration-300" onClick={() => setActiveTab("Personal Details")} >
                           Personal details
-                        </p>
+                        </Link>
                       </div>
 
                       <div className="flex items-center cursor-pointer space-x-3 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:text-white transition-all duration-300 rounded-md p-2">
                         <FaKey className=" text-xl  transition-colors duration-300" />
-                        <p className="text-lg font-medium  transition-colors duration-300">
+                        <Link to="/login-signup" className="text-lg font-medium  transition-colors duration-300" onClick={() => setActiveTab("Change Password")} >
                           Change password
-                        </p>
+                        </Link>
                       </div>
                     </div>
 
@@ -925,6 +941,8 @@ const DesktopMenu = ({
                       <input
                         id="remember"
                         type="checkbox"
+                        checked={remember}
+                        onChange={handleRememberMe}
                         className="checkbox-custom w-5 h-5 border-2 border-[#DB0032] rounded-sm hover:border-[#FA6602] appearance-none relative transition-all ease-in cursor-pointer"
                       />
                       <span className="text-sm">Remember Me</span>

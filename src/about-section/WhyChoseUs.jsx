@@ -8,7 +8,6 @@ import {
   FiClock,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
-
 const WhyChoseUs = () => {
   const features = [
     {

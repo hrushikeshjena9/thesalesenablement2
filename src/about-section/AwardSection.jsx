@@ -24,7 +24,6 @@ const AwardSection = () => {
       x: "-50%",
     },
   };
-
   return (
     <section className="py-6 about-class overflow-hidden container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start h-full">
@@ -43,7 +42,6 @@ const AwardSection = () => {
           >
             Awards & Recognition
           </h5>
-
           <p
             className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
             data-aos="fade-left"
@@ -58,7 +56,6 @@ const AwardSection = () => {
             clients.
           </p>
         </motion.div>
-
         <div className="flex justify-center md:justify-center">
           <motion.div
             className="relative overflow-hidden flex-1 h-full flex items-start justify-center"

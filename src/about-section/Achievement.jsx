@@ -63,7 +63,6 @@ const Achievement = () => {
             marked by innovation, excellence, and impactful results that have
             transformed sales teams worldwide.
           </p>
-
           <div className="flex justify-start">
             <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center transition-all duration-300 hover:bg-gradient-to-l hover:text-gray-200 w-full sm:w-auto">
               <div className="flex flex-wrap justify-center items-center space-x-3 sm:space-x-4">
@@ -76,9 +75,6 @@ const Achievement = () => {
           </div>
 
         </motion.div>
-
-
-
         <div className="flex justify-center md:justify-end">
           <div className="flex flex-col justify-start space-y-4">
             <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">

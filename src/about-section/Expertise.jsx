@@ -8,9 +8,6 @@ import expert1 from "../assets/expert1.png";
 import expert2 from "../assets/expert2.png";
 import expert3 from "../assets/expert3.png";
 import expert4 from "../assets/expert4.png";
-import SliderBtnLeft from "../assets/slider-btn-left.png";
-import SliderBtnRight from "../assets/slider-btn-right.png";
-
 const Expertise = () => {
   const sliderRef = useRef(null);
 
@@ -202,12 +199,8 @@ const Expertise = () => {
           </motion.div>
         ))}
       </Slider>
-
-
-
       <div className="container mx-auto px-4 mt-6 flex justify-center lg:justify-end">
         <div className="btn-hero-slider space-x-5 gap-3">
-
           <button
             onClick={goToPreviousSlide}
             className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-xl`}
@@ -216,7 +209,6 @@ const Expertise = () => {
           >
             <FaArrowLeft className="text-xl text-[#fff] group-hover:text-[#383F71]" />
           </button>
-
           <button
             onClick={goToNextSlide}
             className={` bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full z-50 text-white shadow-lg transition-opacity duration-300  hover:bg-gradient-to-r hover:from-[#FA6602] group hover:to-[#DB0032] hover:shadow-2xl`}

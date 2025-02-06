@@ -48,7 +48,6 @@ const VisionMission = () => {
             >
               Our Mission
             </h5>
-
             <p
               className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
@@ -60,7 +59,6 @@ const VisionMission = () => {
               sustainable practices, and adapt to any market challenges with
               confidence.
             </p>
-
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4">
               <Link
                 to="/contact-us"
@@ -76,7 +74,6 @@ const VisionMission = () => {
               </Link>
             </div>
           </motion.div>
-
           <div className="flex overflow-hidden justify-center md:justify-center">
             <motion.div
               className="relative overflow-hidden flex-1 h-full"
@@ -104,7 +101,6 @@ const VisionMission = () => {
           </div>
         </div>
       </section>
-
       <section className="overflow-hidden about-class container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start">
           <div className="flex justify-center md:justify-center">
@@ -134,7 +130,6 @@ const VisionMission = () => {
               </div>
             </motion.div>
           </div>
-
           <motion.div
             className="text-center md:text-left overflow-hidden flex flex-col justify-center h-full"
             initial="hidden"
@@ -154,7 +149,6 @@ const VisionMission = () => {
             >
               Our Vision
             </h5>
-
             <p
               className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
@@ -165,7 +159,6 @@ const VisionMission = () => {
               continuous innovation and strategic insights that empower
               businesses to thrive in an ever-evolving competitive landscape.
             </p>
-
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4">
               <Link
                 to="/contact-us"
@@ -183,7 +176,6 @@ const VisionMission = () => {
           </motion.div>
         </div>
       </section>
-
       <section className=" overflow-hidden container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <motion.div
@@ -226,7 +218,6 @@ const VisionMission = () => {
               </Link>
             </div>
           </motion.div>
-
           <motion.div
             className="relative"
             initial="hidden"
@@ -242,7 +233,6 @@ const VisionMission = () => {
                     alt="Vision"
                     className="w-[90%] md:w-[80%] z-2"
                   />
-             
                 <div className="flex flex-col justify-center px-4 text-white w-48 h-48 sm:w-60 sm:h-60 top-[-140px] sm:top-[-180px] lg:right-12 right-0 relative z-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-lg">
                   {[
                     "Integrity",

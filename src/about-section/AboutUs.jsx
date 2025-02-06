@@ -36,13 +36,9 @@ const AboutUs = () => {
           className="relative overflow-hidden"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.4 }}
           variants={leftVariants}
-          style={{
-            "@media (max-width: 768px)": {
-              variant: "mobile",
-            },
-          }}
+          
         >
           <div className="px-4  sm:px-12">
             <div className="absolute left-28  top-[-10] sm:top-0  sm:left-44 z-[-10]">

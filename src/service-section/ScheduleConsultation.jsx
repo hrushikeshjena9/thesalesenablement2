@@ -17,8 +17,6 @@ const ScheduleConsultation = () => {
           <p className="mt-4 text-sm text-left font-light sm:font-normal lg:text-lg text-white">
             Take the first step toward making informed decisions with expert guidance in a personalized consultation.
           </p>
-
-          {/* Description */}
           <div className="mt-4 lg:mt-8 text-left font-light sm:font-normal text-white text-sm  lg:text-lg">
             <p className="mb-4">
               Your business deserves the best advice, and our team is here to provide it. Whether you're looking for guidance on a specific challenge or strategic insights, our consultants are ready to help.

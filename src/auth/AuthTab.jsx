@@ -71,17 +71,17 @@ import ChangePassword from "./ChangePwd";
 
 const AuthTab = ({ activeTab, setActiveTab }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
 
-  // Check if token exists in localStorage on component mount
+  
   useEffect(() => {
-    const token = localStorage.getItem("authToken"); // Replace 'authToken' with your actual token key
+    const token = localStorage.getItem("token"); 
     if (token) {
-      setIsLoggedIn(true); // If token exists, set user as logged in
+      setIsLoggedIn(true);
     }
   }, []);
 
-  // Handle the scroll event to determine visibility
+  
   const handleScroll = () => {
     setIsVisible(window.scrollY > 400);
   };
@@ -100,17 +100,16 @@ const AuthTab = ({ activeTab, setActiveTab }) => {
   };
 
   const handleLoginSuccess = () => {
-    // Assuming login was successful, save token to localStorage and update login state
-    localStorage.setItem("authToken", "your-token-here"); // Replace with actual token
+    localStorage.setItem("authToken", "your-token-here");
     setIsLoggedIn(true);
   };
 
   return (
     <div className="py-12 flex flex-col items-center">
-      {/* Tab Buttons */}
+
       <div className={`w-full bg-white ${isVisible ? "fixed top-44 sm:top-24 md:top-28 lg:top-20 z-30 container px-4" : "relative"}`}>
         <div className="flex justify-center z-10 py-3 bg- overflow-hidden transition-all duration-500">
-          {/* Login and Sign Up buttons will be shown only if the user is not logged in */}
+         
           {!isLoggedIn && (
             <>
               <button onClick={() => setActiveTab("Login")} className={tabButtonClass("Login")}>
@@ -124,7 +123,7 @@ const AuthTab = ({ activeTab, setActiveTab }) => {
             </>
           )}
 
-          {/* These buttons are shown only after login */}
+        
           {isLoggedIn && (
             <>
               <button onClick={() => setActiveTab("My Learning Journey")} className={tabButtonClass("My Learning Journey")}>
@@ -148,7 +147,6 @@ const AuthTab = ({ activeTab, setActiveTab }) => {
         </div>
       </div>
 
-      {/* Content Display based on activeTab */}
       <div className="w-full mt-4 p-0 sm:p-6 bg-white">
         {activeTab === "Login" ? (
           <LogIn setActiveTab={setActiveTab} onLoginSuccess={handleLoginSuccess} />

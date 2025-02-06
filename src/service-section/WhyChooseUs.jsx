@@ -1,7 +1,6 @@
 import React from "react";
 import RightArrow1 from "../assets/arrow-right1.png";
 import Person2 from "../assets/person2.png";
-import ServicesImg from "../assets/services.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tick from "../assets/Tick.png";
