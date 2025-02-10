@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
-import axios from "axios"; // Add Axios import
+import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 function SignUp({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -45,8 +45,6 @@ const togglePasswordVisibility = () => {
     if (!signUpData.last_name) tempErrors.last_name = "Last name is required.";
     if (!signUpData.phone_no) tempErrors.phone_no = "Phone Number is required.";
     if (!signUpData.email_id) tempErrors.email_id = "Email is required.";
-    if (!signUpData.checked) tempErrors.checked = "required.";
-
     if (!signUpData.password) {
       tempErrors.password = "Password is required.";
     }
@@ -74,8 +72,9 @@ const togglePasswordVisibility = () => {
       return;
     }
     try {
-      const url = "http://192.168.1.7:8000/api/v1/register";
+      const url = "http://localhost:8000/api/v1/register";
       const response = await axios.post(url, signUpData);
+      console.log(response)
       if (response.data.status) {
         toast.success(response.data.message, {
           position: "top-right",
@@ -338,7 +337,7 @@ const togglePasswordVisibility = () => {
                 electronic channels?
               </label>
 
-              {errors.checked && <p className="text-red-500 text-xs">({errors.checked})</p>}
+         
             </div>
             <div className="flex gap-2 items-center ">
               <input
@@ -358,7 +357,6 @@ const togglePasswordVisibility = () => {
               </Link>
                 </label>
 
-              {errors.checked && <p className="text-red-500 text-xs">({errors.checked})</p>}
             </div>
 
             <div className="flex justify-center items-center">
