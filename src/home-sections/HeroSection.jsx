@@ -1,83 +1,51 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import heroImage from "../assets/Logo-banner.png";
-import heroImage1 from "../assets/banner2.jpg";
-import heroImage2 from "../assets/banner.png";
-import heroImage3 from "../assets/banner3.png";
-import SliderBtnLeft from "../assets/slider-btn-left.png";
-import SliderBtnRight from "../assets/slider-btn-right.png";
 import Navbar from "../components/Navbar";
 import RightArrow from "../assets/arrow-right.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { useInView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-function HeroSection() {
+function HeroSection({ heroData }) {
+  if (!heroData) return <p></p>;
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [heroImage3, heroImage1, heroImage2];
-  const slideContent = [
-    {
-      title: "HELPING SALESPEOPLE RELIABLY AND CONSISTENTLY EXCEED TARGETS.",
-      description:
-        "Our mission is to transform sales performance by equipping professionals with the skills, insights, and tools to excel. With tailored training and cutting-edge solutions, we help sales leaders and CEOs connect, close deals, and achieve exceptional results.",
-      buttonText1: "Contact Us Today",
-      buttonText2: "Discover Our Services",
-      path1: "/contact-us",
-      path2: "/services",
-    },
-    {
-      title: "EMPOWERING SALES LEADERS WITH THE TOOLS FOR SUCCESS AND GROWTH",
-      description:
-        "We provide the best training, coaching, and solutions to ensure that sales leaders and teams can overcome challenges and thrive in a competitive market, we help sales leaders and CEOs connect, close deals, and achieve exceptional results.",
-      buttonText1: "Start Your Journey",
-      buttonText2: "Contact Us More",
-      path1: "/courses",
-      path2: "/contact-us",
-    },
-    {
-      title: "OPTIMIZING SALES PROCESSES FOR MAXIMUM BETTER PERFORMANCE.",
-      description:
-        "Our services help streamline sales operations, boosting efficiency and enabling sales teams to close more deals with less effort. Transform your approach to sales today. we help sales leaders and CEOs connect, close deals, and achieve exceptional results.",
-      buttonText1: "Get in Touch",
-      buttonText2: "See How We Can Help",
-      path1: "/contact-us",
-      path2: "/services",
-    },
-  ];
-
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroData.length);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [heroData.length]);
 
   useEffect(() => {
-    const progressInterval = setInterval(() => {
-      setProgress((prevProgress) => {
-        if (prevProgress < 100) {
-          return prevProgress + 1;
-        } else {
-          return 0;
+    setProgress(0);
+  }, [currentSlide]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          return 100;
         }
+        return prev + 1;
       });
     }, 48);
 
-    return () => clearInterval(progressInterval);
+    return () => clearInterval(interval);
   }, [currentSlide]);
 
   const goToPreviousSlide = () => {
     setCurrentSlide(
-      (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
+      (prevSlide) => (prevSlide - 1 + heroData.length) % heroData.length
     );
   };
 
   const goToNextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % heroData.length);
   };
 
   const [isMobile, setIsMobile] = useState(false);
@@ -114,7 +82,6 @@ function HeroSection() {
   };
 
   const handleButtonClick = (path) => {
-    // Assuming you want to navigate using react-router
     window.location.href = path;
   };
 
@@ -123,12 +90,12 @@ function HeroSection() {
     <>
       <section>
         <div className="relative w-full h-full overflow-hidden">
-          <AnimatePresence>
+          <AnimatePresence >
             <motion.div
               key={currentSlide}
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: `url(${slides[currentSlide]})`,
+                backgroundImage: `url(${heroData[currentSlide].image})`,
               }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -143,9 +110,9 @@ function HeroSection() {
           <div className="relative bg-layer">
             <Navbar />
             <div className="text-white flex flex-col lg:flex-row items-center justify-between container mx-auto">
-              <AnimatePresence>
+              <AnimatePresence mode="wait">
                 <motion.div
-                  key={slides[currentSlide].id}
+                  key={heroData[currentSlide].id}
                   className="lg:w-1/2 text-center lg:text-left h-[500px] flex flex-col justify-center px-4 sm:px-6"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -166,7 +133,7 @@ function HeroSection() {
                       ease: "easeInOut",
                     }}
                   >
-                    {slideContent[currentSlide].title}
+                    {heroData[currentSlide].title}
                   </motion.h1>
 
                   <motion.p
@@ -180,7 +147,7 @@ function HeroSection() {
                       ease: "easeInOut",
                     }}
                   >
-                    {slideContent[currentSlide].description}
+                    {heroData[currentSlide].description}
                   </motion.p>
 
                   <motion.div
@@ -196,12 +163,12 @@ function HeroSection() {
                   >
                     <button
                       type="button"
-                      onClick={() => handleButtonClick(slideContent[currentSlide].path1)}
+                      onClick={() => handleButtonClick(heroData[currentSlide].btn_one_link)}
                       className="relative uppercase font-medium text-white transition-all duration-300 ease-in-out overflow-hidden group bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none shadow-lg flex items-center justify-center text-sm md:text-[14px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] px-5 py-2.5 w-full md:px-2 md:py-2 lg:px-3 lg:py-3 xl:px-6 xl:py-3 md:w-[250px] lg:w-auto xl:w-auto"
                     >
                       <span className="absolute inset-0 w-0 h-full bg-white transition-all duration-300 ease-in-out group-hover:w-full"></span>
                       <span className="relative text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] flex items-center">
-                        {slideContent[currentSlide].buttonText1}
+                        {heroData[currentSlide].btn_one_text}
                         <img
                           src={RightArrow1}
                           alt="Arrow Icon"
@@ -217,10 +184,10 @@ function HeroSection() {
 
                     <button
                       type="button"
-                      onClick={() => handleButtonClick(slideContent[currentSlide].path2)}
+                      onClick={() => handleButtonClick(heroData[currentSlide].btn_two_link)}
                       className="text-white transition-transform duration-500 ease-in-out transform hover:bg-white hover:text-[#DB0032] uppercase w-full justify-center xs:text-[12px] md:w-[250px] lg:w-auto xl:w-auto flex sm:justify-center md:justify-around xl:justify-around lg:justify-around items-center space-x-2 border-2 border-white md:text-[12px] lg:text-[12px] xl:text-[16px] 2xl:text-[18px] sm:text-sm px-3 py-2 md:px-6 md:py-2 xl:px-6 xl:py-2.5 2xl:py-3 lg:px-6 lg:py-2.5 sm:px-4 sm:py-2"
                     >
-                      {slideContent[currentSlide].buttonText2}
+                      {heroData[currentSlide].btn_two_text}
                       <img
                         src={RightArrow}
                         alt="arrow"

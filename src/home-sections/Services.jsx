@@ -14,11 +14,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight, FaPlus } from "react-icons/fa";
 import { LuPlus } from "react-icons/lu";
 
-function Services() {
+function Services({consultationData}) {
+  if (!consultationData) return <p></p>;
   const [clickedCard, setClickedCard] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [showDescription, setShowDescription] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
   const cards = [
     {
       id: 1,
@@ -142,10 +142,8 @@ function Services() {
     },
   };
 
-  const navigate = useNavigate();
-  const handleServices = () => {
-    navigate("/services");
-  };
+
+
   return (
     <section className="py-12 services-top-margin container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
@@ -157,29 +155,24 @@ function Services() {
           variants={leftVariants}
         >
           <h5 className="text-[16px] md:text-[24px] sm:text-[24px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
-            Consultation & Services
+   {consultationData.sub_title}
           </h5>
           <h2 className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7">
-            Explore Our Tailored Services for
-            <span className="ml-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
-              Sales Leaders & CEOs
-            </span>
+          <span
+              className="about-intro-title"
+              dangerouslySetInnerHTML={{ __html: consultationData.title }}
+            />
+
           </h2>
           <p className="text-sm sm:text-[14px] md:text-[16px] leading-[32px] text-justify mb-8">
-            We provide comprehensive sales enablement services designed to
-            empower your{" "}
-            <span className="font-bold">Sales Leaders And CEOs</span> to
-            optimize their performance. We work closely with businesses of all
-            sizes to tailor our solutions, ensuring that your team is equipped
-            with the right tools, training, and strategies to achieve
-            exceptional results. Here's how we make an impact:
+          {consultationData.description}
           </p>
           <button
-            onClick={handleServices}
+                      onClick={() => handleButtonClick(consultationData.btn_link)}
             type="button"
             className="text-[#000] transition-transform duration-500 ease-out transform  h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-xs sm:text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
           >
-            Learn More
+               {consultationData.btn_text} 
             <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
           </button>
         </motion.div>

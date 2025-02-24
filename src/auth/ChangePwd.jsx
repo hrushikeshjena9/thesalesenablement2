@@ -62,7 +62,7 @@ const ChangePassword = () => {
                 toast.error("User ID is missing. Please log in again.", { position: "top-right", autoClose: 3000 });
                 return;
             }
-            const url = "http://192.168.1.7:8000/api/v1/change-password";
+            const url = "https://sec.maastrixdemo.com/api/v1/change-password";
             const requestData = { ...formData, user_id }; 
             const { data: res } = await axios.post(url, requestData, {
                 headers: { Authorization: `Bearer ${token}` },
@@ -79,9 +79,9 @@ if (res.status) {
     };
 
     return (
-        <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-2 text-center">Change Password</h2>
-            <p className="text-gray-600 mb-4 text-sm text-center">Choose a strong password and don't reuse it.</p>
+        <div className="max-w-xl container mx-auto w-full bg-white p-4 md:p-8 lg:p-10  py-6  shadow-xl ">
+            <h2 className="lg:text-3xl text-2xl font-extrabold mb-4 text-center text-gray-800">Change Password</h2>
+            <p className="text-gray-600 mb-6 text-sm text-center leading-relaxed">Choose a strong password and don't reuse it.</p>
             <form className="space-y-4" onSubmit={handleSubmit}>
                 {['current_password', 'new_password', 'confirm_password'].map((field, index) => (
                     <div className="relative" key={index}>
@@ -95,7 +95,7 @@ if (res.status) {
                             value={formData[field]}
                             placeholder={field.replace('_', ' ').replace(/\b\w/g, c => c.toUpperCase())}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 pl-10 pr-10 mt-1 p-2"
+                            className="w-full border border-gray-300  px-10 py-3 text-sm focus:outline-none focus:ring-2 hover:ring-1 hover:ring-[#060B33] focus:ring-[#383F71] appearance-none"
                         />
                         {field !== 'current_password' && (
                             <button

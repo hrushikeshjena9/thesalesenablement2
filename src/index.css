@@ -85,6 +85,12 @@ body {
   width: 423px;
   height: 410px;
 }
+.about-intro-title span {
+  background: -webkit-linear-gradient(#db0032, #fa6602);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 2px;
+}
 
 .vission-bg {
   background-image: url("./assets/new/vissionbg.png");
@@ -252,13 +258,12 @@ body {
   .card {
     margin: 0;
   }
-
 }
 
 /* Base button styles */
 .border-btn2 {
   position: relative;
- font-weight: bold;
+  font-weight: bold;
   background-color: #fff;
   color: #333;
   border: 2px solid transparent;
@@ -395,12 +400,12 @@ body {
 }
 
 .checkbox-custom:checked {
-  background: linear-gradient(to right, #DB0032, #FA6602);
-  border-color: #FA6602;
+  background: linear-gradient(to right, #db0032, #fa6602);
+  border-color: #fa6602;
 }
 
 .checkbox-custom:checked::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 40%;
   left: 50%;

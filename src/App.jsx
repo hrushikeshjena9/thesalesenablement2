@@ -28,6 +28,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "./context/AuthContext";
 import ChangePassword from "./auth/ChangePwd";
+import AdminLogin from "./auth/AdminLogin";
+import ContextProviders from "./context/ContextProviders";
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -70,7 +72,7 @@ function App() {
           className={`transition-opacity duration-1000 ${showContent ? "opacity-100" : "opacity-0"
             }`}
         >
-           <AuthProvider>
+           <ContextProviders>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -79,8 +81,10 @@ function App() {
             <Route path="/service/:id" element={<ServiceDetails />} />
             <Route path="/courses" element={<Course />} />
             <Route path="/pwd" element={<ChangePassword />} />
+
+            <Route path="/adminLogin" element={<AdminLogin />} />
             <Route
-              path="/course-details/:courseId"
+              path="/courses-details/:id"
               element={<CourseDetails />}
             />
             <Route path="/blogs" element={<BlogPage />} />
@@ -110,7 +114,7 @@ function App() {
           <ScrollToTopButton />
           <Footer />
     <ToastContainer />
-    </AuthProvider>
+    </ContextProviders>
           {/* {isPopupOpen && <ScreenResolutionPopup />} */}
         </div>
       )}

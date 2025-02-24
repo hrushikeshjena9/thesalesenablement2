@@ -8,7 +8,7 @@ import VisionPng from "../assets/new/visionpng.png";
 import VisionPng2 from "../assets/new/visionpng2.png";
 import Values2 from "../assets/new/salesleader.png";
 
-const VisionMission = () => {
+const VisionMission = ({ missionData, visionData, valueData, error }) => {
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -29,6 +29,10 @@ const VisionMission = () => {
       x: "-50%",
     },
   };
+  if (!missionData) return <p></p>;
+  if (!visionData) return <p></p>;
+  if (!valueData) return <p></p>;
+  const valueKeyPointsArray = valueData.value_key_points.split(",");
   return (
     <>
       <section className=" py-6 overflow-hidden about-class container mx-auto px-4">
@@ -46,26 +50,21 @@ const VisionMission = () => {
               data-aos-delay="200"
               data-aos-offset="0"
             >
-              Our Mission
+              {missionData.mission_title}
             </h5>
             <p
               className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
             >
-              At The Sales Enablement Company, our mission is clear: to empower
-              sales teams to consistently achieve exceptional results. Through
-              innovative training programs, expert consulting, and advanced
-              tools, we help businesses enhance sales performance, foster
-              sustainable practices, and adapt to any market challenges with
-              confidence.
+              {missionData.mission_description}
             </p>
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4">
               <Link
-                to="/contact-us"
+                to={missionData.btn_link}
                 type="button"
                 className="text-[#000] transition-transform duration-500 ease-out transform flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000] border-[#000] border-btn2"
               >
-                Contact Us Today
+                {missionData.btn_text}
                 <img
                   src={RightArrow}
                   alt="Arrow"
@@ -90,7 +89,7 @@ const VisionMission = () => {
               <div className="flex justify-center align-middle">
                 <div className="mission-bg">
                   <img
-                    src={OurMission}
+                    src={missionData.mission_image}
                     alt="About"
                     className="sm:w-[345px] w-[268px] h-[268px] relative right-2 top-2  sm:h-[355px]  mx-auto"
                     data-aos="fade-right"
@@ -114,14 +113,14 @@ const VisionMission = () => {
               <div className="flex lg:justify-normal justify-center">
                 <div className="vission-bg">
                   <img
-                    src={VisionPng2}
+                    src={visionData.vision_image_one}
                     alt=""
                     className="w-[143px] h-[151px] border-8  rounded-lg  relative top-0 right-0  z-20"
                   />
 
                   <div className="rounded-br-lg">
                     <img
-                      src={VisionPng}
+                      src={visionData.vision_image_two}
                       alt=""
                       className="w-[252.44px] h-[315.09px]  left-20 rounded-br-[114.5px] border-4  shadow-lg z-10 relative bottom-12"
                     />
@@ -147,25 +146,21 @@ const VisionMission = () => {
               data-aos-delay="200"
               data-aos-offset="0"
             >
-              Our Vision
+              {visionData.vision_title}
             </h5>
             <p
               className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
             >
-              We aspire to create a world where every sales team is equipped
-              with the knowledge, tools, and support needed to excel. Our vision
-              is to be the driving force in sales enablement, delivering
-              continuous innovation and strategic insights that empower
-              businesses to thrive in an ever-evolving competitive landscape.
+              {visionData.vision_description}
             </p>
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4">
               <Link
-                to="/contact-us"
+                to={visionData.btn_link}
                 type="button"
                 className="text-[#000] transition-transform duration-500 ease-out transform flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000] border-[#000] border-btn2"
               >
-                Contact Us Today
+                {visionData.btn_text}
                 <img
                   src={RightArrow}
                   alt="Arrow"
@@ -191,25 +186,21 @@ const VisionMission = () => {
               data-aos-delay="200"
               data-aos-offset="0"
             >
-              Our Values
+              {valueData.values_title}
             </h5>
             <p
               className="text-sm sm:text-[16px] leading-[32px] text-justify mt-2 mb-6"
               data-aos="fade-left"
             >
-              At The Sales Enablement Company, we are guided by a set of core
-              values that drive our mission to empower sales teams and deliver
-              exceptional results. These values form the foundation of
-              everything we do and help us build long-term relationships with
-              our clients, partners, and team members.
+              {valueData.values_description}
             </p>
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4">
               <Link
-                to="/contact-us"
+                to={valueData.btn_link}
                 type="button"
                 className="text-[#000] transition-transform duration-500 ease-out transform flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000] border-[#000] border-btn2"
               >
-                Contact Us Today
+                {valueData.btn_text}
                 <img
                   src={RightArrow}
                   alt="Arrow"
@@ -227,23 +218,15 @@ const VisionMission = () => {
           >
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
-             
-                  <img
-                    src={Values2}
-                    alt="Vision"
-                    className="w-[90%] md:w-[80%] z-2"
-                  />
+
+                <img
+                  src={valueData.image}
+                  alt="Vision"
+                  className="w-[90%] md:w-[80%] z-2"
+                />
                 <div className="flex flex-col justify-center px-4 text-white w-48 h-48 sm:w-60 sm:h-60 top-[-140px] sm:top-[-180px] lg:right-12 right-0 relative z-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-lg">
-                  {[
-                    "Integrity",
-                    "Innovation",
-                    "Excellence",
-                    "Collaboration",
-                  ].map((value, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 sm:gap-5 mb-2 last:mb-0"
-                    >
+                  {valueKeyPointsArray.map((value, index) => (
+                    <div key={index} className="flex items-center gap-3 sm:gap-5 mb-2 last:mb-0">
                       <span className="bg-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center">
                         <FaCheck className="text-green-500" />
                       </span>

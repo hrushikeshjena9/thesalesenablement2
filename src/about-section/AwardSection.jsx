@@ -1,9 +1,9 @@
 import React from "react";
 import Awards from "../assets/Awards.png";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
-const AwardSection = () => {
+
+const AwardSection = ({awardData, error}) => {
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -24,6 +24,7 @@ const AwardSection = () => {
       x: "-50%",
     },
   };
+  if (!awardData) return <p></p>;
   return (
     <section className="py-6 about-class overflow-hidden container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-start h-full">
@@ -40,20 +41,13 @@ const AwardSection = () => {
             data-aos-delay="200"
             data-aos-offset="0"
           >
-            Awards & Recognition
+        {awardData.award_title}
           </h5>
           <p
             className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mt-2 mb-6"
             data-aos="fade-left"
           >
-            At The Sales Enablement Company, we take pride in the accolades
-            we’ve received, which reflect our unwavering commitment to
-            excellence in sales enablement. Our awards showcase the trust and
-            recognition we’ve earned from industry leaders for delivering
-            innovative solutions, transformative training, and seamless
-            technology integration. These achievements underscore our dedication
-            to empowering sales teams and driving measurable results for our
-            clients.
+        {awardData.award_description}
           </p>
         </motion.div>
         <div className="flex justify-center md:justify-center">
@@ -70,7 +64,7 @@ const AwardSection = () => {
             }}
           >
             <img
-              src={Awards}
+              src=  {awardData.image}
               alt="About"
               className="w-full sm:w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%] h-auto max-h-[40vh] sm:max-h-[300px] object-contain mx-auto"
               data-aos="fade-right"

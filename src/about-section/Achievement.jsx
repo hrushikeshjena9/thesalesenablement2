@@ -5,7 +5,13 @@ import { FaTrophy } from "react-icons/fa";
 import { FiTrendingUp } from "react-icons/fi";
 import Background from "../assets/AchieveBg.png";
 
-const Achievement = () => {
+
+const Achievement = ({ archivementData, error }) => {
+  const iconMap = {
+    "Global Recognition": <AiOutlineGlobal className="text-white text-2xl" />,
+    "Industry Awards": <FaTrophy className="text-white text-2xl" />,
+    "Empowering Sales Teams": <FiTrendingUp className="text-white text-2xl" />,
+  };
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -23,7 +29,10 @@ const Achievement = () => {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
-
+  if (!archivementData) return <p></p>
+    ;
+  const achievementPointsArray = archivementData.achievement_points.split(",");
+  console.log(achievementPointsArray)
   return (
     <section className="relative py-12 overflow-hidden container mx-auto px-4">
       <div className="absolute inset-0 flex justify-center items-center z-0">
@@ -46,22 +55,21 @@ const Achievement = () => {
           variants={leftVariants}
         >
           <h5 className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
-            Some Fun Fact
+            {archivementData.achievement_subtitle}
           </h5>
 
           <h2 className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7">
-            Our great{" "}
-            <span className="ml-2 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
-              Achievement
-            </span>
+
+
+            <span
+              className="about-intro-title"
+              dangerouslySetInnerHTML={{ __html: archivementData.archivement_title }}
+            />
+
           </h2>
 
           <p className="text-sm sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[16px] leading-[32px] text-justify mb-8">
-            At The Sales Enablement Company, we take immense pride in the
-            milestones we've achieved through our unwavering commitment to
-            empowering businesses and sales professionals. Our journey has been
-            marked by innovation, excellence, and impactful results that have
-            transformed sales teams worldwide.
+            {archivementData.archivement_description}
           </p>
           <div className="flex justify-start">
             <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] text-white py-4 px-6 rounded text-center transition-all duration-300 hover:bg-gradient-to-l hover:text-gray-200 w-full sm:w-auto">
@@ -77,28 +85,26 @@ const Achievement = () => {
         </motion.div>
         <div className="flex justify-center md:justify-end">
           <div className="flex flex-col justify-start space-y-4">
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
-              <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
-                <AiOutlineGlobal className="text-white text-2xl" />
-              </div>
-              <span className="text-[#000] font-medium">
-                Global Recognition
-              </span>
-            </div>
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
-              <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
-                <FaTrophy className="text-white text-2xl" />
-              </div>
-              <span className="text-[#000] font-medium">Industry Awards</span>
-            </div>
-            <div className="flex items-center bg-[#fff] border border-gray-200 p-4 rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]">
-              <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
-                <FiTrendingUp className="text-white text-2xl" />
-              </div>
-              <span className="text-[#000] font-medium">
-                Empowering Sales Teams
-              </span>
-            </div>
+    
+
+              {achievementPointsArray.map((point, index) => (
+                console.log("Rendering:", point),
+                <div
+                  key={index}
+                  className="flex items-center bg-[#fff] border  border-gray-200 p-4  rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]"
+                >
+
+                  <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
+                    {iconMap[point] || <FiTrendingUp className="text-white text-2xl" />}
+                  </div>
+                  <span className="text-[#000] text-center font-medium">{point}</span>
+
+                </div>
+              ))}
+
+
+
+
           </div>
         </div>
       </div>

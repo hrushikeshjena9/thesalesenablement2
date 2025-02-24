@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const CourseSidebar = ({ setFilters }) => {
+const CourseSidebar = ({ setFilters,  }) => {
   const [location, setLocation] = useState("");
   const [audience, setAudience] = useState("");
   const [topics, setTopics] = useState({

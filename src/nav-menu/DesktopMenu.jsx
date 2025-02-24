@@ -519,14 +519,15 @@
 
 
 import React, { useState, useEffect, useContext } from "react";
-import { Link, Links, NavLink } from "react-router-dom";
+import { Link,  NavLink } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 import HoverLine from "../assets/hover-line.png";
 import { FaLock, FaEnvelope, FaTimes, FaEye, FaEyeSlash, FaUser, FaSignOutAlt, FaBook, FaUserAlt, FaKey } from "react-icons/fa";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext";
-import axios from "axios";
+import axios from "../api/axios"
+import { useTab } from "../context/TabContext";
 
 const DesktopMenu = ({
   links,
@@ -534,7 +535,6 @@ const DesktopMenu = ({
   services,
   dropdownOpen,
   toggleDropdown,
-  setActiveTab
 }) => {
   const { user, logout } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -563,7 +563,6 @@ const DesktopMenu = ({
   };
 
   const [isLogInOpen, setIsLogInOpen] = useState(false);
-  const [userName, setUserName] = useState("");
   const handleLoginClick = () => {
     setIsLogInOpen(true);
   };
@@ -593,7 +592,7 @@ const DesktopMenu = ({
   useEffect(() => {
     const savedEmail = localStorage.getItem("email_id");
     const savedPassword = localStorage.getItem("password");
-    const rememberMe = JSON.parse(localStorage.getItem("rememberMe") || "false"); // Ensure boolean value
+    const rememberMe = JSON.parse(localStorage.getItem("rememberMe") || "false"); 
   
     if (rememberMe) {
       setLoginData({ email_id: savedEmail || "", password: savedPassword || "" });
@@ -642,7 +641,7 @@ const DesktopMenu = ({
         localStorage.removeItem("rememberMe");
       }
 
-      const url = "http://192.168.1.7:8000/api/v1/login";
+      const url = "login";
       const { data: res } = await axios.post(url, loginData);
 
       if (res.status) {
@@ -663,7 +662,7 @@ const DesktopMenu = ({
         });
 
         setTimeout(() => {
-          window.location.reload(); // Refreshes the current page
+          window.location.reload();
         }, 3000);
       }
     } catch (error) {
@@ -678,7 +677,7 @@ const DesktopMenu = ({
       });
     }
   };
-
+  const { setActiveTab } = useTab(); 
   return (
     <>
       <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">

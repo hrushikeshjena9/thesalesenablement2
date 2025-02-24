@@ -4,47 +4,18 @@ import RightArrow from "../assets/testi-right-arr.png";
 import LeftArrow from "../assets/testi-left-arr.png";
 import Play from "../assets/play.png";
 import Pause from "../assets/pause.png";
-import Women from "../assets/women.png";
-import Person2 from "../assets/person2.png";
-import Person3 from "../assets/person3.png";
-import Person4 from "../assets/person4.png";
 import { motion } from "framer-motion";
-function Testimonials() {
+function Testimonials({testimonialsData}) {
+  if (!testimonialsData) return <p></p>;
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isFading, setIsFading] = useState(false);
 
-  const testimonials = [
-    {
-      text: "What I love about their methodology especially if you are introducing your non sales people into sales it's the FRAMEWORK. I now easily have conversation about things am passionate about and discover what my clients pain points are..... The numbers don't lie.",
-      name: "Portia Motloung",
-      position: "Human Resource Director",
-      image: Women,
-    },
-    {
-      text: "The team is exceptional, their approach is very customer-centric, and they helped us streamline processes that significantly increased our productivity. The impact was immediate, and their attention to detail is unmatched.",
-      name: "Jane Doe",
-      position: "Chief Operations Officer",
-      image: Person2,
-    },
-    {
-      text: "Their expertise and hands-on support made all the difference. They understood our challenges deeply and delivered solutions that enhanced both efficiency and employee satisfaction. The impact was immediate, and their attention to detail is unmatched.",
-      name: "Emily Davis",
-      position: "HR Manager",
-      image: Person3,
-    },
-    {
-      text: "From start to finish, the collaboration was seamless. Their innovative strategies and customer-centric mindset drove incredible results for our organization. The impact was immediate, and their attention to detail is unmatched.",
-      name: "Sarah Johnson",
-      position: "Marketing Director",
-      image: Person4,
-    },
-  ];
-
   const nextTestimonial = () => {
     setIsFading(true);
     setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonialsData.length);
       setIsFading(false);
     }, 500);
   };
@@ -54,7 +25,7 @@ function Testimonials() {
     setTimeout(() => {
       setCurrentIndex(
         (prevIndex) =>
-          (prevIndex - 1 + testimonials.length) % testimonials.length
+          (prevIndex - 1 + testimonialsData.length) % testimonialsData.length
       );
       setIsFading(false);
     }, 500);
@@ -87,21 +58,21 @@ function Testimonials() {
               alt="Quote Icon"
               className="w-12 h-12 inline-block"
             />
-            <p className="mt-5 text-black text-sm md:text-xl sm:text-base">
-              {testimonials[currentIndex].text}
+            <p className="mt-5 text-black text-sm md:text-xl text-justify sm:text-base">
+              {testimonialsData[currentIndex].description}
             </p>
             <div className="flex flex-col items-center sm:flex-row mt-8">
               <img
-                src={testimonials[currentIndex].image}
+                src={testimonialsData[currentIndex].profile_img}
                 alt="Testimonial"
                 className="w-24 h-24 mb-4 sm:mb-0"
               />
               <div className="sm:ml-4 text-center sm:text-left">
                 <p className="font-bold text-lg md:text-xl">
-                  {testimonials[currentIndex].name}
+                  {testimonialsData[currentIndex].name}
                 </p>
                 <p className="text-black text-sm mt-2 md:text-lg">
-                  {testimonials[currentIndex].position}
+                  {testimonialsData[currentIndex].position}
                 </p>
               </div>
             </div>
@@ -131,7 +102,7 @@ function Testimonials() {
 
           <div className="flex-grow ml-4">
             <div className="flex h-3 bg-white">
-              {testimonials.map((_, index) => (
+              {testimonialsData.map((_, index) => (
                 <motion.div
                   key={index}
                   className={`flex-1 transition-all ${

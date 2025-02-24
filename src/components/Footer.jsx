@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import Logo from "../assets/logo.png";
+import React, { useState, useEffect,  } from "react";
+import { name } from '../../package.json';
 import RightArrow1 from "../assets/arrow-right1.png";
 import ArrowAdd from "../assets/Advance.png";
 import Location from "../assets/location.png";
@@ -11,7 +11,6 @@ import Twitter from "../assets/twitter.png";
 import Linkedin from "../assets/linkedin.png";
 import FooterLine from "../assets/line-footer.png";
 import { motion } from "framer-motion";
-import ScheduleForm from "../service-section/ScheduleForm";
 import ModalScheduleForm from "./ModalScheduleForm";
 import { FaTimes } from "react-icons/fa";
 
@@ -202,7 +201,7 @@ function Footer() {
           <p>
             Copyright © {currentYear} All Rights Reserved By{" "}
             <span className="uppercase font-bold">
-              The Sales Enablement Company
+            {name}
             </span>
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">

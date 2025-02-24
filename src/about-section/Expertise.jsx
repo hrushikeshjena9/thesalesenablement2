@@ -4,55 +4,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight, FaFacebookF, FaLinkedinIn, FaPlus, FaTwitter } from "react-icons/fa";
-import expert1 from "../assets/expert1.png";
-import expert2 from "../assets/expert2.png";
-import expert3 from "../assets/expert3.png";
-import expert4 from "../assets/expert4.png";
-const Expertise = () => {
+const Expertise = ({expertsData}) => {
   const sliderRef = useRef(null);
 
-  const experts = [
-    {
-      name: "Sarah Miller",
-      title: "Sales Enablement Specialist",
-      expertise:
-        "Content Creation, Sales Playbook Development, Onboarding Programs",
-      image: expert1,
-    },
-    {
-      name: "Jane Smith",
-      title: "Sales Trainer & Coach",
-      expertise: "Sales Coaching, Communication, Negotiation Skills",
-      image: expert2,
-    },
-    {
-      name: "Mark Williams",
-      title: "Corporate Sales Trainer",
-      expertise:
-        "Presentation Skills, Conflict Resolution, Sales Training Program Design",
-      image: expert3,
-    },
-    {
-      name: "Olivia Brown",
-      title: "Sales Enablement Specialist",
-      expertise: "Goal Setting, Performance Metrics, Motivation Techniques",
-      image: expert4,
-    },
-    {
-      name: "Katy Perry",
-      title: "Sales Enablement Specialist",
-      expertise:
-        "Content Creation, Sales Playbook Development, Onboarding Programs",
-      image: expert1,
-    },
-    {
-      name: "Kane Williamson",
-      title: "Corporate Sales Trainer",
-      expertise:
-        "Prevention Skills, Conflict Resolution, Sales Training Program Design",
-      image: expert3,
-    },
-  ];
+ 
 
   const settings = {
     dots: false,
@@ -121,6 +76,11 @@ const Expertise = () => {
     }
   };
 
+
+  if (!expertsData || !Array.isArray(expertsData) || expertsData.length === 0) {
+    return <p className="text-center text-white"></p>;
+  }
+
   return (
     <section className="py-6 container mx-auto px-6">
       <h5 className="text-[16px] sm:text-[24px] md:text-[22px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
@@ -140,9 +100,9 @@ const Expertise = () => {
       </p>
 
       <Slider ref={sliderRef} {...settings} className="px-4">
-        {experts.map((expert, index) => (
+        {expertsData.map((expert, index) => (
           <motion.div
-            key={index}
+          key={expert.id}
             className="bg-white shadow-lg rounded-lg overflow-hidden relative flex flex-col border-2 border-orange-500 hover:shadow-xl transition-shadow duration-300 min-h-[550px] lg:h-[550px] md:h-[500px] sm:h-[450px] mx-auto w-full sm:w-[85%] md:w-[75%] lg:w-[65%] max-w-[400px]"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,8 +111,8 @@ const Expertise = () => {
 
             <div className="h-1/2 border-b-2 border-orange-500">
               <img
-                src={expert.image}
-                alt={expert.name}
+                src={expert.profile}
+                alt={expert.profile}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -162,13 +122,13 @@ const Expertise = () => {
                 {expert.name}
               </h3>
               <p className="text-sm uppercase text-gray-500 group-hover:text-gray-200 mt-2">
-                {expert.title}
+                {expert.skill}
               </p>
               <p className="text-gray-600 text-sm mt-3 group-hover:text-gray-100">
-                <span className="font-bold group-hover:text-gray-200 text-black">
+                <span className="font-bold group-hover:text-gray-200 text-black uppercase">
                   Expertise:{" "}
                 </span>
-                {expert.expertise}
+                {expert.description}
               </p>
             </div>
             <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10">
@@ -177,22 +137,27 @@ const Expertise = () => {
                   className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-3 rounded-full cursor-pointer flex items-center justify-center shadow-md hover:shadow-lg transition-shadow duration-300"
                   style={{ width: "50px", height: "50px" }}
                 >
-                  <FaPlus className="text-white text-xl font-bold" />
+            <FaPlus className="text-white text-xl font-bold" />
+  
                 </div>
 
-                <div className="absolute bottom-full right-0 mb-2 hidden group-hover:flex flex-col space-y-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full">
-                  <FaFacebookF
+                <div className="absolute bottom-full right-0 mb-0.5 hidden group-hover:flex flex-col space-y-3 bg-gradient-to-r from-[#DB0032] to-[#FA6602] p-4 rounded-full">
+                <a href={expert.facebook_url}>  <FaFacebookF
                     className="text-white cursor-pointer hover:text-gray-600 text-xl transition-colors duration-300"
                     title="Facebook"
-                  />
-                  <FaLinkedinIn
+                  />               </a>   
+                     <a href={expert.linkedin_url}>
+                      
+                     <FaLinkedinIn
                     className="text-white cursor-pointer hover:text-gray-600 text-xl transition-colors duration-300"
                     title="LinkedIn"
                   />
+                      </a> 
+                      <a href={expert.twitter_url}>
                   <FaTwitter
                     className="text-white cursor-pointer hover:text-gray-600 text-xl transition-colors duration-300"
                     title="Twitter"
-                  />
+                  />     </a> 
                 </div>
               </div>
             </div>

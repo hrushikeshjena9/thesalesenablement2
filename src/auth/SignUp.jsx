@@ -10,12 +10,13 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
-import axios from "axios";
+import axios from "../api/axios"
+
 import { toast, ToastContainer } from "react-toastify";
 function SignUp({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-const [signUpData, setSignUpData] = useState({
+  const [signUpData, setSignUpData] = useState({
     title: "",
     first_name: "",
     last_name: "",
@@ -24,7 +25,7 @@ const [signUpData, setSignUpData] = useState({
     password: "",
     confirmPassword: ""
   })
-const togglePasswordVisibility = () => {
+  const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
   const toggleConfirmPasswordVisibility = () => {
@@ -72,7 +73,7 @@ const togglePasswordVisibility = () => {
       return;
     }
     try {
-      const url = "http://localhost:8000/api/v1/register";
+      const url = "register";
       const response = await axios.post(url, signUpData);
       console.log(response)
       if (response.data.status) {
@@ -274,7 +275,7 @@ const togglePasswordVisibility = () => {
               <button
                 type="button"
                 onClick={togglePasswordVisibility}
-                
+
                 className="absolute right-3 top-10 text-gray-400 hover:text-gray-600"
               >
                 {passwordVisible ? <FaEyeSlash /> : <FaEye />}
@@ -292,7 +293,6 @@ const togglePasswordVisibility = () => {
                 </div>
               </div>
             </div>
-
             <div className="relative">
               <label
                 htmlFor="confirmPassword"
@@ -319,14 +319,12 @@ const togglePasswordVisibility = () => {
                 {confirmPasswordVisible ? <FaEyeSlash /> : <FaEye />}
               </button>
               {errors.title && <p className="text-red-500 text-xs mt-2">{errors.confirmPassword}</p>}
-
-
             </div>
             <div className="flex gap-2 items-center">
               <input
                 id="may-we-send"
                 type="checkbox"
-        
+
                 className="checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
               />
               <label
@@ -336,8 +334,6 @@ const togglePasswordVisibility = () => {
                 May we send you marketing material via email and other
                 electronic channels?
               </label>
-
-         
             </div>
             <div className="flex gap-2 items-center ">
               <input
@@ -345,17 +341,17 @@ const togglePasswordVisibility = () => {
                 type="checkbox"
                 className="checkbox-custom hover:border-[#FA6602] w-5 h-5 border-2 border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
               />
-                <label
-                  htmlFor="Terms and Conditions"
-                  className="text-xs cursor-pointer text-gray-600"
-                >
-                  I agree to the{" "}
-              <Link to="/terms-and-conditions">
+              <label
+                htmlFor="Terms and Conditions"
+                className="text-xs cursor-pointer text-gray-600"
+              >
+                I agree to the{" "}
+                <Link to="/terms-and-conditions">
                   <span className="text-sm font-bold text-[#DB0032] hover:text-[#FA6602] cursor-pointer">
                     Terms, Conditions and Privacy policy.
                   </span>
-              </Link>
-                </label>
+                </Link>
+              </label>
 
             </div>
 

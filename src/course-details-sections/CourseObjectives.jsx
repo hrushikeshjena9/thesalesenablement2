@@ -3,13 +3,15 @@
 import React from 'react';
 import { FaLightbulb } from 'react-icons/fa';
 
-const CourseObjectives = () => {
-  const objectives = [
-    "Understand what is needed to have both the right skill set and mindset to sell.",
-    "Connect better with customers, overcome objections, and close sales confidently and effectively to achieve sales targets.",
-    "Learn and practice an effective sales questioning technique that will increase the likelihood of making a sale by better understanding customer needs while maintaining a great customer experience.",
-    "Understand the 4 major behavioral styles and personality types and how to sell to each buyer type.",
-  ];
+const CourseObjectives = ({course}) => {
+
+
+  const formattedObjectives = (course?.course_objective || "")
+    .split(',')
+    .map(item => item.trim())
+    .filter(item => item) // Remove empty items
+    .map((item, index) => <li key={index}>{item}</li>);
+
 
   return (
     <div className="bg-gradient-to-r from-[#FF6A00] to-[#DB0032] px-6 py-12 md:py-16 lg:py-20 flex justify-center">
@@ -19,17 +21,15 @@ const CourseObjectives = () => {
         </h2>
 
         <div className="bg-white px-6 py-8 md:px-10 md:py-12 rounded-lg shadow-2xl transform transition-all duration-300">
-          <ul className="space-y-4 md:space-y-6">
-            {objectives.map((objective, index) => (
+        <ul className="space-y-4 md:space-y-6">
+            {formattedObjectives.map((objective, index) => (
               <li
                 key={index}
                 className="flex items-center gap-4 text-sm md:text-lg text-gray-800 font-medium"
               >
-
                 <div className="flex items-center justify-center p-2 md:p-3 bg-[#FF6A00] text-white rounded-full w-8 h-8 md:w-12 md:h-12">
                   <FaLightbulb className="text-lg md:text-xl" />
                 </div>
-
 
                 <span className="flex-1 leading-relaxed font-light text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-justify">
                   {objective}
@@ -37,6 +37,7 @@ const CourseObjectives = () => {
               </li>
             ))}
           </ul>
+
 
 
 

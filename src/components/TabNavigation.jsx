@@ -5,7 +5,7 @@ import CourseObjectives from "../course-details-sections/CourseObjectives";
 import MoreInfoContent from "../course-details-sections/MoreInfoContent";
 import ContactDetails from "../course-details-sections/ContactDetails";
 
-const TabNavigation = () => {
+const TabNavigation = ({course}) => {
   const [activeTab, setActiveTab] = useState("modules");
 
   const tabButtonClass = (tab) =>
@@ -37,10 +37,10 @@ const TabNavigation = () => {
 
       {/* Content Section */}
       <div className="sm:py-6 py-4 border-t-2 border-[#DB0032]">
-        {activeTab === "modules" && <ModuleContent />}
-        {activeTab === "objectives" && <CourseObjectives />}
+        {activeTab === "modules" && <ModuleContent course={course} />}
+        {activeTab === "objectives" && <CourseObjectives course={course} />}
         {activeTab === "moreInfo" && <MoreInfoContent />}
-        {activeTab === "contact" && <ContactDetails />}
+        {activeTab === "contact" && <ContactDetails course={course}/>}
       </div>
     </div>
   );

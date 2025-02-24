@@ -146,8 +146,11 @@ import Linkedin from "../assets/linkedin.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import ModalScheduleForm from "./ModalScheduleForm";
 import { FaTimes } from "react-icons/fa";
+import { useApi } from "../context/ContactContextApi";
 
 const Header = () => {
+  const { contactData, loading } = useApi();
+  if (!contactData) return <p>No data available.</p>;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -179,7 +182,7 @@ const Header = () => {
                 className="w-[26px] h-[26px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-500"
               />
               <span className="xl:inline text-sm md:text-sm lg:text-sm sm:text-xs">
-                010 335-1182
+                {contactData.phone}
               </span>
             </span>
             <span className="flex items-center space-x-2 group cursor-pointer">
@@ -189,34 +192,35 @@ const Header = () => {
                 className="w-[26px] h-[26px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:p1 group-hover:ring-blue-500"
               />
               <span className="sm:inline text-sm lg:text-sm md:text-sm sm:text-xs">
-                info@theenablement.com
+
+                {contactData.email}
               </span>
             </span>
           </div>
 
           <div className="flex space-x-10 mb-3 sm:mb-0">
-            <a href="#" aria-label="Facebook" className="group">
+            <a href={contactData.facebook_url} aria-label="Facebook" className="group">
               <img
                 src={Facebook}
                 alt="Facebook"
                 className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[24px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-500"
               />
             </a>
-            <a href="#" aria-label="Instagram" className="group">
+            <a href={contactData.instagram_url} aria-label="Instagram" className="group">
               <img
                 src={Instagram}
                 alt="Instagram"
                 className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[24px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-pink-500"
               />
             </a>
-            <a href="#" aria-label="Twitter" className="group">
+            <a href={contactData.twitter_url} aria-label="Twitter" className="group">
               <img
                 src={Twitter}
                 alt="Twitter"
                 className="w-[28px] sm:w-[24px] lg:w-[34px] lg:h-[34px] md:w-[28px] md:h-[28px] xl:h-[40px] xl:w-[40px] h-[28px] sm:h-[24px] transition-all duration-300 ease-in-out group-hover:ring-2 group-hover:ring-blue-400"
               />
             </a>
-            <a href="#" aria-label="LinkedIn" className="group">
+            <a href={contactData.linkedin_url} aria-label="LinkedIn" className="group">
               <img
                 src={Linkedin}
                 alt="LinkedIn"

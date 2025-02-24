@@ -1,53 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { FaArrowDown, FaBook, FaCircle, FaUsers } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { FaArrowDown, FaBook } from "react-icons/fa";
 import TabNavigation from "../components/TabNavigation";
 import RelatedCourseSlider from "./RelatedCourseSlider";
-import RightArrow1 from "../assets/arrow-right1.png";
-import CourseImage from "../../src/assets/banner3.png";
-import PersonImg from "../../src/assets/person7.png";
 import PriceSideBar from "./PriceSideBar";
-const CourseDetailSection = () => {
-  const { courseId } = useParams();
-  const [course, setCourse] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [relatedCourses, setRelatedCourses] = useState([]);
-  useEffect(() => {
-    const fetchCourseDetails = async () => {
-      const courseData = {
-        id: courseId,
-        title: "Sales Management",
-        description:
-          "This two day extensive sales training program will guide participants towards uncovering the “Right” skill set and mind set a professional sales person should possess. From controlling conversations with customers to asking the right questions to uncover customer’s needs, this program will enhance sales staff’s ability to connect better with customers, overcome objections and close the sale confidently and effectively delivering commercial and sales objectives.",
-        price: "$220",
-        instructor: "Daniel Lee",
-        instructorImage: PersonImg,
-        starCategory: "4.8",
-        lessons: 16,
-        students: 350,
-        image: CourseImage,
-        location: "online",
-        topics: ["salesEnablement", "negotiation"],
-        brochureLink: "/brochure.pdf",
-      };
-
-      const relatedCoursesData = [
-        {
-          id: 1,
-          title: "Negotiation Skills",
-          image: "/src/assets/course1.png",
-        },
-      ];
-
-      setCourse(courseData);
-      setRelatedCourses(relatedCoursesData);
-    };
-
-    fetchCourseDetails();
-  }, [courseId]);
-
-  if (!course) return <div>Loading...</div>;
-
+const CourseDetailSection = ({course}) => {
   return (
     <section className=" w-full mx-auto py-6 px-3">
       <div className="w-full">
@@ -55,7 +10,7 @@ const CourseDetailSection = () => {
           <span className="font-semibold text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 mr-3  rounded-full flex justify-center items-center transition-all duration-300">
             <FaBook size={20} />
           </span>{" "}
-          {course.title}
+          {course.course_name}
         </h2>
       </div>
 
@@ -64,7 +19,7 @@ const CourseDetailSection = () => {
           Overview
         </h1>
         <p className="mt-2 text-sm sm:text-base md:text-lg text-justify font-light max-w-full sm:max-w-3xl md:max-w-5xl">
-          {course.description}
+          {course.course_desc}
         </p>
       </div>
 
@@ -79,10 +34,7 @@ const CourseDetailSection = () => {
               What makes this leadership programme unique?
             </h1>
             <p className="text-sm sm:text-base md:text-lg  text-justify font-light max-w-full sm:max-w-3xl md:max-w-4xl mb-8">
-              Participants utilise an Insights assessment tool for self-awareness, engage
-              in peer coaching, network with diverse professionals, generate practical
-              solutions for strategic challenges, and develop a personal leadership
-              development plan.
+              {course.course_objective}
             </p>
 
 
@@ -95,21 +47,13 @@ const CourseDetailSection = () => {
                 <h2 className="text-base md:text-lg lg:text-xl font-semibold text-left mb-4">
                   How will you benefit?
                 </h2>
-                <ul className="list-disc list-inside text-left font-light text-sm md:text-base space-y-2">
-                  <li>Begin a significantly enhanced journey of self-mastery.</li>
-                  <li>
-                    Build social intelligence, business acumen, and an understanding of
-                    critical business levers that will transform you into a highly effective
-                    decision-maker and negotiator.
-                  </li>
-                  <li>
-                    Develop your strategic and innovative thinking skills and appreciate the
-                    dynamic ecosystems in which you work.
-                  </li>
-                  <li>
-                    Position yourself to become an influential and impactful leader with a
-                    strong personal and professional brand.
-                  </li>
+                <ul className=" list-disc text-left font-light text-sm md:text-base space-y-2 px-5">
+                  {course.advantages &&
+                    course.advantages.map((advantage, index) => (
+                      <li className="" key={index}>{advantage}</li>
+                    ))}
+
+
                 </ul>
               </div>
 
@@ -118,16 +62,11 @@ const CourseDetailSection = () => {
                 <h2 className="text-base md:text-lg lg:text-xl font-semibold text-left mb-4">
                   Who should attend?
                 </h2>
-                <ul className="list-disc list-inside text-left font-light text-sm md:text-base space-y-2">
-                  <li>High-potential specialists seeking to move into management.</li>
-                  <li>
-                    Emerging leaders who have the potential for increased leadership
-                    responsibilities and nominal management experience.
-                  </li>
-                  <li>
-                    Middle managers seeking to acquire the skills to position themselves
-                    favorably for advancement and effect wider influence.
-                  </li>
+                <ul className="list-disc  text-left font-light text-sm md:text-base space-y-2">
+                 {course.attendees && 
+                 course.attendees.map((attendee, index) =>(
+                  <li className="" key={index}>{attendee}</li>
+                 ))}
                 </ul>
               </div>
             </div>
@@ -168,7 +107,7 @@ const CourseDetailSection = () => {
 
 
         <div className="w-full lg:w-1/3">
-          <PriceSideBar />
+          <PriceSideBar course={course}/>
         </div>
       </div>
 
@@ -203,7 +142,7 @@ const CourseDetailSection = () => {
         </p>
       </div>
       <div className="py-12">
-        <TabNavigation />
+        <TabNavigation course={course}/>
       </div>
 
       <h1 className="text-xl md:text-xl lg:text-2xl font-semibold text-gray-900">Related Courses</h1>

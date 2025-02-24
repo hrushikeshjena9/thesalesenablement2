@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaComments } from "react-icons/fa"; // Import the chat icon
 import HeroContact from "../contactus-sections/HeroContact";
 import ContactContent from "../contactus-sections/ContactContent";
 import Faq from "../contactus-sections/Faq";
-import FaqImg from "../assets/faq-img.png";
 import MapEmbed from "../contactus-sections/MapEmbed";
+import axios from "../api/axios";
 
 function ContactUsPage() {
+  const [data, setData] = useState({});
+  const [error, setError] = useState("")
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("/contact-us")
+        setData(res.data.data);
+      } catch (error) {
+        setError("Failed to fetch data")
+        console.log("Error fetching data:", error)
+      }
+    }
+    fetchData()
+  }, [])
+  const { contact_data, faq_data, location_data } = data || {}
+
+
   return (
     <div>
       <HeroContact />
@@ -54,38 +71,13 @@ function ContactUsPage() {
       </div>
 
       <div className="py-2">
-        <ContactContent />
+        <ContactContent contactData={data.contact_data} />
       </div>
 
       <div className="container mx-auto py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
-          <div className="w-full">
-            <Faq />
-          </div>
-
-          <div className="w-full flex justify-center relative">
-            <div
-              className="absolute right-10
-              w-[250px] h-[200px] top-14  sm:right-24
-              sm:w-[280px] sm:h-[310px] sm:top-14 2xl:top-10 2xl:right-28 xl:top-10 xl:right-20 md:top-14 md:right-36
-              md:w-[300px] md:h-[340px] lg:top-14 lg:right-14 bottom-10 
-              lg:w-[310px] lg:h-[330px] 2xl:w-[430px] 2xl:h-[500px] xl:w-[360px] xl:h-[400px] rounded-lg bg-cover bg-no-repeat 
-              faq-bg z-0"
-            ></div>
-
-            <img
-              src={FaqImg}
-              alt="FAQ Illustration"
-              className="xl:w-[380px] xl:h-[400px] lg:w-[320px] lg:h-[350px] md:w-[360px] md:h-[350px] sm:w-[340px] sm:h-[320px] w-[250px] h-[220px] 2xl:w-[430px] 2xl:h-[500px] 
-                relative z-10"
-            />
-          </div>
-        </div>
+        <Faq faqData={data.faq_data} />
       </div>
-
-
-
-      <MapEmbed />
+      <MapEmbed mapData={data.location_data}/>
     </div>
   );
 }

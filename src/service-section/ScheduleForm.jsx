@@ -8,30 +8,106 @@ import {
   FaRegCalendarCheck,
 } from "react-icons/fa";
 import RightArrow1 from "../assets/arrow-right1.png";
-import { Link } from "react-router-dom";
 import { Button } from "@headlessui/react";
 import { MdOutlineDescription } from "react-icons/md";
+import { toast } from "react-toastify";
+import axios from "axios";
 const ScheduleForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [consultationType, setConsultationType] = useState("");
-  const [consultationPurpose, setConsultationPurpose] = useState("");
-  const [preferredTime, setPreferredTime] = useState("");
-  const [mode, setMode] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Consultation scheduled with:", {
-      name,
-      email,
-      mobile,
-      consultationType,
-      consultationPurpose,
-      preferredTime,
-      mode,
-    });
-  };
+  const [consultationForm, setConsultationForm] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    type: "",
+    desc: "",
+    date_time: "",
+    mode: "",
+  })
+  const [errors, setErrors] = useState({})
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setConsultationForm({
+      ...consultationForm,
+      [name]: value
+    })
+  }
+
+  const validateFields = () => {
+    let tempErrors = {}
+    if (!consultationForm.name) tempErrors.name = "Name is required"
+    if (!consultationForm.email) tempErrors.email = "Email is required"
+    if (!consultationForm.mobile) tempErrors.mobile = "Mobile is required"
+    if (!consultationForm.type) tempErrors.type = "Consultation Type is required"
+    if (!consultationForm.date_time) tempErrors.date_time = "Date & Time is required"
+    if (!consultationForm.mode) tempErrors.mode = "Mode is required"
+    setErrors(tempErrors);
+    return Object.keys(tempErrors).length === 0
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!validateFields()) {
+      toast.error("Please fill all required fields", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+      return;
+    }
+    try {
+      const url = "http://localhost:8000/api/v1/consultations";
+      const formatDateTime = (date) => {
+        const d = new Date(date);
+        const year = d.getFullYear();
+        const month = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+        const hours = String(d.getHours()).padStart(2, "0");
+        const minutes = String(d.getMinutes()).padStart(2, "0");
+        const seconds = String(d.getSeconds()).padStart(2, "0");
+        return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+      };
+      const payload = {
+        name: consultationForm.name,
+        email: consultationForm.email,
+        mobile: consultationForm.mobile,
+        type: consultationForm.type,
+        desc: consultationForm.desc,
+        date_time: formatDateTime(consultationForm.date_time),
+        mode: consultationForm.mode,
+      };
+
+      const response = await axios.post(url, payload);
+      if (response.data.status) {
+        toast.success(response.data.message, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "light",
+        });
+      }
+
+      console.log(response.data);
+    } catch (error) {
+      toast.error(error.response?.data?.message || "An error occurred", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+      });
+
+      console.error("Error:", error);
+    }
+  }
 
   return (
     <div className="max-w-lg mx-auto bg-white p-8  shadow-md border border-gray-200">
@@ -50,8 +126,9 @@ const ScheduleForm = () => {
               type="text"
               id="name"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              name="name"
+              value={consultationForm.name}
+              onChange={handleChange}
               placeholder="Enter your full name"
               required
             />
@@ -63,8 +140,9 @@ const ScheduleForm = () => {
               type="email"
               id="email"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={consultationForm.email}
+              onChange={handleChange}
               placeholder="Enter your email address"
               required
             />
@@ -76,8 +154,9 @@ const ScheduleForm = () => {
               type="number"
               id="mobile"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
+              name="mobile"
+              value={consultationForm.mobile}
+              onChange={handleChange}
               placeholder="Enter your mobile number"
               required
             />
@@ -88,8 +167,9 @@ const ScheduleForm = () => {
             <select
               id="consultationType"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
-              value={consultationType}
-              onChange={(e) => setConsultationType(e.target.value)}
+              name="type"
+              value={consultationForm.type}
+              onChange={handleChange}
               required
             >
               <option value="">Select Consultation Type</option>
@@ -101,12 +181,13 @@ const ScheduleForm = () => {
           </div>
 
           <div className="relative mb-4">
-            <MdOutlineDescription  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
+            <MdOutlineDescription className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <textarea
               id="consultationPurpose"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
-              value={consultationPurpose}
-              onChange={(e) => setConsultationPurpose(e.target.value)}
+              name="desc"
+              value={consultationForm.desc}
+              onChange={handleChange}
               placeholder="Describe the purpose of your consultation"
               rows="4"
             />
@@ -115,11 +196,12 @@ const ScheduleForm = () => {
           <div className="relative mb-4 ">
             <FaRegCalendarCheck className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#060B33]" />
             <input
-              type="time"
-              id="preferredTime"
+              type="datetime-local"
+              id="dateTime"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
-              value={preferredTime}
-              onChange={(e) => setPreferredTime(e.target.value)}
+              name="date_time"
+              value={consultationForm.date_time}
+              onChange={handleChange}
               required
             />
           </div>
@@ -129,8 +211,9 @@ const ScheduleForm = () => {
             <select
               id="mode"
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
-              value={mode}
-              onChange={(e) => setMode(e.target.value)}
+              name="mode"
+              value={consultationForm.mode}
+              onChange={handleChange}
               required
             >
               <option value="">Select Mode</option>

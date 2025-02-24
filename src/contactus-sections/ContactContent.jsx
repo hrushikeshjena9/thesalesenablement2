@@ -11,26 +11,24 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 import { MdOutlineDescription, MdOutlineSupportAgent } from "react-icons/md";
 
-function ContactContent() {
+function ContactContent({ contactData }) {
+  if (!contactData) return <p></p>;
+
   return (
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
           <h1 className="text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-4xl font-bold uppercase  bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text  mb-6">
-            Get In Touch With Us
+            {contactData.title}
           </h1>
+          {contactData.description.split("\r\n\r\n").map((para, index) => (
+            <p key={index} className=" sm:text-left  sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
 
-          <p className=" sm:text-left  sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
-            We'd love to hear from you. Whether you're interested in our sales
-            enablement solutions, want to schedule a demo, or simply have a
-            question, we’re here to help! Feel free to reach out to us through
-            the contact form or any of the other methods below.
-          </p>
+              {para}
 
-          <p className=" sm:text-left  sm:leading-6 leading-5 lg:text-lg sm:font-normal text-justify text-sm md:text-base   mb-6">
-            Our team is committed to providing excellent customer support, and
-            we will get back to you as soon as possible.
-          </p>
+            </p>
+          ))}
+
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Location Card */}
@@ -40,7 +38,7 @@ function ContactContent() {
                 Visit Anytime
               </h3>
               <p className="text-base md:text-lg text-gray-600 mt-2 text-center">
-                28 Sturdee Road Rosebank, Johannesburg
+              {contactData.address}
               </p>
             </div>
 
@@ -50,7 +48,7 @@ function ContactContent() {
                 Have Any Questions?
               </h3>
               <p className="text-base md:text-lg text-gray-600 mt-2 text-center">
-                010 335-1182
+              {contactData.phone}
               </p>
             </div>
 
@@ -60,26 +58,30 @@ function ContactContent() {
                 Write Email
               </h3>
               <p className="text-base md:text-lg text-gray-600 mt-2 text-center break-all">
-                info@theenablement.com
+              {contactData.email}
+
               </p>
             </div>
           </div>
 
           <div className="flex justify-center mb-8 cursor-pointer space-x-6">
             <div className="transform hover:scale-110 transition duration-300 bg-blue-700 p-3 rounded-full text-white">
+            <a href={contactData.linkedin_url}>
+              
               <FaLinkedin size={24} />
+              </a>  
             </div>
 
             <div className="transform hover:scale-110 transition duration-300 bg-blue-400 p-3 rounded-full text-white">
-              <FaTwitter size={24} />
+            <a href={contactData.twitter_url}>  <FaTwitter size={24} /> </a>
             </div>
 
             <div className="transform hover:scale-110 transition duration-300 bg-blue-600 p-3 rounded-full text-white">
-              <FaFacebook size={24} />
+            <a href={contactData.facebook_url}>  <FaFacebook size={24} /> </a>
             </div>
 
             <div className="transform hover:scale-110 transition duration-300 bg-pink-500 p-3 rounded-full text-white">
-              <FaInstagram size={24} />
+            <a href={contactData.instagram_url}>  <FaInstagram size={24} /> </a>
             </div>
           </div>
         </div>

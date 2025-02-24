@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import { FaLock, FaEnvelope, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
-import axios from "axios";
+import axios from "../api/axios"
 import { toast, ToastContainer } from 'react-toastify'; // Ensure you've imported the toast library
 import { AuthContext } from "../context/AuthContext"
 function LogIn({ setActiveTab }) {
@@ -85,7 +85,7 @@ function LogIn({ setActiveTab }) {
         localStorage.removeItem("rememberMe");
       }
   
-      const url = "http://192.168.1.7:8000/api/v1/login";
+      const url = "login";
       const { data: res } = await axios.post(url, loginData);
   
       if (res.status) {
