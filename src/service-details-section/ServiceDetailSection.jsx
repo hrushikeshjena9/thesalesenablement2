@@ -5,9 +5,10 @@ import ServicesDetails1 from "../assets/new/services-details1.jpg";
 import ServicesDetails2 from "../assets/new/metic.jpg";
 import Recruiting from "../assets/recuirting.jpg";
 
-const ServiceDetailSection = ({serviceDetails}) => {
+const ServiceDetailSection = ({ serviceDetails }) => {
+  console.log(serviceDetails)
+  console.log(serviceDetails.feature_points)
   if (!serviceDetails) return <p></p>;
-
 
 
 
@@ -47,21 +48,21 @@ const ServiceDetailSection = ({serviceDetails}) => {
       </div>
       <div className="py-12 px-6 bg-gray-100">
         <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center">
-        {serviceDetails.feature_title}
+          {serviceDetails.feature_title}
         </h2>
         <p className="text-center text-sm md:text-base lg:text-lg mt-2">
-        {serviceDetails.feature_description}
+          {serviceDetails.feature_description}
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-        {Object.entries(serviceDetails.feature_points).map(([icon, feature], index) => (
+          {Object.entries(serviceDetails.feature_points).map(([icon, feature], index) => (
             <div
               key={index}
               className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300"
             >
               <div className="flex items-center space-x-4 mb-4">
-              <div className="text-white text-3xl">      
-    <span dangerouslySetInnerHTML={{ __html: icon }}></span>
-</div>
+                <div className="text-white text-3xl">
+                  <span dangerouslySetInnerHTML={{ __html: icon }}></span>
+                </div>
                 <h3 className="text-white text-sm xl:text-sm  font-bold">
                   {feature.title}
                 </h3>
@@ -77,7 +78,7 @@ const ServiceDetailSection = ({serviceDetails}) => {
           Our Sales Enablement Solutions in Action
         </h2>
         <div className="flex flex-col md:flex-col lg:flex-row xl:flex-row gap-8 max-w-6xl mx-auto">
-      <div className="flex-1  p-4 rounded-lg ">
+          <div className="flex-1  p-4 rounded-lg ">
             <img
               src={ServicesDetails1}
               alt="Sales Training"

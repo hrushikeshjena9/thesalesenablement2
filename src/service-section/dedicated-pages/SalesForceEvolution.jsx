@@ -175,7 +175,7 @@ useEffect (() =>{
               variants={leftVariants}
             >
               <img
-                src={data.main_image}
+                src={data.image}
                 alt={data.title}
                 className="w-full max-w-md lg:max-w-full"
               />
