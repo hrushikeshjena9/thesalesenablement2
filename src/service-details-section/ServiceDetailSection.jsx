@@ -4,11 +4,7 @@ import ServicesDetails2 from "../assets/new/metic.jpg";
 
 const ServiceDetailSection = ({ serviceDetails }) => {
   if (!serviceDetails) return <p></p>;
-
-
-
-
-  return (
+return (
     <section className="md:w-full w-full lg:w-3/4 mx-auto">
       <div className="md:w-full lg:w-full md:ml-8 xl:w-full xl:ml-0 mt-6 md:mt-0 mb-6 relative">
         <img
@@ -17,7 +13,6 @@ const ServiceDetailSection = ({ serviceDetails }) => {
           className="w-full h-auto rounded-lg shadow-lg"
         />
       </div>
-
       <div className="flex flex-col md:flex-row items-center mb-6">
         <div className="w-full xl:w-2/3">
           <h2 className="text-lg lg:text-3xl font-semibold text-gray-900 flex items-center">
