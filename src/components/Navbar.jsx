@@ -17,10 +17,8 @@ import {
   FaGraduationCap,
 } from "react-icons/fa";
 import { FaComments, FaStore, FaRoute } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 function Navbar() {
-  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const links = [
