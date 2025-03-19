@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { FaArrowDown } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
 import ServicesDetails1 from "../assets/new/services-details1.jpg";
 import ServicesDetails2 from "../assets/new/metic.jpg";
-import Recruiting from "../assets/recuirting.jpg";
 
 const ServiceDetailSection = ({ serviceDetails }) => {
   if (!serviceDetails) return <p></p>;
