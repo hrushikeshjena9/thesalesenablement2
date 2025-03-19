@@ -85,7 +85,7 @@ function LogIn({ setActiveTab }) {
         localStorage.removeItem("rememberMe");
       }
   
-      const url = "login";
+      const url = "/login";
       const { data: res } = await axios.post(url, loginData);
   
       if (res.status) {
@@ -108,7 +108,7 @@ function LogIn({ setActiveTab }) {
         setTimeout(() => {
           window.location.href = "/";
         }, 3000);
-      }
+      }                               
     } catch (error) {
       toast.error("Invalid credentials", {
         position: "top-right",

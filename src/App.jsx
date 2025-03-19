@@ -78,7 +78,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<About />} />
             <Route path="/services" element={<ServicePage />} />
-            <Route path="/service/:id" element={<ServiceDetails />} />
+            <Route path="/service/:slug" element={<ServiceDetails />} />
             <Route path="/courses" element={<Course />} />
             <Route path="/pwd" element={<ChangePassword />} />
 

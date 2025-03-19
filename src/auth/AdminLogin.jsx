@@ -5,7 +5,6 @@ import heroImage from "../assets/Logo-banner.png";
 function AdminAuth() {
     const [isSignup, setIsSignup] = useState(false);
     const [isForgotPassword, setIsForgotPassword] = useState(false);
-
     return (
         <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-[#060B33] to-[#383F71] px-4 overflow-hidden">
             <WaterBubbleBackground />
@@ -32,8 +31,6 @@ function AdminAuth() {
                                 ? "Admin Signup"
                                 : "Admin Login"}
                     </h2>
-
-
                     {isForgotPassword ? (
                         <div>
                             <label htmlFor="forgotEmail" className="block text-gray-600 text-sm mb-1">

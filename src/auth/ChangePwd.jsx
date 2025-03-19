@@ -62,7 +62,7 @@ const ChangePassword = () => {
                 toast.error("User ID is missing. Please log in again.", { position: "top-right", autoClose: 3000 });
                 return;
             }
-            const url = "https://sec.maastrixdemo.com/api/v1/change-password";
+            const url = "/change-password";
             const requestData = { ...formData, user_id }; 
             const { data: res } = await axios.post(url, requestData, {
                 headers: { Authorization: `Bearer ${token}` },

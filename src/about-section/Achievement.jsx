@@ -92,20 +92,12 @@ const Achievement = ({ archivementData, error }) => {
                 <div
                   key={index}
                   className="flex items-center bg-[#fff] border  border-gray-200 p-4  rounded space-x-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-[#db0032]"
-                >
-
-                  <div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
+                ><div className="bg-gradient-to-r from-[#db0032] to-[#fa6602] p-2 rounded-full">
                     {iconMap[point] || <FiTrendingUp className="text-white text-2xl" />}
                   </div>
                   <span className="text-[#000] text-center font-medium">{point}</span>
-
                 </div>
-              ))}
-
-
-
-
-          </div>
+              ))}</div>
         </div>
       </div>
     </section>

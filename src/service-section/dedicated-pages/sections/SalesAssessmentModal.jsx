@@ -3,7 +3,7 @@ import RightArrow1 from "../../../assets/arrow-right1.png";
 
 const SalesAssessmentModal = ({ toggleModal }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-75">
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-gray-800 bg-opacity-75">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 overflow-y-auto h-[80vh]">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold text-gray-800">

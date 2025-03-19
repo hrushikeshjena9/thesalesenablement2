@@ -8,7 +8,6 @@ import {
   FiClock,
 } from "react-icons/fi";
 import { motion } from "framer-motion";
-
 const iconMap = {
   1: <FiBook className="text-current" size={32} />,
   3: <FiUsers className="text-current" size={32} />,
@@ -17,13 +16,10 @@ const iconMap = {
   6: <FiClock className="text-current" size={32} />,
   7: <FiPhoneCall className="text-current" size={32} />,
 };
-
 const WhyChoseUs = ({ whyChoseUs }) => {
-
   if (!whyChoseUs || !Array.isArray(whyChoseUs) || whyChoseUs.length === 0) {
     return <p className="text-center text-white"></p>;
   }
-
   return (
     <motion.section
       className="py-12 bg-[linear-gradient(to_right,_#060b33_0%,_#383f71_100%)] text-white"

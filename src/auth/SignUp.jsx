@@ -11,7 +11,6 @@ import {
 import { Link } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
 import axios from "../api/axios"
-
 import { toast, ToastContainer } from "react-toastify";
 function SignUp({ setActiveTab }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -72,10 +71,10 @@ function SignUp({ setActiveTab }) {
       });
       return;
     }
+
     try {
-      const url = "register";
+      const url = "/register";
       const response = await axios.post(url, signUpData);
-      console.log(response)
       if (response.data.status) {
         toast.success(response.data.message, {
           position: "top-right",
@@ -86,12 +85,24 @@ function SignUp({ setActiveTab }) {
           draggable: true,
           theme: "light",
         });
-
       }
-      console.log(response);
     } catch (err) {
-
-      toast.error(err.message, {
+      let errorMessage = "Something went wrong!";
+    
+      try {
+        const parsedMessage = JSON.parse(err.response.data.message);
+    
+        if (typeof parsedMessage === "object" && parsedMessage !== null) {
+     
+          errorMessage = Object.keys(parsedMessage)
+            .map((key) => `${key}: ${parsedMessage[key].join(", ")}`)
+            .join("\n");
+        }
+      } catch (parseError) {
+        errorMessage = err.response?.data?.message || err.message;
+      }
+    
+      toast.err(errorMessage, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -101,6 +112,7 @@ function SignUp({ setActiveTab }) {
         theme: "light",
       });
     }
+    
   };
   const titles = [
     " AProf",

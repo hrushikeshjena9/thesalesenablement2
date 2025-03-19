@@ -10,6 +10,7 @@ import OurCourses from "../home-sections/OurCourses";
 import LatestBlogs from "../home-sections/LatestBlogs";
 import FooterSubscribe from "../home-sections/FooterSubscribe";
 import axios from "../api/axios";
+import { Helmet } from "react-helmet-async";
 function Home() {
   const [data, setData] = useState({});
   const [error, setError] = useState(""); 
@@ -28,11 +29,15 @@ function Home() {
     fetchData();
   }, []);
   const { consultation, page_banners, page_data, testimonials } = data || {};
-
+  if (!page_data) return <p></p>;
 
 
   return (
     <>
+        <Helmet>
+          <title>{page_data.meta_title}</title>
+            <meta name="description" content={page_data.meta_description} />
+          </Helmet>
       <div className="flex flex-col space-y-16">
         <HeroSection heroData={data.page_banners}/>
         <OurCourses />

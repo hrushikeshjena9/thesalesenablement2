@@ -6,7 +6,7 @@ function HeroSFE() {
   return (
     <>
       <section>
-        <div className="relative w-full h-full z-50 course-bg">
+        <div className="relative w-full h-full z-30 course-bg">
           <div className="relative   bg-layer">
             <Navbar />
 
