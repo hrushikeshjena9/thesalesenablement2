@@ -33,27 +33,22 @@ const DesktopMenu = ({
     alert(`Password reset link sent to ${forgotEmail}`);
     setShowForgotPassword(false);
   };
-
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = (menuName) => {
     toggleDropdown(menuName);
     setIsHovered(true);
   };
-
   const handleMouseLeave = () => {
     toggleDropdown("");
     setIsHovered(false);
   };
-
   const [isLogInOpen, setIsLogInOpen] = useState(false);
   const handleLoginClick = () => {
     setIsLogInOpen(true);
   };
-
   const closeModal = () => {
     setIsLogInOpen(false);
   };
-
   useEffect(() => {
     if (isLogInOpen) {
       document.body.style.overflow = "hidden";
