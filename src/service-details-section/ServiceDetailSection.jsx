@@ -6,8 +6,6 @@ import ServicesDetails2 from "../assets/new/metic.jpg";
 import Recruiting from "../assets/recuirting.jpg";
 
 const ServiceDetailSection = ({ serviceDetails }) => {
-  console.log(serviceDetails)
-  console.log(serviceDetails.feature_points)
   if (!serviceDetails) return <p></p>;
 
 
@@ -54,7 +52,7 @@ const ServiceDetailSection = ({ serviceDetails }) => {
           {serviceDetails.feature_description}
         </p>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-          {Object.entries(serviceDetails.feature_points).map(([icon, feature], index) => (
+          {Object.entries(serviceDetails?.feature_points || {}).map(([icon, feature], index) => (
             <div
               key={index}
               className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] shadow-md p-6 rounded-lg hover:scale-105 transform transition-all duration-300"

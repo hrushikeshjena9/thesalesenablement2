@@ -2,7 +2,6 @@ import React from "react";
 
 const BenefitsSection = ({ salesForceEvaluation }) => {
   console.log(salesForceEvaluation)
-  console.log(salesForceEvaluation.tool_features)
   if (!salesForceEvaluation) return <p></p>;
   return (
     <section className="py-16 px-6 banner">
