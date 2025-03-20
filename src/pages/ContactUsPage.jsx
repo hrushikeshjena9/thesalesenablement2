@@ -6,7 +6,7 @@ import ContactContent from "../contactus-sections/ContactContent";
 import Faq from "../contactus-sections/Faq";
 import MapEmbed from "../contactus-sections/MapEmbed";
 import axios from "../api/axios";
-
+import { Helmet } from "react-helmet-async";
 function ContactUsPage() {
   const [data, setData] = useState({});
   const [error, setError] = useState("")
@@ -24,9 +24,16 @@ function ContactUsPage() {
   }, [])
   const { contact_data, faq_data, location_data } = data || {}
 
+  if (!contact_data) return <p></p>;
 
   return (
     <div>
+
+            <Helmet>
+            <title>{contact_data.meta_title} </title>
+              <meta name="description" content={contact_data.meta_description} />
+              <meta name="keywords" content={contact_data.meta_keywords} />
+            </Helmet>
       <HeroContact />
 
       <div className="container mx-auto px-4 py-12">
