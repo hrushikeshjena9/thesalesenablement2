@@ -39,7 +39,7 @@ const TabNavigation = ({course}) => {
       <div className="sm:py-6 py-4 border-t-2 border-[#DB0032]">
         {activeTab === "modules" && <ModuleContent course={course} />}
         {activeTab === "objectives" && <CourseObjectives course={course} />}
-        {activeTab === "moreInfo" && <MoreInfoContent />}
+        {activeTab === "moreInfo" && <MoreInfoContent course={course}  />}
         {activeTab === "contact" && <ContactDetails course={course}/>}
       </div>
     </div>

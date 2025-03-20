@@ -6,17 +6,19 @@ FaBook,
 } from "react-icons/fa";
 import { BsBuildings } from "react-icons/bs";
 const CourseItem = ({ course }) => {
+  if (!course) return <p></p>;
+  
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   const handleCourseClick = () => {
     if (course && course.id) {
-      navigate(`/courses-details/${course.id}`);
+      navigate(`/courses-details/${course.slug}`);
     }
   };
 
   const [showFullDescription, setShowFullDescription] = useState(false);
-  const description = course.course_desc;
+  const description = course.description;
   const charLimit = 180;
   const shortDescription = description.slice(0, charLimit);
   const fullDescription = description;
@@ -54,11 +56,11 @@ const CourseItem = ({ course }) => {
                     ? "bg-white text-[#DB0032]"
                     : "text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
                   }`}
-              >
-           <FaBook/>
+                  dangerouslySetInnerHTML={{ __html: course.icon }} >
+      
               </span>
-              <span className="font-semibold">
-                {course.course_title}
+              <span className="font-normal">
+                {course.category}
               </span>
             </div>
             <div
@@ -68,13 +70,14 @@ const CourseItem = ({ course }) => {
                 }`}
             >
               <div className="flex items-center gap-2">
-                {course?.mode_id === 1 ? (
+              {course?.course_type}
+                {course?.course_type === "Offline" ? (
                   <>
-                    <BsBuildings  /> <span>Onsite</span>
+                    <BsBuildings  /> 
                   </>
-                ) : course?.mode_id === 2 ? (
+                ) : course?.course_type === "Virtual" ? (
                   <>
-                    <FaGlobeAmericas  /> <span>Virtual</span>
+                    <FaGlobeAmericas  />
                   </>
                 ) : (
                   <span>Unknown Mode</span>
@@ -85,7 +88,7 @@ const CourseItem = ({ course }) => {
           </div>
 
           <h3 className="text-sm md:text-base lg:text-lg font-semibold uppercase mb-2">
-            {course?.course_name}
+            {course?.name}
           </h3>
           <hr className="my-2" />
 

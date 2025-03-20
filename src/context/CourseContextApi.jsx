@@ -1,17 +1,18 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "../api/axios";
-const ServiceContextApi = createContext();
-export const ServiceApiProvider = ({ children }) => {
-    const [serviceData, setServiceData] = useState({});
+const CourseContextApi = createContext();
+export const CourseApiProvider = ({ children }) => {
+    const [courseData, setCourseData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get("/all-services");
+                const res = await axios.post("/courses");
                 const data = res.data.data;
-                setServiceData(data);
+             
+                setCourseData(data);
             } catch (error) {
                 setError("Failed to fetch data");
             } finally {
@@ -20,14 +21,15 @@ export const ServiceApiProvider = ({ children }) => {
         };
         fetchData();
     }, []);
+
+
     return (
-        <ServiceContextApi.Provider value={{ serviceData, loading, error }}>
+        <CourseContextApi.Provider value={{ courseData, loading, error }}>
             {children}
-        </ServiceContextApi.Provider>
+        </CourseContextApi.Provider>
     );
 };
-
 // Custom Hook to Use Contact API Context
-export const useApi = () => {
-    return useContext(ServiceContextApi);
+export const useApi2 = () => {
+    return useContext(CourseContextApi);
 };

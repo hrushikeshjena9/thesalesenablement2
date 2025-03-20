@@ -1,48 +1,68 @@
 
-import React, { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import CourseList from "../course-section/CourseList";
 import Sidebar from "../course-section/CourseSidebar";
 import HeroCourse from "../course-section/HeroCourse";
+import axios from "../api/axios";
 import FilterMobile from "../course-section/FilterMobile";
-
 
 function Course() {
   const [filters, setFilters] = useState({
     location: "viewAll",
     audience: "viewAll",
-    topics: {
-      sellingSkills: false,
-      frontlineRetail: false,
-      salesManagement: false,
-      territoryPlanning: false,
-      retailPlanning: false,
-      communicationSkills: false,
+      topics: {
+    
     },
   });
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal
+  const [data, setData] = useState({});
+  const [error, setError] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("/get-cat-filtre");
+        setData(res.data.data);
+        console.log("Filters after setting:", filters);
+      } catch (error) {
+        setError("Failed to fetch data");
+      }
+    };
+    fetchData();
+  }, []);
+
+
   const getFilteredDetails = (filters) => {
     const { topics } = filters;
     let details = [];
-
-
+  
+  
     const activeTopics = Object.keys(topics)
-      .filter((key) => topics[key])
-      .map(
-        (key) =>
-          key
-            .replace(/([A-Z])/g, " $1")
-            .replace(/^./, (match) => match.toUpperCase())
-      )
+      .filter((key) => {
+        console.log(`Checking key: ${key}, value: ${topics[key]}`);
+        return topics[key];
+      })
+      .map((key) => {
+        const formattedKey = key
+          .replace(/([A-Z])/g, " $1")
+          .replace(/^./, (match) => match.toUpperCase());
+  
+
+        return formattedKey;
+      })
       .join(" | ");
 
+  
     if (activeTopics) {
       details.push(`${activeTopics}`);
     }
 
-
+  
     return details.length > 0 ? details.join(" | ") : "All Courses";
   };
+
 
   return (
     <div>
@@ -61,28 +81,25 @@ function Course() {
           <p className="text-sm">
             Showing:{" "}
             <span className="text-sm ml-4">
-              {filters.location !== "viewAll" ||
-                Object.values(filters.topics).includes(true) ||
-                filters.audience !== "viewAll"
+              {/* {filters.location !== "viewAll" ||
+              Object.values(filters.topics).includes(true) ||
+              filters.audience !== "viewAll"
                 ? `${getFilteredDetails(filters)}`
-                : "All Courses"}
+                : "All Courses"} */}
+                 {getFilteredDetails(filters)}
             </span>
           </p>
-
-
         </div>
 
         <div className="flex flex-col md:flex-row py-12 gap-10">
-          <Sidebar setFilters={setFilters} filters={filters} />
-          <CourseList setFilters={setFilters} filters={filters} />
+          <Sidebar filterData={data} setFilters={setFilters} filters={filters} />
+          <CourseList filterData={data} filters={filters} setFilters={setFilters}  />
         </div>
       </div>
-
-      {/* Mobile Filter Modal */}
       <FilterMobile
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
-        filters={filters}
+        filterData={data}
         setFilters={setFilters}
       />
     </div>
@@ -90,3 +107,5 @@ function Course() {
 }
 
 export default Course;
+
+

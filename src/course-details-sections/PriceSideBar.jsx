@@ -30,7 +30,7 @@ const PriceSideBar = ({ course }) => {
         {/* Header */}
         <div className="flex flex-wrap justify-between items-center gap-4">
           <h2 className="text-base sm:text-lg font-semibold uppercase">
-   {course.course_name}
+   {course.name}
           </h2>
           <div
             className={`flex items-center justify-center gap-1 rounded-md px-2 py-2 transition-all duration-300 ${isHovered
@@ -39,17 +39,18 @@ const PriceSideBar = ({ course }) => {
               }`}
           >
             <div className="flex items-center gap-2">
-              {course?.mode_id === 1 ? (
-                <>
-                  <BsBuildings /> <span>Onsite</span>
-                </>
-              ) : course?.mode_id === 2 ? (
-                <>
-                  <FaGlobeAmericas /> <span>Virtual</span>
-                </>
-              ) : (
-                <span>Unknown Mode</span>
-              )}
+               {course?.course_type}
+                             {course?.course_type === "Offline" ? (
+                               <>
+                                 <BsBuildings  /> 
+                               </>
+                             ) : course?.course_type === "Virtual" ? (
+                               <>
+                                 <FaGlobeAmericas  />
+                               </>
+                             ) : (
+                               <span>Unknown Mode</span>
+                             )}
             </div>
           </div>
           </div>
@@ -78,12 +79,12 @@ const PriceSideBar = ({ course }) => {
             <div>
               <span className="text-xs font-light">Cost</span>
               <div className="text-sm sm:text-md bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text font-bold">
-                $ {course.course_fee}
+                $ {course.fees}
               </div>
             </div>
             <div>
               <span className="text-xs font-light">Venue</span>
-              <div className="text-sm text-gray-700">{course.venue_details}</div>
+              <div className="text-sm text-gray-700">{course.type_address}</div>
             </div>
           </div>
 

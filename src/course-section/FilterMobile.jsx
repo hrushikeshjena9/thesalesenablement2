@@ -1,27 +1,28 @@
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 
-const FilterMobile = ({ setFilters }) => {
+const FilterMobile = ({ filterData }) => {
+  if (!filterData) return <p></p>;
   const [location, setLocation] = useState("");
   const [audience, setAudience] = useState("");
   const [topics, setTopics] = useState({
-    sellingSkills: false,
-    frontlineRetail: false,
-    salesManagement: false,
-    territoryPlanning: false,
-    retailPlanning: false,
-    communicationSkills: false,
   });
   const [isOpen, setIsOpen] = useState(false);
   const updateFilter = (setter) => (e) => {
-    setter(e.target.id);
+    const { id, checked } = e.target;
+    setter((prev) => ({
+      ...prev,
+      [id]: checked,
+    }));
   };
-
   const handleTopicChange = (e) => {
     const { id, checked } = e.target;
-    setTopics((prev) => ({ ...prev, [id]: checked }));
+    const topicId = id.replace("topic-", "");
+    setTopics((prev) => ({
+      ...prev,
+      [topicId]: checked,
+    }));
   };
-
   const handleApplyFilters = () => {
     setFilters({ location, audience, topics });
     setIsOpen(false);
@@ -61,19 +62,20 @@ const FilterMobile = ({ setFilters }) => {
                 Topics
               </label>
               <div className="space-y-3">
-                {Object.keys(topics).map((topic) => (
-                  <div key={topic} className="flex items-center">
+                {filterData?.topics?.map((topic) => (
+                  <div key={topic.id} className="flex items-center">
                     <input
                       type="checkbox"
-                      id={topic}
-                      checked={topics[topic]}
+                      id={`topic-${topic.id}`}
+                      checked={topics[topic.id] || false}
                       onChange={handleTopicChange}
                       className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
-                    <label htmlFor={topic} className="text-sm cursor-pointer">
-                      {topic
-                        .replace(/([A-Z])/g, " $1")
-                        .replace(/^./, (match) => match.toUpperCase())}
+                    <label
+                      htmlFor={`topic-${topic.id}`}
+                      className="text-sm cursor-pointer md:text-[16px]"
+                    >
+                      {topic.name}
                     </label>
                   </div>
                 ))}
@@ -82,41 +84,76 @@ const FilterMobile = ({ setFilters }) => {
             <div className="mb-6">
               <label className="block text-lg font-semibold mb-3">Location</label>
               <div className="space-y-3">
-                {["onsite", "virtual", "view All"].map((locationType) => (
+                {filterData?.location?.map((locationType) => (
                   <div key={locationType} className="flex items-center">
                     <input
                       type="checkbox"
                       id={locationType}
-                      name="location"
-                      checked={location === locationType}
+                      checked={location[locationType]}
                       onChange={updateFilter(setLocation)}
                       className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
-                    <label id={locationType} htmlFor={locationType} className="text-sm cursor-pointer">
+                    <label
+                      htmlFor={locationType}
+                      className="text-sm cursor-pointer md:text-[16px]"
+                    >
                       {locationType.charAt(0).toUpperCase() + locationType.slice(1)}
                     </label>
                   </div>
                 ))}
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="viewAll"
+                    checked={location.viewAll}
+                    onChange={updateFilter(setLocation)}
+                    className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
+                  />
+                  <label
+                    htmlFor="viewAll"
+                    className="text-sm cursor-pointer md:text-[16px]"
+                  >
+                    View All
+                  </label>
+                </div>
               </div>
             </div>
             <div className="mb-6">
               <label className="block text-lg font-semibold mb-3">Audience</label>
               <div className="space-y-3">
-                {["sales-leaders", "sales-teams", "view All"].map((audienceType) => (
-                  <div key={audienceType} className="flex items-center">
+                {filterData?.audience?.map((audienceType) => (
+                  <div key={audienceType.id} className="flex items-center">
                     <input
                       type="checkbox"
-                      id={audienceType}
-                      name="audience"
-                      checked={audience === audienceType}
+                      id={audienceType.id}
+                      checked={audience[audienceType.id] || false}
                       onChange={updateFilter(setAudience)}
                       className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                     />
-                    <label id={audienceType} htmlFor={audienceType} className="text-sm cursor-pointer">
-                      {audienceType.replace("-", " ").replace(/\b\w/g, (match) => match.toUpperCase())}
+                    <label
+                      htmlFor={audienceType.id}
+                      className="text-sm cursor-pointer md:text-[16px]"
+                    >
+                      {audienceType.name}
                     </label>
                   </div>
                 ))}
+
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="viewAllAudience"
+                    checked={audience.viewAllAudience || false}
+                    onChange={updateFilter(setAudience)}
+                    className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
+                  />
+                  <label
+                    htmlFor="viewAllAudience"
+                    className="text-sm cursor-pointer md:text-[16px]"
+                  >
+                    View All
+                  </label>
+                </div>
               </div>
             </div>
           </div>

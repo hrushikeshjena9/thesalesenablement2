@@ -1,64 +1,68 @@
+
 import React, { useEffect, useState } from "react";
 import CourseItem from "./CourseItem";
-import axios from "../api/axios"
+import axios from "../api/axios";
 
-
-const CourseList = ({ filters }) => {
-
-  const [courses, setCourses] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+const CourseList = ({ filters,filterData }) => {
+  if (!filterData) return <p></p>;
+  const [courses, setCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([]); 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("courses")
-        setCourses(res.data.data)
+        const res = await axios.post("/courses");
+        setCourses(res.data.data);
       } catch (error) {
-        setError("Failed to fetch courses")
+        setError("Failed to fetch courses");
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    }
-    fetchCourses()
-  }, [])
+    };
 
-  if (loading) return <p>Loading Courses...</p>
-  if (error) return <p>{error}</p>
+    fetchCourses();
+  }, []);
 
-  const filteredCourses = courses.filter((course) => {
-    const locationMatches =
-      !filters.location ||
-      filters.location === "viewAll" ||
-      filters.location === course.location?.text.toLowerCase();
-
-    const audienceMatches =
-      !filters.audience ||
-      filters.audience === "viewAll" ||
-      filters.audience === course.audience.toLowerCase();
-
-    const topicsMatches = Object.entries(filters.topics || {}).every(
-      ([topic, isSelected]) => {
-        if (Array.isArray(course.topics)) {
-          return isSelected ? course.topics.includes(topic) : true;
-        } else if (typeof course.topics === "object") {
-          return isSelected ? course.topics[topic] : true;
+  useEffect(() => {
+    if (!courses.length) return;
+  const newFilteredCourses = courses.filter((course) => {
+ const locationMatches =
+        !filters.location ||
+        filters.location === "viewAll" ||
+        filters.location.toLowerCase() === course.location?.text?.toLowerCase();
+  
+      const audienceMatches =
+        !filters.audience ||
+        filters.audience === "viewAll" ||
+        filters.audience.toLowerCase() === course.audience?.toLowerCase();
+  
+      const topicsMatches = Object.entries(filters.topics || {}).every(
+        ([topic, isSelected]) => {
+          if (!isSelected) return true;
+          if (Array.isArray(course.topics)) {
+            return course.topics.includes(topic);
+          }
+          if (typeof course.topics === "object") {
+            return course.topics[topic] === true;
+          }
+          return false;
         }
-        return true;
-      }
-    );
-
-    return locationMatches && audienceMatches && topicsMatches;
-  });
-
-  // If no filters are applied, show all courses
-  const coursesToDisplay =
-    filteredCourses.length > 0 ? filteredCourses : courses;
-
+      );
+      return locationMatches && audienceMatches && topicsMatches;
+    });
+    setFilteredCourses(newFilteredCourses.length > 0 ? newFilteredCourses : courses);
+  }, [filters, courses]);
+  
   return (
     <section className="flex-1">
-      {coursesToDisplay.length === 0 ? (
+      {loading ? (
+        <p>Loading courses...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : filteredCourses.length === 0 ? (
         <div>
           <h2 className="text-xl font-semibold mb-6">
             We're sorry, but it looks like there are currently no courses
@@ -80,7 +84,7 @@ const CourseList = ({ filters }) => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-          {coursesToDisplay.map((course) => (
+          {filteredCourses.map((course) => (
             <CourseItem key={course.id} course={course} />
           ))}
         </div>

@@ -3,11 +3,13 @@ import { AuthProvider } from './AuthContext'
 import { TabProvider } from './TabContext'
 import { ContactApiProvider } from './ContactContextApi'
 import { ServiceApiProvider } from './ServiceContextApi'
+import { CourseApiProvider } from './CourseContextApi'
 
 function ContextProviders({ children }) {
     return (
         <>
-        <ServiceApiProvider>
+        <CourseApiProvider>
+            <ServiceApiProvider>
             <ContactApiProvider>
                 <AuthProvider>
                     <TabProvider>
@@ -16,6 +18,7 @@ function ContextProviders({ children }) {
                 </AuthProvider>
             </ContactApiProvider>
         </ServiceApiProvider>
+        </CourseApiProvider>
 
         </>
     )

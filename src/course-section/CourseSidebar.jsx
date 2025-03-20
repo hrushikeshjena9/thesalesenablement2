@@ -1,32 +1,36 @@
 import React, { useState, useEffect } from "react";
 
-const CourseSidebar = ({ setFilters,  }) => {
+const CourseSidebar = ({ filterData }) => {
+  if (!filterData) return <p></p>;
   const [location, setLocation] = useState("");
   const [audience, setAudience] = useState("");
   const [topics, setTopics] = useState({
-    sellingSkills: false,
-    frontlineRetail: false,
-    salesManagement: false,
-    territoryPlanning: false,
-    retailPlanning: false,
-    communicationSkills: false,
   });
+
+
   const [isOpen, setIsOpen] = useState(false);
   const updateFilter = (setter) => (e) => {
-    setter(e.target.id);
+    const { id, checked } = e.target;
+    setter((prev) => ({
+      ...prev,
+      [id]: checked,
+    }));
   };
   const handleTopicChange = (e) => {
     const { id, checked } = e.target;
-    setTopics((prev) => ({ ...prev, [id]: checked }));
+    const topicId = id.replace("topic-", ""); 
+    setTopics((prev) => ({
+      ...prev,
+      [topicId]: checked,
+    }));
   };
-  useEffect(() => {
-    setFilters({ location, audience, topics });
-  }, [location, audience, topics, setFilters]);
+  // useEffect(() => {
+  //   filterData({ location, audience, topics });
+  // }, [location, audience, topics, filterData]);
   return (
     <aside
-      className={`w-full md:w-1/4 h-1/3 p-6 md:block ${
-        isOpen ? "block" : "hidden"
-      }`}
+      className={`w-full md:w-1/4 h-1/3 md:block ${isOpen ? "block" : "hidden"
+        }`}
     >
       <button
         className="md:hidden fixed top-4 left-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white px-4 py-2 rounded-lg shadow-md"
@@ -38,26 +42,24 @@ const CourseSidebar = ({ setFilters,  }) => {
       <div className="flex flex-col w-full">
         <div className="mb-6">
           <label className="block text-lg font-semibold mb-3">
-          Topics
+            Topics
           </label>
           <div className="space-y-4">
-            {Object.keys(topics).map((topic) => (
-              <div key={topic} className="flex items-center">
+
+            {filterData?.topics?.map((topic) => (
+              <div key={topic.id} className="flex items-center">
                 <input
                   type="checkbox"
-                  id={topic}
-                  checked={topics[topic]}
+                  id={`topic-${topic.id}`}
+                  checked={topics[topic.id] || false}
                   onChange={handleTopicChange}
                   className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                 />
-               
                 <label
-                  htmlFor={topic}
+                  htmlFor={`topic-${topic.id}`}
                   className="text-sm cursor-pointer md:text-[16px]"
                 >
-                  {topic
-                    .replace(/([A-Z])/g, " $1")
-                    .replace(/^./, (match) => match.toUpperCase())}
+                  {topic.name}
                 </label>
               </div>
             ))}
@@ -66,7 +68,7 @@ const CourseSidebar = ({ setFilters,  }) => {
         <div className="mb-6">
           <label className="block text-lg font-semibold mb-3">Location</label>
           <div className="space-y-4">
-            {["onsite", "virtual"].map((locationType) => (
+            {filterData?.location?.map((locationType) => (
               <div key={locationType} className="flex items-center">
                 <input
                   type="checkbox"
@@ -103,31 +105,29 @@ const CourseSidebar = ({ setFilters,  }) => {
         <div className="mb-6">
           <label className="block text-lg font-semibold mb-3">Audience</label>
           <div className="space-y-4">
-            {["sales-leaders", "sales-teams"].map((audienceType) => (
-              <div key={audienceType} className="flex items-center">
+            {filterData?.audience?.map((audienceType) => (
+              <div key={audienceType.id} className="flex items-center">
                 <input
                   type="checkbox"
-                  id={audienceType}
-                  checked={audience[audienceType]}
+                  id={audienceType.id}
+                  checked={audience[audienceType.id] || false}
                   onChange={updateFilter(setAudience)}
                   className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
                 />
                 <label
-                  htmlFor={audienceType}
+                  htmlFor={audienceType.id}
                   className="text-sm cursor-pointer md:text-[16px]"
                 >
-                  {audienceType
-                    .replace("-", " ")
-                    .replace(/\b\w/g, (match) => match.toUpperCase())
-                    .replace(/\s+/g, " ")}
+                  {audienceType.name}
                 </label>
               </div>
             ))}
+
             <div className="flex items-center">
               <input
                 type="checkbox"
                 id="viewAllAudience"
-                checked={audience.viewAll}
+                checked={audience.viewAllAudience || false}
                 onChange={updateFilter(setAudience)}
                 className="mr-2 checkbox-custom w-5 h-5 border-2 hover:border-[#FA6602] border-[#DB0032] rounded-sm appearance-none relative transition-all ease-in cursor-pointer"
               />

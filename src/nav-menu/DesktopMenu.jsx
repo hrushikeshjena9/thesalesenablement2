@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../context/AuthContext";
 import axios from "../api/axios"
 import { useTab } from "../context/TabContext";
-import { useApi } from "../context/ServiceContextApi";
 const DesktopMenu = ({
   links,
   courses,
@@ -16,9 +15,8 @@ const DesktopMenu = ({
   dropdownOpen,
   toggleDropdown,
 }) => {
-  const { serviceData, loading } = useApi();
-    if (!serviceData) return <p></p>;
-  console.log(serviceData)
+  if (!services) return <p></p>;
+  if (!courses) return <p></p>;
   const { user, logout } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => { setPasswordVisible(!passwordVisible) };
@@ -156,6 +154,7 @@ const DesktopMenu = ({
     }
   };
   const { setActiveTab } = useTab();
+  if (!courses) return <p></p>;
   return (
     <>
       <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
@@ -185,12 +184,21 @@ const DesktopMenu = ({
                           key={idx}
                           className="flex icon-hover items-center space-x-3 p-4 group bg-white hover:text-white shadow-md text-sm rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-[#DB0032] hover:to-[#FA6602]"
                         >
-                          <span className="text-xl icon-hover1 text-white font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#DB0032] to-[#FA6602] rounded-full p-3 ">
-                            {item.icon}
-                          </span>
 
+                          <span
+                            dangerouslySetInnerHTML={{ __html: item.icon }}
+                            className="inline-flex items-center justify-center text-xl icon-hover1 text-white font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 rounded-full"
+                          ></span>
                           <NavLink
-                            to={item.path}
+                          to={
+                              link.name === "Courses"
+                                ? `/courses-details/${item.slug}` 
+                                : item.indp === "1"
+                                ? "/services/sales-force-evaluation"
+                                : item.indp === "2"
+                                ? "/services/sales-candidate-assessments"
+                                : `/service/${item.slug}`
+                            }
                             className={({ isActive }) =>
                               `block font-bold ${isActive
                                 ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] icon-hover2 transition duration-200 ease-in-out"
@@ -198,7 +206,7 @@ const DesktopMenu = ({
                               }`
                             }
                           >
-                            {item.name}
+                        {link.name === "Courses" ? item.name : item.title}
                           </NavLink>
                         </li>
                       )
@@ -228,6 +236,7 @@ const DesktopMenu = ({
                     </div>
                   </ul>
                 )}
+
               </div>
             ) : (
               <NavLink

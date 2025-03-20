@@ -84,7 +84,7 @@ function App() {
 
             <Route path="/adminLogin" element={<AdminLogin />} />
             <Route
-              path="/courses-details/:id"
+              path="/courses-details/:slug"
               element={<CourseDetails />}
             />
             <Route path="/blogs" element={<BlogPage />} />
