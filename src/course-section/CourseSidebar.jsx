@@ -31,8 +31,7 @@ const CourseSidebar = ({ filterData }) => {
     <aside
       className={`w-full md:w-1/4 h-1/3 md:block ${isOpen ? "block" : "hidden"
         }`}
-    >
-      <button
+    ><button
         className="md:hidden fixed top-4 left-4 bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-white px-4 py-2 rounded-lg shadow-md"
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -44,9 +43,7 @@ const CourseSidebar = ({ filterData }) => {
           <label className="block text-lg font-semibold mb-3">
             Topics
           </label>
-          <div className="space-y-4">
-
-            {filterData?.topics?.map((topic) => (
+          <div className="space-y-4"> {filterData?.topics?.map((topic) => (
               <div key={topic.id} className="flex items-center">
                 <input
                   type="checkbox"

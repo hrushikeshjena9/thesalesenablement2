@@ -5,8 +5,7 @@ import RightArrow1 from "../../assets/arrow-right1.png";
 import RightArrow from "../../assets/arrow-right.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Big from "../../assets/new/salesfource.jpg";
-import VideoThumb from "../../assets/new/salesteamimage.jpg";
+
 import axios from "../../api/axios"
 import {
   FaUser,
@@ -62,24 +61,24 @@ const SalesForceEvaluation = () => {
     setIsPlaying(true);
   };
 
-useEffect (() =>{
-  const fetchData = async () =>{
-    try {
-      const res = await axios.get("/sales-force-details/sales-force-evoluation")
-      setData(res.data.data)
-    
-    } catch (error) {
-      setError("failed to fetch data")
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("/sales-force-details/sales-force-evoluation")
+        setData(res.data.data)
+
+      } catch (error) {
+        setError("failed to fetch data")
+      }
     }
-  }
-  fetchData();
+    fetchData();
   }, [])
   const getYouTubeEmbedUrl = (url) => {
     if (!url) return ""; // Prevents the "match" error
     const videoIdMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/|.*v\/))([\w-]+)/);
     return videoIdMatch ? `https://www.youtube.com/embed/${videoIdMatch[1]}` : "";
   };
-  
+
   const getYouTubeThumbnail = (url) => {
     if (!url) return "default-thumbnail.jpg"; // Default thumbnail if URL is missing
     const videoIdMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/|.*v\/))([\w-]+)/);
@@ -87,17 +86,15 @@ useEffect (() =>{
   };
   const videoUrl = getYouTubeEmbedUrl(data?.tool_video_link);
   const VideoThumb = getYouTubeThumbnail(data?.tool_video_link);
-  
+
 
   return (
     <div>
-
-
-<Helmet>
-  <title>{data.meta_title}</title>  
-  <meta name="description" content={data.meta_description } />
-  <meta name="keywords" content={data.meta_keywords} />
-</Helmet>
+ <Helmet>
+        <title>{data.meta_title}</title>
+        <meta name="description" content={data.meta_description} />
+        <meta name="keywords" content={data.meta_keywords} />
+      </Helmet>
 
 
       <HeroSFE salesForceEvaluation={data} />
@@ -118,17 +115,17 @@ useEffect (() =>{
               data-aos-delay="200"
               data-aos-offset="200"
             >
-          <span
-              className="about-intro-title"
-              dangerouslySetInnerHTML={{ __html: data.sub_title }}
-            />
+              <span
+                className="about-intro-title"
+                dangerouslySetInnerHTML={{ __html: data.sub_title }}
+              />
             </h2>
 
             <p
               className="text-sm md:text-[16px] leading-[32px] text-justify mb-8"
               data-aos="fade-left"
             >
-             {data.description}
+              {data.description}
             </p>
 
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
@@ -140,7 +137,7 @@ useEffect (() =>{
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-                {data.btn_one_text}
+                  {data.btn_one_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"
@@ -155,7 +152,7 @@ useEffect (() =>{
                 type="button"
                 className="text-[#000] transition-transform duration-500 ease-out transform flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000] border-[#000] border-btn2"
               >
-              {data.btn_two_text}
+                {data.btn_two_text}
                 <img
                   src={RightArrow}
                   alt="Arrow"
@@ -185,18 +182,18 @@ useEffect (() =>{
       </section>
 
       <div className="py-12 ">
-        <BenefitsSection salesForceEvaluation={data}/>
+        <BenefitsSection salesForceEvaluation={data} />
       </div>
       <section className="container mx-auto px-4">
         <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center mb-8 text-gray-800">
-        {data.tool_work_title}
+          {data.tool_work_title}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Left Content */}
           <div className="text-center md:text-left px-6">
             <p className="text-lg  mb-4">
-            {data.tool_work_description}
+              {data.tool_work_description}
             </p>
 
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
@@ -207,7 +204,7 @@ useEffect (() =>{
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-                {data.tool_btn_one_text}
+                  {data.tool_btn_one_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"
@@ -222,7 +219,7 @@ useEffect (() =>{
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-                {data.tool_btn_two_text}
+                  {data.tool_btn_two_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"
@@ -237,45 +234,45 @@ useEffect (() =>{
           </div>
 
           <div className="flex justify-end px-4">
-          <div className="w-full max-w-[600px] h-[400px] md:h-[600px] relative">
-    {!isPlaying ? (
-      <div
-        className="w-full h-full bg-cover bg-center rounded-lg shadow-xl cursor-pointer flex items-center justify-center relative"
-        style={{
-          backgroundImage: `url(${VideoThumb})`,
-        }}
-        onClick={handlePlay}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-lg"></div>
+            <div className="w-full max-w-[600px] h-[400px] md:h-[600px] relative">
+              {!isPlaying ? (
+                <div
+                  className="w-full h-full bg-cover bg-center rounded-lg shadow-xl cursor-pointer flex items-center justify-center relative"
+                  style={{
+                    backgroundImage: `url(${VideoThumb})`,
+                  }}
+                  onClick={handlePlay}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-lg"></div>
 
-        <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-16 w-16 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M14.752 11.168l-3.197-1.833A1 1 0 0010 10.25v3.5a1 1 0 001.555.832l3.197-1.833a1 1 0 000-1.664z"
-            />
-          </svg>
-        </div>
-      </div>
-    ) : (
-     <iframe
-      className="w-full h-full rounded-lg shadow-xl"
-      src={videoUrl}
-      title="Sales Force Evaluation Tool Demo"
-      frameBorder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    ></iframe>
-    )}
-  </div>
+                  <div className="bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-16 w-16 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M14.752 11.168l-3.197-1.833A1 1 0 0010 10.25v3.5a1 1 0 001.555.832l3.197-1.833a1 1 0 000-1.664z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              ) : (
+                <iframe
+                  className="w-full h-full rounded-lg shadow-xl"
+                  src={videoUrl}
+                  title="Sales Force Evaluation Tool Demo"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -285,10 +282,10 @@ useEffect (() =>{
           {/* Left Side Content with Additional Information and CTA Buttons */}
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-bold text-center md:text-left mb-6">
-         {data.potential_title}
+              {data.potential_title}
             </h2>
             <p className="text-center  md:text-left text-sm md:text-base lg:text-lg mb-6">
-    {data.potential_description}
+              {data.potential_description}
             </p>
 
 
@@ -300,7 +297,7 @@ useEffect (() =>{
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-      {data.potential_btn_one_text}
+                  {data.potential_btn_one_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"

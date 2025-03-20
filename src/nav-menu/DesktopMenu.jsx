@@ -16,7 +16,6 @@ const DesktopMenu = ({
   toggleDropdown,
 }) => {
   if (!services) return <p></p>;
-  if (!courses) return <p></p>;
   const { user, logout } = useContext(AuthContext);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const togglePasswordVisibility = () => { setPasswordVisible(!passwordVisible) };
@@ -155,6 +154,7 @@ const DesktopMenu = ({
   };
   const { setActiveTab } = useTab();
   if (!courses) return <p></p>;
+  console.log(courses)
   return (
     <>
       <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">

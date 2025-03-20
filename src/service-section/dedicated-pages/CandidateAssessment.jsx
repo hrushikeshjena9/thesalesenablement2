@@ -21,6 +21,10 @@ import {
 } from "react-icons/fa";
 
 const CandidateAssessment = () => {
+
+
+
+  
   const benefits = [
     {
       icon: <FaCog />,
