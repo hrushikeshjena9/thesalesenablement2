@@ -2,10 +2,31 @@ import { FaArrowDown, FaBook } from "react-icons/fa";
 import TabNavigation from "../components/TabNavigation";
 import RelatedCourseSlider from "./RelatedCourseSlider";
 import PriceSideBar from "./PriceSideBar";
+import { Helmet } from "react-helmet-async";
+import { useApi3 } from "../context/WebsiteDataContext";
 const CourseDetailSection = ({ courseData }) => {
   if (!courseData) return <p></p>
+
+    
+    const { websiteData,  } = useApi3();
+        if (!websiteData) return <p></p>
   return (
-    <section className=" w-full mx-auto py-6 px-3">
+
+
+    <>
+  <Helmet>
+  <title>{courseData?.meta_title || ""} | {websiteData?.title || ""}</title>
+
+        <meta name="description" content={courseData.meta_description} />
+        <meta name="keywords" content={courseData.meta_keywords} />
+        <meta property="og:title" content={courseData.og_title}/>
+        <meta property="og:description" content={courseData.og_description} />
+        <meta property="og:image" content={courseData.og_image} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
+      </Helmet>
+
+        <section className=" w-full mx-auto py-6 px-3">
       <div className="w-full">
         <h2 className="text-xl lg:text-3xl font-semibold  flex items-center mb-6">
           <span className="font-semibold text-white bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 mr-3  rounded-full flex justify-center items-center transition-all duration-300">
@@ -114,9 +135,11 @@ const CourseDetailSection = ({ courseData }) => {
 
       <h1 className="text-xl md:text-xl lg:text-2xl  font-semibold text-gray-900">Related Courses</h1>
       <div className="py-12">
-        <RelatedCourseSlider course={courseData}/>
+        <RelatedCourseSlider course={courseData} courseId={courseData.id}/>
       </div>
     </section>
+    </>
+
   );
 };
 

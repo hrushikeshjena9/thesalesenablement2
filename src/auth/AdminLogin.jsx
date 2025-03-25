@@ -8,22 +8,16 @@ function AdminAuth() {
     return (
         <div className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-[#060B33] to-[#383F71] px-4 overflow-hidden">
             <WaterBubbleBackground />
-
-
-            <img src={heroImage} alt="Company Logo" className="w-1/2 sm:w-1/4 mb-6 relative z-10" />
-
-
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden grid grid-cols-1 sm:grid-cols-2 max-w-4xl w-full min-h-[500px] relative z-10">
-
-                <div className="hidden sm:flex items-center justify-center bg-gray-100">
+<img src={heroImage} alt="Company Logo" className="w-1/2 sm:w-1/4 mb-6 relative z-10" />
+<div className="bg-white shadow-lg rounded-lg overflow-hidden grid grid-cols-1 sm:grid-cols-2 max-w-4xl w-full min-h-[500px] relative z-10">
+<div className="hidden sm:flex items-center justify-center bg-gray-100">
                     <img
                         src="https://img.freepik.com/free-photo/smiling-young-businessman_1098-778.jpg?t=st=1739180693~exp=1739184293~hmac=1293ed75c42a70604e34f5b26468fffb47ed502c683a11e322cac6fc979dc3a7&w=1380"
                         alt="Admin Access"
                         className="w-full h-full object-cover"
                     />
                 </div>
-
-                <div className="p-6 sm:p-10 flex flex-col justify-center w-full min-h-[500px]">
+<div className="p-6 sm:p-10 flex flex-col justify-center w-full min-h-[500px]">
                     <h2 className="text-2xl font-semibold text-gray-700 text-center mb-6">
                         {isForgotPassword
                             ? "Reset Password"
@@ -49,8 +43,7 @@ function AdminAuth() {
                             >
                                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                                 <span className="relative text-white group-hover:text-white flex items-center">
-
-                                    Send Reset Link
+ Send Reset Link
                                 </span>
                             </button>
                             <p

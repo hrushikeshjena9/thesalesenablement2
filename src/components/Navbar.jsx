@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import DesktopMenu from "../nav-menu/DesktopMenu";
 import MobileMenu from "../nav-menu/MobileMenu";
-import {
-  FaChartLine,
-  FaClipboardCheck,
-  FaChalkboardTeacher,
-} from "react-icons/fa";
-import { FaComments, FaStore, FaRoute } from "react-icons/fa";
+
+import { useApi3 } from "../context/WebsiteDataContext";
 import { useApi } from "../context/ServiceContextApi";
 import { useApi2 } from "../context/CourseContextApi";
 
@@ -29,6 +25,9 @@ function Navbar() {
     setDropdownOpen(dropdownOpen === dropdownName ? null : dropdownName);
   };
 
+    const { websiteData,  } = useApi3();
+    if (!websiteData) return <p></p>
+
     const { serviceData,  } = useApi();
       if (!serviceData) return <p></p>;
   
@@ -41,7 +40,7 @@ function Navbar() {
         <div className="flex justify-between items-center py-4">
           <div className="text-xl font-bold">
             <a href="/">
-              <img src={Logo} alt="Logo" className="w-[170px] h-auto" />
+              <img src=   {websiteData.logo} alt="Logo" className="w-[170px] h-auto" />
             </a>
           </div>
           <button

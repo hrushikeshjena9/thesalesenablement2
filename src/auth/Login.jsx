@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import { FaLock, FaEnvelope, FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import RightArrow1 from "../assets/arrow-right1.png";
 import axios from "../api/axios"
-import { toast, ToastContainer } from 'react-toastify'; // Ensure you've imported the toast library
+import { toast, ToastContainer } from 'react-toastify'; 
 import { AuthContext } from "../context/AuthContext"
-function LogIn({ setActiveTab }) {
+import { useTab } from "../context/TabContext";
+function LogIn() {
+    const { setActiveTab } = useTab();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [forgotEmail, setForgotEmail] = useState("");
@@ -17,13 +18,11 @@ function LogIn({ setActiveTab }) {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
-
   const handleForgotPassword = (e) => {
     e.preventDefault();
     alert(`Password reset link sent to ${forgotEmail}`);
     setShowForgotPassword(false);
   };
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginData({
@@ -31,36 +30,27 @@ function LogIn({ setActiveTab }) {
       [name]: value,
     })
   }
-
   useEffect(() => {
     const savedEmail = localStorage.getItem("email_id");
     const savedPassword = localStorage.getItem("password");
-    const rememberMe = JSON.parse(localStorage.getItem("rememberMe") || "false"); // Ensure boolean value
-  
+    const rememberMe = JSON.parse(localStorage.getItem("rememberMe") || "false"); 
     if (rememberMe) {
       setLoginData({ email_id: savedEmail || "", password: savedPassword || "" });
       setRemember(true);
     }
   }, []);
-  
   const handleRememberMe = () => {
     setRemember((prev) => !prev);
   };
-  
-
   const validateFields = () => {
     let tempErrors = {};
-
     if (!loginData.email_id) tempErrors.email_id = "Email is required.";
     if (!loginData.password) tempErrors.password = "Password  is required.";
-
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     if (!validateFields()) {
       toast.error("Please fill all required fields", {
         position: "top-right",
@@ -73,7 +63,6 @@ function LogIn({ setActiveTab }) {
       });
       return;
     }
-  
     try {
       if (remember) {
         localStorage.setItem("email_id", loginData.email_id);
@@ -84,17 +73,13 @@ function LogIn({ setActiveTab }) {
         localStorage.removeItem("password");
         localStorage.removeItem("rememberMe");
       }
-  
       const url = "/login";
       const { data: res } = await axios.post(url, loginData);
-  
       if (res.status) {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.user_id);
-  
         const userData = { first_name: res.data.first_name };
         login(userData);
-  
         toast.success(res.message, {
           position: "top-right",
           autoClose: 3000,
@@ -104,7 +89,6 @@ function LogIn({ setActiveTab }) {
           draggable: true,
           theme: "light",
         });
-  
         setTimeout(() => {
           window.location.href = "/";
         }, 3000);
@@ -121,9 +105,6 @@ function LogIn({ setActiveTab }) {
       });
     }
   };
-  
-
-
   return (
     <>
       <section className="flex items-center justify-center ">

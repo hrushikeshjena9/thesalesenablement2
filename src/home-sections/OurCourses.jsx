@@ -1,20 +1,31 @@
 import RightArrow1 from "../assets/arrow-right1.png";
 import RightArrow from "../assets/arrow-right.png";
 import FilterImg from "../assets/filter.png";
-import Communication from "../assets/4.png";
-import Professional from "../assets/0.png";
-import Front from "../assets/5.png";
-import Sales from "../assets/3.png";
-import Territory from "../assets/2.png";
-import Retail from "../assets/1.png";
+
 import { Link, useNavigate } from "react-router-dom";
+import { useApi2 } from "../context/CourseContextApi";
+import { useState } from "react";
+import { useFilter } from "../context/FilterContextApi";
 
 
 function OurCourses() {
+  const { courseData, } = useApi2();
+
+  if (!courseData) return <p></p>;
+  const courses = Array.isArray(courseData) ? courseData : [];
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const filteredCourses = courses.filter((course) =>
+    course.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const { filteredCourse } = useFilter();
+
   const navigate = useNavigate();
   const handlenavigate = () => {
     navigate("/services");
   }
+
+
 
   return (
     <>
@@ -27,61 +38,30 @@ function OurCourses() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2  text-white gap-4 lg:gap-4 xl:gap-4 2xl:gap-12 md:grid-cols-3 lg:grid-cols-6 mb-6">
-              <div className="card p-2  shadow-lg">
-                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
-                  <img src={Professional} />
-                </div>
-                <p className="text-center text-sm md:text-[12px] px-1 uppercase">
-                  Professional Selling Skills
-                </p>
-              </div>
+            <div className="w-full flex justify-center items-center">
+              <div className="flex gap-4 2xl:gap-12 text-white mb-6">
+                {Array.isArray(courseData) && courseData.slice(0, 6).map((course, index) => (
+                  <Link to={`/courses-details/${course.slug}`}>
+                    <div key={index} className="card p-2 shadow-lg flex flex-col items-center">
+                      <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue flex items-center justify-center mb-4">
+                        <img
+                          src={course.image}
+                          alt={course.name}
+                          className="w-full h-full object-cover rounded-full"
+                        />
+                      </div>
+                      <p className="text-center text-sm md:text-[12px] px-1 uppercase">
+                        {course.name}
+                      </p>
 
-              <div className="card pt-2 shadow-lg">
-                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
-                  <img src={Communication} />
-                </div>
-                <p className="text-center px-3  text-sm md:text-[12px] uppercase ">
-                  Communication Skills for Sales Staff
-                </p>
-              </div>
 
-              <div className="card p-2 shadow-lg">
-                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
-                  <img src={Front} />
-                </div>
-                <p className="text-center text-sm md:text-[12px] px-1 uppercase">
-                  Front Line Retail Selling Skills
-                </p>
-              </div>
+                    </div>
+                  </Link>
+                ))}
 
-              <div className="card p-2 shadow-lg">
-                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
-                  <img src={Sales} />
-                </div>
-                <p className="text-center text-sm md:text-[12px] px-3 uppercase">
-                  Sales Management
-                </p>
-              </div>
-
-              <div className="card p-2 shadow-lg">
-                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
-                  <img src={Territory} />
-                </div>
-                <p className="text-center text-sm md:text-[12px]  uppercase">
-                  Sales Territory Planning & Routing
-                </p>
-              </div>
-
-              <div className="card p-2 shadow-lg">
-                <div className="w-[112.19px] h-[112.19px] rounded-full bg-aliceblue mx-auto mb-4">
-                  <img src={Retail} />
-                </div>
-                <p className="text-center text-sm md:text-[12px] px-1 uppercase">
-                  Retail Sales Planning and Forecasting
-                </p>
               </div>
             </div>
+
 
             <div className="flex flex-col md:flex-wrap lg:flex-wrap xl:flex-row lg:m xl:mx-7  justify-between items-center gap-4">
               <button
@@ -101,29 +81,64 @@ function OurCourses() {
                 </span>
               </button>
 
-              <div className="flex justify-between items-center border-2 border-black">
-                <img
-                  src={FilterImg}
-                  alt="Filter Icon"
-                  className="w-6 h-6 ml-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Search Courses"
-                  className="flex-1 w-full  px-6 py-0 sm:px-4 sm:py-1 md:px-4 md:py-1 lg:px-4 lg:py-1 xl:px-4 xl:py-1 2xl:px-4 2xl:py-1  font-bold placeholder:text-sm uppercase outline-none"
-                />
-                <Link
-                  to="book-now"
-                  type="button"
-                  className="text-white   group transition-transform duration-500 ease-out transform   w-auto  uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px]  sm:text-sm md:text-[14px] px-5 py-2.5 sm:w-auto lg:w-auto xl:w-auto md:px-6 md:py-3 md:w-auto flex items-center justify-center"
-                >
-                  <span className="absolute inset-0 w-0 h-full   bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
-                  <span className="relative text-white group-hover:text-white flex items-center">
-                    Book Now
-                  </span>
-                </Link>
-              </div>
+              <div className="relative">
 
+                <div className="flex justify-between items-center border-2 border-black p-1">
+                  <img src={FilterImg} alt="Filter Icon" className="w-6 h-6 ml-2" />
+                  <input
+                    type="text"
+                    placeholder="Search Courses"
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setDropdownOpen(e.target.value.length > 0);
+                    }}
+                    className="flex-1 w-full px-6 py-2 sm:px-4 sm:py-1 font-bold placeholder:text-sm uppercase outline-none"
+                  />
+                  <div>
+                  {Array.isArray(courseData) && courseData.slice(0, 1).map((course, index) => (
+
+                    <Link
+                      to={`/courses-details/${course.slug || ""}`}
+                      type="submit"
+                      className="text-white group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px] sm:text-sm md:text-[14px] px-5 py-2.5 flex items-center justify-center"
+                    >
+                      <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-[#060b33] "></span>
+                      <span className="relative text-white group-hover:text-white flex items-center" >
+                        Book Now
+                      </span>
+                    </Link>
+                             ))}
+                  </div>
+
+
+
+                </div>
+
+
+                {isDropdownOpen && (
+                  <div className="absolute w-full bg-white border border-gray-300 rounded-md shadow-md mt-1 max-h-48 overflow-y-auto">
+                    {filteredCourses.length > 0 ? (
+                      filteredCourses.map((course, index) => (
+                        <div
+                          key={index}
+                          className="p-2 text-center text-sm font-bold border-b border-gray-200 hover:bg-gray-100 cursor-pointer"
+                          onClick={() => {
+                            setSearchQuery(course.name);
+                            setDropdownOpen(false);
+                          }}
+                        >
+                          {course.name}
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-center text-gray-500 font-bold p-2">
+                        No courses found
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
               <Link
                 to="courses"
                 type="button"

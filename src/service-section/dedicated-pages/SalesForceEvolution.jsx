@@ -3,7 +3,7 @@ import BenefitsSection from "./sections/BenefitsSection";
 import HeroSFE from "./sections/HeroSFE";
 import RightArrow1 from "../../assets/arrow-right1.png";
 import RightArrow from "../../assets/arrow-right.png";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import axios from "../../api/axios"
@@ -20,7 +20,7 @@ import SalesAssessmentModal from "./sections/SalesAssessmentModal";
 import { Helmet } from "react-helmet-async";
 
 const SalesForceEvaluation = () => {
-
+const {slug} =useParams();
   const [data, setData] = useState({})
   const [error, setError] = useState("")
 
@@ -64,23 +64,22 @@ const SalesForceEvaluation = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/sales-force-details/sales-force-evoluation")
-        setData(res.data.data)
-
+        const res = await axios.get(`/sales-force-details/${slug}`)
+        setData(res.data?.data)
       } catch (error) {
         setError("failed to fetch data")
       }
     }
     fetchData();
-  }, [])
+  }, [slug])
   const getYouTubeEmbedUrl = (url) => {
-    if (!url) return ""; // Prevents the "match" error
+    if (!url) return "";
     const videoIdMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/|.*v\/))([\w-]+)/);
     return videoIdMatch ? `https://www.youtube.com/embed/${videoIdMatch[1]}` : "";
   };
 
   const getYouTubeThumbnail = (url) => {
-    if (!url) return "default-thumbnail.jpg"; // Default thumbnail if URL is missing
+    if (!url) return "default-thumbnail.jpg";
     const videoIdMatch = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/|.*v\/))([\w-]+)/);
     return videoIdMatch ? `https://img.youtube.com/vi/${videoIdMatch[1]}/maxresdefault.jpg` : "default-thumbnail.jpg";
   };
@@ -91,9 +90,14 @@ const SalesForceEvaluation = () => {
   return (
     <div>
  <Helmet>
-        <title>{data.meta_title}</title>
-        <meta name="description" content={data.meta_description} />
-        <meta name="keywords" content={data.meta_keywords} />
+        <title>{data?.meta_title}</title>
+        <meta name="description" content={data?.meta_description} />
+        <meta name="keywords" content={data?.meta_keywords} />
+        <meta property="og:title" content={data?.og_title}/>
+        <meta property="og:description" content={data?.og_description} />
+        <meta property="og:image" content={data?.og_image} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
       </Helmet>
 
 
@@ -117,7 +121,7 @@ const SalesForceEvaluation = () => {
             >
               <span
                 className="about-intro-title"
-                dangerouslySetInnerHTML={{ __html: data.sub_title }}
+                dangerouslySetInnerHTML={{ __html: data?.sub_title }}
               />
             </h2>
 
@@ -125,19 +129,19 @@ const SalesForceEvaluation = () => {
               className="text-sm md:text-[16px] leading-[32px] text-justify mb-8"
               data-aos="fade-left"
             >
-              {data.description}
+              {data?.description}
             </p>
 
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
 
               <Link
-                to={data.btn_one_link}
+                to={data?.btn_one_link}
                 type="button"
                 className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-                  {data.btn_one_text}
+                  {data?.btn_one_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"
@@ -148,11 +152,11 @@ const SalesForceEvaluation = () => {
 
 
               <Link
-                to={data.btn_two_link}
+                to={data?.btn_two_link}
                 type="button"
                 className="text-[#000] transition-transform duration-500 ease-out transform flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000] border-[#000] border-btn2"
               >
-                {data.btn_two_text}
+                {data?.btn_two_text}
                 <img
                   src={RightArrow}
                   alt="Arrow"
@@ -161,8 +165,6 @@ const SalesForceEvaluation = () => {
               </Link>
             </div>
           </motion.div>
-
-
           <div className="flex justify-center">
             <motion.div
               className="relative overflow-hidden"
@@ -172,8 +174,8 @@ const SalesForceEvaluation = () => {
               variants={leftVariants}
             >
               <img
-                src={data.image}
-                alt={data.title}
+                src={data?.image}
+                alt={data?.title}
                 className="w-full max-w-md lg:max-w-full"
               />
             </motion.div>
@@ -186,25 +188,23 @@ const SalesForceEvaluation = () => {
       </div>
       <section className="container mx-auto px-4">
         <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-semibold text-center mb-8 text-gray-800">
-          {data.tool_work_title}
+          {data?.tool_work_title}
         </h2>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Left Content */}
           <div className="text-center md:text-left px-6">
             <p className="text-lg  mb-4">
-              {data.tool_work_description}
+              {data?.tool_work_description}
             </p>
 
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
               <Link
-                to={data.tool_btn_one_link}
+                to={data?.tool_btn_one_link}
                 type="button"
                 className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-                  {data.tool_btn_one_text}
+                  {data?.tool_btn_one_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"
@@ -219,7 +219,7 @@ const SalesForceEvaluation = () => {
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-                  {data.tool_btn_two_text}
+                  {data?.tool_btn_two_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"
@@ -232,7 +232,6 @@ const SalesForceEvaluation = () => {
               )}
             </div>
           </div>
-
           <div className="flex justify-end px-4">
             <div className="w-full max-w-[600px] h-[400px] md:h-[600px] relative">
               {!isPlaying ? (
@@ -276,28 +275,26 @@ const SalesForceEvaluation = () => {
           </div>
         </div>
       </section>
-
       <section className="py-12 container px-4 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          {/* Left Side Content with Additional Information and CTA Buttons */}
           <div className="md:w-1/2 mb-8 md:mb-0">
             <h2 className="text-lg  md:text-xl lg:text-2xl xl:text-3xl font-bold text-center md:text-left mb-6">
-              {data.potential_title}
+              {data?.potential_title}
             </h2>
             <p className="text-center  md:text-left text-sm md:text-base lg:text-lg mb-6">
-              {data.potential_description}
+              {data?.potential_description}
             </p>
 
 
             <div className="flex flex-col sm:flex-wrap md:flex-wrap lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
               <Link
-                to={data.potential_btn_one_link}
+                to={data?.potential_btn_one_link}
                 type="button"
                 className="text-white group text-nowrap transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-sm md:text-[13px] px-5 py-2.5 w-full md:px-6 md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto flex items-center justify-center"
               >
                 <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-gradient-to-tr group-hover:from-[#060b33] group-hover:to-[#383f71]"></span>
                 <span className="relative text-white group-hover:text-white flex items-center">
-                  {data.potential_btn_one_text}
+                  {data?.potential_btn_one_text}
                   <img
                     src={RightArrow1}
                     alt="Arrow Icon"
@@ -306,11 +303,11 @@ const SalesForceEvaluation = () => {
                 </span>
               </Link>
               <Link
-                to={data.potential_btn_two_link}
+                to={data?.potential_btn_two_link}
                 type="button"
                 className="text-[#000] transition-transform duration-500 ease-out transform flex md:px-10 lg:px-10 xl:px-6 text-nowrap md:py-3 md:w-auto lg:w-full xl:w-auto 2xl:w-auto uppercase gap-3 justify-center sm:justify-center md:justify-center lg:justify-center xl:justify-between 2xl:justify-between space-x-2 items-center font-bold text-sm px-4 py-2 hover:text-[#000] border-[#000] border-btn2"
               >
-                {data.potential_btn_two_text}
+                {data?.potential_btn_two_text}
                 <FaLongArrowAltDown className="ml-2" />
               </Link>
             </div>

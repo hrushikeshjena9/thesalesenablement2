@@ -27,7 +27,7 @@ export const ServiceApiProvider = ({ children }) => {
     );
 };
 
-// Custom Hook to Use Contact API Context
+
 export const useApi = () => {
     return useContext(ServiceContextApi);
 };

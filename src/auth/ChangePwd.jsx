@@ -53,12 +53,10 @@ const ChangePassword = () => {
             toast.error("Please correct the errors in the form.", { position: "top-right", autoClose: 3000 });
             return;
         }
-
         try {
             const token = localStorage.getItem("token");
             const user_id = localStorage.getItem("user_id"); 
             if (!user_id) {
-
                 toast.error("User ID is missing. Please log in again.", { position: "top-right", autoClose: 3000 });
                 return;
             }

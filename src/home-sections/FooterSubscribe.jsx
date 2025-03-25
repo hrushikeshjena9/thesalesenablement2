@@ -1,13 +1,16 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import RightArrow1 from "../assets/arrow-right1.png";
+import { useApi3 } from "../context/WebsiteDataContext";
 
 const FooterSubscribe = () => {
+    const { websiteData, loading } = useApi3();
+    if (!websiteData) return <p></p>
   return (
     <footer className="bg-gradient-2 text-white">
       <div className="flex flex-col md:flex-row container mx-auto justify-between items-center py-6 px-4 md:px-4">
         <img
-          src={Logo}
+          src={websiteData.logo}
           alt="Logo"
           className="w-[180px] md:w-[150px] lg:w-[200px] xl:w-[300px]  h-auto mb-4 md:mb-0"
         />

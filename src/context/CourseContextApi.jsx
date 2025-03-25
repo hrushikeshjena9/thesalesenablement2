@@ -5,7 +5,6 @@ export const CourseApiProvider = ({ children }) => {
     const [courseData, setCourseData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -21,15 +20,12 @@ export const CourseApiProvider = ({ children }) => {
         };
         fetchData();
     }, []);
-
-
     return (
         <CourseContextApi.Provider value={{ courseData, loading, error }}>
             {children}
         </CourseContextApi.Provider>
     );
 };
-// Custom Hook to Use Contact API Context
 export const useApi2 = () => {
     return useContext(CourseContextApi);
 };

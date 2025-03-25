@@ -7,7 +7,11 @@ import Faq from "../contactus-sections/Faq";
 import MapEmbed from "../contactus-sections/MapEmbed";
 import axios from "../api/axios";
 import { Helmet } from "react-helmet-async";
+import { useApi3 } from "../context/WebsiteDataContext";
 function ContactUsPage() {
+
+      const { websiteData,  } = useApi3();
+        if (!websiteData) return <p></p>
   const [data, setData] = useState({});
   const [error, setError] = useState("")
   useEffect(() => {
@@ -30,7 +34,7 @@ function ContactUsPage() {
     <div>
 
             <Helmet>
-            <title>{contact_data.meta_title} </title>
+            <title>{contact_data?.meta_title || " "} | {websiteData?.title || " "}</title>
               <meta name="description" content={contact_data.meta_description} />
               <meta name="keywords" content={contact_data.meta_keywords} />
             </Helmet>
@@ -90,3 +94,6 @@ function ContactUsPage() {
 }
 
 export default ContactUsPage;
+
+
+

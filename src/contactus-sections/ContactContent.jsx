@@ -10,10 +10,12 @@ import {
 import { AiOutlineGlobal } from "react-icons/ai";
 import { FaLinkedin, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
 import { MdOutlineDescription, MdOutlineSupportAgent } from "react-icons/md";
+import { useApi3 } from "../context/WebsiteDataContext";
 
 function ContactContent({ contactData }) {
   if (!contactData) return <p></p>;
-
+   const { websiteData,  } = useApi3();
+      if (!websiteData) return <p></p>
   return (
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 items-center">
@@ -37,8 +39,8 @@ function ContactContent({ contactData }) {
               <h3 className="text-base md:text-lg text-center font-semibold text-gray-800">
                 Visit Anytime
               </h3>
-              <p className="text-base md:text-lg text-gray-600 mt-2 text-center">
-              {contactData.address}
+              <p className="text-sm md:text-base text-gray-600 mt-2 text-center">
+              {websiteData.address}
               </p>
             </div>
 
@@ -47,8 +49,8 @@ function ContactContent({ contactData }) {
               <h3 className="text-base md:text-lg text-center font-semibold text-gray-800">
                 Have Any Questions?
               </h3>
-              <p className="text-base md:text-lg text-gray-600 mt-2 text-center">
-              {contactData.phone}
+              <p className="text-sm md:text-base text-gray-600 mt-2 text-center">
+              {websiteData.phone}
               </p>
             </div>
 
@@ -57,8 +59,8 @@ function ContactContent({ contactData }) {
               <h3 className="text-base md:text-lg text-center font-semibold text-gray-800">
                 Write Email
               </h3>
-              <p className="text-base md:text-lg text-gray-600 mt-2 text-center break-all">
-              {contactData.email}
+              <p className="text-sm md:text-base text-gray-600 mt-2 text-center break-all">
+              {websiteData.email}
 
               </p>
             </div>
@@ -66,27 +68,27 @@ function ContactContent({ contactData }) {
 
           <div className="flex justify-center mb-8 cursor-pointer space-x-6">
             <div className="transform hover:scale-110 transition duration-300 bg-blue-700 p-3 rounded-full text-white">
-            <a href={contactData.linkedin_url}>
+            <a href={websiteData.linkedin_link}>
               
               <FaLinkedin size={24} />
               </a>  
             </div>
 
             <div className="transform hover:scale-110 transition duration-300 bg-blue-400 p-3 rounded-full text-white">
-            <a href={contactData.twitter_url}>  <FaTwitter size={24} /> </a>
+            <a href={websiteData.twitter_link}>  <FaTwitter size={24} /> </a>
             </div>
 
             <div className="transform hover:scale-110 transition duration-300 bg-blue-600 p-3 rounded-full text-white">
-            <a href={contactData.facebook_url}>  <FaFacebook size={24} /> </a>
+            <a href={websiteData.facebook_link}>  <FaFacebook size={24} /> </a>
             </div>
 
             <div className="transform hover:scale-110 transition duration-300 bg-pink-500 p-3 rounded-full text-white">
-            <a href={contactData.instagram_url}>  <FaInstagram size={24} /> </a>
+            <a href={websiteData.instagram_link}>  <FaInstagram size={24} /> </a>
             </div>
           </div>
         </div>
 
-        <div className="space-y-6 shadow-lg p-5">
+        <div className="space-y-6 shadow-lg p-5 ">
           <h2 className="text-xl sm:text-2xl font-semibold  text-center uppercase text-black mb-4">
             Fill Out The Form
           </h2>

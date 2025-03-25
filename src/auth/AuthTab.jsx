@@ -17,15 +17,11 @@ const AuthTab = () => {
       setIsLoggedIn(true);
     }
   }, []);
-
-
   const handleScroll = () => {
     setIsVisible(window.scrollY > 400);
   };
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -37,16 +33,14 @@ const AuthTab = () => {
   };
 
   const handleLoginSuccess = () => {
-    localStorage.setItem("authToken", "your-token-here");
+    localStorage.setItem("token", "your-token-here");
     setIsLoggedIn(true);
   };
 
   return (
     <div className="py-12 flex flex-col items-center">
-
       <div className={`w-full bg-white ${isVisible ? "fixed top-44 sm:top-24 md:top-28 lg:top-20 z-30 container px-4" : "relative"}`}>
         <div className="flex justify-center z-10 py-3 bg- overflow-hidden transition-all duration-500">
-
           {!isLoggedIn && (
             <>
               <button onClick={() => setActiveTab("Login")} className={tabButtonClass("Login")}>
@@ -59,8 +53,6 @@ const AuthTab = () => {
               </button>
             </>
           )}
-
-
           {isLoggedIn && (
             <>
               <button onClick={() => setActiveTab("My Learning Journey")} className={tabButtonClass("My Learning Journey")}>
@@ -83,7 +75,6 @@ const AuthTab = () => {
           <div className="flex-grow border-t-2 border-[#FA6602]"></div>
         </div>
       </div>
-
       <div className="w-full mt-4 p-0 sm:p-6 bg-white">
         {activeTab === "Login" ? (
           <LogIn onLoginSuccess={handleLoginSuccess} />

@@ -1,121 +1,119 @@
 import React, { useState } from "react";
 import RightArrow from "../assets/arrow-right.png";
 import ServiceArrow from "../assets/service-arrow.png";
-import PlusImg from "../assets/plus.png";
-import SliderBtnLeft from "../assets/slider-btn-left.png";
-import SliderBtnRight from "../assets/slider-btn-right.png";
 import SalesTrainingImg from "../assets/sales-traning.png";
 import SalesPlaybookImg from "../assets/sales-playbook.png";
 import CandidateAssessmentImg from "../assets/candidate-assesment.png";
 import StartupSupportImg from "../assets/startup-support.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight, FaPlus } from "react-icons/fa";
 import { LuPlus } from "react-icons/lu";
+import { useApi } from "../context/ServiceContextApi";
 
-function Services({consultationData}) {
-  if (!consultationData) return <p></p>;
-  const [clickedCard, setClickedCard] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+function Services({ consultationData }) {
+  // if (!consultationData) return <p></p>;
+  // const [clickedCard, setClickedCard] = useState(null);
+  // const [currentPage, setCurrentPage] = useState(1);
   const [showDescription, setShowDescription] = useState(false);
-  const cards = [
-    {
-      id: 1,
-      title: "Sales Training",
-      image: SalesTrainingImg,
-      description: "Results-focused training programs.",
-    },
-    {
-      id: 2,
-      title: "Trade Show Selling",
-      image: SalesPlaybookImg,
-      description:
-        "Turning event participation into measurable sales opportunities.",
-    },
-    {
-      id: 3,
-      title: "Sales Candidate Assessments",
-      image: CandidateAssessmentImg,
-      description:
-        "Assess sales candidates with psychometric tests and interviews to evaluate key skills like negotiation, resilience, and relationship-building, ensuring alignment with your strategy.",
-    },
-    {
-      id: 4,
-      title: "Coaching",
-      image: StartupSupportImg,
-      description: "Executive and sales coaching to improve outcomes.",
-    },
-    {
-      id: 5,
-      title: "Sales Force Evaluation",
-      image: SalesTrainingImg,
-      description:
-        "Get a custom playbook to align your team and strategies effectively.",
-    },
-    {
-      id: 6,
-      title: "Sales Candidate Assessments",
-      image: SalesPlaybookImg,
-      description:
-        "Assess sales candidates with psychometric tests and interviews to evaluate key skills.",
-    },
-    {
-      id: 7,
-      title: "Startups Support",
-      image: CandidateAssessmentImg,
-      description:
-        "Empower startups with strategic sales guidance and resources.",
-    },
-    {
-      id: 8,
-      title: "Consulting & Strategy",
-      image: StartupSupportImg,
-      description: "Offering market, account, and business strategy support.",
-    },
-    {
-      id: 9,
-      title: "Recruiting Process Optimization",
-      image: StartupSupportImg,
-      description:
-        "Streamlining recruitment to attract and retain top-tier sales talent.",
-    },
-    {
-      id: 10,
-      title: "CRM Selection, Installation, and Integration",
-      image: StartupSupportImg,
-      description:
-        "Helping businesses choose and implement the right CRM system.",
-    },
-    {
-      id: 11,
-      title: "Metrics Development",
-      image: StartupSupportImg,
-      description:
-        "Identifying KPIs and predictive indicators to drive revnue.",
-    },
-    {
-      id: 12,
-      title: "Pipeline Management",
-      image: StartupSupportImg,
-      description:
-        " Building formal, staged, and criteria-based pipeline systems",
-    },
-  ];
+  // const cards = [
+  //   {
+  //     id: 1,
+  //     title: "Sales Training",
+  //     image: SalesTrainingImg,
+  //     description: "Results-focused training programs.",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Trade Show Selling",
+  //     image: SalesPlaybookImg,
+  //     description:
+  //       "Turning event participation into measurable sales opportunities.",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Sales Candidate Assessments",
+  //     image: CandidateAssessmentImg,
+  //     description:
+  //       "Assess sales candidates with psychometric tests and interviews to evaluate key skills like negotiation, resilience, and relationship-building, ensuring alignment with your strategy.",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Coaching",
+  //     image: StartupSupportImg,
+  //     description: "Executive and sales coaching to improve outcomes.",
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Sales Force Evaluation",
+  //     image: SalesTrainingImg,
+  //     description:
+  //       "Get a custom playbook to align your team and strategies effectively.",
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "Sales Candidate Assessments",
+  //     image: SalesPlaybookImg,
+  //     description:
+  //       "Assess sales candidates with psychometric tests and interviews to evaluate key skills.",
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "Startups Support",
+  //     image: CandidateAssessmentImg,
+  //     description:
+  //       "Empower startups with strategic sales guidance and resources.",
+  //   },
+  //   {
+  //     id: 8,
+  //     title: "Consulting & Strategy",
+  //     image: StartupSupportImg,
+  //     description: "Offering market, account, and business strategy support.",
+  //   },
+  //   {
+  //     id: 9,
+  //     title: "Recruiting Process Optimization",
+  //     image: StartupSupportImg,
+  //     description:
+  //       "Streamlining recruitment to attract and retain top-tier sales talent.",
+  //   },
+  //   {
+  //     id: 10,
+  //     title: "CRM Selection, Installation, and Integration",
+  //     image: StartupSupportImg,
+  //     description:
+  //       "Helping businesses choose and implement the right CRM system.",
+  //   },
+  //   {
+  //     id: 11,
+  //     title: "Metrics Development",
+  //     image: StartupSupportImg,
+  //     description:
+  //       "Identifying KPIs and predictive indicators to drive revnue.",
+  //   },
+  //   {
+  //     id: 12,
+  //     title: "Pipeline Management",
+  //     image: StartupSupportImg,
+  //     description:
+  //       " Building formal, staged, and criteria-based pipeline systems",
+  //   },
+  // ];
 
-  const cardsPerPage = 4;
-  const totalPages = Math.ceil(cards.length / cardsPerPage);
-  const currentCards = cards.slice(
-    (currentPage - 1) * cardsPerPage,
-    currentPage * cardsPerPage
-  );
+  // const cardsPerPage = 4;
+  // const totalPages = Math.ceil(cards.length / cardsPerPage);
+  // const currentCards = cards.slice(
+  //   (currentPage - 1) * cardsPerPage,
+  //   currentPage * cardsPerPage
+  // );
 
-  const handleNext = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-  const handlePrev = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
+  // const handleNext = () => {
+  //   if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  // };
+  // const handlePrev = () => {
+  //   if (currentPage > 1) setCurrentPage(currentPage - 1);
+  // };
   const handleCardClick = (id) => {
     if (id === clickedCard) {
       setClickedCard(null);
@@ -129,10 +127,48 @@ function Services({consultationData}) {
     }
   };
 
-  const [ref2, inView2] = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
-  });
+  // const [ref2, inView2] = useInView({
+  //   triggerOnce: true,
+  //   threshold: 0.5,
+  // });
+  // const leftVariants = {
+  //   hidden: { opacity: 0, x: -100 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: { duration: 0.8, ease: "easeOut" },
+  //   },
+  // };
+
+
+  if (!consultationData) return null;
+
+  const { serviceData } = useApi();
+
+  // Ensure `serviceData` is an array
+  if (!Array.isArray(serviceData)) {
+    console.error("serviceData is not an array:", serviceData);
+    return null;
+  }
+
+  // Pagination logic
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 4;
+  const totalPages = Math.ceil(serviceData.length / cardsPerPage);
+  const currentCards = serviceData.slice((currentPage - 1) * cardsPerPage, currentPage * cardsPerPage);
+
+  // State for handling clicked cards
+  const [clickedCard, setClickedCard] = useState(null);
+  // const handleCardClick = (id) => setClickedCard(clickedCard === id ? null : id);
+
+  // Pagination functions
+  const handleNext = () => setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev));
+  const handlePrev = () => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
+
+  // Animation settings
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.5 });
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.5 });
+
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -141,7 +177,6 @@ function Services({consultationData}) {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
-
 
 
   return (
@@ -155,24 +190,24 @@ function Services({consultationData}) {
           variants={leftVariants}
         >
           <h5 className="text-[16px] md:text-[24px] sm:text-[24px] uppercase font-bold bg-gradient-to-r from-[#DB0032] to-[#FA6602] text-transparent bg-clip-text">
-   {consultationData.sub_title}
+            {consultationData.sub_title}
           </h5>
           <h2 className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7">
-          <span
+            <span
               className="about-intro-title"
               dangerouslySetInnerHTML={{ __html: consultationData.title }}
             />
 
           </h2>
           <p className="text-sm sm:text-[14px] md:text-[16px] leading-[32px] text-justify mb-8">
-          {consultationData.description}
+            {consultationData.description}
           </p>
           <button
-                      onClick={() => handleButtonClick(consultationData.btn_link)}
+            onClick={() => handleButtonClick(consultationData.btn_link)}
             type="button"
             className="text-[#000] transition-transform duration-500 ease-out transform  h-12 w-full justify-center  flex space-x-5 gap-6 uppercase items-center font-bold text-xs sm:text-sm md:px-20 lg:px-20 sm:w-full xl:w-auto 2xl:w-auto  md:w-auto xl:px-20   md:py-6 sm:px-16 py-4 hover:text-[#000] border border-[#000] sm:justify-center md:justify-between border-btn2"
           >
-               {consultationData.btn_text} 
+            {consultationData.btn_text}
             <img src={RightArrow} alt="Right Arrow" className="w-6 h-6" />
           </button>
         </motion.div>
@@ -189,73 +224,7 @@ function Services({consultationData}) {
               }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              {/* <div className="relative hidden sm:block w-full sm:w-3/4 md:w-1/2 ">
-                {currentCards.map((card, index) => {
-                  let positionClass = "";
-                  let transformOrigin = "";
-                  let margin = "m-4";
-                  if (index === 0) {
-                    positionClass = "absolute bottom-0 right-1/2";
-                    transformOrigin = "bottom right";
-                  } else if (index === 1) {
-                    positionClass = "absolute top-1/2 left-1/2 ";
-                    transformOrigin = "left center";
-                  } else if (index === 2) {
-                    positionClass = "absolute top-1/2 right-1/2 ";
-                    transformOrigin = "right center";
-                  } else if (index === 3) {
-                    positionClass = "absolute bottom-0 left-1/2 ";
-                    transformOrigin = "bottom center";
-                  }
-                  return (
-                    <div
-                      key={card.id}
-                      onClick={() => handleCardClick(card.id)}
-                      className={`transition-all cursor-pointer duration-500 transform  ${positionClass} ${margin} ${(clickedCard === card.id ? "scale-110 z-10" : "",
-                        clickedCard === card.id ? "card-services" : "")
-                        }`}
-                      style={{
-                        backgroundImage: `url(${card.image})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        width: clickedCard === card.id ? "290px" : "180px",
-                        height: clickedCard === card.id ? "290px" : "180px",
-                        transition: "all 0.3s ease",
-                        transformOrigin: transformOrigin,
-                        
-                        transform: clickedCard === card.id ? "scale(1)" : "",
-                      }}
-                    >
-                      <div className="h-full flex flex-col justify-between bg-layer1 p-5 transition-all duration-300">
-                        <h3 className="text-[14px] uppercase font-bold">
-                          {card.title}
-                        </h3>
 
-                        <div className="flex justify-start items-center">
-                          {clickedCard === card.id && showDescription && (
-                            <p className="absolute text-sm leading-6 lg:leading-4 lg:text-[13px] xl:leading-6 xl:text-[16px] 2xl:leading-6 2xl:text-[16px] bold-text1 top-16 w-[90%]">
-                              {card.description}
-                            </p>
-                          )}
-                          {clickedCard === card.id ? (
-                            <img
-                              src={ServiceArrow}
-                              alt="Service Arrow"
-                              className="w-7 h-7"
-                            />
-                          ) : (
-                            <img
-                              src={PlusImg}
-                              alt="Plus Icon"
-                              className="w-7 h-7"
-                            />
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div> */}
 
               <div className="relative hidden sm:block w-full sm:w-3/4 md:w-1/2">
                 {currentCards.map((card, index) => {
@@ -279,34 +248,41 @@ function Services({consultationData}) {
 
                   return (
                     <div
-                      key={card.id}
-                      onClick={() => handleCardClick(card.id)}
+                      key={`${card.id}-${index}`} // Unique key using id and index
+                      onClick={() => handleCardClick(index)} // Use index for click tracking
                       className={`transition-all cursor-pointer duration-500 transform 
                         ${positionClass} ${margin} 
-                             ${clickedCard === card.id ? "scale-110 z-10" : ""} 
+                             ${clickedCard === index ? "scale-110 z-10" : ""} 
                             hover:shadow-lg hover:opacity-90`}
                       style={{
                         backgroundImage: `url(${card.image})`,
                         backgroundSize: "cover",
                         backgroundPosition: "center",
-                        width: clickedCard === card.id ? "290px" : "180px",
-                        height: clickedCard === card.id ? "290px" : "180px",
+                        width: clickedCard === index ? "290px" : "180px",
+                        height: clickedCard === index ? "290px" : "180px",
                         transition: "all 0.3s ease",
                         transformOrigin: transformOrigin,
-                        transform: clickedCard === card.id ? "scale(1)" : "",
+                        transform: clickedCard === index ? "scale(1)" : "",
                       }}
                     >
                       <div className="h-full flex flex-col justify-between bg-layer1 p-5 transition-all duration-300">
                         <h3 className="text-[14px] uppercase font-bold">{card.title}</h3>
 
                         <div className="flex justify-start items-center">
-                          {clickedCard === card.id && showDescription && (
+                          {clickedCard === index && showDescription && (
                             <p className="absolute text-sm leading-6 lg:leading-4 lg:text-[13px] xl:leading-6 xl:text-[16px] 2xl:leading-6 2xl:text-[16px] bold-text1 top-16 w-[90%]">
-                              {card.description}
+                              {card.description.length > 120 ? `${card.description.slice(0, 150)}...` : card.description}
                             </p>
                           )}
-                          <Link to="/services">
-                            {clickedCard === card.id ? (
+
+                          <Link to={
+                            card.indp === "1"
+                              ? `/service/sales-force-details/${card.slug}`
+                              : card.indp === "2"
+                                ? `/service/sales-candidate-details/${card.slug}`
+                                : `/service/${card.slug}`
+                          }>
+                            {clickedCard === index ? (
                               <span className="w-10 h-10 border-2 text-red-500 border-red-500 bg-text flex items-center justify-center">
                                 <FaArrowRight className="text-xl" />
                               </span>
@@ -344,7 +320,13 @@ function Services({consultationData}) {
                         <p className="absolute text-sm leading-6 lg:leading-4 lg:text-[13px] xl:leading-6 xl:text-[16px] 2xl:leading-6 2xl:text-[16px] bold-text1 top-16 w-[90%]">
                           {card.description}
                         </p>
-                        <Link to="/services">
+                        <Link to={
+                            card.indp === "1"
+                              ? `/service/sales-force-details/${card.slug}`
+                              : card.indp === "2"
+                                ? `/service/sales-candidate-details/${card.slug}`
+                                : `/service/${card.slug}`
+                          }>
 
                           <img
                             src={ServiceArrow}
@@ -389,3 +371,4 @@ function Services({consultationData}) {
 }
 
 export default Services;
+

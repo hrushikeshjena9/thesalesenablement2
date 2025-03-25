@@ -24,7 +24,6 @@ const DesktopMenu = ({
   const [loginData, setLoginData] = useState({ email_id: "", password: "" });
   const [errors, setErrors] = useState({});
   const [remember, setRemember] = useState(false);
-
   const { login } = useContext(AuthContext)
   const handleForgotPassword = () => {
     alert(`Password reset link sent to ${forgotEmail}`);
@@ -154,7 +153,7 @@ const DesktopMenu = ({
   };
   const { setActiveTab } = useTab();
   if (!courses) return <p></p>;
-  console.log(courses)
+  // console.log(courses)
   return (
     <>
       <ul className="hidden lg:flex xl:space-x-12 2xl:space-x-14 lg:space-x-3 bold-text1 uppercase mt-4 lg:mt-0">
@@ -185,28 +184,30 @@ const DesktopMenu = ({
                           className="flex icon-hover items-center space-x-3 p-4 group bg-white hover:text-white shadow-md text-sm rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-[#DB0032] hover:to-[#FA6602]"
                         >
 
-                          <span
+                      <div>
+                      <span
                             dangerouslySetInnerHTML={{ __html: item.icon }}
                             className="inline-flex items-center justify-center text-xl icon-hover1 text-white font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 rounded-full"
                           ></span>
+                        </div>    
                           <NavLink
-                          to={
+                            to={
                               link.name === "Courses"
-                                ? `/courses-details/${item.slug}` 
+                                ? `/courses-details/${item.slug}`
                                 : item.indp === "1"
-                                ? "/services/sales-force-evaluation"
-                                : item.indp === "2"
-                                ? "/services/sales-candidate-assessments"
-                                : `/service/${item.slug}`
+                                  ? `/service/sales-force-details/${item.slug}`
+                                  : item.indp === "2"
+                                    ? `/service/sales-candidate-details/${item.slug}`
+                                    : `/service/${item.slug}`
                             }
-                            className={({ isActive }) =>
+                            id={item.indp === '1' ? 'sales-force-details' : 'sales-candidate-details'} className={({ isActive }) =>
                               `block font-bold ${isActive
                                 ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] icon-hover2 transition duration-200 ease-in-out"
                                 : " "
                               }`
                             }
                           >
-                        {link.name === "Courses" ? item.name : item.title}
+                            {link.name === "Courses" ? item.name : item.title}
                           </NavLink>
                         </li>
                       )

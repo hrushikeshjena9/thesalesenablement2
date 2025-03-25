@@ -7,7 +7,6 @@ export const ContactApiProvider = ({ children }) => {
     const [locationData, setLocationData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -22,7 +21,6 @@ export const ContactApiProvider = ({ children }) => {
                 setLoading(false);
             }
         };
-
         fetchData();
     }, []);
     return (
@@ -31,8 +29,6 @@ export const ContactApiProvider = ({ children }) => {
         </ContactContextApi.Provider>
     );
 };
-
-// Custom Hook to Use Contact API Context
 export const useApi = () => {
     return useContext(ContactContextApi);
 };

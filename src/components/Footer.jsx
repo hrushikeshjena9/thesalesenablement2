@@ -1,4 +1,4 @@
-import React, { useState, useEffect,  } from "react";
+import React, { useState, useEffect, } from "react";
 import { name } from '../../package.json';
 import RightArrow1 from "../assets/arrow-right1.png";
 import ArrowAdd from "../assets/Advance.png";
@@ -13,8 +13,15 @@ import FooterLine from "../assets/line-footer.png";
 import { motion } from "framer-motion";
 import ModalScheduleForm from "./ModalScheduleForm";
 import { FaTimes } from "react-icons/fa";
-
+import { useApi3 } from "../context/WebsiteDataContext";
+import { useApi2 } from "../context/CourseContextApi";
+import { Link } from "react-router-dom";
 function Footer() {
+
+  const { courseData, } = useApi2();
+  if (!courseData) return <p></p>;
+  const { websiteData, loading } = useApi3();
+  if (!websiteData) return <p></p>
   const currentYear = new Date().getFullYear();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -35,6 +42,12 @@ function Footer() {
       document.body.style.overflow = "";
     };
   }, [isModalOpen]);
+  const socialMedia = [
+    { name: "Facebook", icon: Facebook, link: websiteData.facebook_link },
+    { name: "Instagram", icon: Instagram, link: websiteData.instagram_link },
+    { name: "Twitter", icon: Twitter, link: websiteData.twitter_link },
+    { name: "LinkedIn", icon: Linkedin, link: websiteData.linkedin_link }
+  ];
   return (
     <footer className="bg-gradient-2 text-white">
       <div className="banner-footer">
@@ -48,10 +61,7 @@ function Footer() {
           >
             <div>
               <p className="mb-4 bold-text1">
-                At The Enablement Company, we help your sales team achieve
-                exceptional results with tailored training and enablement
-                solutions to enhance strategies, improve performance, and
-                optimize processes.
+                {websiteData.footer_text}
               </p>
               <h5 className="mb-2 font-bold uppercase text-base sm:text-xl  md:text-xl lg:text-xl xl:text-2xl">
                 Schedule a Consultation
@@ -62,14 +72,13 @@ function Footer() {
                 onClick={openModal}
                 className="flex md:px-12 hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:from-[#FA6602] hover:to-[#DB0032] transition-all duration-500 ease-out transform md:py-3 md:w-auto uppercase items-center text-white font-bold text-sm md:text-sm lg:text-sm xl:text-xl 2xl:text-lg px-5 py-2  border-2 border-white"
               >
-                Get Started Now
+                {websiteData.footer_btn}
                 <img src={RightArrow1} alt="arrow" className="w-6 h-6 ml-2" />
               </button>
               {isModalOpen && (
                 <div
                   className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 backdrop-blur-sm z-50 text-[#000]"
                   onClick={(e) => {
-                    // Close modal if clicked outside the modal content area
                     if (e.target === e.currentTarget) {
                       closeModal();
                     }
@@ -80,11 +89,6 @@ function Footer() {
                       onClick={closeModal}
                       className="absolute top-5 right-5 text-gray-600 hover:text-gray-800 text-xl sm:text-2xl md:text-3xl transition-all duration-300 ease-in-out bg-transparent  p-2 rounded-full"
                     >
-                      {/* <div className="bg-black hover:bg-red-600 hover:text-white rounded-full h-7 w-7 flex items-center justify-center">
-                      <span className="text-white text-2xl font-semibold">
-                        <FaTimes />
-                      </span>
-                    </div> */}
 
                       <span className="text-black text-2xl hover:text-red-600 transition-all duration-300 ease-in-out  font-semibold">
                         <FaTimes />
@@ -109,22 +113,19 @@ function Footer() {
               <div>
                 <h5 className="font-bold text-lg md:text-2xl  mb-4">Courses</h5>
                 <img src={FooterLine} alt="Line" className="w-[110px] mb-4" />
-                {[
-                  "Professional Selling Skills",
-                  "Front Line Retail Selling Skills",
-                  "Sales Management",
-                  "Sales Territory Planning & Routing",
-                  "Retail Sales Planning and Forecasting",
-                  "Communication Skills for Sales Staff",
-                ].map((course, index) => (
-                  <div
-                    key={index}
-                    className="flex cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] items-center mb-2"
-                  >
-                    <img src={ArrowAdd} alt="arrow" className="w-6 h-6 mr-2" />
-                    <p>{course}</p>
-                  </div>
-                ))}
+                {Array.isArray(courseData) ? courseData.slice(0, 5).map((course, index) => (
+  <div
+    key={index}
+    className="flex cursor-pointer hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] items-center mb-2"
+  >
+    <img src={ArrowAdd} alt="arrow" className="w-6 h-6 mr-2" />
+
+    <Link to={`/courses-details/${course.slug}`}>
+      <p>{course.name}</p>
+    </Link>
+  </div>
+)) : null}
+
               </div>
 
               <div>
@@ -138,10 +139,10 @@ function Footer() {
                     <div
                       key={index}
                       onClick={() =>
-                        (window.location.href =
-                          link === "Home"
-                            ? "/"
-                            : `/${link.toLowerCase().replace(/\s+/g, "-")}`)
+                      (window.location.href =
+                        link === "Home"
+                          ? "/"
+                          : `/${link.toLowerCase().replace(/\s+/g, "-")}`)
                       }
                       className="flex hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602] cursor-pointer items-center mb-2"
                     >
@@ -169,14 +170,14 @@ function Footer() {
                     target="_blank"
                     className="flex items-center"
                   >
-                    <p>28 Sturdee Road, Rosebank, Johannesburg</p>
+                    <p>{websiteData.address}</p>
                   </a>
                 </div>
 
                 <div className="flex flex-row gap-4   mb-2 sm:flex-row sm:gap-4 md:gap-4 lg:flex-col xl:flex-row hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
                   <img src={Phone} alt="phone" className="w-6 h-6 mb-2" />
                   <a href="tel:+0103351182" className="flex items-center">
-                    <p>010 335-1182</p>
+                    <p>{websiteData.phone}</p>
                   </a>
                 </div>
 
@@ -186,7 +187,7 @@ function Footer() {
                     href="mailto:info@theenablement.com"
                     className="flex items-center"
                   >
-                    <p>info@theenablement.com</p>
+                    <p>{websiteData.email}</p>
                   </a>
                 </div>
               </div>
@@ -195,24 +196,26 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Section */}
+
       <div className="banner">
         <div className="container mx-auto flex bold-text1 flex-col md:flex-wrap lg:flex-row xl:flex-row justify-between items-center px-4 py-4 text-center md:text-left">
           <p>
             Copyright © {currentYear} All Rights Reserved By{" "}
             <span className="uppercase font-bold">
-            {name}
+              {websiteData.title}
             </span>
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            {[Facebook, Instagram, Twitter, Linkedin].map((icon, index) => (
-              <div key={index} className="relative">
-                <img
-                  src={icon}
-                  alt="social"
-                  className="w-10 h-10 transition-all cursor-pointer duration-300 ease-in-out hover:shadow-[0px_0px_0px_2px_rgba(219,0,50,0.9),0px_0px_0px_2px_rgba(250,102,2,0.9)] "
-                />
-              </div>
+            {socialMedia.map((item, index) => (
+              <a key={index} href={item.link} target="_blank" rel="noopener noreferrer">
+                <div className="relative">
+                  <img
+                    src={item.icon}
+                    alt={item.name}
+                    className="w-10 h-10 transition-all cursor-pointer duration-300 ease-in-out hover:shadow-[0px_0px_0px_2px_rgba(219,0,50,0.9),0px_0px_0px_2px_rgba(250,102,2,0.9)] "
+                  />
+                </div>
+              </a>
             ))}
           </div>
         </div>

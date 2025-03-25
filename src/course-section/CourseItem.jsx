@@ -51,6 +51,8 @@ const CourseItem = ({ course }) => {
         >
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-3">
+              <div>
+
               <span
                 className={`font-semibold w-8 h-8 rounded-full flex justify-center items-center transition-all duration-300 ${isHovered
                     ? "bg-white text-[#DB0032]"
@@ -59,6 +61,8 @@ const CourseItem = ({ course }) => {
                   dangerouslySetInnerHTML={{ __html: course.icon }} >
       
               </span>
+              </div>
+            
               <span className="font-normal">
                 {course.category}
               </span>

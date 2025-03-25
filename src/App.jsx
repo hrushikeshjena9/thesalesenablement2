@@ -26,7 +26,6 @@ import LoginSignUp from "./auth/LoginSignUp";
 import { ToastContainer, toast } from 'react-toastify';
 
 import "react-toastify/dist/ReactToastify.css";
-import { AuthProvider } from "./context/AuthContext";
 import ChangePassword from "./auth/ChangePwd";
 import AdminLogin from "./auth/AdminLogin";
 import ContextProviders from "./context/ContextProviders";
@@ -81,22 +80,18 @@ function App() {
             <Route path="/service/:slug" element={<ServiceDetails />} />
             <Route path="/courses" element={<Course />} />
             <Route path="/pwd" element={<ChangePassword />} />
-
             <Route path="/adminLogin" element={<AdminLogin />} />
             <Route
-              path="/courses-details/:slug"
-              element={<CourseDetails />}
-            />
+              path="/courses-details/:slug" element={<CourseDetails />} />
             <Route path="/blogs" element={<BlogPage />} />
             <Route path="/blog-details/:blogId" element={<BlogDetails />} />
             <Route path="/contact-us" element={<ContactUsPage />} />
             <Route path="/services/sales-candidate-assessments/sample-sales-candidate-assessments" element={<SampleRequestPage />} />
             <Route
-              path="/services/sales-force-evaluation"
-              element={<SalesForceEvaluation />}
-            />
+              path="/service/sales-force-details/:slug"
+              element={<SalesForceEvaluation />}  />
             <Route
-              path="/services/sales-candidate-assessments"
+              path="/service/sales-candidate-details/:slug"
               element={<CandidateAssessment />}
             />
             <Route

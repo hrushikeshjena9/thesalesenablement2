@@ -25,11 +25,7 @@ function ServicesPage() {
   }, [])
   return (
     <div>
-        {/* <Helmet>
-            <title>{about_data.meta_title} </title>
-              <meta name="description" content={about_data.meta_description} />
-              <meta name="keywords" content={about_data.meta_keywords} />
-            </Helmet> */}
+       
       <HeroServices />
       <div className="container mx-auto px-4 py-12  ">
         <h1 className="text-lg sm:text-2xl lg:text-4xl font-bold uppercase sm:leading-[38px] lg:leading-[48px] mb-3 lg:mb-5">

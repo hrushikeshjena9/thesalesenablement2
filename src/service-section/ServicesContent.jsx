@@ -61,12 +61,12 @@ const ServiceContent = ({ serviceData }) => {
 
                   <div className="flex justify-center">
                     <Link  to={
-                    service.indp === "1" 
-                      ? "/services/sales-force-evaluation"
-                      : service.indp === "2"
-                      ? "/services/sales-candidate-assessments"
-                      : `/service/${service.slug}`
-                  }
+                            service.indp === "1"
+                              ? `/service/sales-force-details/${service.slug}`
+                              : service.indp === "2"
+                                ? `/service/sales-candidate-details/${service.slug}`
+                                : `/service/${service.slug}`
+                          }
                       state={service}
                       className="relative w-[86%] icon-hover mb-4 px-6 py-3 flex items-center justify-center font-medium text-xs sm:text-sm  text-[#DB0032] border-2 border-transparent rounded-md transition-all duration-500 ease-out hover:text-white hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
                       style={{
