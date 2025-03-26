@@ -29,7 +29,6 @@ const [consultationForm, setConsultationForm] = useState({
       [name]: value
     })
   }
-
   const validateFields = () => {
     let tempErrors = {}
     if (!consultationForm.name) tempErrors.name = "Name is required"
@@ -41,7 +40,6 @@ const [consultationForm, setConsultationForm] = useState({
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!validateFields()) {
@@ -77,7 +75,6 @@ const [consultationForm, setConsultationForm] = useState({
         date_time: formatDateTime(consultationForm.date_time),
         mode: consultationForm.mode,
       };
-
       const response = await axios.post(url, payload);
       if (response.data.status) {
         toast.success(response.data.message, {

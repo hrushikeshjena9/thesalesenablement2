@@ -1,19 +1,14 @@
 import React from "react";
-
 function CommentPost() {
   return (
     <div>
       <div className="bg-white p-6 rounded-lg w-3/5 mt-6 shadow-md">
         <h3 className="text-xl font-semibold mb-4">Post a Comment</h3>
-
         <form className="space-y-4">
-    
           <p className="text-sm text-gray-500">
             Your email address will not be published. Required fields are marked
             *
           </p>
-
-    
           <div>
             <label
               htmlFor="comment"
@@ -29,8 +24,6 @@ function CommentPost() {
               required
             ></textarea>
           </div>
-
-
           <div>
             <label
               htmlFor="name"
@@ -46,8 +39,6 @@ function CommentPost() {
               required
             />
           </div>
-
-
           <div>
             <label
               htmlFor="phone"
@@ -62,7 +53,6 @@ function CommentPost() {
               placeholder="Enter your phone number"
             />
           </div>
-
           <div className="flex justify-end">
             <button
               type="submit"
@@ -76,5 +66,4 @@ function CommentPost() {
     </div>
   );
 }
-
 export default CommentPost;

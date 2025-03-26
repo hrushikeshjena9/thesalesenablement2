@@ -8,13 +8,11 @@ import MapEmbed from "../contactus-sections/MapEmbed";
 import axios from "../api/axios";
 import { Helmet } from "react-helmet-async";
 import { useApi3 } from "../context/WebsiteDataContext";
-
 import { Bars } from "react-loader-spinner"; 
 
 function ContactUsPage() {
-
-      const { websiteData,  } = useApi3();
-        if (!websiteData) return <p></p>
+ const { websiteData,  } = useApi3();
+  if (!websiteData) return <p></p>
   const [data, setData] = useState({});
   const [error, setError] = useState("")
   const [isLoading, setIsLoading] = useState(true);
