@@ -25,10 +25,10 @@ function SignUp() {
     email_id: "",
     password: "",
     confirmPassword: "",
-    marketingConsent: false, // Optional checkbox
-    termsAccepted: false, // Mandatory checkbox
+    marketingConsent: false,
+    termsAccepted: false,
   });
-  const [loading, setLoading] = useState(false); // Prevent multiple submissions
+  const [loading, setLoading] = useState(false); 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
@@ -40,7 +40,7 @@ function SignUp() {
 
   const titles = ["Adv", "Dr", "Miss", "Mr", "Mrs", "Ms", "Prof", "Sir"];
 
-  // Handle input change
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setSignUpData({
@@ -83,7 +83,7 @@ function SignUp() {
       console.log("Response:", response.data); // Debugging
   
       if (response.data.status && response.data.message) {
-        console.log("Success Message:", response.data.message); // Debugging
+        console.log("Success Message:", response.data.message); 
   
         toast.success(response.data.message, { toastId: "registerSuccess" });
   
@@ -106,7 +106,7 @@ function SignUp() {
       }
     } catch (err) {
       let errorMessage = err.response?.data?.message || "Something went wrong!";
-      console.error("Error:", errorMessage); // Debugging
+      console.error("Error:", errorMessage);
       toast.error(errorMessage, { toastId: "registerError" });
     } finally {
       setLoading(false);

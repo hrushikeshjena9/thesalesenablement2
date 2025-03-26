@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import { FaCommentDots } from "react-icons/fa";
 
 const MapSection = ({ mapData }) => {

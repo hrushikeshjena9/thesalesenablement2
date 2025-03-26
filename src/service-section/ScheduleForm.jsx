@@ -12,8 +12,7 @@ import { MdOutlineDescription } from "react-icons/md";
 import { toast } from "react-toastify";
 import axios from "axios";
 const ScheduleForm = () => {
-
-  const [consultationForm, setConsultationForm] = useState({
+const [consultationForm, setConsultationForm] = useState({
     name: "",
     email: "",
     mobile: "",

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: '480px', // Define the `xs` breakpoint at 480px
+        xs: '480px',
       },
     },
   },

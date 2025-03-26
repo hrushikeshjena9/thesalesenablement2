@@ -33,7 +33,7 @@ function ContactContent({ contactData }) {
 
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {/* Location Card */}
+      
             <div className="p-3 bg-white border border-gray-200 shadow-md rounded-lg transform hover:scale-105 transition duration-300 flex flex-col items-center justify-center min-h-[250px]">
               <AiOutlineGlobal className="w-10 h-10 text-[#DB0032] mb-4" />
               <h3 className="text-base md:text-lg text-center font-semibold text-gray-800">
