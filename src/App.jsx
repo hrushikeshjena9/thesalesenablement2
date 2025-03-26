@@ -2,12 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ScreenResolutionPopup from "./components/ScreenResolutionPopup";
 import { useState, useEffect } from "react";
 import { Bars } from "react-loader-spinner";
 import NotFound from "./components/Not-found";
-import Login from "./auth/Login";
-import SignUp from "./auth/SignUp";
 import Course from "./pages/Course";
 import About from "./pages/About";
 import ServicePage from "./pages/ServicesPage";
@@ -23,12 +20,12 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import SampleRequestPage from "./pages/SampleRequestPage";
 import LoginSignUp from "./auth/LoginSignUp";
-import { ToastContainer, toast } from 'react-toastify';
-
+import { ToastContainer  } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import ChangePassword from "./auth/ChangePwd";
 import AdminLogin from "./auth/AdminLogin";
 import ContextProviders from "./context/ContextProviders";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -70,7 +67,7 @@ function App() {
         <div
           className={`transition-opacity duration-1000 ${showContent ? "opacity-100" : "opacity-0"
             }`}
-        >
+        > <ScrollToTop />
            <ContextProviders>
           <Header />
           <Routes>

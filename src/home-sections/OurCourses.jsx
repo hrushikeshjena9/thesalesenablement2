@@ -8,7 +8,6 @@ import { useState } from "react";
 
 function OurCourses() {
   const { courseData, } = useApi2();
-
   if (!courseData) return <p></p>;
   const courses = Array.isArray(courseData) ? courseData : [];
   const [searchQuery, setSearchQuery] = useState("");
@@ -63,55 +62,58 @@ function OurCourses() {
                   />
                 </span>
               </button>
-              <div className="relative"> <div className="flex justify-between items-center border-2 border-black p-1">
-                <img src={FilterImg} alt="Filter Icon" className="w-6 h-6 ml-2" />
-                <input
-                  type="text"
-                  placeholder="Search Courses"
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                    setDropdownOpen(e.target.value.length > 0);
-                  }}
-                  className="flex-1 w-full px-6 py-2 sm:px-4 sm:py-1 font-bold placeholder:text-sm  outline-none"
-                />
-       
+              <div className="relative">
+                <div className="flex justify-between items-center border-2 border-black p-1">
+                  <img
+                    src={FilterImg}
+                    alt="Filter Icon"
+                    className="w-6 h-6 ml-2 cursor-pointer"
+                    onClick={() => setDropdownOpen(!isDropdownOpen)}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Search Courses"
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setDropdownOpen(e.target.value.length > 0);
+                    }}
+                    className="flex-1 w-full px-6 py-2 sm:px-4 sm:py-1 font-bold placeholder:text-sm  outline-none"
+                  />{filteredCourses.length > 0 ? (
+                    <Link
+                      to={`/courses-details/${filteredCourses[0].slug || ""}`}
+                      className="text-white group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px] sm:text-sm md:text-[14px] px-5 py-2.5 flex items-center justify-center relative"
+                    >
+                      <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-[#060b33]"></span>
+                      <span className="relative text-white group-hover:text-white flex items-center">
+                        Book Now
+                      </span>
+                    </Link>
+                  ) : null}
 
-                {filteredCourses.length > 0 ? (
-                  <Link
-                    to={`/courses-details/${filteredCourses[0].slug || ""}`}
-                    className="text-white group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px] sm:text-sm md:text-[14px] px-5 py-2.5 flex items-center justify-center relative"
-                  >
-                    <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-[#060b33]"></span>
-                    <span className="relative text-white group-hover:text-white flex items-center">
-                      Book Now
-                    </span>
-                  </Link>
-                ) : null}
 
-
-              </div> {isDropdownOpen && (
-                <div className="absolute w-full bg-white border border-gray-300 rounded-md shadow-md mt-1 max-h-48 overflow-y-auto">
-                  {filteredCourses.length > 0 ? (
-                    filteredCourses.map((course, index) => (
-                      <div
-                        key={index}
-                        className="p-2 text-center text-sm font-bold border-b border-gray-200 hover:bg-gray-100 cursor-pointer"
-                        onClick={() => {
-                          setSearchQuery(course.name);
-                          setDropdownOpen(false);
-                        }}
-                      >
-                        {course.name}
-                      </div>
-                    ))
-                  ) : (
-                    <p className="text-center text-gray-500 font-bold p-2">
-                      No courses found
-                    </p>
-                  )}
-                </div>
-              )}
+                </div> {isDropdownOpen && (
+                  <div className="absolute w-full bg-white border border-gray-300 rounded-md shadow-md mt-1 max-h-48 overflow-y-auto">
+                    {filteredCourses.length > 0 ? (
+                      filteredCourses.map((course, index) => (
+                        <div
+                          key={index}
+                          className="p-2 text-center text-sm font-bold border-b border-gray-200 hover:bg-gray-100 cursor-pointer"
+                          onClick={() => {
+                            setSearchQuery(course.name);
+                            setDropdownOpen(false);
+                          }}
+                        >
+                  {course.name}
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-center text-gray-500 font-bold p-2">
+                        No courses found
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
               <Link
                 to="courses"

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Logo from "../assets/logo.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import { useApi3 } from "../context/WebsiteDataContext";
 
@@ -21,7 +20,6 @@ const FooterSubscribe = () => {
     }
     setError("");
     console.log("Subscribed with:", email);
-    // Handle form submission logic here (e.g., send to backend)
     setEmail("");
   };
 

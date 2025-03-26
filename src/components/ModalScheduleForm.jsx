@@ -4,11 +4,9 @@ import {
   FaEnvelope,
   FaPhoneAlt,
   FaChalkboardTeacher,
-  FaQuestionCircle,
   FaRegCalendarCheck,
   FaArrowRight,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { MdOutlineDescription } from "react-icons/md";
 import { toast } from "react-toastify";
 import axios from "../api/axios"
@@ -51,7 +49,7 @@ const ModalScheduleForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (!validateFields()) {
       toast.error("Please fill all required fields", {
         position: "top-right",
@@ -64,10 +62,10 @@ const ModalScheduleForm = () => {
       });
       return;
     }
-  
+
     try {
       const url = "consultations";
-  
+
       const formatDateTime = (date) => {
         const d = new Date(date);
         const year = d.getFullYear();
@@ -78,19 +76,19 @@ const ModalScheduleForm = () => {
         const seconds = String(d.getSeconds()).padStart(2, "0");
         return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
       };
-  
+
       const payload = {
         name: consultationForm.name,
         email: consultationForm.email,
         mobile: consultationForm.mobile,
         type: consultationForm.type,
         desc: consultationForm.desc,
-        date_time: formatDateTime(consultationForm.date_time), 
+        date_time: formatDateTime(consultationForm.date_time),
         mode: consultationForm.mode,
       };
-  
+
       const response = await axios.post(url, payload);
-  
+
       if (response.data.status) {
         toast.success(response.data.message, {
           position: "top-right",
@@ -102,7 +100,7 @@ const ModalScheduleForm = () => {
           theme: "light",
         });
       }
-  
+
       console.log(response.data);
     } catch (error) {
       toast.error(error.response?.data?.message || "An error occurred", {
@@ -114,11 +112,11 @@ const ModalScheduleForm = () => {
         draggable: true,
         theme: "light",
       });
-  
+
       console.error("Error:", error);
     }
   };
-  
+
 
 
   return (
@@ -154,7 +152,7 @@ const ModalScheduleForm = () => {
             <input
               type="email"
               id="email"
-              
+
               className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
               name="email"
               value={consultationForm.email}
@@ -217,12 +215,14 @@ const ModalScheduleForm = () => {
             <input
               type="datetime-local"
               id="dateTime"
-              className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
+              className="w-full pl-10 p-3 border  border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
               name="date_time"
               value={consultationForm.date_time}
               onChange={handleChange}
+              onFocus={(e) => e.target.showPicker()} 
               required
             />
+
 
           </div>
 

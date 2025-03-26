@@ -12,7 +12,6 @@ function CourseDetails() {
       try {
         const res = await axios.get(`get-course-details/${slug}`);
         const data = res.data.data;
-        // console.log("API Response:", res.data.data);
         setCourse(data);
       } catch (error) {
         console.error("Error fetching course:", error);

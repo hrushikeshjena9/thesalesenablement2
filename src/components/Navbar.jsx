@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import Logo from "../assets/logo.png";
 import DesktopMenu from "../nav-menu/DesktopMenu";
 import MobileMenu from "../nav-menu/MobileMenu";
-
 import { useApi3 } from "../context/WebsiteDataContext";
 import { useApi } from "../context/ServiceContextApi";
 import { useApi2 } from "../context/CourseContextApi";

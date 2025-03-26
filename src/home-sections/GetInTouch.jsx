@@ -3,7 +3,6 @@ import GetInTouchImg from "../assets/getintouch.png";
 import RightArrow from "../assets/arrow-right.png";
 import RightArrow1 from "../assets/arrow-right1.png";
 import PhoneIncome from "../assets/phone-incoming.png";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
 

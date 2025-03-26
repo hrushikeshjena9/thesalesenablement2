@@ -1,5 +1,4 @@
 import React, { useState, useEffect, } from "react";
-import { name } from '../../package.json';
 import RightArrow1 from "../assets/arrow-right1.png";
 import ArrowAdd from "../assets/Advance.png";
 import Location from "../assets/location.png";

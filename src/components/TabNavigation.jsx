@@ -16,7 +16,6 @@ const TabNavigation = ({course}) => {
 
   return (
     <div className="py-4 w-full">
-      {/* Responsive Tabs */}
       <div className="flex flex-col lg:flex-row justify-center md:justify-between gap-2  lg:gap-10 mb-6">
         {[
           { label: "Modules", value: "modules" },
@@ -34,8 +33,6 @@ const TabNavigation = ({course}) => {
           </button>
         ))}
       </div>
-
-      {/* Content Section */}
       <div className="sm:py-6 py-4 border-t-2 border-[#DB0032]">
         {activeTab === "modules" && <ModuleContent course={course} />}
         {activeTab === "objectives" && <CourseObjectives course={course} />}

@@ -2,7 +2,6 @@ import React from 'react';
 import { FaCheckCircle, FaBookOpen, FaClipboardList } from 'react-icons/fa';
 
 const MyLearningJourney = () => {
-  // Mock data for demonstration with only the courses you provided
   const courses = [
     { name: 'Professional Selling Skills', progress: 80 },
     { name: 'Communication Skills for Sales Staff', progress: 50 },

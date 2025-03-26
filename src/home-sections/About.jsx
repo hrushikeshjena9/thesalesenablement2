@@ -1,10 +1,5 @@
 import RightArrow1 from "../assets/arrow-right1.png";
 import RightArrow from "../assets/arrow-right.png";
-import OurMission from "../assets/our-mission.png";
-import OurValues from "../assets/our-value.png";
-import OurVision from "../assets/our-vision.png";
-import Thumb from "../assets/new/thumbsup.png";
-import About1 from "../assets/new/about1.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 function About({ aboutPageData }) {
@@ -46,7 +41,6 @@ function About({ aboutPageData }) {
                 alt=""
                 className="w-[150.38px]  h-[150.38px] sm:w-[234.3px]  sm:h-[230.35px] md:w-[234.3px]  md:h-[230.35px] lg:w-[200px]  lg:h-[200px] xl:w-[234.3px]  xl:h-[230.35px] 2xl:w-[234.3px]  2xl:h-[230.35px] relative top-[-2rem] sm:top-[-4rem] z-20"
               />
-
               <img
                 src={aboutPageData.second_image}
                 alt=""
@@ -55,7 +49,6 @@ function About({ aboutPageData }) {
             </div>
           </div>
         </motion.div>
-
         <motion.div
           className="text-center md:text-left overflow-hidden"
           initial="hidden"
@@ -71,7 +64,6 @@ function About({ aboutPageData }) {
           >
             {aboutPageData.sub_title}
           </h5>
-
           <h2
             className="text-[18px] sm:text-[24px] md:text-[28px] font-bold uppercase mt-7 mb-7"
             data-aos="fade-left"
@@ -93,13 +85,11 @@ function About({ aboutPageData }) {
 
           <div className="space-y-6 pl-2">
             {Object.entries(aboutPageData.key_points).map(([icon, item], index) => (
-
               <div className="flex items-start space-x-5" key={index}>
                 <div className="w-[10%]">
                   <div className="w-12 bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:scale-110 h-12 rounded-full flex justify-center items-center pt-1">
                     <div dangerouslySetInnerHTML={{ __html: icon }} className="text-3xl text-white " />
                   </div>
-
                 </div>
 
                 <div className="flex items-start w-[90%] gap-6">

@@ -3,12 +3,8 @@ import {
   FaUserAlt,
   FaEnvelope,
   FaPhoneAlt,
-  FaChalkboardTeacher,
-  FaQuestionCircle,
-  FaRegCalendarCheck,
   FaArrowRight,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { MdOutlineDescription } from "react-icons/md";
 import { toast } from "react-toastify";
 import axios from "../api/axios"

@@ -193,10 +193,11 @@ const [consultationForm, setConsultationForm] = useState({
             <input
               type="datetime-local"
               id="dateTime"
-              className="w-full pl-10 p-3 border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
+              className="w-full pl-10 p-3 border  border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#060B33]"
               name="date_time"
               value={consultationForm.date_time}
               onChange={handleChange}
+              onFocus={(e) => e.target.showPicker()} 
               required
             />
           </div>
