@@ -183,12 +183,12 @@ const DesktopMenu = ({
                           className="flex icon-hover items-center space-x-3 p-4 group bg-white hover:text-white shadow-md text-sm rounded-lg cursor-pointer hover:bg-gradient-to-r hover:from-[#DB0032] hover:to-[#FA6602]"
                         >
 
-                      <div>
-                      <span
-                            dangerouslySetInnerHTML={{ __html: item.icon }}
-                            className="inline-flex items-center justify-center text-xl icon-hover1 text-white font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 rounded-full"
-                          ></span>
-                        </div>    
+                          <div>
+                            <span
+                              dangerouslySetInnerHTML={{ __html: item.icon }}
+                              className="inline-flex items-center justify-center text-xl icon-hover1 text-white font-bold transition duration-200 ease-in-out bg-gradient-to-r from-[#DB0032] to-[#FA6602] w-10 h-10 rounded-full"
+                            ></span>
+                          </div>
                           <NavLink
                             to={
                               link.name === "Courses"
@@ -243,8 +243,8 @@ const DesktopMenu = ({
                 to={link.route}
                 className={({ isActive }) =>
                   `relative sm:text-xs lg:text-sm xl:text-base ${isActive
-                    ? "text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
-                    : "hover:text-transparent hover:bg-clip-text hover:font-bold hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
+                    ? "text-transparent w-10 h-10 bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602] font-bold"
+                    : "hover:text-transparent  hover:bg-clip-text hover:font-bold hover:bg-gradient-to-r from-[#DB0032] to-[#FA6602]"
                   }`
                 }
               >

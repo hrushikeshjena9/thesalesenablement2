@@ -125,7 +125,7 @@ const ModalScheduleForm = () => {
     <div className="max-w-lg mx-auto bg-white p-8 shadow-md border border-gray-200 rounded-lg overflow-y-auto">
       <form
         onSubmit={handleSubmit}
-        className="space-y-6 max-h-[85vh] py-2 "
+        className="space-y-2 max-h-[80vh] py-2 "
       >
         <h2 className="text-2xl font-bold text-center uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#DB0032] to-[#FA6602]">
           Book Your Consultation
@@ -260,6 +260,7 @@ const ModalScheduleForm = () => {
           </button>
         </div>
       </form>
+
     </div>
   );
 };

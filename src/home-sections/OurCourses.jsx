@@ -73,25 +73,23 @@ function OurCourses() {
                     setSearchQuery(e.target.value);
                     setDropdownOpen(e.target.value.length > 0);
                   }}
-                  className="flex-1 w-full px-6 py-2 sm:px-4 sm:py-1 font-bold placeholder:text-sm uppercase outline-none"
+                  className="flex-1 w-full px-6 py-2 sm:px-4 sm:py-1 font-bold placeholder:text-sm  outline-none"
                 />
-                <div>
-                  {filteredCourses.length > 0 ? (
-                    filteredCourses.map((course, id) => (
-                      <Link
-                        key={id}
-                        to={`/courses-details/${course.slug || ""}`}
-                        className="text-white group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px] sm:text-sm md:text-[14px] px-5 py-2.5 flex items-center justify-center relative"
-                      >
-                        <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-[#060b33]"></span>
-                        <span className="relative text-white group-hover:text-white flex items-center">
-                          Book Now
-                        </span>
-                      </Link>
-                    ))
-                  ) : null}
+       
 
-                </div>
+                {filteredCourses.length > 0 ? (
+                  <Link
+                    to={`/courses-details/${filteredCourses[0].slug || ""}`}
+                    className="text-white group transition-transform duration-500 ease-out transform uppercase bg-gradient-to-r from-[#DB0032] to-[#FA6602] hover:bg-gradient-to-bl focus:outline-none text-[12px] sm:text-sm md:text-[14px] px-5 py-2.5 flex items-center justify-center relative"
+                  >
+                    <span className="absolute inset-0 w-0 h-full bg-[#060b33] transition-all duration-300 ease-in-out group-hover:w-full group-hover:bg-[#060b33]"></span>
+                    <span className="relative text-white group-hover:text-white flex items-center">
+                      Book Now
+                    </span>
+                  </Link>
+                ) : null}
+
+
               </div> {isDropdownOpen && (
                 <div className="absolute w-full bg-white border border-gray-300 rounded-md shadow-md mt-1 max-h-48 overflow-y-auto">
                   {filteredCourses.length > 0 ? (
@@ -132,3 +130,4 @@ function OurCourses() {
 }
 
 export default OurCourses;
+
