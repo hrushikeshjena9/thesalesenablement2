@@ -12,7 +12,7 @@ import Achievement from "../about-section/Achievement";
 import Awards from "../about-section/AwardSection";
 import Cards from "../about-section/Cards";
 import Expertise from "../about-section/Expertise";
-import { Bars } from "react-loader-spinner"; // Ensure you have react-loader-spinner installed
+import { Bars } from "react-loader-spinner";
 
 function About() {
   const { websiteData } = useApi3();

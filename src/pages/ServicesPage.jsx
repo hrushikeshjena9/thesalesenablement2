@@ -1,11 +1,10 @@
-// src/App.js
+
 import React, { useEffect, useState } from "react";
 import HeroServices from "../service-section/HeroServices";
 import ServiceContent from "../service-section/ServicesContent";
 import WhyChooseUs from "../service-section/WhyChooseUs";
 import ScheduleConsultation from "../service-section/ScheduleConsultation";
 import axios from "../api/axios"
-import { Helmet } from "react-helmet-async";
 function ServicesPage() {
 
   const [data, setData] = useState({})

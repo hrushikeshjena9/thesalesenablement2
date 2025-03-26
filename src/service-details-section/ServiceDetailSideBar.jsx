@@ -8,7 +8,7 @@ import {
 
 } from "react-icons/fa";
 
-import { BsArrowRight } from "react-icons/bs"; // Icon for arrow
+import { BsArrowRight } from "react-icons/bs"; 
 
 const ServiceDetailSideBar = ({ course }) => {
   const [email, setEmail] = useState("");

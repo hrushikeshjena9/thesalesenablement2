@@ -1,69 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import "../home-sections/home.css";
-// import HeroSection from "../home-sections/HeroSection";
-// import About from "../home-sections/About";
-// import Services from "../home-sections/Services";
-// import GetInTouch from "../home-sections/GetInTouch";
-// import CaseStudies from "../home-sections/CaseStudies";
-// import Testimonials from "../home-sections/Testimonialss";
-// import OurCourses from "../home-sections/OurCourses";
-// import LatestBlogs from "../home-sections/LatestBlogs";
-// import FooterSubscribe from "../home-sections/FooterSubscribe";
-// import axios from "../api/axios";
-// import { Helmet } from "react-helmet-async";
-// import { useApi3 } from "../context/WebsiteDataContext";
-// function Home() {
-//    const { websiteData, loading } = useApi3();
-//    if (!websiteData) return <p></p>
-
-//   const [data, setData] = useState({});
-//   const [error, setError] = useState(""); 
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const res = await axios.get("/home-page");
-//         setData(res.data.data);
-//       } catch (error) {
-//         setError("Failed to fetch data"); 
-//         console.error("Error fetching data:", error);
-//       }
-//     };
-
-//     fetchData();
-//   }, []);
-//   const { consultation, page_banners, page_data, testimonials } = data || {};
-//   if (!page_data) return <p></p>
-  
-//   return (
-//     <>
-//         <Helmet>
-//           <title>{websiteData.meta_title}</title>
-//             <meta name="description" content={websiteData.meta_description} />
-//             <meta name="keywords" content={websiteData.meta_keywords} />
-//         <meta property="og:title" content={websiteData.og_title}/>
-//         <meta property="og:description" content={websiteData.og_description} />
-//         <meta property="og:image" content={websiteData.og_image} />
-//         <meta property="og:type" content="website" />
-//         <meta property="og:url" content={window.location.href} />
-//           </Helmet>
-//       <div className="flex flex-col space-y-16">
-//         <HeroSection heroData={data.page_banners}/>
-//         <OurCourses />
-//         <About aboutPageData={data.page_data} />
-//         <Services consultationData={data.consultation}/>
-//         <GetInTouch />
-//         <CaseStudies />
-//         <Testimonials testimonialsData={data.testimonials} />
-//         <LatestBlogs />
-//         <FooterSubscribe />
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Home;
-
 
 import React, { useEffect, useState } from "react";
 import "../home-sections/home.css";
@@ -79,16 +13,15 @@ import FooterSubscribe from "../home-sections/FooterSubscribe";
 import axios from "../api/axios";
 import { Helmet } from "react-helmet-async";
 import { useApi3 } from "../context/WebsiteDataContext";
-import { BrowserRouter } from "react-router-dom";
-import { Bars } from "react-loader-spinner"; // Import loader
+import { Bars } from "react-loader-spinner"; 
 
 function Home() {
   const { websiteData, loading: websiteLoading } = useApi3();
 
   const [data, setData] = useState({});
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(true); // Loader state
-  const [showContent, setShowContent] = useState(false); // Transition state
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -102,7 +35,7 @@ function Home() {
         setTimeout(() => {
           setIsLoading(false);
           setShowContent(true);
-        }, 2000); // Simulate loading delay
+        }, 2000);
       }
     };
 
@@ -114,7 +47,6 @@ function Home() {
   return (
     <>
       {isLoading || websiteLoading ? (
-        /** Loader Section **/
         <div
           style={{
             background: "linear-gradient(to right, #DB0032, #FA6602)",

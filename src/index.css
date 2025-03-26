@@ -44,8 +44,7 @@ input[type="number"] {
   background: linear-gradient(to right, #db0032 0%, #fa6602 100%);
 }
 
-/* background: linear-gradient(to right, #060B33 69%, #383F71 100%); */
-/* bg-gradient-to-r from-[#00BFFF] to-[#1E90FF] */
+
 *,
 *::before,
 *::after {
@@ -260,7 +259,6 @@ body {
   }
 }
 
-/* Base button styles */
 .border-btn2 {
   position: relative;
   font-weight: bold;
@@ -279,7 +277,6 @@ body {
   animation: borderRunningAnimation 2s linear infinite;
 }
 
-/* Keyframes for border animation */
 @keyframes borderRunningAnimation {
   0% {
     border-image-source: linear-gradient(to right, #db0032 0%, #A6602 100%);
@@ -305,20 +302,20 @@ body {
 
 .border-btn2::before {
   top: 0;
-  left: -100%; /* Start off-screen */
+  left: -100%; 
 }
 
 .border-btn2::after {
   bottom: 0;
-  right: -100%; /* Start off-screen */
+  right: -100%; 
 }
 
 .border-btn2:hover::before {
-  transform: translateX(100%); /* Slide in from left */
+  transform: translateX(100%); 
 }
 
 .border-btn2:hover::after {
-  transform: translateX(-100%); /* Slide in from right */
+  transform: translateX(-100%); 
 }
 
 @keyframes fadeIn {
@@ -367,7 +364,6 @@ body {
   background-size: cover;
   background-position: center;
 }
-/* Add this to your CSS file */
 .hover\:rotate-y-180:hover {
   transform: rotateY(180deg);
 }

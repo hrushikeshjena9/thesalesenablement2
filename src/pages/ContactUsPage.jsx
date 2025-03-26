@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaComments } from "react-icons/fa"; // Import the chat icon
+import { FaComments } from "react-icons/fa"; 
 import HeroContact from "../contactus-sections/HeroContact";
 import ContactContent from "../contactus-sections/ContactContent";
 import Faq from "../contactus-sections/Faq";
@@ -8,12 +8,16 @@ import MapEmbed from "../contactus-sections/MapEmbed";
 import axios from "../api/axios";
 import { Helmet } from "react-helmet-async";
 import { useApi3 } from "../context/WebsiteDataContext";
+
+import { Bars } from "react-loader-spinner"; 
+
 function ContactUsPage() {
 
       const { websiteData,  } = useApi3();
         if (!websiteData) return <p></p>
   const [data, setData] = useState({});
   const [error, setError] = useState("")
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -22,12 +26,30 @@ function ContactUsPage() {
       } catch (error) {
         setError("Failed to fetch data")
         console.log("Error fetching data:", error)
+      } finally {
+        setIsLoading(false);
       }
     }
     fetchData()
   }, [])
   const { contact_data, faq_data, location_data } = data || {}
-
+if (isLoading) {
+    return (
+      <div
+        style={{
+          background: "linear-gradient(to right, #DB0032, #FA6602)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <div className="flex flex-wrap">
+          <Bars height="80" width="80" color="#FFFFFF" ariaLabel="bars-loading" visible={true} />
+        </div>
+      </div>
+    );
+  }
   if (!contact_data) return <p></p>;
 
   return (
@@ -37,6 +59,11 @@ function ContactUsPage() {
             <title>{contact_data?.meta_title || " "} | {websiteData?.title || " "}</title>
               <meta name="description" content={contact_data.meta_description} />
               <meta name="keywords" content={contact_data.meta_keywords} />
+              <meta property="og:title" content={contact_data.og_title} />
+        <meta property="og:description" content={contact_data.og_description} />
+        <meta property="og:image" content={contact_data.og_image} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.href} />
             </Helmet>
       <HeroContact />
 

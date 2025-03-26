@@ -18,7 +18,7 @@ function PrivacyPolicy() {
           This Privacy Policy explains how <span className="font-semibold">{websiteData.title}</span> collects, uses, and discloses information when you use our website and services.
         </p>
         
-        {/* Information We Collect */}
+
         <section className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-700">Information We Collect</h2>
           <p className="text-gray-600 mt-2">We may collect the following types of information:</p>
@@ -28,7 +28,7 @@ function PrivacyPolicy() {
           </ul>
         </section>
 
-        {/* How We Use Your Information */}
+   
         <section className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-700">How We Use Your Information</h2>
           <p className="text-gray-600 mt-2">We may use your information to:</p>
@@ -43,7 +43,7 @@ function PrivacyPolicy() {
           </ul>
         </section>
 
-        {/* Data Security */}
+     
         <section className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-700">Data Security</h2>
           <p className="text-gray-600 mt-2">
@@ -51,7 +51,7 @@ function PrivacyPolicy() {
           </p>
         </section>
 
-        {/* Changes to Privacy Policy */}
+
         <section className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-700">Changes to This Privacy Policy</h2>
           <p className="text-gray-600 mt-2">
@@ -59,7 +59,7 @@ function PrivacyPolicy() {
           </p>
         </section>
 
-        {/* Contact Us */}
+    
         <section className="mb-6">
           <h2 className="text-2xl font-semibold text-gray-700">Contact Us</h2>
           <p className="text-gray-600 mt-2">

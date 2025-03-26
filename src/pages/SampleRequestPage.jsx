@@ -26,7 +26,6 @@ const SampleRequestPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add logic here to handle form submission (e.g., send to an API)
     console.log("Form submitted:", formData);
   };
 
@@ -35,7 +34,6 @@ const SampleRequestPage = () => {
       <HeroSRP />
       <div className="container mx-auto px-4 py-12 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Side (Content) */}
           <div className="space-y-6">
             <h1 className="text-3xl font-semibold text-gray-800">
               SEC Sample Request
@@ -53,7 +51,6 @@ const SampleRequestPage = () => {
             </p>
           </div>
 
-          {/* Right Side (Form) */}
           <div className="bg-gray-50 p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
               Sample Request
