@@ -3,10 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 import RightArrow from "../assets/arrow-right.png";
-import OurMission from "../assets/new/our-mission-person.png";
-import VisionPng from "../assets/new/visionpng.png";
-import VisionPng2 from "../assets/new/visionpng2.png";
-import Values2 from "../assets/new/salesleader.png";
+
 
 const VisionMission = ({ missionData, visionData, valueData, error }) => {
   const leftVariants = {

@@ -23,13 +23,11 @@ function GetInTouch() {
     } else if (!/^\d{10}$/.test(phone)) {
       newErrors.phone = "Enter a valid 10-digit phone number.";
     }
-
     if (!email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
       newErrors.email = "Enter a valid email address.";
     }
-
     if (!description.trim()) newErrors.description = "Description is required.";
     if (!recaptchaToken) newErrors.recaptcha = "Please complete the reCAPTCHA.";
 

@@ -4,15 +4,12 @@ import ServiceArrow from "../assets/service-arrow.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
-import { FaArrowLeft, FaArrowRight, FaPlus } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { LuPlus } from "react-icons/lu";
 import { useApi } from "../context/ServiceContextApi";
 
 function Services({ consultationData }) {
-
-  const [showDescription, setShowDescription] = useState(false);
-  
-  
+const [showDescription, setShowDescription] = useState(false);
   const handleCardClick = (id) => {
     if (id === clickedCard) {
       setClickedCard(null);
@@ -25,28 +22,20 @@ function Services({ consultationData }) {
       }, 500);
     }
   };
-
-
-  if (!consultationData) return null;
-
-  const { serviceData } = useApi();
-
-  if (!Array.isArray(serviceData)) {
+if (!consultationData) return null;
+const { serviceData } = useApi();
+if (!Array.isArray(serviceData)) {
     console.error("serviceData is not an array:", serviceData);
     return null;
   }
-
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 4;
   const totalPages = Math.ceil(serviceData.length / cardsPerPage);
   const currentCards = serviceData.slice((currentPage - 1) * cardsPerPage, currentPage * cardsPerPage);
-
   const [clickedCard, setClickedCard] = useState(null);
   const handleNext = () => setCurrentPage((prev) => (prev < totalPages ? prev + 1 : prev));
   const handlePrev = () => setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
-
   const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.5 });
-
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },
     visible: {
@@ -55,8 +44,6 @@ function Services({ consultationData }) {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
-
-
   return (
     <section className="py-12 services-top-margin container mx-auto px-4">
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">

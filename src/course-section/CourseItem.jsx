@@ -1,28 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-FaBook,
   FaGlobeAmericas,
 } from "react-icons/fa";
 import { BsBuildings } from "react-icons/bs";
 const CourseItem = ({ course }) => {
   if (!course) return <p></p>;
-  
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
-
   const handleCourseClick = () => {
     if (course && course.id) {
       navigate(`/courses-details/${course.slug}`);
     }
   };
-
   const [showFullDescription, setShowFullDescription] = useState(false);
   const description = course.description;
   const charLimit = 180;
   const shortDescription = description.slice(0, charLimit);
   const fullDescription = description;
-
   return (
     <div className="container">
       <div
@@ -90,14 +85,11 @@ const CourseItem = ({ course }) => {
 
             </div>
           </div>
-
           <h3 className="text-sm md:text-base lg:text-lg font-semibold uppercase mb-2">
             {course?.name}
           </h3>
           <hr className="my-2" />
-
           <p className="text-sm font-light mb-4">
-
             {showFullDescription ? fullDescription : shortDescription}
             {description.length > charLimit && (
               <button
@@ -113,5 +105,4 @@ const CourseItem = ({ course }) => {
     </div>
   );
 };
-
 export default CourseItem;

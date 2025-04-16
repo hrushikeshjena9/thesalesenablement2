@@ -156,10 +156,7 @@ const FilterMobile = ({ filterData }) => {
                 </div>
               </div>
             </div>
-          </div>
-
-
-          <button
+          </div><button
             onClick={handleApplyFilters}
             className="px-6 group md:px-8 uppercase py-3 md:py-4  bg-gradient-to-r from-[#DB0032] to-[#FF6A00] text-white text-sm md:text-lg font-semibold shadow-lg  transition-all duration-300 focus:outline-none relative overflow-hidden"
           >

@@ -3,11 +3,9 @@ import RightArrow1 from "../assets/arrow-right1.png";
 import RightArrow from "../assets/arrow-right.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Big from "../assets/big.png";
 import Dot from "../assets/dotted.png";
 import Iso from "../assets/Isolation_Mode.png";
-import Three from "../assets/three.png";
-import Fir from "../assets/fir.png";
+
 const AboutUs = ({ aboutData, error }) => {
   const leftVariants = {
     hidden: { opacity: 0, x: -100 },

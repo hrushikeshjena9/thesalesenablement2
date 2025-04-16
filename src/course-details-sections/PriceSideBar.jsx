@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { BsBuildings } from "react-icons/bs";
 import {
-  FaCheckCircle,
   FaEnvelope,
   FaGlobeAmericas,
   FaPhoneAlt,
   FaShareAlt,
-  FaTimes,
 } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { IoCall } from "react-icons/io5";

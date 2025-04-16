@@ -91,7 +91,6 @@ function About({ aboutPageData }) {
                     <div dangerouslySetInnerHTML={{ __html: icon }} className="text-3xl text-white " />
                   </div>
                 </div>
-
                 <div className="flex items-start w-[90%] gap-6">
                   <div className="w-[30%]">
                     <h5 className="font-bold text-[11px] sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-xl uppercase mt-3 sm:mt-4 md:mt-5 lg:mt-1 xl:mt-3">
@@ -107,8 +106,6 @@ function About({ aboutPageData }) {
               </div>
             ))}
           </div>
-
-
           <div className="flex flex-col sm:flex-wrap md:flex-wrap   lg:flex-row xl:flex-nowrap 2xl:flex-nowrap justify-between gap-4 mt-8">
             <Link
               to={aboutPageData.btn_one_link}

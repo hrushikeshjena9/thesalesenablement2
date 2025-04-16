@@ -4,7 +4,6 @@ import {
   FaComment,
   FaEye,
   FaUser,
-  FaUsers,
 } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { FaShareAlt, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
@@ -16,7 +15,6 @@ import VideoThumb from "../assets/new/salesteamimage.jpg";
 const BlogDetailSection = () => {
   const { courseId } = useParams();
   const [course, setCourse] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
   const [relatedCourses, setRelatedCourses] = useState([]);
   const [isPlaying, setIsPlaying] = useState(false); 
   useEffect(() => {

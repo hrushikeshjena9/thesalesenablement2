@@ -23,7 +23,6 @@ import LoginSignUp from "./auth/LoginSignUp";
 import { ToastContainer  } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import ChangePassword from "./auth/ChangePwd";
-import AdminLogin from "./auth/AdminLogin";
 import ContextProviders from "./context/ContextProviders";
 import ScrollToTop from "./components/ScrollToTop";
 function App() {
@@ -77,7 +76,6 @@ function App() {
             <Route path="/service/:slug" element={<ServiceDetails />} />
             <Route path="/courses" element={<Course />} />
             <Route path="/pwd" element={<ChangePassword />} />
-            <Route path="/adminLogin" element={<AdminLogin />} />
             <Route
               path="/courses-details/:slug" element={<CourseDetails />} />
             <Route path="/blogs" element={<BlogPage />} />
